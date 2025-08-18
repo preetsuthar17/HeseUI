@@ -6,16 +6,20 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "format": "npx ultracite@latest format --unsafe",
+    "format": "npx ultracite@latest format",
     "lint": "npx ultracite@latest lint",
-    "check": "tsc --noEmit",
-    "prepare": "husky"
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-beta.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "react-icons": "^5.5.0",
+    "shiki": "^1.29.2",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
@@ -23,7 +27,6 @@
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "husky": "^9.1.7",
     "tailwindcss": "^4",
     "typescript": "^5",
     "ultracite": "5.1.8"
