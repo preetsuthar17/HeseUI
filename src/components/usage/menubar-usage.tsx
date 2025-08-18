@@ -14,10 +14,13 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from '@/components/ui/menubar';
+import { MenubarInstallation } from '../installation/menubar-installation';
+import { Separator } from '../ui/separator';
 
 export function MenubarDemo() {
   return (
-    <Menubar>
+    <div className='flex flex-col gap-8'>
+      <Menubar>
       <MenubarMenu>
         <MenubarTrigger>File</MenubarTrigger>
         <MenubarPortal>
@@ -98,6 +101,9 @@ export function MenubarDemo() {
         <MenubarTrigger>Help</MenubarTrigger>
       </MenubarMenu>
     </Menubar>
+    <Separator/>
+    <MenubarInstallation/>
+    </div>
   );
 }
 

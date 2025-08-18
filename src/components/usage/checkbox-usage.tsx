@@ -1,10 +1,13 @@
 'use client';
 
 import { Checkbox } from '@/components/ui/checkbox';
+import { CheckboxInstallation } from '../installation/checkbox-installation';
+import { Separator } from '../ui/separator';
 
 export function CheckboxDemo() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-col gap-6">
       <div className="flex items-center gap-3">
         <Checkbox id="terms" />
         <label htmlFor="terms">Accept terms and conditions</label>
@@ -45,6 +48,9 @@ export function CheckboxDemo() {
           </p>
         </div>
       </div>
+    </div>
+    <Separator/>
+    <CheckboxInstallation/>
     </div>
   );
 }

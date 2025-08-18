@@ -12,6 +12,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { DialogInstallation } from '../installation/dialog-installation';
+import { Separator } from '../ui/separator';
 
 export function DialogDemo() {
   const [_controlledOpen, _setControlledOpen] = React.useState(false);
@@ -21,7 +23,8 @@ export function DialogDemo() {
   const [_textareaValue, _setTextareaValue] = React.useState('');
 
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Basic Dialog</h3>
         <Dialog>
@@ -141,6 +144,9 @@ export function DialogDemo() {
           </DialogContent>
         </Dialog>
       </div>
+    </div>
+    <Separator/>
+    <DialogInstallation/>
     </div>
   );
 }

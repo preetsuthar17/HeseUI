@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fieldset",
+  "type": "registry:ui",
+  "title": "Fieldset",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A fieldset component for grouping form fields.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/fieldset/fieldset.tsx",
+      "content": "'use client';\n\nimport { Fieldset as BaseFieldset } from '@base-ui-components/react/fieldset';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Fieldset = React.forwardRef<\n  React.ComponentRef<typeof BaseFieldset.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseFieldset.Root>\n>(function FieldsetComponent({ className, ...props }, ref) {\n  return (\n    <BaseFieldset.Root\n      className={cn('flex w-full flex-col gap-4', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldset.displayName = 'Fieldset';\n\nconst FieldsetLegend = React.forwardRef<\n  React.ComponentRef<typeof BaseFieldset.Legend>,\n  React.ComponentPropsWithoutRef<typeof BaseFieldset.Legend>\n>(function FieldsetLegendComponent({ className, ...props }, ref) {\n  return (\n    <BaseFieldset.Legend\n      className={cn(\n        'border-border border-b pb-3 font-medium text-foreground text-lg',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldsetLegend.displayName = 'FieldsetLegend';\n\nexport { Fieldset, FieldsetLegend };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

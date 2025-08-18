@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:ui",
+  "title": "Avatar",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "An image element with a fallback for representing a user or entity.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/avatar/avatar.tsx",
+      "content": "'use client';\n\nimport { Avatar as BaseAvatar } from '@base-ui-components/react/avatar';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Avatar = React.forwardRef<\n  React.ComponentRef<typeof BaseAvatar.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseAvatar.Root>\n>(({ className, ...props }, ref) => (\n  <BaseAvatar.Root\n    className={cn(\n      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',\n      className\n    )}\n    ref={ref}\n    {...props}\n  />\n));\nAvatar.displayName = 'Avatar';\n\nconst AvatarImage = React.forwardRef<\n  React.ComponentRef<typeof BaseAvatar.Image>,\n  React.ComponentPropsWithoutRef<typeof BaseAvatar.Image>\n>(({ className, ...props }, ref) => (\n  <BaseAvatar.Image\n    className={cn('aspect-square h-full w-full', className)}\n    ref={ref}\n    {...props}\n  />\n));\nAvatarImage.displayName = 'AvatarImage';\n\nconst AvatarFallback = React.forwardRef<\n  React.ComponentRef<typeof BaseAvatar.Fallback>,\n  React.ComponentPropsWithoutRef<typeof BaseAvatar.Fallback>\n>(({ className, ...props }, ref) => (\n  <BaseAvatar.Fallback\n    className={cn(\n      'flex h-full w-full items-center justify-center rounded-full bg-muted',\n      className\n    )}\n    ref={ref}\n    {...props}\n  />\n));\nAvatarFallback.displayName = 'AvatarFallback';\n\nexport { Avatar, AvatarImage, AvatarFallback };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -3,13 +3,16 @@
 import React from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
 import { CheckboxGroup } from '@/components/ui/checkbox-group';
+import { CheckboxGroupInstallation } from '../installation/checkbox-group-installation';
+import { Separator } from '../ui/separator';
 
 export function CheckboxGroupDemo() {
   const [value, setValue] = React.useState<string[]>([]);
   const fruits = ['fuji-apple', 'gala-apple', 'granny-smith-apple'];
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-col gap-8">
       <div>
         <h3 className="mb-4 font-medium text-lg">Basic Checkbox Group</h3>
         <CheckboxGroup
@@ -134,6 +137,9 @@ export function CheckboxGroupDemo() {
           </label>
         </CheckboxGroup>
       </div>
+    </div>
+    <Separator/>
+    <CheckboxGroupInstallation/>
     </div>
   );
 }

@@ -6,12 +6,15 @@ import {
   ScrollAreaThumb,
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';
+import { ScrollAreaInstallation } from '../installation/scrollarea-installation';
+import { Separator } from '../ui/separator';
 
 const BOX_COUNT = 10;
 
 export function ScrollAreaDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Vertical</h3>
         <ScrollArea className="h-[8.5rem] w-96 max-w-[calc(100vw-8rem)]">
@@ -73,6 +76,9 @@ export function ScrollAreaDemo() {
           </ScrollAreaScrollbar>
         </ScrollArea>
       </div>
+    </div>
+    <Separator/>
+    <ScrollAreaInstallation/>
     </div>
   );
 }

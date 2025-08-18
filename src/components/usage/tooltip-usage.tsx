@@ -11,10 +11,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { TooltipInstallation } from '../installation/tooltip-installation';
+import { Separator } from '../ui/separator';
 
 export function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <div className='flex flex-col gap-8'>
+      <TooltipProvider>
       <div className="flex w-fit rounded border border-border p-0.5">
         <Tooltip>
           <TooltipTrigger aria-label="Bold">
@@ -65,6 +68,9 @@ export function TooltipDemo() {
         </Tooltip>
       </div>
     </TooltipProvider>
+    <Separator/>
+    <TooltipInstallation/>
+    </div>
   );
 }
 

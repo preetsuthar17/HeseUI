@@ -8,6 +8,8 @@ import {
   ProgressTrack,
   ProgressValue,
 } from '@/components/ui/progress';
+import { ProgressInstallation } from '../installation/progress-installation';
+import { Separator } from '../ui/separator';
 
 const INITIAL_PROGRESS = 20;
 const PROGRESS_MAX = 100;
@@ -30,12 +32,16 @@ export function ProgressDemo() {
   }, []);
 
   return (
-    <Progress className="grid w-48 grid-cols-2 gap-y-2" value={value}>
+    <div className='flex flex-col gap-8'>
+      <Progress className="grid w-48 grid-cols-2 gap-y-2" value={value}>
       <ProgressLabel>Export data</ProgressLabel>
       <ProgressValue />
       <ProgressTrack>
         <ProgressIndicator />
       </ProgressTrack>
     </Progress>
+    <Separator/>
+    <ProgressInstallation/>
+    </div>
   );
 }

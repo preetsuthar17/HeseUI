@@ -24,10 +24,13 @@ import {
   ToolbarLink,
   ToolbarSeparator,
 } from '@/components/ui/toolbar';
+import { ToolbarInstallation } from '../installation/toolbar-installation';
+import { Separator } from '../ui/separator';
 
 export function ToolbarDemo() {
   return (
-    <Toolbar className="w-[600px]">
+    <div className='flex flex-col gap-8'>
+      <Toolbar className="w-[600px]">
       <ToggleGroup aria-label="Alignment" className="flex gap-1">
         <ToolbarButton
           aria-label="Align left"
@@ -105,6 +108,9 @@ export function ToolbarDemo() {
       <ToolbarSeparator />
       <ToolbarLink href="#">Edited 51m ago</ToolbarLink>
     </Toolbar>
+    <Separator/>
+    <ToolbarInstallation/>
+    </div>
   );
 }
 

@@ -9,10 +9,13 @@ import {
   PreviewCardPositioner,
   PreviewCardTrigger,
 } from '@/components/ui/preview-card';
+import { PreviewCardInstallation } from '../installation/preview-card-installation';
+import { Separator } from '../ui/separator';
 
 export function PreviewCardDemo() {
   return (
-    <PreviewCard>
+    <div className='flex flex-col gap-8'>
+      <PreviewCard>
       <p className="max-w-64 text-balance text-base text-foreground">
         The principles of good{' '}
         <PreviewCardTrigger
@@ -45,5 +48,8 @@ export function PreviewCardDemo() {
         </PreviewCardPositioner>
       </PreviewCardPortal>
     </PreviewCard>
+    <Separator/>
+    <PreviewCardInstallation/>
+    </div>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "type": "registry:ui",
+  "title": "Checkbox",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A checkbox component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/checkbox/checkbox.tsx",
+      "content": "'use client';\n\nimport { Checkbox as BaseCheckbox } from '@base-ui-components/react/checkbox';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Checkbox = React.forwardRef<\n  React.ComponentRef<typeof BaseCheckbox.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseCheckbox.Root>\n>(({ className, ...props }, ref) => (\n  <BaseCheckbox.Root\n    className={cn(\n      'peer h-4 w-4 shrink-0 rounded border border-border ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:border-primary data-[unchecked]:border-border data-[checked]:bg-primary',\n      className\n    )}\n    ref={ref}\n    {...props}\n  >\n    <BaseCheckbox.Indicator\n      className={cn(\n        'flex items-center justify-center text-primary-foreground data-[unchecked]:hidden'\n      )}\n    >\n      <CheckIcon className=\"h-3 w-3\" />\n    </BaseCheckbox.Indicator>\n  </BaseCheckbox.Root>\n));\nCheckbox.displayName = 'Checkbox';\n\nfunction CheckIcon(props: React.ComponentProps<'svg'>) {\n  return (\n    <svg\n      fill=\"none\"\n      height=\"24\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth=\"2\"\n      viewBox=\"0 0 24 24\"\n      width=\"24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <title>Check</title>\n      <polyline points=\"20,6 9,17 4,12\" />\n    </svg>\n  );\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,8 +1,11 @@
 import { Separator } from '@/components/ui/separator';
+import { SeparatorInstallation } from '../installation/separator-installation';
+import { Separator as SeparatorUI } from '../ui/separator';
 
 export function SeparatorDemo() {
   return (
-    <div>
+    <div className='flex flex-col gap-8'>
+      <div>
       <div className="flex flex-col gap-1">
         <h4 className="font-medium text-sm leading-none">Radix Primitives</h4>
         <p className="text-muted-foreground text-sm">
@@ -17,6 +20,9 @@ export function SeparatorDemo() {
         <Separator orientation="vertical" />
         <div>Source</div>
       </div>
+    </div>
+    <SeparatorUI/>
+    <SeparatorInstallation/>
     </div>
   );
 }

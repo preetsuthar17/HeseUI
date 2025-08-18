@@ -6,12 +6,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import { CollapsibleInstallation } from '../installation/collapsible-installation';
+import { Separator } from '../ui/separator';
 
 export function CollapsibleDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-col gap-6">
       <div>
         <h3 className="mb-4 font-medium text-lg">Basic Collapsible</h3>
         <Collapsible className="w-full max-w-md">
@@ -87,6 +90,9 @@ export function CollapsibleDemo() {
           </CollapsibleContent>
         </Collapsible>
       </div>
+    </div>
+    <Separator/>
+    <CollapsibleInstallation/>
     </div>
   );
 }

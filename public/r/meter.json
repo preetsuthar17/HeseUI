@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meter",
+  "type": "registry:ui",
+  "title": "Meter",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A meter component for displaying progress.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/meter/meter.tsx",
+      "content": "'use client';\n\nimport { Meter as BaseMeter } from '@base-ui-components/react/meter';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Meter = React.forwardRef<\n  React.ComponentRef<typeof BaseMeter.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseMeter.Root>\n>(function MeterComponent({ className, ...props }, ref) {\n  return (\n    <BaseMeter.Root\n      className={cn('box-border', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nMeter.displayName = 'Meter';\n\nconst MeterLabel = React.forwardRef<\n  React.ComponentRef<typeof BaseMeter.Label>,\n  React.ComponentPropsWithoutRef<typeof BaseMeter.Label>\n>(function MeterLabelComponent({ className, ...props }, ref) {\n  return (\n    <BaseMeter.Label\n      className={cn('font-medium text-foreground text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nMeterLabel.displayName = 'MeterLabel';\n\nconst MeterValue = React.forwardRef<\n  React.ComponentRef<typeof BaseMeter.Value>,\n  React.ComponentPropsWithoutRef<typeof BaseMeter.Value>\n>(function MeterValueComponent({ className, ...props }, ref) {\n  return (\n    <BaseMeter.Value\n      className={cn('m-0 text-foreground text-sm leading-5', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nMeterValue.displayName = 'MeterValue';\n\nconst MeterTrack = React.forwardRef<\n  React.ComponentRef<typeof BaseMeter.Track>,\n  React.ComponentPropsWithoutRef<typeof BaseMeter.Track>\n>(function MeterTrackComponent({ className, ...props }, ref) {\n  return (\n    <BaseMeter.Track\n      className={cn(\n        'relative block h-2 w-full overflow-hidden rounded bg-muted outline outline-border',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nMeterTrack.displayName = 'MeterTrack';\n\nconst MeterIndicator = React.forwardRef<\n  React.ComponentRef<typeof BaseMeter.Indicator>,\n  React.ComponentPropsWithoutRef<typeof BaseMeter.Indicator>\n>(function MeterIndicatorComponent({ className, ...props }, ref) {\n  return (\n    <BaseMeter.Indicator\n      className={cn(\n        'block h-full bg-primary transition-[width] duration-500',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nMeterIndicator.displayName = 'MeterIndicator';\n\nexport { Meter, MeterLabel, MeterValue, MeterTrack, MeterIndicator };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

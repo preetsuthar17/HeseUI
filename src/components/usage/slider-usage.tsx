@@ -9,6 +9,8 @@ import {
   SliderTrack,
   SliderValue,
 } from '@/components/ui/slider';
+import { SliderInstallation } from '../installation/slider-installation';
+import { Separator } from '../ui/separator';
 
 const RANGE_SINGLE_INITIAL = 25;
 const RANGE_LOWER_INITIAL = 25;
@@ -23,7 +25,8 @@ export function SliderDemo() {
     RANGE_UPPER_INITIAL,
   ]);
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Single value</h3>
         <Slider defaultValue={RANGE_SINGLE_INITIAL}>
@@ -66,6 +69,9 @@ export function SliderDemo() {
           </span>
         </div>
       </div>
+    </div>
+    <Separator/>
+    <SliderInstallation/>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "type": "registry:ui",
+  "title": "Form",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A form component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/form/form.tsx",
+      "content": "'use client';\n\nimport { Form as BaseForm } from '@base-ui-components/react/form';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Form = React.forwardRef<\n  React.ComponentRef<typeof BaseForm>,\n  React.ComponentPropsWithoutRef<typeof BaseForm>\n>(function FormComponent({ className, ...props }, ref) {\n  return (\n    <BaseForm\n      className={cn('flex w-full flex-col gap-4', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nForm.displayName = 'Form';\n\nexport { Form };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

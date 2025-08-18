@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { Input } from './ui/input';
 
 type ComponentNavigationProps = {
   onItemClick?: () => void;
@@ -64,11 +65,13 @@ function NavigationLinks({
   onItemClick,
   setActiveSection,
   toggleSection,
+  search,
 }: {
   activeSection: string;
   onItemClick?: () => void;
   setActiveSection: (id: string) => void;
   toggleSection: (componentId: string) => void;
+  search: string;
 }) {
   function handleClick(componentId: string) {
     setActiveSection(componentId);
@@ -78,22 +81,32 @@ function NavigationLinks({
     }
   }
 
+  // Filter components by search (case-insensitive, match name or id)
+  const filteredComponents = components.filter((component) =>
+    component.name.toLowerCase().includes(search.toLowerCase()) ||
+    component.id.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="flex flex-col gap-1">
-      {components.map((component) => (
-        <button
-          className={`w-full px-2 py-1 text-left text-sm transition-colors ${
-            activeSection === component.id
-              ? 'font-medium text-foreground'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-          key={component.id}
-          onClick={() => handleClick(component.id)}
-          type="button"
-        >
-          {component.name}
-        </button>
-      ))}
+      {filteredComponents.length === 0 ? (
+        <div className="px-2 py-2 text-sm text-muted-foreground">No components found</div>
+      ) : (
+        filteredComponents.map((component) => (
+          <button
+            className={`w-full px-2 py-1 text-left text-sm transition-colors ${
+              activeSection === component.id
+                ? 'font-medium text-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+            key={component.id}
+            onClick={() => handleClick(component.id)}
+            type="button"
+          >
+            {component.name}
+          </button>
+        ))
+      )}
     </div>
   );
 }
@@ -101,6 +114,7 @@ function NavigationLinks({
 export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
   const [activeSection, setActiveSection] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -155,6 +169,15 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
 
   return (
     <nav className="flex max-h-screen flex-col p-4">
+      <div className="mb-3">
+        <Input
+          type="text"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          placeholder="Search components..."
+          aria-label="Search components"
+        />
+      </div>
       {isLoading ? (
         <NavigationSkeleton />
       ) : (
@@ -163,6 +186,7 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
           onItemClick={onItemClick}
           setActiveSection={setActiveSection}
           toggleSection={toggleSection}
+          search={search}
         />
       )}
     </nav>

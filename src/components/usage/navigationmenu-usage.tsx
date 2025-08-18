@@ -16,6 +16,8 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigationmenu';
+import { NavigationMenuInstallation } from '../installation/navigationmenu-installation';
+import { Separator } from '../ui/separator';
 
 const components = [
   {
@@ -59,7 +61,8 @@ export function NavigationMenuDemo() {
   const triggerCls = navigationMenuTriggerStyle();
 
   return (
-    <NavigationMenu>
+    <div className='flex flex-col gap-8'>
+      <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Home</NavigationMenuTrigger>
@@ -130,6 +133,9 @@ export function NavigationMenuDemo() {
         </NavigationMenuPositioner>
       </NavigationMenuPortal>
     </NavigationMenu>
+    <Separator/>
+    <NavigationMenuInstallation/>
+    </div>
   );
 }
 

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A tabbed interface component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/tabs/tabs.tsx",
+      "content": "'use client';\n\nimport { Tabs as BaseTabs } from '@base-ui-components/react/tabs';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Tabs = React.forwardRef<\n  React.ComponentRef<typeof BaseTabs.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseTabs.Root>\n>(function TabsComponent({ className, ...props }, ref) {\n  return (\n    <BaseTabs.Root\n      className={cn('rounded border border-border', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nTabs.displayName = 'Tabs';\n\nconst TabsList = React.forwardRef<\n  React.ComponentRef<typeof BaseTabs.List>,\n  React.ComponentPropsWithoutRef<typeof BaseTabs.List>\n>(function TabsListComponent({ className, ...props }, ref) {\n  return (\n    <BaseTabs.List\n      className={cn(\n        'relative z-0 flex gap-1 px-1 shadow-[inset_0_-1px] shadow-border',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nTabsList.displayName = 'TabsList';\n\nconst TabsTrigger = React.forwardRef<\n  React.ComponentRef<typeof BaseTabs.Tab>,\n  React.ComponentPropsWithoutRef<typeof BaseTabs.Tab>\n>(function TabsTriggerComponent({ className, ...props }, ref) {\n  return (\n    <BaseTabs.Tab\n      className={cn(\n        'before:-outline-offset-1 flex h-8 select-none items-center justify-center whitespace-nowrap break-keep px-2 font-medium text-muted-foreground text-sm outline-none before:inset-x-0 before:inset-y-1 before:rounded before:outline-ring hover:text-foreground focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-[selected]:text-accent-foreground',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nTabsTrigger.displayName = 'TabsTrigger';\n\nconst TabsIndicator = React.forwardRef<\n  React.ComponentRef<typeof BaseTabs.Indicator>,\n  React.ComponentPropsWithoutRef<typeof BaseTabs.Indicator>\n>(function TabsIndicatorComponent({ className, ...props }, ref) {\n  return (\n    <BaseTabs.Indicator\n      className={cn(\n        '-translate-y-1/2 absolute top-1/2 left-[var(--active-tab-left)] z-[-1] h-6 w-[var(--active-tab-width)] rounded bg-accent transition-[left,width] duration-200 ease-in-out',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nTabsIndicator.displayName = 'TabsIndicator';\n\nconst TabsContent = React.forwardRef<\n  React.ComponentRef<typeof BaseTabs.Panel>,\n  React.ComponentPropsWithoutRef<typeof BaseTabs.Panel>\n>(function TabsContentComponent({ className, ...props }, ref) {\n  return (\n    <BaseTabs.Panel\n      className={cn(\n        'relative flex h-32 items-center justify-center focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nTabsContent.displayName = 'TabsContent';\n\nexport { Tabs, TabsList, TabsTrigger, TabsIndicator, TabsContent };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

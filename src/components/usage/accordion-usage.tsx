@@ -4,10 +4,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { AccordionInstallation } from '../installation/accordion-installation';
+import { Separator } from '../ui/separator';
 
 export function AccordionDemo() {
   return (
-    <>
+    <div className='flex flex-col gap-8'>
       <Accordion
         className="w-full text-base"
         collapsible
@@ -35,6 +37,8 @@ export function AccordionDemo() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </>
+      <Separator/>
+      <AccordionInstallation/>
+    </div>
   );
 }

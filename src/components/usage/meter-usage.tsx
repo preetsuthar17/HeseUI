@@ -7,10 +7,13 @@ import {
   MeterTrack,
   MeterValue,
 } from '@/components/ui/meter';
+import { MeterInstallation } from '../installation/meter-installation';
+import { Separator } from '../ui/separator';
 
 export function MeterDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Basic Meter</h3>
         <Meter className="grid w-48 grid-cols-2 gap-y-2" value={24}>
@@ -54,6 +57,9 @@ export function MeterDemo() {
           </MeterTrack>
         </Meter>
       </div>
+    </div>
+    <Separator/>
+    <MeterInstallation/>
     </div>
   );
 }

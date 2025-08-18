@@ -8,10 +8,13 @@ import {
   FieldLabel,
 } from '@/components/ui/field';
 import { Fieldset, FieldsetLegend } from '@/components/ui/fieldset';
+import { FieldsetInstallation } from '../installation/fieldset-installation';
+import { Separator } from '../ui/separator';
 
 export function FieldsetDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <Fieldset className="w-full max-w-64">
           <FieldsetLegend>Billing details</FieldsetLegend>
@@ -180,6 +183,9 @@ export function FieldsetDemo() {
           </Field>
         </Fieldset>
       </div>
+    </div>
+    <Separator/>
+    <FieldsetInstallation/>
     </div>
   );
 }

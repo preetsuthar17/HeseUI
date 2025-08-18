@@ -1,10 +1,13 @@
 'use client';
 
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio';
+import { RadioInstallation } from '../installation/radio-installation';
+import { Separator } from '../ui/separator';
 
 export function RadioGroupDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Basic</h3>
         <RadioGroup defaultValue="comfortable">
@@ -52,6 +55,9 @@ export function RadioGroupDemo() {
           </div>
         </RadioGroup>
       </div>
+    </div>
+    <Separator/>
+    <RadioInstallation/>
     </div>
   );
 }

@@ -10,11 +10,14 @@ import {
   NumberFieldScrubArea,
   NumberFieldScrubAreaCursor,
 } from '@/components/ui/numberfield';
+import { NumberFieldInstallation } from '../installation/numberfield-installation';
+import { Separator } from '../ui/separator';
 
 export function NumberFieldDemo() {
   const id = React.useId();
   return (
-    <NumberField
+    <div className='flex flex-col gap-8'>
+      <NumberField
       className="flex flex-col items-start gap-1"
       defaultValue={100}
       id={id}
@@ -41,6 +44,9 @@ export function NumberFieldDemo() {
         </NumberFieldIncrement>
       </NumberFieldGroup>
     </NumberField>
+    <Separator/>
+    <NumberFieldInstallation/>
+    </div>
   );
 }
 

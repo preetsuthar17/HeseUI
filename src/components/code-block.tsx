@@ -30,7 +30,7 @@ function getLineKey(line: string, index: number): string {
 export default function CodeBlock({
   code,
   lang,
-  theme = 'github-dark',
+  theme = 'github-light',
   showLineNumbers = false,
   className = '',
   filename,
@@ -119,6 +119,13 @@ export default function CodeBlock({
     background: 'var(--color-muted, #27272a)',
   };
 
+  // Add word wrap styles for code/pre
+  const wordWrapStyle: React.CSSProperties = {
+    whiteSpace: 'pre-wrap',
+    wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+  };
+
   if (loading) {
     return (
       <div
@@ -149,8 +156,8 @@ export default function CodeBlock({
 
     if (typeof window === 'undefined') {
       return (
-        <pre>
-          <code>{code}</code>
+        <pre className='font-mono' style={wordWrapStyle}>
+          <code className='p-4 font-mono' style={wordWrapStyle}>{code}</code>
         </pre>
       );
     }
@@ -160,10 +167,25 @@ export default function CodeBlock({
     const pre = doc.body.querySelector('pre');
     if (!pre) {
       return (
-        <pre>
-          <code>{code}</code>
+        <pre style={wordWrapStyle}>
+          <code style={wordWrapStyle}>{code}</code>
         </pre>
       );
+    }
+
+    function parseInlineStyle(styleText: string): React.CSSProperties {
+      const styleObject: React.CSSProperties = {};
+      styleText.split(';').forEach((declaration) => {
+        const [rawProp, rawValue] = declaration.split(':');
+        if (!rawProp || !rawValue) return;
+        const prop = rawProp.trim();
+        const value = rawValue.trim();
+        if (!prop || !value) return;
+        const camelProp = prop.replace(/-([a-z])/g, (_m, c: string) => c.toUpperCase());
+        // @ts-expect-error: dynamic style keys
+        styleObject[camelProp] = value;
+      });
+      return styleObject;
     }
 
     function domNodeToReact(node: ChildNode, key?: string | number): React.ReactNode {
@@ -180,7 +202,9 @@ export default function CodeBlock({
       const props: any = { key };
       // Copy className and style if present
       if (el.className) props.className = el.className;
-      if (el.getAttribute('style')) props.style = el.getAttribute('style');
+      const styleAttr = el.getAttribute('style');
+      if (styleAttr) props.style = { ...parseInlineStyle(styleAttr), ...((el.tagName.toLowerCase() === 'pre' || el.tagName.toLowerCase() === 'code') ? wordWrapStyle : {}) };
+      else if (el.tagName.toLowerCase() === 'pre' || el.tagName.toLowerCase() === 'code') props.style = wordWrapStyle;
       // Copy data- attributes
       Array.from(el.attributes).forEach(attr => {
         if (attr.name.startsWith('data-')) {
@@ -254,7 +278,10 @@ export default function CodeBlock({
           </div>
         )}
 
-        <div className={`overflow-x-auto ${showLineNumbers ? 'ml-12' : ''}`}>
+        <div
+          className={`overflow-x-auto ${showLineNumbers ? 'ml-12' : ''}`}
+          style={{ ...wordWrapStyle }}
+        >
           {renderHighlightedCode()}
         </div>
       </div>

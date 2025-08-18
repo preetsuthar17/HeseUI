@@ -15,6 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { SelectInstallation } from '../installation/select-installation';
+import { Separator } from '../ui/separator';
 
 const fontItems = {
   sans: 'Sans-serif',
@@ -25,7 +27,8 @@ const fontItems = {
 
 export function SelectDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Single Select</h3>
         <Select items={fontItems}>
@@ -86,6 +89,9 @@ export function SelectDemo() {
           </SelectPortal>
         </Select>
       </div>
+    </div>
+    <Separator/>
+    <SelectInstallation/>
     </div>
   );
 }

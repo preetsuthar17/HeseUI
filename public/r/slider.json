@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:ui",
+  "title": "Slider",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A slider input component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/slider/slider.tsx",
+      "content": "'use client';\n\nimport { Slider as BaseSlider } from '@base-ui-components/react/slider';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Slider = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Root>\n>(function SliderComponent({ className, ...props }, _ref) {\n  return <BaseSlider.Root className={cn('', className)} {...props} />;\n});\nSlider.displayName = 'Slider';\n\nconst SliderValue = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Value>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Value>\n>(function SliderValueComponent({ className, ...props }, ref) {\n  return (\n    <BaseSlider.Value\n      className={cn('text-foreground text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nSliderValue.displayName = 'SliderValue';\n\nconst SliderControl = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Control>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Control>\n>(function SliderControlComponent({ className, ...props }, ref) {\n  return (\n    <BaseSlider.Control\n      className={cn(\n        'flex w-56 touch-none select-none items-center py-3',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nSliderControl.displayName = 'SliderControl';\n\nconst SliderTrack = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Track>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Track>\n>(function SliderTrackComponent({ className, ...props }, ref) {\n  return (\n    <BaseSlider.Track\n      className={cn(\n        'select-none rounded bg-muted shadow-[inset_0_0_0_1px] shadow-border data-[orientation=horizontal]:h-1 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nSliderTrack.displayName = 'SliderTrack';\n\nconst SliderIndicator = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Indicator>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Indicator>\n>(function SliderIndicatorComponent({ className, ...props }, ref) {\n  return (\n    <BaseSlider.Indicator\n      className={cn('rounded bg-primary', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nSliderIndicator.displayName = 'SliderIndicator';\n\nconst SliderThumb = React.forwardRef<\n  React.ComponentRef<typeof BaseSlider.Thumb>,\n  React.ComponentPropsWithoutRef<typeof BaseSlider.Thumb>\n>(function SliderThumbComponent({ className, ...props }, ref) {\n  return (\n    <BaseSlider.Thumb\n      className={cn(\n        'size-4 select-none rounded-full bg-background outline outline-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nSliderThumb.displayName = 'SliderThumb';\n\nexport {\n  Slider,\n  SliderValue,\n  SliderControl,\n  SliderTrack,\n  SliderIndicator,\n  SliderThumb,\n};\n",
+      "type": "registry:ui"
+    }
+  ]
+}

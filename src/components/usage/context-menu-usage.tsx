@@ -19,13 +19,16 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from '@/components/ui/context-menu';
+import { ContextMenuInstallation } from '../installation/context-menu-installation';
+import { Separator } from '../ui/separator';
 
 export function ContextMenuDemo() {
   const [showStatusBar, setShowStatusBar] = React.useState(true);
   const [position, setPosition] = React.useState('bottom');
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-col gap-8">
       <div>
         <h3 className="mb-4 font-medium text-lg">Basic Context Menu</h3>
         <ContextMenu>
@@ -140,6 +143,9 @@ export function ContextMenuDemo() {
           </ContextMenuPortal>
         </ContextMenu>
       </div>
+    </div>
+    <Separator/>
+    <ContextMenuInstallation/>
     </div>
   );
 }

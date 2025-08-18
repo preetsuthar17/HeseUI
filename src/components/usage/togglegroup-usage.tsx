@@ -3,6 +3,8 @@
 import { Bold, Italic, Underline } from 'lucide-react';
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/togglegroup';
+import { ToggleGroupInstallation } from '../installation/togglegroup-installation';
+import { Separator } from '../ui/separator';
 
 function getLabel(value: string) {
   if (value === 'bold') {
@@ -37,7 +39,8 @@ export function ToggleGroupDemo() {
   }
 
   return (
-    <div className="">
+    <div className='flex flex-col gap-8'>
+      <div className="">
       <ToggleGroup
         className="w-fit"
         onValueChange={handleChange}
@@ -56,6 +59,9 @@ export function ToggleGroupDemo() {
           </ToggleGroupItem>
         ))}
       </ToggleGroup>
+    </div>
+    <Separator/>
+    <ToggleGroupInstallation/>
     </div>
   );
 }

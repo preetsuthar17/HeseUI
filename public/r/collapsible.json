@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "title": "Collapsible",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A component for showing and hiding content.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/collapsible/collapsible.tsx",
+      "content": "'use client';\n\nimport { Collapsible as BaseCollapsible } from '@base-ui-components/react/collapsible';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Collapsible = React.forwardRef<\n  React.ComponentRef<typeof BaseCollapsible.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseCollapsible.Root>\n>(function CollapsibleComponent({ className, ...props }, ref) {\n  return (\n    <BaseCollapsible.Root\n      className={cn('w-full', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\n\ntype CollapsibleTriggerProps = React.ComponentPropsWithoutRef<\n  typeof BaseCollapsible.Trigger\n> & {\n  iconPosition?: 'left' | 'right';\n  icon?: React.ReactNode;\n};\n\nconst CollapsibleTrigger = React.forwardRef<\n  React.ComponentRef<typeof BaseCollapsible.Trigger>,\n  CollapsibleTriggerProps\n>(function CollapsibleTriggerComponent(\n  { className, children, icon, iconPosition = 'right', ...props },\n  ref\n) {\n  const iconNode = icon ?? (\n    <ChevronDownIcon className=\"h-4 w-4 shrink-0 transition-transform duration-200 data-[panel-open]:rotate-180\" />\n  );\n  return (\n    <BaseCollapsible.Trigger\n      className={cn(\n        'flex w-full items-center justify-between rounded border border-border bg-background px-4 py-3 font-medium text-sm transition-all hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[panel-open]:bg-accent data-[panel-open]:text-accent-foreground',\n        className\n      )}\n      ref={ref}\n      {...props}\n      type=\"button\"\n    >\n      {iconPosition === 'left' && iconNode}\n      <span className=\"flex-1 text-left\">{children}</span>\n      {iconPosition === 'right' && iconNode}\n    </BaseCollapsible.Trigger>\n  );\n});\n\nconst CollapsibleContent = React.forwardRef<\n  React.ComponentRef<typeof BaseCollapsible.Panel>,\n  React.ComponentPropsWithoutRef<typeof BaseCollapsible.Panel>\n>(function CollapsibleContentComponent({ className, children, ...props }, ref) {\n  return (\n    <BaseCollapsible.Panel\n      className={cn(\n        'mt-2 flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden rounded text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0',\n        className\n      )}\n      ref={ref}\n      {...props}\n    >\n      {children}\n    </BaseCollapsible.Panel>\n  );\n});\n\nfunction ChevronDownIcon(props: React.ComponentProps<'svg'>) {\n  return (\n    <svg\n      fill=\"none\"\n      height=\"24\"\n      stroke=\"currentColor\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n      strokeWidth=\"2\"\n      viewBox=\"0 0 24 24\"\n      width=\"24\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <title>Expand</title>\n      <path d=\"m6 9 6 6 6-6\" />\n    </svg>\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

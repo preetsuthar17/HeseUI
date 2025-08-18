@@ -7,10 +7,13 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs';
+import { TabsInstallation } from '../installation/tabs-installation';
+import { Separator } from '../ui/separator';
 
 export function TabsDemo() {
   return (
-    <Tabs className="w-[400px]" defaultValue="overview">
+    <div className='flex flex-col gap-8'>
+      <Tabs className="w-[400px]" defaultValue="overview">
       <TabsList>
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="projects">Projects</TabsTrigger>
@@ -33,5 +36,8 @@ export function TabsDemo() {
         <div className="text-muted-foreground">Account content</div>
       </TabsContent>
     </Tabs>
+    <Separator/>
+    <TabsInstallation/>
+    </div>
   );
 }

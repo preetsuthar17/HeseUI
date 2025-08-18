@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A progress bar component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/progress/progress.tsx",
+      "content": "'use client';\n\nimport { Progress as BaseProgress } from '@base-ui-components/react/progress';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Progress = React.forwardRef<\n  React.ComponentRef<typeof BaseProgress.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseProgress.Root>\n>(function ProgressComponent({ className, ...props }, ref) {\n  return (\n    <BaseProgress.Root\n      className={cn('grid w-48 grid-cols-2 gap-y-2', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nProgress.displayName = 'Progress';\n\nconst ProgressLabel = React.forwardRef<\n  React.ComponentRef<typeof BaseProgress.Label>,\n  React.ComponentPropsWithoutRef<typeof BaseProgress.Label>\n>(function ProgressLabelComponent({ className, ...props }, ref) {\n  return (\n    <BaseProgress.Label\n      className={cn('font-medium text-foreground text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nProgressLabel.displayName = 'ProgressLabel';\n\nconst ProgressValue = React.forwardRef<\n  React.ComponentRef<typeof BaseProgress.Value>,\n  React.ComponentPropsWithoutRef<typeof BaseProgress.Value>\n>(function ProgressValueComponent({ className, ...props }, ref) {\n  return (\n    <BaseProgress.Value\n      className={cn(\n        'col-start-2 text-right text-foreground text-sm',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nProgressValue.displayName = 'ProgressValue';\n\nconst ProgressTrack = React.forwardRef<\n  React.ComponentRef<typeof BaseProgress.Track>,\n  React.ComponentPropsWithoutRef<typeof BaseProgress.Track>\n>(function ProgressTrackComponent({ className, ...props }, ref) {\n  return (\n    <BaseProgress.Track\n      className={cn(\n        'col-span-full h-1 overflow-hidden rounded bg-muted outline outline-border',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nProgressTrack.displayName = 'ProgressTrack';\n\nconst ProgressIndicator = React.forwardRef<\n  React.ComponentRef<typeof BaseProgress.Indicator>,\n  React.ComponentPropsWithoutRef<typeof BaseProgress.Indicator>\n>(function ProgressIndicatorComponent({ className, ...props }, ref) {\n  return (\n    <BaseProgress.Indicator\n      className={cn(\n        'block h-full bg-primary transition-[width] duration-500',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nProgressIndicator.displayName = 'ProgressIndicator';\n\nexport {\n  Progress,\n  ProgressLabel,\n  ProgressValue,\n  ProgressTrack,\n  ProgressIndicator,\n};\n",
+      "type": "registry:ui"
+    }
+  ]
+}

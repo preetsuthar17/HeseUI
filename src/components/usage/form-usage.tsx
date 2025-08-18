@@ -9,6 +9,8 @@ import {
   FieldLabel,
 } from '@/components/ui/field';
 import { Form } from '@/components/ui/form';
+import { FormInstallation } from '../installation/form-installation';
+import { Separator } from '../ui/separator';
 
 const SERVER_DELAY_MS = 1000;
 const MIN_AGE = 18;
@@ -71,7 +73,8 @@ export function FormDemo() {
   const [validationLoading, setValidationLoading] = React.useState(false);
 
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">URL Validation Form</h3>
         <Form
@@ -249,6 +252,9 @@ export function FormDemo() {
           </Button>
         </Form>
       </div>
+    </div>
+    <Separator/>
+    <FormInstallation/>
     </div>
   );
 }

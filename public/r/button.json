@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A simple button component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/button/button.tsx",
+      "content": "'use client';\n\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n  variant?:\n    | 'default'\n    | 'destructive'\n    | 'outline'\n    | 'secondary'\n    | 'ghost'\n    | 'link';\n  size?: 'default' | 'sm' | 'lg' | 'icon';\n}\n\nconst Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  ({ className, variant = 'default', size = 'default', ...props }, ref) => {\n    return (\n      <button\n        className={cn(\n          'inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',\n          {\n            'bg-primary text-primary-foreground hover:bg-primary/90':\n              variant === 'default',\n            'bg-destructive text-destructive-foreground hover:bg-destructive/90':\n              variant === 'destructive',\n            'border border-border bg-background hover:bg-accent hover:text-accent-foreground':\n              variant === 'outline',\n            'bg-secondary text-secondary-foreground hover:bg-secondary/80':\n              variant === 'secondary',\n            'hover:bg-accent hover:text-accent-foreground': variant === 'ghost',\n            'text-primary underline-offset-4 hover:underline':\n              variant === 'link',\n          },\n          {\n            'h-10 px-4 py-2': size === 'default',\n            'h-9 rounded px-3': size === 'sm',\n            'h-11 rounded px-8': size === 'lg',\n            'h-10 w-10': size === 'icon',\n          },\n          className\n        )}\n        ref={ref}\n        {...props}\n      />\n    );\n  }\n);\nButton.displayName = 'Button';\n\nexport { Button };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

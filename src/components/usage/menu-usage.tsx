@@ -21,6 +21,8 @@ import {
   MenuSubTrigger,
   MenuTrigger,
 } from '@/components/ui/menu';
+import { MenuInstallation } from '../installation/menu-installation';
+import { Separator } from '../ui/separator';
 
 export function MenuDemo() {
   const [_hoverValue, _setHoverValue] = React.useState('Get Up!');
@@ -33,7 +35,8 @@ export function MenuDemo() {
     'inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2';
 
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Basic Menu</h3>
         <Menu>
@@ -269,6 +272,9 @@ export function MenuDemo() {
           </MenuPortal>
         </Menu>
       </div>
+    </div>
+    <Separator/>
+    <MenuInstallation/>
     </div>
   );
 }

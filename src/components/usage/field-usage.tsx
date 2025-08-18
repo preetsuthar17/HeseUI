@@ -8,13 +8,16 @@ import {
   FieldLabel,
   FieldValidity,
 } from '@/components/ui/field';
+import { FieldInstallation } from '../installation/field-installation';
+import { Separator } from '../ui/separator';
 
 const MIN_USERNAME_LENGTH = 3;
 const USERNAME_REGEX = /^[a-zA-Z0-9_]+$/;
 
 export function FieldDemo() {
   return (
-    <div className="flex flex-wrap gap-8">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
         <h3 className="font-medium text-lg">Basic Field</h3>
         <Field className="w-full max-w-64">
@@ -161,6 +164,9 @@ export function FieldDemo() {
           </FieldDescription>
         </Field>
       </div>
+    </div>
+    <Separator/>
+    <FieldInstallation/>
     </div>
   );
 }

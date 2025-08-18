@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "type": "registry:ui",
+  "title": "Field",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "A form field wrapper component.",
+  "dependencies": [
+    "@base-ui-components/react"
+  ],
+  "files": [
+    {
+      "path": "registry/field/field.tsx",
+      "content": "'use client';\n\nimport { Field as BaseField } from '@base-ui-components/react/field';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\nconst Field = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Root>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Root>\n>(function FieldComponent({ className, ...props }, ref) {\n  return (\n    <BaseField.Root\n      className={cn('flex w-full flex-col items-start gap-1', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nField.displayName = 'Field';\n\nconst FieldLabel = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Label>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Label>\n>(function FieldLabelComponent({ className, ...props }, ref) {\n  return (\n    <BaseField.Label\n      className={cn('font-medium text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldLabel.displayName = 'FieldLabel';\n\nconst FieldControl = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Control>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Control>\n>(function FieldControlComponent({ className, ...props }, ref) {\n  return (\n    <BaseField.Control\n      className={cn(\n        'flex h-9 w-full min-w-0 rounded border border-border bg-transparent px-3 py-1 text-base text-foreground outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[2px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldControl.displayName = 'FieldControl';\n\nconst FieldDescription = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Description>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Description>\n>(function FieldDescriptionComponent({ className, ...props }, ref) {\n  return (\n    <BaseField.Description\n      className={cn('text-muted-foreground text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldDescription.displayName = 'FieldDescription';\n\nconst FieldError = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Error>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Error>\n>(function FieldErrorComponent({ className, ...props }, ref) {\n  return (\n    <BaseField.Error\n      className={cn('text-destructive text-sm', className)}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nFieldError.displayName = 'FieldError';\n\nconst FieldValidity = React.forwardRef<\n  React.ComponentRef<typeof BaseField.Validity>,\n  React.ComponentPropsWithoutRef<typeof BaseField.Validity>\n>(function FieldValidityComponent(props, _ref) {\n  return <BaseField.Validity {...props} />;\n});\nFieldValidity.displayName = 'FieldValidity';\n\nexport {\n  Field,\n  FieldLabel,\n  FieldControl,\n  FieldDescription,\n  FieldError,\n  FieldValidity,\n};\n",
+      "type": "registry:ui"
+    }
+  ]
+}

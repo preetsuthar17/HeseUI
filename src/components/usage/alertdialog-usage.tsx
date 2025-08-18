@@ -9,9 +9,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { AlertDialogInstallation } from '../installation/alert-dialog-installation';
+import { Separator } from '../ui/separator';
 
 export function AlertDialogDemo() {
   return (
+    <div className='flex flex-col gap-8'> 
     <AlertDialog>
       <AlertDialogTrigger
         className={
@@ -34,5 +37,8 @@ export function AlertDialogDemo() {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
+    <Separator/>
+    <AlertDialogInstallation/>
+    </div>
   );
 }

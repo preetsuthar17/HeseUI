@@ -1,8 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { AvatarInstallation } from '../installation/avatar-installation';
+import { Separator } from '../ui/separator';
 
 export function AvatarDemo() {
   return (
-    <div className="flex flex-row flex-wrap items-center gap-12">
+    <div className='flex flex-col gap-8'>
+      <div className="flex flex-row flex-wrap items-center gap-12">
       <Avatar>
         <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
@@ -38,6 +41,9 @@ export function AvatarDemo() {
           <AvatarFallback>ER</AvatarFallback>
         </Avatar>
       </div>
+    </div>
+    <Separator/>
+    <AvatarInstallation/>
     </div>
   );
 }
