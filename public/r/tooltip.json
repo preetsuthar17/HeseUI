@@ -5,9 +5,7 @@
   "title": "Tooltip",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A tooltip component for displaying additional information.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/tooltip/tooltip.tsx",

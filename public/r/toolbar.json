@@ -5,9 +5,7 @@
   "title": "Toolbar",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A toolbar component for grouping actions.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/toolbar/toolbar.tsx",

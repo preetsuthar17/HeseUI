@@ -5,9 +5,7 @@
   "title": "Toast",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A toast notification component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/toast/toast.tsx",

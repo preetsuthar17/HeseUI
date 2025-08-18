@@ -1,25 +1,27 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function CollapsibleInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/collapsible.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/collapsible.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function CollapsibleDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function CollapsibleDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -102,9 +104,8 @@ export function CollapsibleInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

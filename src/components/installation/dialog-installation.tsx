@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function DialogInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/dialog.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/dialog.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -18,11 +20,11 @@ export function DialogInstallation() {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function DialogDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function DialogDemo() {
   const [_controlledOpen, _setControlledOpen] = React.useState(false);
   const [_nonModalOpen, _setNonModalOpen] = React.useState(false);
   const [_nonDismissibleOpen, _setNonDismissibleOpen] = React.useState(false);
@@ -153,9 +155,8 @@ export function DialogInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

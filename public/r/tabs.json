@@ -5,9 +5,7 @@
   "title": "Tabs",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A tabbed interface component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/tabs/tabs.tsx",

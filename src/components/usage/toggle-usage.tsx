@@ -7,12 +7,12 @@ import { Separator } from '../ui/separator';
 
 export function ToggleDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Toggle aria-label="Toggle bold" className="w-fit p-2">
-      <Bold className="h-4 w-4" />
-    </Toggle>
-    <Separator/>
-    <ToggleInstallation/>
+        <Bold className="h-4 w-4" />
+      </Toggle>
+      <Separator />
+      <ToggleInstallation />
     </div>
   );
 }

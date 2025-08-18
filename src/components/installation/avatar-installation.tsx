@@ -1,25 +1,27 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function AvatarInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/avatar.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/avatar.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Avatar,
   AvatarFallback,
   AvatarImage,
 } from '@/components/ui/avatar';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function AvatarDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function AvatarDemo() {
   return (
     <div className="flex flex-row flex-wrap items-center gap-12">
       <Avatar>
@@ -60,9 +62,8 @@ export function AvatarInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

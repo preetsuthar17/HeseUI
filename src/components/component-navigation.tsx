@@ -82,15 +82,18 @@ function NavigationLinks({
   }
 
   // Filter components by search (case-insensitive, match name or id)
-  const filteredComponents = components.filter((component) =>
-    component.name.toLowerCase().includes(search.toLowerCase()) ||
-    component.id.toLowerCase().includes(search.toLowerCase())
+  const filteredComponents = components.filter(
+    (component) =>
+      component.name.toLowerCase().includes(search.toLowerCase()) ||
+      component.id.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <div className="flex flex-col gap-1">
       {filteredComponents.length === 0 ? (
-        <div className="px-2 py-2 text-sm text-muted-foreground">No components found</div>
+        <div className="px-2 py-2 text-muted-foreground text-sm">
+          No components found
+        </div>
       ) : (
         filteredComponents.map((component) => (
           <button
@@ -171,11 +174,11 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
     <nav className="flex max-h-screen flex-col p-4">
       <div className="mb-3">
         <Input
+          aria-label="Search components"
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search components..."
           type="text"
           value={search}
-          onChange={e => setSearch(e.target.value)}
-          placeholder="Search components..."
-          aria-label="Search components"
         />
       </div>
       {isLoading ? (
@@ -184,9 +187,9 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
         <NavigationLinks
           activeSection={activeSection}
           onItemClick={onItemClick}
+          search={search}
           setActiveSection={setActiveSection}
           toggleSection={toggleSection}
-          search={search}
         />
       )}
     </nav>

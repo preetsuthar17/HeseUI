@@ -5,9 +5,7 @@
   "title": "Slider",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A slider input component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/slider/slider.tsx",

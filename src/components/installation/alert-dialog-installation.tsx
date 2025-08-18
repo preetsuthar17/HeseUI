@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function AlertDialogInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/alert-dialog.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/alert-dialog.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -21,11 +23,11 @@ export function AlertDialogInstallation() {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-            code={`export function AlertDialogDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function AlertDialogDemo() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
@@ -51,9 +53,8 @@ export function AlertDialogInstallation() {
     </AlertDialog>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

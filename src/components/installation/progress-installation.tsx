@@ -1,21 +1,23 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ProgressInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/progress.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Progress } from '@/components/ui/progress';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function ProgressDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/progress.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Progress } from '@/components/ui/progress';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function ProgressDemo() {
   const [progress, setProgress] = useState(13);
 
   useEffect(() => {
@@ -30,9 +32,8 @@ export function ProgressInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

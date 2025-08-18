@@ -1,21 +1,21 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function MeterInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/meter.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Meter } from '@/components/ui/meter';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function MeterDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/meter.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Meter } from '@/components/ui/meter';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function MeterDemo() {
   return (
     <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
@@ -64,9 +64,8 @@ export function MeterInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

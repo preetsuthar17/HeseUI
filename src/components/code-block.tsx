@@ -1,13 +1,8 @@
 'use client';
 
 import { Check, Copy } from 'lucide-react';
-import React from 'react';
-import { useEffect, useState } from 'react';
-import {
-  type BundledLanguage,
-  type BundledTheme,
-  codeToHtml,
-} from 'shiki';
+import React, { useEffect, useState } from 'react';
+import { type BundledLanguage, type BundledTheme, codeToHtml } from 'shiki';
 
 type CodeBlockProps = {
   code: string;
@@ -21,8 +16,8 @@ type CodeBlockProps = {
 function getLineKey(line: string, index: number): string {
   let hash = 0;
   for (let i = 0; i < line.length; i++) {
-    hash = ((hash << 5) - hash) + line.charCodeAt(i);
-    hash |= 0; 
+    hash = (hash << 5) - hash + line.charCodeAt(i);
+    hash |= 0;
   }
   return `${hash}_${index}`;
 }
@@ -70,8 +65,7 @@ export default function CodeBlock({
       await navigator.clipboard.writeText(code);
       setCopied(true);
       setTimeout(() => setCopied(false), COPY_FEEDBACK_DURATION_MS);
-    } catch (_error) {
-    }
+    } catch (_error) {}
   };
 
   // Custom style objects using CSS variables from global.css
@@ -128,16 +122,15 @@ export default function CodeBlock({
 
   if (loading) {
     return (
-      <div
-        className={`rounded border ${className}`}
-        style={codeBlockStyle}
-      >
+      <div className={`rounded border ${className}`} style={codeBlockStyle}>
         {filename && (
           <div
             className="flex items-center justify-between rounded-t-lg border-b px-4 py-2"
             style={headerStyle}
           >
-            <span className="font-mono text-sm" style={filenameStyle}>{filename}</span>
+            <span className="font-mono text-sm" style={filenameStyle}>
+              {filename}
+            </span>
           </div>
         )}
         <div className="p-4">
@@ -156,8 +149,10 @@ export default function CodeBlock({
 
     if (typeof window === 'undefined') {
       return (
-        <pre className='font-mono' style={wordWrapStyle}>
-          <code className='p-4 font-mono' style={wordWrapStyle}>{code}</code>
+        <pre className="font-mono" style={wordWrapStyle}>
+          <code className="p-4 font-mono" style={wordWrapStyle}>
+            {code}
+          </code>
         </pre>
       );
     }
@@ -177,18 +172,23 @@ export default function CodeBlock({
       const styleObject: React.CSSProperties = {};
       styleText.split(';').forEach((declaration) => {
         const [rawProp, rawValue] = declaration.split(':');
-        if (!rawProp || !rawValue) return;
+        if (!(rawProp && rawValue)) return;
         const prop = rawProp.trim();
         const value = rawValue.trim();
-        if (!prop || !value) return;
-        const camelProp = prop.replace(/-([a-z])/g, (_m, c: string) => c.toUpperCase());
+        if (!(prop && value)) return;
+        const camelProp = prop.replace(/-([a-z])/g, (_m, c: string) =>
+          c.toUpperCase()
+        );
         // @ts-expect-error: dynamic style keys
         styleObject[camelProp] = value;
       });
       return styleObject;
     }
 
-    function domNodeToReact(node: ChildNode, key?: string | number): React.ReactNode {
+    function domNodeToReact(
+      node: ChildNode,
+      key?: string | number
+    ): React.ReactNode {
       if (node.nodeType === Node.TEXT_NODE) {
         return node.textContent;
       }
@@ -203,10 +203,21 @@ export default function CodeBlock({
       // Copy className and style if present
       if (el.className) props.className = el.className;
       const styleAttr = el.getAttribute('style');
-      if (styleAttr) props.style = { ...parseInlineStyle(styleAttr), ...((el.tagName.toLowerCase() === 'pre' || el.tagName.toLowerCase() === 'code') ? wordWrapStyle : {}) };
-      else if (el.tagName.toLowerCase() === 'pre' || el.tagName.toLowerCase() === 'code') props.style = wordWrapStyle;
+      if (styleAttr)
+        props.style = {
+          ...parseInlineStyle(styleAttr),
+          ...(el.tagName.toLowerCase() === 'pre' ||
+          el.tagName.toLowerCase() === 'code'
+            ? wordWrapStyle
+            : {}),
+        };
+      else if (
+        el.tagName.toLowerCase() === 'pre' ||
+        el.tagName.toLowerCase() === 'code'
+      )
+        props.style = wordWrapStyle;
       // Copy data- attributes
-      Array.from(el.attributes).forEach(attr => {
+      Array.from(el.attributes).forEach((attr) => {
         if (attr.name.startsWith('data-')) {
           props[attr.name] = attr.value;
         }
@@ -229,7 +240,9 @@ export default function CodeBlock({
       >
         <div className="flex items-center space-x-2">
           {filename && (
-            <span className="font-mono text-sm" style={filenameStyle}>{filename}</span>
+            <span className="font-mono text-sm" style={filenameStyle}>
+              {filename}
+            </span>
           )}
           <span className="text-xs tracking-wide" style={langStyle}>
             {lang}
@@ -237,17 +250,23 @@ export default function CodeBlock({
         </div>
 
         <button
-          type="button"
           aria-label="Copy code"
           className="flex items-center space-x-1 rounded px-2 py-1 text-xs transition-colors"
-          style={copyButtonStyle}
-          onMouseOver={e => {
-            Object.assign((e.currentTarget as HTMLElement).style, copyButtonHoverStyle);
-          }}
-          onMouseOut={e => {
-            Object.assign((e.currentTarget as HTMLElement).style, copyButtonStyle);
-          }}
           onClick={copyToClipboard}
+          onMouseOut={(e) => {
+            Object.assign(
+              (e.currentTarget as HTMLElement).style,
+              copyButtonStyle
+            );
+          }}
+          onMouseOver={(e) => {
+            Object.assign(
+              (e.currentTarget as HTMLElement).style,
+              copyButtonHoverStyle
+            );
+          }}
+          style={copyButtonStyle}
+          type="button"
         >
           {copied ? (
             <>
@@ -271,7 +290,10 @@ export default function CodeBlock({
             style={lineNumberStyle}
           >
             {code.split('\n').map((line, index) => (
-              <div className="px-2 py-0.5 text-right leading-5" key={getLineKey(line, index)}>
+              <div
+                className="px-2 py-0.5 text-right leading-5"
+                key={getLineKey(line, index)}
+              >
                 {index + 1}
               </div>
             ))}

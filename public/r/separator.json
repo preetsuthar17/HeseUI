@@ -5,9 +5,7 @@
   "title": "Separator",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A separator component for dividing content.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/separator/separator.tsx",

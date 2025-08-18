@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ContextMenuInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/context-menu.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import React from 'react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/context-menu.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import React from 'react';
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -29,11 +31,11 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from '@/components/ui/context-menu';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function ContextMenuDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function ContextMenuDemo() {
   const [showStatusBar, setShowStatusBar] = React.useState(true);
   const [position, setPosition] = React.useState('bottom');
 
@@ -156,9 +158,8 @@ import {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

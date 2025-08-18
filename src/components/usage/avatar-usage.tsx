@@ -4,46 +4,46 @@ import { Separator } from '../ui/separator';
 
 export function AvatarDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-row flex-wrap items-center gap-12">
-      <Avatar>
-        <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
-      <Avatar>
-        <AvatarImage
-          alt="@preetsuthar17"
-          src="https://github.com/preetsuthar17.png"
-        />
-        <AvatarFallback>PS</AvatarFallback>
-      </Avatar>
-      <Avatar className="rounded">
-        <AvatarImage
-          alt="@evilrabbit"
-          src="https://github.com/evilrabbit.png"
-        />
-        <AvatarFallback>ER</AvatarFallback>
-      </Avatar>
-      <div className="-space-x-2 flex *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale">
         <Avatar>
           <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <Avatar>
-          <AvatarImage alt="@leerob" src="https://github.com/leerob.png" />
-          <AvatarFallback>LR</AvatarFallback>
+          <AvatarImage
+            alt="@preetsuthar17"
+            src="https://github.com/preetsuthar17.png"
+          />
+          <AvatarFallback>PS</AvatarFallback>
         </Avatar>
-        <Avatar>
+        <Avatar className="rounded">
           <AvatarImage
             alt="@evilrabbit"
             src="https://github.com/evilrabbit.png"
           />
           <AvatarFallback>ER</AvatarFallback>
         </Avatar>
+        <div className="-space-x-2 flex *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background *:data-[slot=avatar]:grayscale">
+          <Avatar>
+            <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarImage alt="@leerob" src="https://github.com/leerob.png" />
+            <AvatarFallback>LR</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarImage
+              alt="@evilrabbit"
+              src="https://github.com/evilrabbit.png"
+            />
+            <AvatarFallback>ER</AvatarFallback>
+          </Avatar>
+        </div>
       </div>
-    </div>
-    <Separator/>
-    <AvatarInstallation/>
+      <Separator />
+      <AvatarInstallation />
     </div>
   );
 }

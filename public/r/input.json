@@ -5,9 +5,7 @@
   "title": "Input",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A text input component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/input/input.tsx",

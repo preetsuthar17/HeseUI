@@ -9,7 +9,7 @@ import { Separator } from '../ui/separator';
 
 export function AccordionDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Accordion
         className="w-full text-base"
         collapsible
@@ -37,8 +37,8 @@ export function AccordionDemo() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <Separator/>
-      <AccordionInstallation/>
+      <Separator />
+      <AccordionInstallation />
     </div>
   );
 }

@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ToolbarInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/toolbar.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/toolbar.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react';
 import type React from 'react';
 import {
   Select,
@@ -34,11 +36,11 @@ import {
   ToolbarLink,
   ToolbarSeparator,
 } from '@/components/ui/toolbar';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function ToolbarDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function ToolbarDemo() {
   return (
     <Toolbar className="w-[600px]">
       <ToggleGroup aria-label="Alignment" className="flex gap-1">
@@ -153,9 +155,8 @@ function CheckIcon(props: React.ComponentProps<'svg'>) {
     </svg>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

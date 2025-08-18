@@ -1,16 +1,16 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function MenuInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/menu.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import React from 'react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/menu.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import React from 'react';
 import {
   Menu,
   MenuArrow,
@@ -31,11 +31,11 @@ import {
   MenuSubTrigger,
   MenuTrigger,
 } from '@/components/ui/menu';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function MenuDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function MenuDemo() {
   const [_hoverValue, _setHoverValue] = React.useState('Get Up!');
   const [showMinimap, setShowMinimap] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
@@ -318,9 +318,8 @@ function CheckIcon(props: React.ComponentProps<'svg'>) {
     </svg>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

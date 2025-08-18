@@ -5,9 +5,7 @@
   "title": "Progress",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A progress bar component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/progress/progress.tsx",

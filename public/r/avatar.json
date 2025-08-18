@@ -5,9 +5,7 @@
   "title": "Avatar",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "An image element with a fallback for representing a user or entity.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/avatar/avatar.tsx",

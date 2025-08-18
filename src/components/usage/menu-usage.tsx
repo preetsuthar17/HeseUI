@@ -35,173 +35,63 @@ export function MenuDemo() {
     'inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2';
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-wrap gap-8">
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Basic Menu</h3>
-        <Menu>
-          <MenuTrigger className={triggerCls}>
-            Song <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuItem>Add to Library</MenuItem>
-                <MenuItem>Add to Playlist</MenuItem>
-                <MenuSeparator />
-                <MenuItem>Play Next</MenuItem>
-                <MenuItem>Play Last</MenuItem>
-                <MenuSeparator />
-                <MenuItem>Favorite</MenuItem>
-                <MenuItem>Share</MenuItem>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
-      </div>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Basic Menu</h3>
+          <Menu>
+            <MenuTrigger className={triggerCls}>
+              Song <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
+                  <MenuItem>Add to Library</MenuItem>
+                  <MenuItem>Add to Playlist</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>Play Next</MenuItem>
+                  <MenuItem>Play Last</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>Favorite</MenuItem>
+                  <MenuItem>Share</MenuItem>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
 
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Open on Hover</h3>
-        <Menu openOnHover>
-          <MenuTrigger className={triggerCls}>
-            Add to playlist <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuItem>Get Up!</MenuItem>
-                <MenuItem>Inside Out</MenuItem>
-                <MenuItem>Night Beats</MenuItem>
-                <MenuSeparator />
-                <MenuItem>New playlist…</MenuItem>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
-      </div>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Open on Hover</h3>
+          <Menu openOnHover>
+            <MenuTrigger className={triggerCls}>
+              Add to playlist <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
+                  <MenuItem>Get Up!</MenuItem>
+                  <MenuItem>Inside Out</MenuItem>
+                  <MenuItem>Night Beats</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>New playlist…</MenuItem>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
 
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Checkbox Items</h3>
-        <Menu>
-          <MenuTrigger className={triggerCls}>
-            Workspace <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuCheckboxItem
-                  checked={showMinimap}
-                  onCheckedChange={setShowMinimap}
-                >
-                  <MenuCheckboxItemIndicator>
-                    <CheckIcon className="size-3" />
-                  </MenuCheckboxItemIndicator>
-                  <span>Minimap</span>
-                </MenuCheckboxItem>
-                <MenuCheckboxItem
-                  checked={showSearch}
-                  onCheckedChange={setShowSearch}
-                >
-                  <MenuCheckboxItemIndicator>
-                    <CheckIcon className="size-3" />
-                  </MenuCheckboxItemIndicator>
-                  <span>Search</span>
-                </MenuCheckboxItem>
-                <MenuCheckboxItem
-                  checked={showSidebar}
-                  onCheckedChange={setShowSidebar}
-                >
-                  <MenuCheckboxItemIndicator>
-                    <CheckIcon className="size-3" />
-                  </MenuCheckboxItemIndicator>
-                  <span>Sidebar</span>
-                </MenuCheckboxItem>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
-      </div>
-
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Radio Items</h3>
-        <Menu>
-          <MenuTrigger className={triggerCls}>
-            Sort <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuRadioGroup onValueChange={setSortValue} value={sortValue}>
-                  <MenuRadioItem value="date">
-                    <MenuRadioItemIndicator>
-                      <CheckIcon className="size-3" />
-                    </MenuRadioItemIndicator>
-                    <span>Date</span>
-                  </MenuRadioItem>
-                  <MenuRadioItem value="name">
-                    <MenuRadioItemIndicator>
-                      <CheckIcon className="size-3" />
-                    </MenuRadioItemIndicator>
-                    <span>Name</span>
-                  </MenuRadioItem>
-                  <MenuRadioItem value="type">
-                    <MenuRadioItemIndicator>
-                      <CheckIcon className="size-3" />
-                    </MenuRadioItemIndicator>
-                    <span>Type</span>
-                  </MenuRadioItem>
-                </MenuRadioGroup>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
-      </div>
-
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Groups</h3>
-        <Menu>
-          <MenuTrigger className={triggerCls}>
-            View <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuGroup>
-                  <MenuGroupLabel>Sort</MenuGroupLabel>
-                  <MenuRadioGroup
-                    onValueChange={setSortValue}
-                    value={sortValue}
-                  >
-                    <MenuRadioItem value="date">
-                      <MenuRadioItemIndicator>
-                        <CheckIcon className="size-3" />
-                      </MenuRadioItemIndicator>
-                      <span>Date</span>
-                    </MenuRadioItem>
-                    <MenuRadioItem value="name">
-                      <MenuRadioItemIndicator>
-                        <CheckIcon className="size-3" />
-                      </MenuRadioItemIndicator>
-                      <span>Name</span>
-                    </MenuRadioItem>
-                    <MenuRadioItem value="type">
-                      <MenuRadioItemIndicator>
-                        <CheckIcon className="size-3" />
-                      </MenuRadioItemIndicator>
-                      <span>Type</span>
-                    </MenuRadioItem>
-                  </MenuRadioGroup>
-                </MenuGroup>
-
-                <MenuSeparator />
-
-                <MenuGroup>
-                  <MenuGroupLabel>Workspace</MenuGroupLabel>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Checkbox Items</h3>
+          <Menu>
+            <MenuTrigger className={triggerCls}>
+              Workspace <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
                   <MenuCheckboxItem
                     checked={showMinimap}
                     onCheckedChange={setShowMinimap}
@@ -229,52 +119,165 @@ export function MenuDemo() {
                     </MenuCheckboxItemIndicator>
                     <span>Sidebar</span>
                   </MenuCheckboxItem>
-                </MenuGroup>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
-      </div>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
 
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Submenu</h3>
-        <Menu>
-          <MenuTrigger className={triggerCls}>
-            Song <ChevronDownIcon className="-mr-1 ml-1" />
-          </MenuTrigger>
-          <MenuPortal>
-            <MenuPositioner sideOffset={8}>
-              <MenuContent>
-                <MenuArrow />
-                <MenuItem>Add to Library</MenuItem>
-                <MenuSub>
-                  <MenuSubTrigger>Add to Playlist</MenuSubTrigger>
-                  <MenuPortal>
-                    <MenuPositioner alignOffset={-4} sideOffset={-4}>
-                      <MenuSubContent>
-                        <MenuItem>Get Up!</MenuItem>
-                        <MenuItem>Inside Out</MenuItem>
-                        <MenuItem>Night Beats</MenuItem>
-                        <MenuSeparator />
-                        <MenuItem>New playlist…</MenuItem>
-                      </MenuSubContent>
-                    </MenuPositioner>
-                  </MenuPortal>
-                </MenuSub>
-                <MenuSeparator />
-                <MenuItem>Play Next</MenuItem>
-                <MenuItem>Play Last</MenuItem>
-                <MenuSeparator />
-                <MenuItem>Favorite</MenuItem>
-                <MenuItem>Share</MenuItem>
-              </MenuContent>
-            </MenuPositioner>
-          </MenuPortal>
-        </Menu>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Radio Items</h3>
+          <Menu>
+            <MenuTrigger className={triggerCls}>
+              Sort <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
+                  <MenuRadioGroup
+                    onValueChange={setSortValue}
+                    value={sortValue}
+                  >
+                    <MenuRadioItem value="date">
+                      <MenuRadioItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuRadioItemIndicator>
+                      <span>Date</span>
+                    </MenuRadioItem>
+                    <MenuRadioItem value="name">
+                      <MenuRadioItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuRadioItemIndicator>
+                      <span>Name</span>
+                    </MenuRadioItem>
+                    <MenuRadioItem value="type">
+                      <MenuRadioItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuRadioItemIndicator>
+                      <span>Type</span>
+                    </MenuRadioItem>
+                  </MenuRadioGroup>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
+
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Groups</h3>
+          <Menu>
+            <MenuTrigger className={triggerCls}>
+              View <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
+                  <MenuGroup>
+                    <MenuGroupLabel>Sort</MenuGroupLabel>
+                    <MenuRadioGroup
+                      onValueChange={setSortValue}
+                      value={sortValue}
+                    >
+                      <MenuRadioItem value="date">
+                        <MenuRadioItemIndicator>
+                          <CheckIcon className="size-3" />
+                        </MenuRadioItemIndicator>
+                        <span>Date</span>
+                      </MenuRadioItem>
+                      <MenuRadioItem value="name">
+                        <MenuRadioItemIndicator>
+                          <CheckIcon className="size-3" />
+                        </MenuRadioItemIndicator>
+                        <span>Name</span>
+                      </MenuRadioItem>
+                      <MenuRadioItem value="type">
+                        <MenuRadioItemIndicator>
+                          <CheckIcon className="size-3" />
+                        </MenuRadioItemIndicator>
+                        <span>Type</span>
+                      </MenuRadioItem>
+                    </MenuRadioGroup>
+                  </MenuGroup>
+
+                  <MenuSeparator />
+
+                  <MenuGroup>
+                    <MenuGroupLabel>Workspace</MenuGroupLabel>
+                    <MenuCheckboxItem
+                      checked={showMinimap}
+                      onCheckedChange={setShowMinimap}
+                    >
+                      <MenuCheckboxItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuCheckboxItemIndicator>
+                      <span>Minimap</span>
+                    </MenuCheckboxItem>
+                    <MenuCheckboxItem
+                      checked={showSearch}
+                      onCheckedChange={setShowSearch}
+                    >
+                      <MenuCheckboxItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuCheckboxItemIndicator>
+                      <span>Search</span>
+                    </MenuCheckboxItem>
+                    <MenuCheckboxItem
+                      checked={showSidebar}
+                      onCheckedChange={setShowSidebar}
+                    >
+                      <MenuCheckboxItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </MenuCheckboxItemIndicator>
+                      <span>Sidebar</span>
+                    </MenuCheckboxItem>
+                  </MenuGroup>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
+
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Submenu</h3>
+          <Menu>
+            <MenuTrigger className={triggerCls}>
+              Song <ChevronDownIcon className="-mr-1 ml-1" />
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuPositioner sideOffset={8}>
+                <MenuContent>
+                  <MenuArrow />
+                  <MenuItem>Add to Library</MenuItem>
+                  <MenuSub>
+                    <MenuSubTrigger>Add to Playlist</MenuSubTrigger>
+                    <MenuPortal>
+                      <MenuPositioner alignOffset={-4} sideOffset={-4}>
+                        <MenuSubContent>
+                          <MenuItem>Get Up!</MenuItem>
+                          <MenuItem>Inside Out</MenuItem>
+                          <MenuItem>Night Beats</MenuItem>
+                          <MenuSeparator />
+                          <MenuItem>New playlist…</MenuItem>
+                        </MenuSubContent>
+                      </MenuPositioner>
+                    </MenuPortal>
+                  </MenuSub>
+                  <MenuSeparator />
+                  <MenuItem>Play Next</MenuItem>
+                  <MenuItem>Play Last</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>Favorite</MenuItem>
+                  <MenuItem>Share</MenuItem>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuPortal>
+          </Menu>
+        </div>
       </div>
-    </div>
-    <Separator/>
-    <MenuInstallation/>
+      <Separator />
+      <MenuInstallation />
     </div>
   );
 }

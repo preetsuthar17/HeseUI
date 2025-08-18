@@ -5,9 +5,7 @@
   "title": "Dialog",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A modal dialog component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/dialog/dialog.tsx",

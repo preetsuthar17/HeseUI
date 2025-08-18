@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function PreviewCardInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/preview-card.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import NextImage from 'next/image';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/preview-card.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import NextImage from 'next/image';
 import {
   PreviewCard,
   PreviewCardArrow,
@@ -19,11 +21,11 @@ import {
   PreviewCardPositioner,
   PreviewCardTrigger,
 } from '@/components/ui/preview-card';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function PreviewCardDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function PreviewCardDemo() {
   return (
     <PreviewCard>
       <p className="max-w-64 text-balance text-base text-foreground">
@@ -60,9 +62,8 @@ import {
     </PreviewCard>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

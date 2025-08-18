@@ -5,9 +5,7 @@
   "title": "Button",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A simple button component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/button/button.tsx",

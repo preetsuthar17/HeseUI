@@ -1,21 +1,23 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function SwitchInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/switch.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Switch } from '@/components/ui/switch';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function SwitchDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/switch.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Switch } from '@/components/ui/switch';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function SwitchDemo() {
   return (
     <div className="flex items-center space-x-2">
       <Switch id="airplane-mode" />
@@ -23,9 +25,8 @@ export function SwitchInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

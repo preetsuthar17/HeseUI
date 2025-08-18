@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function MenubarInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/menubar.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import type React from 'react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/menubar.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import type React from 'react';
 import {
   Menubar,
   MenubarContent,
@@ -24,11 +26,11 @@ import {
   MenubarSubTrigger,
   MenubarTrigger,
 } from '@/components/ui/menubar';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function MenubarDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function MenubarDemo() {
   return (
     <Menubar>
       <MenubarMenu>
@@ -132,9 +134,8 @@ function ChevronRightIcon(props: React.ComponentProps<'svg'>) {
     </svg>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

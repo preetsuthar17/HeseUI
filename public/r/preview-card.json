@@ -5,9 +5,7 @@
   "title": "Preview Card",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A card component for previewing content.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/preview-card/preview-card.tsx",

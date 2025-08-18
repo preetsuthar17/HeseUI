@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function NavigationMenuInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/navigation-menu.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import NextLink from 'next/link';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/navigation-menu.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import NextLink from 'next/link';
 import type React from 'react';
 import {
   NavigationMenu,
@@ -26,11 +28,11 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigationmenu';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`const components = [
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`const components = [
   {
     title: 'Alert Dialog',
     href: '/docs/primitives/alert-dialog',
@@ -166,9 +168,8 @@ function ListItem({
     </li>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

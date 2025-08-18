@@ -5,9 +5,7 @@
   "title": "Switch",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A switch input component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/switch/switch.tsx",

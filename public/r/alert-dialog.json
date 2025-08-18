@@ -5,9 +5,7 @@
   "title": "Alert Dialog",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A modal dialog that interrupts the user with important content and expects a response.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/alert-dialog/alert-dialog.tsx",

@@ -1,23 +1,25 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ToggleGroupInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/toggle-group.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Bold, Italic, Underline } from 'lucide-react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/toggle-group.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Bold, Italic, Underline } from 'lucide-react';
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/togglegroup';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`function getLabel(value: string) {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`function getLabel(value: string) {
   if (value === 'bold') {
     return 'Bold';
   }
@@ -72,9 +74,8 @@ export function ToggleGroupDemo() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

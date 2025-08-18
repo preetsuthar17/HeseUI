@@ -5,9 +5,7 @@
   "title": "Form",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A form component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/form/form.tsx",

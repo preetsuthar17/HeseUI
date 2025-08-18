@@ -1,21 +1,21 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function InputInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/input.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Input } from '@/components/ui/input';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function InputDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/input.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Input } from '@/components/ui/input';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function InputDemo() {
   return (
     <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
@@ -52,9 +52,8 @@ export function InputInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

@@ -1,25 +1,27 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function PopoverInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/popover.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/popover.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function PopoverDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function PopoverDemo() {
   return (
     <Popover>
       <PopoverTrigger className="flex size-10 select-none items-center justify-center rounded border border-border bg-background text-foreground ring-offset-background hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent">
@@ -56,9 +58,8 @@ function BellIcon(props: React.ComponentProps<'svg'>) {
     </svg>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

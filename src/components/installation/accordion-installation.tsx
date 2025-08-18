@@ -1,26 +1,28 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function AccordionInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/accordion.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/accordion.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`
 export function AccordionDemo() {
   return (
     <div className='flex flex-col gap-8'>
@@ -56,9 +58,8 @@ export function AccordionDemo() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

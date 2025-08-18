@@ -5,9 +5,7 @@
   "title": "Fieldset",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A fieldset component for grouping form fields.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/fieldset/fieldset.tsx",

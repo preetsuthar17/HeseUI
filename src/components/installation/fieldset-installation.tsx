@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function FieldsetInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/fieldset.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/fieldset.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Field,
   FieldControl,
   FieldDescription,
@@ -18,11 +20,11 @@ export function FieldsetInstallation() {
   FieldLabel,
 } from '@/components/ui/field';
 import { Fieldset, FieldsetLegend } from '@/components/ui/fieldset';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function FieldsetDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function FieldsetDemo() {
   return (
     <div className="flex flex-wrap gap-8">
       <div className="item-center flex w-fit flex-col justify-start gap-2">
@@ -196,9 +198,8 @@ import { Fieldset, FieldsetLegend } from '@/components/ui/fieldset';`}
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

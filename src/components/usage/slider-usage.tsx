@@ -25,53 +25,53 @@ export function SliderDemo() {
     RANGE_UPPER_INITIAL,
   ]);
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-wrap gap-8">
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Single value</h3>
-        <Slider defaultValue={RANGE_SINGLE_INITIAL}>
-          <SliderValue />
-          <SliderControl>
-            <SliderTrack>
-              <SliderIndicator />
-              <SliderThumb />
-            </SliderTrack>
-          </SliderControl>
-        </Slider>
-      </div>
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Range</h3>
-        <div className="flex items-center gap-2">
-          <span className="min-w-8 text-muted-foreground text-sm">
-            {rangeValue.at(0)}
-          </span>
-          <Slider
-            max={RANGE_MAX}
-            min={RANGE_MIN}
-            onValueChange={(value) => {
-              if (Array.isArray(value) && value.length === 2) {
-                setRangeValue([value.at(0), value.at(1)]);
-              }
-            }}
-            step={RANGE_STEP}
-            value={rangeValue}
-          >
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Single value</h3>
+          <Slider defaultValue={RANGE_SINGLE_INITIAL}>
+            <SliderValue />
             <SliderControl>
               <SliderTrack>
                 <SliderIndicator />
                 <SliderThumb />
-                <SliderThumb />
               </SliderTrack>
             </SliderControl>
           </Slider>
-          <span className="min-w-8 text-muted-foreground text-sm">
-            {rangeValue.at(1)}
-          </span>
+        </div>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Range</h3>
+          <div className="flex items-center gap-2">
+            <span className="min-w-8 text-muted-foreground text-sm">
+              {rangeValue.at(0)}
+            </span>
+            <Slider
+              max={RANGE_MAX}
+              min={RANGE_MIN}
+              onValueChange={(value) => {
+                if (Array.isArray(value) && value.length === 2) {
+                  setRangeValue([value.at(0), value.at(1)]);
+                }
+              }}
+              step={RANGE_STEP}
+              value={rangeValue}
+            >
+              <SliderControl>
+                <SliderTrack>
+                  <SliderIndicator />
+                  <SliderThumb />
+                  <SliderThumb />
+                </SliderTrack>
+              </SliderControl>
+            </Slider>
+            <span className="min-w-8 text-muted-foreground text-sm">
+              {rangeValue.at(1)}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <Separator/>
-    <SliderInstallation/>
+      <Separator />
+      <SliderInstallation />
     </div>
   );
 }

@@ -5,9 +5,7 @@
   "title": "Field",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A form field wrapper component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/field/field.tsx",

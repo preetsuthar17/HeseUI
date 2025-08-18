@@ -1,16 +1,16 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function FormInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/form.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import React from 'react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/form.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import React from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Field,
@@ -19,14 +19,14 @@ import {
   FieldLabel,
 } from '@/components/ui/field';
 import { Form } from '@/components/ui/form';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`const SERVER_DELAY_MS = 1000;
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`const SERVER_DELAY_MS = 1000;
 const MIN_AGE = 18;
 const MAX_AGE = 120;
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_REGEX = /^[^s@]+@[^s@]+.[^s@]+$/;
 
 async function submitForm(value: string) {
   await new Promise((resolve) => {
@@ -265,9 +265,8 @@ export function FormDemo() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

@@ -27,71 +27,71 @@ const fontItems = {
 
 export function SelectDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-wrap gap-8">
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Single Select</h3>
-        <Select items={fontItems}>
-          <SelectTrigger>
-            <SelectValue />
-            <SelectIcon>
-              <ChevronUpDownIcon />
-            </SelectIcon>
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner
-              className="z-50 select-none outline-none"
-              sideOffset={8}
-            >
-              <SelectScrollUpArrow className="top-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded bg-popover text-center text-xs before:absolute before:top-[-100%] before:left-0 before:h-full before:w-full before:content-['']" />
-              <SelectContent>
-                {Object.entries(fontItems).map(([value, label]) => (
-                  <SelectItem key={value} value={value}>
-                    <SelectItemIndicator>
-                      <CheckIcon className="size-3" />
-                    </SelectItemIndicator>
-                    <SelectItemText>{label}</SelectItemText>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-              <SelectScrollDownArrow className="bottom-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded bg-popover text-center text-xs before:absolute before:top-[-100%] before:left-0 before:h-full before:w-full before:content-['']" />
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
-      </div>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Single Select</h3>
+          <Select items={fontItems}>
+            <SelectTrigger>
+              <SelectValue />
+              <SelectIcon>
+                <ChevronUpDownIcon />
+              </SelectIcon>
+            </SelectTrigger>
+            <SelectPortal>
+              <SelectPositioner
+                className="z-50 select-none outline-none"
+                sideOffset={8}
+              >
+                <SelectScrollUpArrow className="top-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded bg-popover text-center text-xs before:absolute before:top-[-100%] before:left-0 before:h-full before:w-full before:content-['']" />
+                <SelectContent>
+                  {Object.entries(fontItems).map(([value, label]) => (
+                    <SelectItem key={value} value={value}>
+                      <SelectItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </SelectItemIndicator>
+                      <SelectItemText>{label}</SelectItemText>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+                <SelectScrollDownArrow className="bottom-0 z-[1] flex h-4 w-full cursor-default items-center justify-center rounded bg-popover text-center text-xs before:absolute before:top-[-100%] before:left-0 before:h-full before:w-full before:content-['']" />
+              </SelectPositioner>
+            </SelectPortal>
+          </Select>
+        </div>
 
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Multiple Select</h3>
-        <Select defaultValue={['javascript', 'typescript']} multiple>
-          <SelectTrigger className="min-w-[14rem]">
-            <SelectValue>{renderLanguages}</SelectValue>
-            <SelectIcon>
-              <ChevronUpDownIcon />
-            </SelectIcon>
-          </SelectTrigger>
-          <SelectPortal>
-            <SelectPositioner
-              alignItemWithTrigger={false}
-              className="z-50 outline-none"
-              sideOffset={8}
-            >
-              <SelectContent>
-                {values.map((value) => (
-                  <SelectItem key={value} value={value}>
-                    <SelectItemIndicator>
-                      <CheckIcon className="size-3" />
-                    </SelectItemIndicator>
-                    <SelectItemText>{languages[value]}</SelectItemText>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </SelectPositioner>
-          </SelectPortal>
-        </Select>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Multiple Select</h3>
+          <Select defaultValue={['javascript', 'typescript']} multiple>
+            <SelectTrigger className="min-w-[14rem]">
+              <SelectValue>{renderLanguages}</SelectValue>
+              <SelectIcon>
+                <ChevronUpDownIcon />
+              </SelectIcon>
+            </SelectTrigger>
+            <SelectPortal>
+              <SelectPositioner
+                alignItemWithTrigger={false}
+                className="z-50 outline-none"
+                sideOffset={8}
+              >
+                <SelectContent>
+                  {values.map((value) => (
+                    <SelectItem key={value} value={value}>
+                      <SelectItemIndicator>
+                        <CheckIcon className="size-3" />
+                      </SelectItemIndicator>
+                      <SelectItemText>{languages[value]}</SelectItemText>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </SelectPositioner>
+            </SelectPortal>
+          </Select>
+        </div>
       </div>
-    </div>
-    <Separator/>
-    <SelectInstallation/>
+      <Separator />
+      <SelectInstallation />
     </div>
   );
 }

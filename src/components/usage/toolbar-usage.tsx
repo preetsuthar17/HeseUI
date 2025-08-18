@@ -29,87 +29,96 @@ import { Separator } from '../ui/separator';
 
 export function ToolbarDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Toolbar className="w-[600px]">
-      <ToggleGroup aria-label="Alignment" className="flex gap-1">
-        <ToolbarButton
-          aria-label="Align left"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-left"
-        >
-          <AlignLeft />
-        </ToolbarButton>
+        <ToggleGroup aria-label="Alignment" className="flex gap-1">
+          <ToolbarButton
+            aria-label="Align left"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-left"
+          >
+            <AlignLeft />
+          </ToolbarButton>
 
-        <ToolbarButton
-          aria-label="Align center"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-center"
-        >
-          <AlignCenter />
-        </ToolbarButton>
+          <ToolbarButton
+            aria-label="Align center"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-center"
+          >
+            <AlignCenter />
+          </ToolbarButton>
 
-        <ToolbarButton
-          aria-label="Align right"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-right"
-        >
-          <AlignRight />
-        </ToolbarButton>
-      </ToggleGroup>
-      <ToolbarSeparator />
-      <ToolbarGroup aria-label="Numerical format">
-        <ToolbarButton aria-label="Format as currency" className="min-w-8 px-3">
-          $
-        </ToolbarButton>
-        <ToolbarButton aria-label="Format as percent" className="min-w-8 px-3">
-          %
-        </ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarSeparator />
-      <Select defaultValue="Helvetica">
-        <ToolbarButton
-          className="min-w-[8rem] justify-between rounded px-3"
-          render={<SelectTrigger className="rounded" />}
-          role="combobox"
-        >
-          <SelectValue />
-          <SelectIcon>
-            <ChevronUpDownIcon />
-          </SelectIcon>
-        </ToolbarButton>
-        <SelectPortal>
-          <SelectPositioner className="select-none outline-none" sideOffset={8}>
-            <SelectScrollUpArrow />
-            <SelectContent>
-              <SelectItem value="Helvetica">
-                <SelectItemIndicator className="col-start-1">
-                  <CheckIcon className="size-3" />
-                </SelectItemIndicator>
-                <SelectItemText className="col-start-2 text-sm">
-                  Helvetica
-                </SelectItemText>
-              </SelectItem>
-              <SelectItem value="Arial">
-                <SelectItemIndicator className="col-start-1">
-                  <CheckIcon className="size-3" />
-                </SelectItemIndicator>
-                <SelectItemText className="col-start-2 text-sm">
-                  Arial
-                </SelectItemText>
-              </SelectItem>
-            </SelectContent>
-            <SelectScrollDownArrow />
-          </SelectPositioner>
-        </SelectPortal>
-      </Select>
-      <ToolbarSeparator />
-      <ToolbarLink href="#">Edited 51m ago</ToolbarLink>
-    </Toolbar>
-    <Separator/>
-    <ToolbarInstallation/>
+          <ToolbarButton
+            aria-label="Align right"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-right"
+          >
+            <AlignRight />
+          </ToolbarButton>
+        </ToggleGroup>
+        <ToolbarSeparator />
+        <ToolbarGroup aria-label="Numerical format">
+          <ToolbarButton
+            aria-label="Format as currency"
+            className="min-w-8 px-3"
+          >
+            $
+          </ToolbarButton>
+          <ToolbarButton
+            aria-label="Format as percent"
+            className="min-w-8 px-3"
+          >
+            %
+          </ToolbarButton>
+        </ToolbarGroup>
+        <ToolbarSeparator />
+        <Select defaultValue="Helvetica">
+          <ToolbarButton
+            className="min-w-[8rem] justify-between rounded px-3"
+            render={<SelectTrigger className="rounded" />}
+            role="combobox"
+          >
+            <SelectValue />
+            <SelectIcon>
+              <ChevronUpDownIcon />
+            </SelectIcon>
+          </ToolbarButton>
+          <SelectPortal>
+            <SelectPositioner
+              className="select-none outline-none"
+              sideOffset={8}
+            >
+              <SelectScrollUpArrow />
+              <SelectContent>
+                <SelectItem value="Helvetica">
+                  <SelectItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
+                  </SelectItemIndicator>
+                  <SelectItemText className="col-start-2 text-sm">
+                    Helvetica
+                  </SelectItemText>
+                </SelectItem>
+                <SelectItem value="Arial">
+                  <SelectItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
+                  </SelectItemIndicator>
+                  <SelectItemText className="col-start-2 text-sm">
+                    Arial
+                  </SelectItemText>
+                </SelectItem>
+              </SelectContent>
+              <SelectScrollDownArrow />
+            </SelectPositioner>
+          </SelectPortal>
+        </Select>
+        <ToolbarSeparator />
+        <ToolbarLink href="#">Edited 51m ago</ToolbarLink>
+      </Toolbar>
+      <Separator />
+      <ToolbarInstallation />
     </div>
   );
 }

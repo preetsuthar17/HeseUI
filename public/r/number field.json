@@ -5,9 +5,7 @@
   "title": "NumberField",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A number input field component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/number-field/number-field.tsx",

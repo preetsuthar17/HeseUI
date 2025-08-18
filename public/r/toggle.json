@@ -5,9 +5,7 @@
   "title": "Toggle",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A toggle button component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/toggle/toggle.tsx",

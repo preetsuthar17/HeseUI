@@ -1,16 +1,18 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function NumberFieldInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/numberfield.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import React from 'react';
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/numberfield.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import React from 'react';
 import {
   NumberField,
   NumberFieldDecrement,
@@ -20,11 +22,11 @@ import {
   NumberFieldScrubArea,
   NumberFieldScrubAreaCursor,
 } from '@/components/ui/numberfield';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function NumberFieldDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function NumberFieldDemo() {
   const id = React.useId();
   return (
     <NumberField
@@ -106,9 +108,8 @@ function MinusIcon(props: React.ComponentProps<'svg'>) {
     </svg>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

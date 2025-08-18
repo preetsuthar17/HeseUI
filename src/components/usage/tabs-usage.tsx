@@ -12,32 +12,35 @@ import { Separator } from '../ui/separator';
 
 export function TabsDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Tabs className="w-[400px]" defaultValue="overview">
-      <TabsList>
-        <TabsTrigger value="overview">Overview</TabsTrigger>
-        <TabsTrigger value="projects">Projects</TabsTrigger>
-        <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsIndicator />
-      </TabsList>
-      <TabsContent
-        className="h-32 items-center justify-center"
-        value="overview"
-      >
-        <div className="text-muted-foreground">Overview content</div>
-      </TabsContent>
-      <TabsContent
-        className="h-32 items-center justify-center"
-        value="projects"
-      >
-        <div className="text-muted-foreground">Projects content</div>
-      </TabsContent>
-      <TabsContent className="h-32 items-center justify-center" value="account">
-        <div className="text-muted-foreground">Account content</div>
-      </TabsContent>
-    </Tabs>
-    <Separator/>
-    <TabsInstallation/>
+        <TabsList>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="projects">Projects</TabsTrigger>
+          <TabsTrigger value="account">Account</TabsTrigger>
+          <TabsIndicator />
+        </TabsList>
+        <TabsContent
+          className="h-32 items-center justify-center"
+          value="overview"
+        >
+          <div className="text-muted-foreground">Overview content</div>
+        </TabsContent>
+        <TabsContent
+          className="h-32 items-center justify-center"
+          value="projects"
+        >
+          <div className="text-muted-foreground">Projects content</div>
+        </TabsContent>
+        <TabsContent
+          className="h-32 items-center justify-center"
+          value="account"
+        >
+          <div className="text-muted-foreground">Account content</div>
+        </TabsContent>
+      </Tabs>
+      <Separator />
+      <TabsInstallation />
     </div>
   );
 }

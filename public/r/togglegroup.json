@@ -5,9 +5,7 @@
   "title": "ToggleGroup",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A group of toggle buttons.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/toggle-group/toggle-group.tsx",

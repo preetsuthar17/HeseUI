@@ -1,27 +1,27 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function FieldInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/field.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/field.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Field,
   FieldControl,
   FieldDescription,
   FieldError,
   FieldLabel,
 } from '@/components/ui/field';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`const MIN_USERNAME_LENGTH = 3;
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`const MIN_USERNAME_LENGTH = 3;
 const USERNAME_REGEX = /^[a-zA-Z0-9_]+$/;
 
 export function FieldDemo() {
@@ -176,9 +176,8 @@ export function FieldDemo() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

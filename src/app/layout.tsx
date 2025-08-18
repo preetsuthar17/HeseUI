@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script
-        data-debug="base.hextaui.com"
-        defer
-        src="https://assets.onedollarstats.com/stonks.js"
-      />
+        <script
+          data-debug="base.hextaui.com"
+          defer
+          src="https://assets.onedollarstats.com/stonks.js"
+        />
       </head>
       <body
         className={`${geistSans.className} ${geistMono.variable} antialiased`}

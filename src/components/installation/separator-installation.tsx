@@ -1,21 +1,23 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function SeparatorInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/separator.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Separator } from '@/components/ui/separator';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function SeparatorDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/separator.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Separator } from '@/components/ui/separator';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function SeparatorDemo() {
   return (
     <div>
       <div className="space-y-1">
@@ -35,9 +37,8 @@ export function SeparatorInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

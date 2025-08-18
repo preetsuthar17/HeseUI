@@ -39,29 +39,29 @@ export function ToggleGroupDemo() {
   }
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="">
-      <ToggleGroup
-        className="w-fit"
-        onValueChange={handleChange}
-        type="multiple"
-        value={selected}
-        variant="outline"
-      >
-        {options.map(({ value, icon: Icon }) => (
-          <ToggleGroupItem
-            aria-label={`Toggle ${getLabel(value)}`}
-            className="flex aspect-square w-8 flex-col items-center justify-center rounded border border-border bg-card transition-colors duration-150 hover:bg-accent focus-visible:ring-2 focus-visible:ring-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
-            key={value}
-            value={value}
-          >
-            <Icon className="h-6 w-6" />
-          </ToggleGroupItem>
-        ))}
-      </ToggleGroup>
-    </div>
-    <Separator/>
-    <ToggleGroupInstallation/>
+        <ToggleGroup
+          className="w-fit"
+          onValueChange={handleChange}
+          type="multiple"
+          value={selected}
+          variant="outline"
+        >
+          {options.map(({ value, icon: Icon }) => (
+            <ToggleGroupItem
+              aria-label={`Toggle ${getLabel(value)}`}
+              className="flex aspect-square w-8 flex-col items-center justify-center rounded border border-border bg-card transition-colors duration-150 hover:bg-accent focus-visible:ring-2 focus-visible:ring-primary data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+              key={value}
+              value={value}
+            >
+              <Icon className="h-6 w-6" />
+            </ToggleGroupItem>
+          ))}
+        </ToggleGroup>
+      </div>
+      <Separator />
+      <ToggleGroupInstallation />
     </div>
   );
 }

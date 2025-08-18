@@ -5,9 +5,7 @@
   "title": "Checkbox Group",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A group of checkboxes.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/checkbox-group/checkbox-group.tsx",

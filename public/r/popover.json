@@ -5,9 +5,7 @@
   "title": "Popover",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A popover component for displaying content on top of another.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/popover/popover.tsx",

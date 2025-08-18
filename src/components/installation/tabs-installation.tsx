@@ -1,26 +1,26 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function TabsInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/tabs.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/tabs.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from '@/components/ui/tabs';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function TabsDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function TabsDemo() {
   return (
     <Tabs defaultValue="account" className="w-[400px]">
       <TabsList>
@@ -40,9 +40,8 @@ export function TabsInstallation() {
     </Tabs>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

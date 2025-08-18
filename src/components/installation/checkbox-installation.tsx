@@ -1,21 +1,23 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function CheckboxInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/checkbox.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Checkbox } from '@/components/ui/checkbox';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function CheckboxDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/checkbox.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Checkbox } from '@/components/ui/checkbox';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function CheckboxDemo() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-3">
@@ -61,9 +63,8 @@ export function CheckboxInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

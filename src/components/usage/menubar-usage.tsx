@@ -19,90 +19,92 @@ import { Separator } from '../ui/separator';
 
 export function MenubarDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Menubar>
-      <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
-        <MenubarPortal>
-          <MenubarPositioner sideOffset={6}>
-            <MenubarContent>
-              <MenubarItem onClick={handleClick}>New</MenubarItem>
-              <MenubarItem onClick={handleClick}>Open</MenubarItem>
-              <MenubarItem onClick={handleClick}>Save</MenubarItem>
-              <MenubarSub>
-                <MenubarSubTrigger>
-                  Export
-                  <ChevronRightIcon />
-                </MenubarSubTrigger>
-                <MenubarPortal>
-                  <MenubarPositioner alignOffset={-4}>
-                    <MenubarSubContent>
-                      <MenubarItem onClick={handleClick}>PDF</MenubarItem>
-                      <MenubarItem onClick={handleClick}>PNG</MenubarItem>
-                      <MenubarItem onClick={handleClick}>SVG</MenubarItem>
-                    </MenubarSubContent>
-                  </MenubarPositioner>
-                </MenubarPortal>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem onClick={handleClick}>Print</MenubarItem>
-            </MenubarContent>
-          </MenubarPositioner>
-        </MenubarPortal>
-      </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger>File</MenubarTrigger>
+          <MenubarPortal>
+            <MenubarPositioner sideOffset={6}>
+              <MenubarContent>
+                <MenubarItem onClick={handleClick}>New</MenubarItem>
+                <MenubarItem onClick={handleClick}>Open</MenubarItem>
+                <MenubarItem onClick={handleClick}>Save</MenubarItem>
+                <MenubarSub>
+                  <MenubarSubTrigger>
+                    Export
+                    <ChevronRightIcon />
+                  </MenubarSubTrigger>
+                  <MenubarPortal>
+                    <MenubarPositioner alignOffset={-4}>
+                      <MenubarSubContent>
+                        <MenubarItem onClick={handleClick}>PDF</MenubarItem>
+                        <MenubarItem onClick={handleClick}>PNG</MenubarItem>
+                        <MenubarItem onClick={handleClick}>SVG</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarPositioner>
+                  </MenubarPortal>
+                </MenubarSub>
+                <MenubarSeparator />
+                <MenubarItem onClick={handleClick}>Print</MenubarItem>
+              </MenubarContent>
+            </MenubarPositioner>
+          </MenubarPortal>
+        </MenubarMenu>
 
-      <MenubarMenu>
-        <MenubarTrigger>Edit</MenubarTrigger>
-        <MenubarPortal>
-          <MenubarPositioner sideOffset={6}>
-            <MenubarContent>
-              <MenubarItem onClick={handleClick}>Cut</MenubarItem>
-              <MenubarItem onClick={handleClick}>Copy</MenubarItem>
-              <MenubarItem onClick={handleClick}>Paste</MenubarItem>
-            </MenubarContent>
-          </MenubarPositioner>
-        </MenubarPortal>
-      </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger>Edit</MenubarTrigger>
+          <MenubarPortal>
+            <MenubarPositioner sideOffset={6}>
+              <MenubarContent>
+                <MenubarItem onClick={handleClick}>Cut</MenubarItem>
+                <MenubarItem onClick={handleClick}>Copy</MenubarItem>
+                <MenubarItem onClick={handleClick}>Paste</MenubarItem>
+              </MenubarContent>
+            </MenubarPositioner>
+          </MenubarPortal>
+        </MenubarMenu>
 
-      <MenubarMenu>
-        <MenubarTrigger>View</MenubarTrigger>
-        <MenubarPortal>
-          <MenubarPositioner sideOffset={6}>
-            <MenubarContent>
-              <MenubarItem onClick={handleClick}>Zoom In</MenubarItem>
-              <MenubarItem onClick={handleClick}>Zoom Out</MenubarItem>
-              <MenubarSub>
-                <MenubarSubTrigger>
-                  Layout
-                  <ChevronRightIcon />
-                </MenubarSubTrigger>
-                <MenubarPortal>
-                  <MenubarPositioner alignOffset={-4}>
-                    <MenubarSubContent>
-                      <MenubarItem onClick={handleClick}>
-                        Single Page
-                      </MenubarItem>
-                      <MenubarItem onClick={handleClick}>Two Pages</MenubarItem>
-                      <MenubarItem onClick={handleClick}>
-                        Continuous
-                      </MenubarItem>
-                    </MenubarSubContent>
-                  </MenubarPositioner>
-                </MenubarPortal>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem onClick={handleClick}>Full Screen</MenubarItem>
-            </MenubarContent>
-          </MenubarPositioner>
-        </MenubarPortal>
-      </MenubarMenu>
+        <MenubarMenu>
+          <MenubarTrigger>View</MenubarTrigger>
+          <MenubarPortal>
+            <MenubarPositioner sideOffset={6}>
+              <MenubarContent>
+                <MenubarItem onClick={handleClick}>Zoom In</MenubarItem>
+                <MenubarItem onClick={handleClick}>Zoom Out</MenubarItem>
+                <MenubarSub>
+                  <MenubarSubTrigger>
+                    Layout
+                    <ChevronRightIcon />
+                  </MenubarSubTrigger>
+                  <MenubarPortal>
+                    <MenubarPositioner alignOffset={-4}>
+                      <MenubarSubContent>
+                        <MenubarItem onClick={handleClick}>
+                          Single Page
+                        </MenubarItem>
+                        <MenubarItem onClick={handleClick}>
+                          Two Pages
+                        </MenubarItem>
+                        <MenubarItem onClick={handleClick}>
+                          Continuous
+                        </MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarPositioner>
+                  </MenubarPortal>
+                </MenubarSub>
+                <MenubarSeparator />
+                <MenubarItem onClick={handleClick}>Full Screen</MenubarItem>
+              </MenubarContent>
+            </MenubarPositioner>
+          </MenubarPortal>
+        </MenubarMenu>
 
-      <MenubarMenu disabled>
-        <MenubarTrigger>Help</MenubarTrigger>
-      </MenubarMenu>
-    </Menubar>
-    <Separator/>
-    <MenubarInstallation/>
+        <MenubarMenu disabled>
+          <MenubarTrigger>Help</MenubarTrigger>
+        </MenubarMenu>
+      </Menubar>
+      <Separator />
+      <MenubarInstallation />
     </div>
   );
 }

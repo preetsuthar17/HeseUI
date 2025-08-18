@@ -5,9 +5,7 @@
   "title": "ScrollArea",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A scrollable area component.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/scroll-area/scroll-area.tsx",

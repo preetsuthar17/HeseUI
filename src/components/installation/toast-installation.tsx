@@ -1,16 +1,16 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ToastInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/toast.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/toast.json'}
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Toast,
   ToastAction,
   ToastClose,
@@ -20,11 +20,11 @@ export function ToastInstallation() {
   ToastViewport,
 } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function ToastDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function ToastDemo() {
   const { toast } = useToast();
 
   return (
@@ -55,9 +55,8 @@ import { useToast } from '@/hooks/use-toast';`}
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

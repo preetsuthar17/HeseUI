@@ -5,9 +5,7 @@
   "title": "Meter",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A meter component for displaying progress.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/meter/meter.tsx",

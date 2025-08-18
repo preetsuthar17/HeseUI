@@ -1,26 +1,28 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function TooltipInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/tooltip.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/tooltip.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function TooltipDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function TooltipDemo() {
   return (
     <TooltipProvider>
       <Tooltip>
@@ -34,9 +36,8 @@ export function TooltipInstallation() {
     </TooltipProvider>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

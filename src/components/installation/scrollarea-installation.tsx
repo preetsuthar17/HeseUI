@@ -1,26 +1,28 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ScrollAreaInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/scrollarea.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/scrollarea.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   ScrollArea,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`const BOX_COUNT = 10;
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`const BOX_COUNT = 10;
 
 export function ScrollAreaDemo() {
   return (
@@ -89,9 +91,8 @@ export function ScrollAreaDemo() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

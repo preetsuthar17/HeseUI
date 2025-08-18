@@ -16,36 +16,36 @@ import { Separator } from '../ui/separator';
 export function NumberFieldDemo() {
   const id = React.useId();
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <NumberField
-      className="flex flex-col items-start gap-1"
-      defaultValue={100}
-      id={id}
-    >
-      <NumberFieldScrubArea className="cursor-ew-resize">
-        <label
-          className="cursor-ew-resize font-medium text-foreground text-sm"
-          htmlFor={id}
-        >
-          Amount
-        </label>
-        <NumberFieldScrubAreaCursor className="drop-shadow-[0_1px_1px_#0008] filter">
-          <CursorGrowIcon />
-        </NumberFieldScrubAreaCursor>
-      </NumberFieldScrubArea>
+        className="flex flex-col items-start gap-1"
+        defaultValue={100}
+        id={id}
+      >
+        <NumberFieldScrubArea className="cursor-ew-resize">
+          <label
+            className="cursor-ew-resize font-medium text-foreground text-sm"
+            htmlFor={id}
+          >
+            Amount
+          </label>
+          <NumberFieldScrubAreaCursor className="drop-shadow-[0_1px_1px_#0008] filter">
+            <CursorGrowIcon />
+          </NumberFieldScrubAreaCursor>
+        </NumberFieldScrubArea>
 
-      <NumberFieldGroup className="flex">
-        <NumberFieldDecrement className="flex size-10 select-none items-center justify-center rounded-tl-md rounded-bl-md border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent">
-          <MinusIcon />
-        </NumberFieldDecrement>
-        <NumberFieldInput className="h-10 w-24 border-border border-y text-center text-base text-foreground tabular-nums focus:z-10 focus:outline-none focus:ring-2 focus:ring-ring" />
-        <NumberFieldIncrement className="flex size-10 select-none items-center justify-center rounded-tr-md rounded-br-md border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent">
-          <PlusIcon />
-        </NumberFieldIncrement>
-      </NumberFieldGroup>
-    </NumberField>
-    <Separator/>
-    <NumberFieldInstallation/>
+        <NumberFieldGroup className="flex">
+          <NumberFieldDecrement className="flex size-10 select-none items-center justify-center rounded-tl-md rounded-bl-md border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent">
+            <MinusIcon />
+          </NumberFieldDecrement>
+          <NumberFieldInput className="h-10 w-24 border-border border-y text-center text-base text-foreground tabular-nums focus:z-10 focus:outline-none focus:ring-2 focus:ring-ring" />
+          <NumberFieldIncrement className="flex size-10 select-none items-center justify-center rounded-tr-md rounded-br-md border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent">
+            <PlusIcon />
+          </NumberFieldIncrement>
+        </NumberFieldGroup>
+      </NumberField>
+      <Separator />
+      <NumberFieldInstallation />
     </div>
   );
 }

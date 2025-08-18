@@ -1,21 +1,23 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function ButtonInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/button.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import { Button } from '@/components/ui/button';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function ButtonDemo() {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/button.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import { Button } from '@/components/ui/button';`}
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function ButtonDemo() {
   return (
     <div className="flex flex-wrap gap-4">
       <Button>Default</Button>
@@ -30,9 +32,8 @@ export function ButtonInstallation() {
     </div>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

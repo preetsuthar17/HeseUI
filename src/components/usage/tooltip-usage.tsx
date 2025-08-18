@@ -16,60 +16,60 @@ import { Separator } from '../ui/separator';
 
 export function TooltipDemo() {
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <TooltipProvider>
-      <div className="flex w-fit rounded border border-border p-0.5">
-        <Tooltip>
-          <TooltipTrigger aria-label="Bold">
-            <Bold className="size-4" />
-          </TooltipTrigger>
-          <TooltipPortal>
-            <TooltipPositioner sideOffset={10}>
-              <TooltipContent>
-                <TooltipArrow>
-                  <ArrowSvg />
-                </TooltipArrow>
-                Bold
-              </TooltipContent>
-            </TooltipPositioner>
-          </TooltipPortal>
-        </Tooltip>
+        <div className="flex w-fit rounded border border-border p-0.5">
+          <Tooltip>
+            <TooltipTrigger aria-label="Bold">
+              <Bold className="size-4" />
+            </TooltipTrigger>
+            <TooltipPortal>
+              <TooltipPositioner sideOffset={10}>
+                <TooltipContent>
+                  <TooltipArrow>
+                    <ArrowSvg />
+                  </TooltipArrow>
+                  Bold
+                </TooltipContent>
+              </TooltipPositioner>
+            </TooltipPortal>
+          </Tooltip>
 
-        <Tooltip>
-          <TooltipTrigger aria-label="Italic">
-            <Italic className="size-4" />
-          </TooltipTrigger>
-          <TooltipPortal>
-            <TooltipPositioner sideOffset={10}>
-              <TooltipContent>
-                <TooltipArrow>
-                  <ArrowSvg />
-                </TooltipArrow>
-                Italic
-              </TooltipContent>
-            </TooltipPositioner>
-          </TooltipPortal>
-        </Tooltip>
+          <Tooltip>
+            <TooltipTrigger aria-label="Italic">
+              <Italic className="size-4" />
+            </TooltipTrigger>
+            <TooltipPortal>
+              <TooltipPositioner sideOffset={10}>
+                <TooltipContent>
+                  <TooltipArrow>
+                    <ArrowSvg />
+                  </TooltipArrow>
+                  Italic
+                </TooltipContent>
+              </TooltipPositioner>
+            </TooltipPortal>
+          </Tooltip>
 
-        <Tooltip>
-          <TooltipTrigger aria-label="Underline">
-            <Underline className="size-4" />
-          </TooltipTrigger>
-          <TooltipPortal>
-            <TooltipPositioner sideOffset={10}>
-              <TooltipContent>
-                <TooltipArrow>
-                  <ArrowSvg />
-                </TooltipArrow>
-                Underline
-              </TooltipContent>
-            </TooltipPositioner>
-          </TooltipPortal>
-        </Tooltip>
-      </div>
-    </TooltipProvider>
-    <Separator/>
-    <TooltipInstallation/>
+          <Tooltip>
+            <TooltipTrigger aria-label="Underline">
+              <Underline className="size-4" />
+            </TooltipTrigger>
+            <TooltipPortal>
+              <TooltipPositioner sideOffset={10}>
+                <TooltipContent>
+                  <TooltipArrow>
+                    <ArrowSvg />
+                  </TooltipArrow>
+                  Underline
+                </TooltipContent>
+              </TooltipPositioner>
+            </TooltipPortal>
+          </Tooltip>
+        </div>
+      </TooltipProvider>
+      <Separator />
+      <TooltipInstallation />
     </div>
   );
 }

@@ -1,27 +1,29 @@
-import CodeBlock from "../code-block";
+import CodeBlock from '../code-block';
 
 export function SelectInstallation() {
-    return(
-        <>
-            <p>Install component using the CLI</p>
-            <CodeBlock
-                code={`pnpm dlx shadcn@latest add http://base.hextaui.com/r/select.json`}
-                lang="bash"
-            />
-            <p>example usage</p>
-            <CodeBlock
-                code={`import {
+  return (
+    <>
+      <p>Install component using the CLI</p>
+      <CodeBlock
+        code={
+          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/select.json'
+        }
+        lang="bash"
+      />
+      <p>example usage</p>
+      <CodeBlock
+        code={`import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';`}
-                lang="tsx"
-            />
-            
-            <CodeBlock
-                code={`export function SelectDemo() {
+        lang="tsx"
+      />
+
+      <CodeBlock
+        code={`export function SelectDemo() {
   return (
     <Select>
       <SelectTrigger className="w-[180px]">
@@ -37,9 +39,8 @@ export function SelectInstallation() {
     </Select>
   );
 }`}
-                lang="tsx"
-            />
-
-        </>
-    )
+        lang="tsx"
+      />
+    </>
+  );
 }

@@ -73,188 +73,192 @@ export function FormDemo() {
   const [validationLoading, setValidationLoading] = React.useState(false);
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-wrap gap-8">
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">URL Validation Form</h3>
-        <Form
-          className="w-full max-w-64"
-          errors={urlErrors}
-          onClearErrors={setUrlErrors}
-          onSubmit={async (event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const value = formData.get('url') as string;
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">URL Validation Form</h3>
+          <Form
+            className="w-full max-w-64"
+            errors={urlErrors}
+            onClearErrors={setUrlErrors}
+            onSubmit={async (event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const value = formData.get('url') as string;
 
-            setUrlLoading(true);
-            const response = await submitForm(value);
-            const serverErrors = {
-              url: response.error,
-            };
+              setUrlLoading(true);
+              const response = await submitForm(value);
+              const serverErrors = {
+                url: response.error,
+              };
 
-            setUrlErrors(serverErrors);
-            setUrlLoading(false);
-          }}
-        >
-          <Field className="flex flex-col items-start gap-1" name="url">
-            <FieldLabel>Homepage</FieldLabel>
-            <FieldControl
-              defaultValue="https://example.com"
-              pattern="https?://.*"
-              placeholder="https://example.com"
-              required
-              type="url"
-            />
-            <FieldError />
-          </Field>
-          <Button className="w-full" disabled={urlLoading} type="submit">
-            {urlLoading ? 'Submitting...' : 'Submit'}
-          </Button>
-        </Form>
-      </div>
-
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Multi-Field Validation</h3>
-        <Form
-          className="w-full max-w-64"
-          errors={validationErrors}
-          onClearErrors={setValidationErrors}
-          onSubmit={(event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-
-            setValidationLoading(true);
-            const errors = validateFormData(formData);
-            setValidationErrors(errors);
-            setValidationLoading(false);
-
-            if (Object.keys(errors).length === 0) {
-              alert('Form submitted successfully!');
-            }
-          }}
-        >
-          <Field className="flex flex-col items-start gap-1" name="name">
-            <FieldLabel>Full Name</FieldLabel>
-            <FieldControl placeholder="Enter your full name" required />
-            <FieldError />
-          </Field>
-
-          <Field className="flex flex-col items-start gap-1" name="age">
-            <FieldLabel>Age</FieldLabel>
-            <FieldControl
-              max={120}
-              min={18}
-              placeholder="Enter your age"
-              required
-              type="number"
-            />
-            <FieldError />
-          </Field>
-
-          <Field className="flex flex-col items-start gap-1" name="email">
-            <FieldLabel>Email</FieldLabel>
-            <FieldControl
-              placeholder="Enter your email"
-              required
-              type="email"
-            />
-            <FieldError />
-          </Field>
-
-          <Button className="w-full" disabled={validationLoading} type="submit">
-            {validationLoading ? 'Validating...' : 'Submit'}
-          </Button>
-        </Form>
-      </div>
-
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Contact Form</h3>
-        <Form
-          className="w-full max-w-64"
-          onSubmit={(event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const _data = Object.fromEntries(formData);
-            alert('Contact form submitted! Check console for data.');
-          }}
-        >
-          <Field className="flex flex-col items-start gap-1" name="firstName">
-            <FieldLabel>First Name</FieldLabel>
-            <FieldControl placeholder="Enter your first name" required />
-            <FieldError />
-          </Field>
-
-          <Field className="flex flex-col items-start gap-1" name="lastName">
-            <FieldLabel>Last Name</FieldLabel>
-            <FieldControl placeholder="Enter your last name" required />
-            <FieldError />
-          </Field>
-
-          <Field className="flex flex-col items-start gap-1" name="message">
-            <FieldLabel>Message</FieldLabel>
-            <FieldControl placeholder="Enter your message" required />
-            <FieldError />
-          </Field>
-
-          <Button className="w-full" type="submit">
-            Send Message
-          </Button>
-        </Form>
-      </div>
-
-      <div className="item-center flex w-fit flex-col justify-start gap-2">
-        <h3 className="font-medium text-lg">Registration Form</h3>
-        <Form
-          className="w-full max-w-64"
-          onSubmit={(event) => {
-            event.preventDefault();
-            const formData = new FormData(event.currentTarget);
-            const _data = Object.fromEntries(formData);
-            alert('Registration successful! Check console for data.');
-          }}
-        >
-          <Field className="flex flex-col items-start gap-1" name="username">
-            <FieldLabel>Username</FieldLabel>
-            <FieldControl
-              minLength={3}
-              placeholder="Choose a username"
-              required
-            />
-            <FieldError />
-          </Field>
-
-          <Field className="flex flex-col items-start gap-1" name="password">
-            <FieldLabel>Password</FieldLabel>
-            <FieldControl
-              minLength={8}
-              placeholder="Enter your password"
-              required
-              type="password"
-            />
-            <FieldError />
-          </Field>
-
-          <Field
-            className="flex flex-col items-start gap-1"
-            name="confirmPassword"
+              setUrlErrors(serverErrors);
+              setUrlLoading(false);
+            }}
           >
-            <FieldLabel>Confirm Password</FieldLabel>
-            <FieldControl
-              placeholder="Confirm your password"
-              required
-              type="password"
-            />
-            <FieldError />
-          </Field>
+            <Field className="flex flex-col items-start gap-1" name="url">
+              <FieldLabel>Homepage</FieldLabel>
+              <FieldControl
+                defaultValue="https://example.com"
+                pattern="https?://.*"
+                placeholder="https://example.com"
+                required
+                type="url"
+              />
+              <FieldError />
+            </Field>
+            <Button className="w-full" disabled={urlLoading} type="submit">
+              {urlLoading ? 'Submitting...' : 'Submit'}
+            </Button>
+          </Form>
+        </div>
 
-          <Button className="w-full" type="submit">
-            Create Account
-          </Button>
-        </Form>
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Multi-Field Validation</h3>
+          <Form
+            className="w-full max-w-64"
+            errors={validationErrors}
+            onClearErrors={setValidationErrors}
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+
+              setValidationLoading(true);
+              const errors = validateFormData(formData);
+              setValidationErrors(errors);
+              setValidationLoading(false);
+
+              if (Object.keys(errors).length === 0) {
+                alert('Form submitted successfully!');
+              }
+            }}
+          >
+            <Field className="flex flex-col items-start gap-1" name="name">
+              <FieldLabel>Full Name</FieldLabel>
+              <FieldControl placeholder="Enter your full name" required />
+              <FieldError />
+            </Field>
+
+            <Field className="flex flex-col items-start gap-1" name="age">
+              <FieldLabel>Age</FieldLabel>
+              <FieldControl
+                max={120}
+                min={18}
+                placeholder="Enter your age"
+                required
+                type="number"
+              />
+              <FieldError />
+            </Field>
+
+            <Field className="flex flex-col items-start gap-1" name="email">
+              <FieldLabel>Email</FieldLabel>
+              <FieldControl
+                placeholder="Enter your email"
+                required
+                type="email"
+              />
+              <FieldError />
+            </Field>
+
+            <Button
+              className="w-full"
+              disabled={validationLoading}
+              type="submit"
+            >
+              {validationLoading ? 'Validating...' : 'Submit'}
+            </Button>
+          </Form>
+        </div>
+
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Contact Form</h3>
+          <Form
+            className="w-full max-w-64"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const _data = Object.fromEntries(formData);
+              alert('Contact form submitted! Check console for data.');
+            }}
+          >
+            <Field className="flex flex-col items-start gap-1" name="firstName">
+              <FieldLabel>First Name</FieldLabel>
+              <FieldControl placeholder="Enter your first name" required />
+              <FieldError />
+            </Field>
+
+            <Field className="flex flex-col items-start gap-1" name="lastName">
+              <FieldLabel>Last Name</FieldLabel>
+              <FieldControl placeholder="Enter your last name" required />
+              <FieldError />
+            </Field>
+
+            <Field className="flex flex-col items-start gap-1" name="message">
+              <FieldLabel>Message</FieldLabel>
+              <FieldControl placeholder="Enter your message" required />
+              <FieldError />
+            </Field>
+
+            <Button className="w-full" type="submit">
+              Send Message
+            </Button>
+          </Form>
+        </div>
+
+        <div className="item-center flex w-fit flex-col justify-start gap-2">
+          <h3 className="font-medium text-lg">Registration Form</h3>
+          <Form
+            className="w-full max-w-64"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const _data = Object.fromEntries(formData);
+              alert('Registration successful! Check console for data.');
+            }}
+          >
+            <Field className="flex flex-col items-start gap-1" name="username">
+              <FieldLabel>Username</FieldLabel>
+              <FieldControl
+                minLength={3}
+                placeholder="Choose a username"
+                required
+              />
+              <FieldError />
+            </Field>
+
+            <Field className="flex flex-col items-start gap-1" name="password">
+              <FieldLabel>Password</FieldLabel>
+              <FieldControl
+                minLength={8}
+                placeholder="Enter your password"
+                required
+                type="password"
+              />
+              <FieldError />
+            </Field>
+
+            <Field
+              className="flex flex-col items-start gap-1"
+              name="confirmPassword"
+            >
+              <FieldLabel>Confirm Password</FieldLabel>
+              <FieldControl
+                placeholder="Confirm your password"
+                required
+                type="password"
+              />
+              <FieldError />
+            </Field>
+
+            <Button className="w-full" type="submit">
+              Create Account
+            </Button>
+          </Form>
+        </div>
       </div>
-    </div>
-    <Separator/>
-    <FormInstallation/>
+      <Separator />
+      <FormInstallation />
     </div>
   );
 }

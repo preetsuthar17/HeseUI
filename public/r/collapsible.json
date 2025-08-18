@@ -5,9 +5,7 @@
   "title": "Collapsible",
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "description": "A component for showing and hiding content.",
-  "dependencies": [
-    "@base-ui-components/react"
-  ],
+  "dependencies": ["@base-ui-components/react"],
   "files": [
     {
       "path": "registry/collapsible/collapsible.tsx",

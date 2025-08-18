@@ -32,16 +32,16 @@ export function ProgressDemo() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-8'>
+    <div className="flex flex-col gap-8">
       <Progress className="grid w-48 grid-cols-2 gap-y-2" value={value}>
-      <ProgressLabel>Export data</ProgressLabel>
-      <ProgressValue />
-      <ProgressTrack>
-        <ProgressIndicator />
-      </ProgressTrack>
-    </Progress>
-    <Separator/>
-    <ProgressInstallation/>
+        <ProgressLabel>Export data</ProgressLabel>
+        <ProgressValue />
+        <ProgressTrack>
+          <ProgressIndicator />
+        </ProgressTrack>
+      </Progress>
+      <Separator />
+      <ProgressInstallation />
     </div>
   );
 }
