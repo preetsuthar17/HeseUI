@@ -138,17 +138,18 @@ export function FieldDemo() {
           <FieldControl placeholder="Type 'valid' to make it valid" />
           <FieldValidity>
             {(validity) => {
-              if (validity.valid) {
+              const v = validity as any;
+              if (v.valid) {
                 return (
                   <div className="text-green-600 text-sm">
                     ✅ Field is valid!
                   </div>
                 );
               }
-              if (validity.customError) {
+              if (v.customError) {
                 return (
                   <div className="text-destructive text-sm">
-                    ❌ Custom error: {validity.customError}
+                    ❌ Custom error: {v.customError}
                   </div>
                 );
               }
