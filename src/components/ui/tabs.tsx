@@ -42,7 +42,7 @@ const TabsTrigger = React.forwardRef<
   return (
     <BaseTabs.Tab
       className={cn(
-        'before:-outline-offset-1 flex h-8 select-none items-center justify-center whitespace-nowrap break-keep px-2 font-medium text-muted-foreground text-sm outline-none before:inset-x-0 before:inset-y-1 before:rounded before:outline-ring hover:text-foreground focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-[selected]:text-foreground',
+        'before:-outline-offset-1 flex h-8 select-none items-center justify-center whitespace-nowrap break-keep px-2 font-medium text-muted-foreground text-sm outline-none before:inset-x-0 before:inset-y-1 before:rounded before:outline-ring hover:text-foreground focus-visible:relative focus-visible:before:absolute focus-visible:before:outline data-[selected]:text-accent-foreground',
         className
       )}
       ref={ref}

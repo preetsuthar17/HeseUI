@@ -90,7 +90,7 @@ const ContextMenuSubTrigger = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <BaseContextMenu.SubmenuTrigger
     className={cn(
-      'relative flex w-full cursor-default select-none items-center justify-between gap-1 rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground',
+      'relative flex w-full cursor-default select-none items-center justify-between gap-1 rounded px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground',
       className
     )}
     ref={ref}
@@ -123,7 +123,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <BaseContextMenu.CheckboxItem
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
       className
     )}
     ref={ref}
@@ -157,7 +157,7 @@ const ContextMenuRadioItem = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <BaseContextMenu.RadioItem
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
+      'relative flex cursor-default select-none items-center rounded py-1.5 pr-2 pl-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
       className
     )}
     ref={ref}

@@ -65,7 +65,10 @@ export function ScrollAreaDemo() {
               })}
             </div>
           </ScrollAreaViewport>
-          <ScrollAreaScrollbar orientation="horizontal">
+          <ScrollAreaScrollbar
+            className="overflow-hidden"
+            orientation="horizontal"
+          >
             <ScrollAreaThumb />
           </ScrollAreaScrollbar>
         </ScrollArea>

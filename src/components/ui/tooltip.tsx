@@ -27,7 +27,7 @@ const TooltipTrigger = React.forwardRef<
   return (
     <BaseTooltip.Trigger
       className={cn(
-        'flex size-8 select-none items-center justify-center rounded-sm text-foreground hover:bg-accent focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[popup-open]:bg-accent focus-visible:[&:not(:hover)]:bg-transparent',
+        'flex size-8 select-none items-center justify-center rounded text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[popup-open]:bg-accent focus-visible:[&:not(:hover)]:bg-transparent',
         className
       )}
       ref={ref}

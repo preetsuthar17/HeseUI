@@ -16,7 +16,7 @@ export function PreviewCardDemo() {
       <p className="max-w-64 text-balance text-base text-foreground">
         The principles of good{' '}
         <PreviewCardTrigger
-          className="text-primary underline decoration-1 decoration-primary/60 underline-offset-2 outline-none hover:underline focus-visible:rounded-sm focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-ring data-[popup-open]:underline"
+          className="text-primary underline decoration-1 decoration-primary/60 underline-offset-2 outline-none hover:underline focus-visible:rounded focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-ring data-[popup-open]:underline"
           href="https://en.wikipedia.org/wiki/Typography"
         >
           typography
@@ -30,7 +30,7 @@ export function PreviewCardDemo() {
             <PreviewCardArrow />
             <NextImage
               alt="Station Hofplein signage in Rotterdam, Netherlands"
-              className="block w-full rounded-sm"
+              className="block w-full rounded"
               height={300}
               src="https://images.unsplash.com/photo-1619615391095-dfa29e1672ef?q=80&w=448&h=300"
               unoptimized

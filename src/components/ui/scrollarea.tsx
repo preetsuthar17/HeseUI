@@ -25,7 +25,7 @@ const ScrollAreaViewport = React.forwardRef<
   return (
     <BaseScrollArea.Viewport
       className={cn(
-        '-outline-offset-1 h-full overscroll-contain rounded outline outline-border focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring',
+        '-outline-offset-1 h-full overscroll-contain rounded outline outline-border focus-visible:outline focus-visible:outline-ring',
         className
       )}
       ref={ref}
@@ -56,14 +56,17 @@ const ScrollAreaScrollbar = React.forwardRef<
   { className, orientation = 'vertical', ...props },
   ref
 ) {
+  const baseScrollbarClass =
+    'relative flex justify-start rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-75 data-[scrolling]:duration-75';
+  const verticalClass =
+    'm-2 w-1 before:absolute before:inset-y-0 before:w-5 before:content-["""]';
+  const horizontalClass =
+    'h-1 before:absolute before:inset-x-0 before:h-5 before:content-["""]';
   return (
     <BaseScrollArea.Scrollbar
       className={cn(
-        'relative m-2 flex justify-center rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-75 data-[scrolling]:duration-75',
-        orientation === 'vertical' ? 'w-1' : 'h-1',
-        orientation === 'vertical'
-          ? 'before:absolute before:inset-y-0 before:w-5 before:content-["""]'
-          : 'before:absolute before:inset-x-0 before:h-5 before:content-["""]',
+        baseScrollbarClass,
+        orientation === 'vertical' ? verticalClass : horizontalClass,
         className
       )}
       orientation={orientation}

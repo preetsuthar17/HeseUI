@@ -34,7 +34,7 @@ const MenubarTrigger = React.forwardRef<
   return (
     <BaseMenu.Trigger
       className={cn(
-        'h-8 select-none rounded px-3 text-sm outline-none focus-visible:bg-accent data-[popup-open]:bg-accent data-[disabled]:opacity-50',
+        'h-8 select-none rounded px-3 text-sm outline-none hover:text-accent-foreground focus-visible:bg-accent data-[popup-open]:bg-accent data-[disabled]:opacity-50',
         className
       )}
       ref={ref}

@@ -67,7 +67,7 @@ const NumberFieldDecrement = React.forwardRef<
   return (
     <BaseNumberField.Decrement
       className={cn(
-        'flex size-10 select-none items-center justify-center rounded-tl rounded-bl border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent',
+        'flex size-10 select-none items-center justify-center rounded-tl rounded-bl border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent',
         className
       )}
       ref={ref}
@@ -101,7 +101,7 @@ const NumberFieldIncrement = React.forwardRef<
   return (
     <BaseNumberField.Increment
       className={cn(
-        'flex size-10 select-none items-center justify-center rounded-tr rounded-br border border-border bg-background bg-clip-padding text-foreground hover:bg-accent active:bg-accent',
+        'flex size-10 select-none items-center justify-center rounded-tr rounded-br border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent',
         className
       )}
       ref={ref}

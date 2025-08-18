@@ -19,7 +19,7 @@ const PopoverTrigger = React.forwardRef<
   return (
     <BasePopover.Trigger
       className={cn(
-        'inline-flex items-center justify-center rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[disabled]:opacity-50',
+        'inline-flex items-center justify-center rounded font-medium text-sm ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[disabled]:opacity-50',
         className
       )}
       ref={ref}

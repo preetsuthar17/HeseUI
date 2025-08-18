@@ -50,7 +50,7 @@ const NavigationMenuTrigger = React.forwardRef<
   return (
     <BaseNav.Trigger
       className={cn(
-        'inline-flex h-10 select-none items-center justify-center gap-1.5 rounded bg-secondary px-3 font-medium text-secondary-foreground text-sm no-underline ring-offset-background hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent',
+        'inline-flex h-10 select-none items-center justify-center gap-1.5 rounded bg-secondary px-3 font-medium text-secondary-foreground text-sm no-underline ring-offset-background hover:bg-secondary/80 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent',
         className
       )}
       ref={ref}

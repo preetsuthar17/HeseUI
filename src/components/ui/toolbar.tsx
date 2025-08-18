@@ -28,7 +28,7 @@ const ToolbarButton = React.forwardRef<
   return (
     <BaseToolbar.Button
       className={cn(
-        'inline-flex h-8 min-w-8 select-none items-center justify-center rounded-sm px-3 font-medium text-muted-foreground text-sm hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[pressed]:bg-accent data-[pressed]:text-foreground',
+        'inline-flex h-8 min-w-8 select-none items-center justify-center rounded px-3 font-medium text-muted-foreground text-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[pressed]:bg-accent data-[pressed]:text-foreground',
         className
       )}
       ref={ref}
@@ -45,7 +45,7 @@ const ToolbarLink = React.forwardRef<
   return (
     <BaseToolbar.Link
       className={cn(
-        'mr-3 ml-auto flex-none self-center text-muted-foreground text-sm no-underline hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        'mr-3 ml-auto flex-none self-center text-muted-foreground text-sm no-underline hover:text-primary focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
         className
       )}
       ref={ref}
