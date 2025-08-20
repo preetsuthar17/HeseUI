@@ -20,7 +20,7 @@ export function PopoverDemo() {
       </PopoverTrigger>
       <PopoverPortal>
         <PopoverPositioner sideOffset={8}>
-          <PopoverPopup className="origin-[var(--transform-origin)] rounded bg-popover px-6 py-4 text-popover-foreground outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0">
+          <PopoverPopup className="origin-[var(--transform-origin)] rounded bg-popover px-6 py-4 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0">
             <PopoverArrow />
             <PopoverTitle className="font-medium text-base">
               Notifications
