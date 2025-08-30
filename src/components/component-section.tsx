@@ -75,7 +75,7 @@ export function ComponentSection({
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4">{children}</div>
+        <div className="flex flex-col gap-4 p-2 md:p-4">{children}</div>
       </div>
     </div>
   );
