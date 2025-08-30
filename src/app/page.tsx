@@ -393,6 +393,11 @@ export default function Home() {
               </section>
             )
           )}
+          <footer>  
+            <p className='text-muted-foreground'>
+              Built with ❤️ and ☕ by <Link href="https://x.com/preetsuthar17" className='underline'>Preet Suthar</Link>
+            </p>
+          </footer>
         </main>
       </div>
     </div>
