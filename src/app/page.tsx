@@ -18,7 +18,6 @@ import {
   ScrollAreaThumb,
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';
-import { Separator } from '@/components/ui/separator';
 import React, { useEffect, useState } from 'react';
 
 function RectanglePlaceholder() {
@@ -376,9 +375,7 @@ function ScrollToTopButton() {
   );
 }
 
-// Divider component for left and right sides
 function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
-  // position: left or right
   return (
     <div
       className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} border-r border-l h-full md:w-6 w-2 z-10 block`}
@@ -400,10 +397,10 @@ export default function Home() {
   return (
     <div className="mx-auto min-h-dvh">
       <MobileNavigation />
-      <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
-        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] overflow-visible lg:block">
+      <div className="relative grid grid-cols-1 gap-2 lg:grid-cols-[270px_minmax(0,1fr)]">
+        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] overflow-visible w-full lg:block">
           <ScrollArea className="h-full">
-            <ScrollAreaViewport className="h-full border-transparent p-4 pb-8 outline-transparent">
+            <ScrollAreaViewport className="h-full border-transparent pb-8 outline-transparent">
               <ScrollAreaContent>
                 <ComponentNavigation />
               </ScrollAreaContent>
@@ -414,9 +411,7 @@ export default function Home() {
           </ScrollArea>
         </aside>
         <main className="relative flex min-w-0 flex-col gap-8 py-12 md:text-left">
-          {/* Left side divider */}
           <SideDivider position="left" />
-          {/* Right side divider */}
           <SideDivider position="right" />
           <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
             <div className="flex flex-col gap-2">
@@ -455,7 +450,6 @@ export default function Home() {
               </Button>
             </div>
           </header>
-          {/* divider */}
           <div className="relative h-6 border-y">
             <div
               aria-hidden="true"
@@ -467,7 +461,6 @@ export default function Home() {
               }}
             />
           </div>
-          {/* divider */}
           {componentSections.map(
             ({ id, title, component: SectionComponent }, idx) => (
               <section className="min-w-0" key={id}>
@@ -483,7 +476,6 @@ export default function Home() {
                   </ComponentSection>
                   {idx < componentSections.length - 1 && (
                     <>
-                      {/* divider */}
                       <div className="relative h-6 border-y">
                         <div
                           aria-hidden="true"
@@ -495,7 +487,6 @@ export default function Home() {
                           }}
                         />
                       </div>
-                      {/* divider */}
                     </>
                   )}
                 </div>
