@@ -295,9 +295,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
-          data-debug="base.hextaui.com"
           defer
           src="https://assets.onedollarstats.com/stonks.js"
+          data-debug="www.heseui.com"
         />
       </head>
       <body
