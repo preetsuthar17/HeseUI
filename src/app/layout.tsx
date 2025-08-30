@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Base UI x Hexta UI',
+  title: 'HeseUI',
   description:
-    'HextaUI component library built on top of Base UI with Tailwind CSS',
+    'components built on top of Base UI using shadcn design system.',
 };
 
 export default function RootLayout({

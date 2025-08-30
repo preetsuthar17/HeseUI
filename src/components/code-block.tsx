@@ -3,6 +3,7 @@
 import { Check, Copy } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { type BundledLanguage, type BundledTheme, codeToHtml } from 'shiki';
+import { Button } from './ui/button';
 
 type CodeBlockProps = {
   code: string;
@@ -90,17 +91,6 @@ export default function CodeBlock({
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
   };
-
-  const copyButtonStyle: React.CSSProperties = {
-    color: 'var(--color-muted-foreground, #9ca3af)',
-    transition: 'color 0.2s',
-  };
-
-  const copyButtonHoverStyle: React.CSSProperties = {
-    background: 'var(--color-muted, #27272a)',
-    color: 'var(--color-foreground, #fff)',
-  };
-
   const lineNumberStyle: React.CSSProperties = {
     background: 'var(--color-muted, #18181b)',
     borderRightColor: 'var(--color-border, #000)',
@@ -249,23 +239,11 @@ export default function CodeBlock({
           </span>
         </div>
 
-        <button
+        <Button
           aria-label="Copy code"
-          className="flex items-center space-x-1 rounded px-2 py-1 text-xs transition-colors"
+          variant='ghost'
+          className='flex items-center justify-center gap-2 opacity-70 hover:opacity-100'
           onClick={copyToClipboard}
-          onMouseOut={(e) => {
-            Object.assign(
-              (e.currentTarget as HTMLElement).style,
-              copyButtonStyle
-            );
-          }}
-          onMouseOver={(e) => {
-            Object.assign(
-              (e.currentTarget as HTMLElement).style,
-              copyButtonHoverStyle
-            );
-          }}
-          style={copyButtonStyle}
           type="button"
         >
           {copied ? (
@@ -279,7 +257,7 @@ export default function CodeBlock({
               <span>Copy</span>
             </>
           )}
-        </button>
+        </Button>
       </div>
 
       {/* Code content */}

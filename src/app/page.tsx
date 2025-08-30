@@ -355,24 +355,13 @@ export default function Home() {
           <header className="flex w-full flex-wrap justify-center gap-4 md:justify-between">
             <div className="flex flex-col gap-2">
               <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-2xl tracking-tight sm:text-3xl md:justify-start">
-                Base UI <X /> Hexta UI
+                HeseUI
               </h1>
               <p className="text-muted-foreground">
-                HextaUI components but built on top of Base UI
+                components built on top of Base UI using shadcn design system.
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2">
-              <Button variant="secondary">
-                <Link className="flex items-center gap-2" href="/hextaui">
-                  <Image
-                    alt="HextaUI"
-                    height={22}
-                    src="/favicon.ico"
-                    width={22}
-                  />
-                  HextaUI with Radix UI
-                </Link>
-              </Button>
               <Button size="icon" variant="ghost">
                 <Link href="/github">
                   <FaGithub className="size-4 shrink-0" />

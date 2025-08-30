@@ -1,469 +1,222 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "BaseUI x hextaui",
-  "homepage": "https://base.hextaui.com",
-  "items": [
+  "name": "@heseui",
+  "title": "HextaUI x BaseUI Registry",
+  "description": "A collection of UI components built with BaseUI and styled with HextaUI design system",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "version": "1.0.0",
+  "url": "https://base.hextaui.com/r/{name}.json",
+  "baseUrl": "https://base.hextaui.com",
+  "components": [
     {
       "name": "accordion",
-      "type": "registry:ui",
       "title": "Accordion",
       "description": "A simple accordion component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/accordion/accordion.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "type": "registry:ui"
     },
     {
       "name": "alert-dialog",
-      "type": "registry:ui",
       "title": "Alert Dialog",
-      "description": "A modal dialog that interrupts the user with important content and expects a response.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/alert-dialog/alert-dialog.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "A modal dialog for important actions.",
+      "type": "registry:ui"
     },
     {
       "name": "avatar",
-      "type": "registry:ui",
       "title": "Avatar",
-      "description": "An image element with a fallback for representing a user or entity.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/avatar/avatar.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "User profile pictures.",
+      "type": "registry:ui"
     },
     {
       "name": "button",
-      "type": "registry:ui",
       "title": "Button",
-      "description": "A simple button component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/button/button.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Interactive buttons with variants.",
+      "type": "registry:ui"
     },
     {
       "name": "checkbox",
-      "type": "registry:ui",
       "title": "Checkbox",
-      "description": "A checkbox component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/checkbox/checkbox.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Single checkbox input.",
+      "type": "registry:ui"
     },
     {
       "name": "checkbox-group",
-      "type": "registry:ui",
       "title": "Checkbox Group",
-      "description": "A group of checkboxes.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/checkbox-group/checkbox-group.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Multiple checkbox inputs.",
+      "type": "registry:ui"
     },
     {
       "name": "collapsible",
-      "type": "registry:ui",
       "title": "Collapsible",
-      "description": "A component for showing and hiding content.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/collapsible/collapsible.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Expandable content areas.",
+      "type": "registry:ui"
     },
     {
       "name": "context-menu",
-      "type": "registry:ui",
       "title": "Context Menu",
-      "description": "A contextual menu triggered by right-click.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/context-menu/context-menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Right-click context menus.",
+      "type": "registry:ui"
     },
     {
       "name": "dialog",
-      "type": "registry:ui",
       "title": "Dialog",
-      "description": "A modal dialog component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/dialog/dialog.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Modal dialogs.",
+      "type": "registry:ui"
     },
     {
       "name": "field",
-      "type": "registry:ui",
       "title": "Field",
-      "description": "A form field wrapper component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/field/field.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Form field wrapper.",
+      "type": "registry:ui"
     },
     {
       "name": "fieldset",
-      "type": "registry:ui",
       "title": "Fieldset",
-      "description": "A fieldset component for grouping form fields.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/fieldset/fieldset.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Group of form fields.",
+      "type": "registry:ui"
     },
     {
       "name": "form",
-      "type": "registry:ui",
       "title": "Form",
-      "description": "A form component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/form/form.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Form components with validation.",
+      "type": "registry:ui"
     },
     {
       "name": "input",
-      "type": "registry:ui",
       "title": "Input",
-      "description": "A text input component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/input/input.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Text input fields.",
+      "type": "registry:ui"
     },
     {
       "name": "menu",
-      "type": "registry:ui",
       "title": "Menu",
-      "description": "A menu component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/menu/menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Dropdown menus.",
+      "type": "registry:ui"
     },
     {
       "name": "menubar",
-      "type": "registry:ui",
       "title": "Menubar",
-      "description": "A menubar component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/menubar/menubar.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Horizontal menu bars.",
+      "type": "registry:ui"
     },
     {
       "name": "meter",
-      "type": "registry:ui",
       "title": "Meter",
-      "description": "A meter component for displaying progress.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/meter/meter.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Progress indicators.",
+      "type": "registry:ui"
     },
     {
       "name": "navigation menu",
-      "type": "registry:ui",
-      "title": "NavigationMenu",
-      "description": "A navigation menu component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/navigation-menu/navigation-menu.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "title": "Navigation Menu",
+      "description": "Navigation components.",
+      "type": "registry:ui"
     },
     {
       "name": "number field",
-      "type": "registry:ui",
-      "title": "NumberField",
-      "description": "A number input field component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/number-field/number-field.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "title": "Number Field",
+      "description": "Numeric input fields.",
+      "type": "registry:ui"
     },
     {
       "name": "popover",
-      "type": "registry:ui",
       "title": "Popover",
-      "description": "A popover component for displaying content on top of another.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/popover/popover.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Floating content panels.",
+      "type": "registry:ui"
     },
     {
       "name": "preview-card",
-      "type": "registry:ui",
       "title": "Preview Card",
-      "description": "A card component for previewing content.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/preview-card/preview-card.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Card components.",
+      "type": "registry:ui"
     },
     {
       "name": "progress",
-      "type": "registry:ui",
       "title": "Progress",
-      "description": "A progress bar component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/progress/progress.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Progress bars.",
+      "type": "registry:ui"
     },
     {
       "name": "radio",
-      "type": "registry:ui",
       "title": "Radio",
-      "description": "A radio button component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/radio/radio.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Radio button inputs.",
+      "type": "registry:ui"
     },
     {
       "name": "scrollarea",
-      "type": "registry:ui",
-      "title": "ScrollArea",
-      "description": "A scrollable area component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/scroll-area/scroll-area.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "title": "Scroll Area",
+      "description": "Scrollable content areas.",
+      "type": "registry:ui"
     },
     {
       "name": "select",
-      "type": "registry:ui",
       "title": "Select",
-      "description": "A select dropdown component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/select/select.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Dropdown select inputs.",
+      "type": "registry:ui"
     },
     {
       "name": "separator",
-      "type": "registry:ui",
       "title": "Separator",
-      "description": "A separator component for dividing content.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/separator/separator.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Visual dividers.",
+      "type": "registry:ui"
     },
     {
       "name": "slider",
-      "type": "registry:ui",
       "title": "Slider",
-      "description": "A slider input component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/slider/slider.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Range slider inputs.",
+      "type": "registry:ui"
     },
     {
       "name": "switch",
-      "type": "registry:ui",
       "title": "Switch",
-      "description": "A switch input component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/switch/switch.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Toggle switches.",
+      "type": "registry:ui"
     },
     {
       "name": "tabs",
-      "type": "registry:ui",
       "title": "Tabs",
-      "description": "A tabbed interface component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/tabs/tabs.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Tabbed content.",
+      "type": "registry:ui"
     },
     {
       "name": "toast",
-      "type": "registry:ui",
       "title": "Toast",
-      "description": "A toast notification component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/toast/toast.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Notification toasts.",
+      "type": "registry:ui"
     },
     {
       "name": "toggle",
-      "type": "registry:ui",
       "title": "Toggle",
-      "description": "A toggle button component.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/toggle/toggle.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Toggle buttons.",
+      "type": "registry:ui"
     },
     {
       "name": "togglegroup",
-      "type": "registry:ui",
-      "title": "ToggleGroup",
-      "description": "A group of toggle buttons.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/toggle-group/toggle-group.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "title": "Toggle Group",
+      "description": "Groups of toggle buttons.",
+      "type": "registry:ui"
     },
     {
       "name": "toolbar",
-      "type": "registry:ui",
       "title": "Toolbar",
-      "description": "A toolbar component for grouping actions.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/toolbar/toolbar.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Toolbar components.",
+      "type": "registry:ui"
     },
     {
       "name": "tooltip",
-      "type": "registry:ui",
       "title": "Tooltip",
-      "description": "A tooltip component for displaying additional information.",
-      "author": "Preet Suthar <hi@preetsuthar.me>",
-      "files": [
-        {
-          "path": "registry/tooltip/tooltip.tsx",
-          "type": "registry:ui"
-        }
-      ],
-      "dependencies": ["@base-ui-components/react"]
+      "description": "Hover tooltips.",
+      "type": "registry:ui"
     }
-  ]
+  ],
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.2"
+  },
+  "metadata": {
+    "style": "new-york",
+    "rsc": true,
+    "tsx": true,
+    "tailwind": {
+      "baseColor": "zinc",
+      "cssVariables": true
+    }
+  }
 }
