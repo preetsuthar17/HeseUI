@@ -14,32 +14,31 @@ type CodeBlockProps = {
   filename?: string;
 };
 
-// Package manager configuration
 const PACKAGE_MANAGERS = {
   npm: {
     name: 'npm',
     logo: '📦',
     command: 'npx',
-    color: '#cb3837'
+    color: '#cb3837',
   },
   pnpm: {
     name: 'pnpm',
     logo: '📦',
     command: 'pnpm dlx',
-    color: '#f69220'
+    color: '#f69220',
   },
   yarn: {
     name: 'yarn',
     logo: '🧶',
     command: 'yarn',
-    color: '#2c8ebb'
+    color: '#2c8ebb',
   },
   bun: {
     name: 'bun',
     logo: '🍞',
     command: 'bunx --bun',
-    color: '#fbf0df'
-  }
+    color: '#fbf0df',
+  },
 } as const;
 
 type PackageManager = keyof typeof PACKAGE_MANAGERS;
@@ -53,54 +52,52 @@ function getLineKey(line: string, index: number): string {
   return `${hash}_${index}`;
 }
 
-// Transform code based on package manager
-function transformPackageInstallCode(code: string, packageManager: PackageManager): string {
+function transformPackageInstallCode(
+  code: string,
+  packageManager: PackageManager
+): string {
   const { command } = PACKAGE_MANAGERS[packageManager];
-  
-  // Replace pnpm dlx with the selected package manager's command
   return code.replace(/pnpm\s+dlx/g, command);
 }
 
-// Get language logo/icon
 function getLanguageLogo(lang: string): string {
   const languageLogos: Record<string, string> = {
-    'typescript': '🔷',
-    'javascript': '🟨',
-    'jsx': '⚛️',
-    'tsx': '⚛️',
-    'python': '🐍',
-    'java': '☕',
-    'cpp': '⚡',
-    'c': '⚡',
-    'csharp': '💜',
-    'go': '🐹',
-    'rust': '🦀',
-    'php': '🐘',
-    'ruby': '💎',
-    'swift': '🍎',
-    'kotlin': '🔷',
-    'scala': '🔴',
-    'html': '🌐',
-    'css': '🎨',
-    'json': '📄',
-    'yaml': '📄',
-    'yml': '📄',
-    'markdown': '📝',
-    'bash': '💻',
-    'shell': '💻',
-    'sh': '💻',
-    'sql': '🗄️',
-    'dockerfile': '🐳',
-    'docker': '🐳',
-    'git': '📚',
+    typescript: '🔷',
+    javascript: '🟨',
+    jsx: '⚛️',
+    tsx: '⚛️',
+    python: '🐍',
+    java: '☕',
+    cpp: '⚡',
+    c: '⚡',
+    csharp: '💜',
+    go: '🐹',
+    rust: '🦀',
+    php: '🐘',
+    ruby: '💎',
+    swift: '🍎',
+    kotlin: '🔷',
+    scala: '🔴',
+    html: '🌐',
+    css: '🎨',
+    json: '📄',
+    yaml: '📄',
+    yml: '📄',
+    markdown: '📝',
+    bash: '💻',
+    shell: '💻',
+    sh: '💻',
+    sql: '🗄️',
+    dockerfile: '🐳',
+    docker: '🐳',
+    git: '📚',
     'package-install': '📦',
     'package.json': '📦',
     'package-lock.json': '📦',
     'pnpm-lock.yaml': '📦',
     'yarn.lock': '📦',
-    'bun.lockb': '📦'
+    'bun.lockb': '📦',
   };
-  
   return languageLogos[lang.toLowerCase()] || '📄';
 }
 
@@ -115,33 +112,31 @@ export default function CodeBlock({
   const [highlightedCode, setHighlightedCode] = useState<string>('');
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [selectedPackageManager, setSelectedPackageManager] = useState<PackageManager>('pnpm');
+  const [selectedPackageManager, setSelectedPackageManager] =
+    useState<PackageManager>('pnpm');
 
-  // Check if this is a package-install code block
   const isPackageInstall = lang === 'package-install';
-
-  // Get the transformed code based on selected package manager
-  const displayCode = isPackageInstall ? transformPackageInstallCode(code, selectedPackageManager) : code;
+  const displayCode = isPackageInstall
+    ? transformPackageInstallCode(code, selectedPackageManager)
+    : code;
 
   useEffect(() => {
     let mounted = true;
-
     const highlightCode = async () => {
       try {
-        const html = await codeToHtml(displayCode, { lang: isPackageInstall ? 'bash' : lang, theme });
+        const html = await codeToHtml(displayCode, {
+          lang: isPackageInstall ? 'bash' : lang,
+          theme,
+        });
         if (mounted) {
           setHighlightedCode(html);
           setLoading(false);
         }
-      } catch (_error) {
-        if (mounted) {
-          setLoading(false);
-        }
+      } catch {
+        if (mounted) setLoading(false);
       }
     };
-
     highlightCode();
-
     return () => {
       mounted = false;
     };
@@ -154,10 +149,9 @@ export default function CodeBlock({
       await navigator.clipboard.writeText(displayCode);
       setCopied(true);
       setTimeout(() => setCopied(false), COPY_FEEDBACK_DURATION_MS);
-    } catch (_error) {}
+    } catch {}
   };
 
-  // Custom style objects using CSS variables from global.css
   const codeBlockStyle: React.CSSProperties = {
     background: 'var(--color-background, #0a0a0a)',
     borderColor: 'var(--color-border, #000)',
@@ -179,7 +173,7 @@ export default function CodeBlock({
     textTransform: 'uppercase',
     letterSpacing: '0.05em',
   };
-  
+
   const lineNumberStyle: React.CSSProperties = {
     background: 'var(--color-muted, #18181b)',
     borderRightColor: 'var(--color-border, #000)',
@@ -192,14 +186,11 @@ export default function CodeBlock({
     background: 'var(--color-muted, #27272a)',
   };
 
-  // Add word wrap styles for code/pre
-  const wordWrapStyle: React.CSSProperties = {
-    whiteSpace: 'pre-wrap',
-    wordBreak: 'break-word',
-    overflowWrap: 'break-word',
+  const codeOverflowStyle: React.CSSProperties = {
+    whiteSpace: 'pre',
+    overflowX: 'auto',
   };
 
-  // Package manager tab styles
   const tabStyle: React.CSSProperties = {
     background: 'var(--color-card, #18181b)',
     borderBottomColor: 'var(--color-border, #000)',
@@ -209,6 +200,9 @@ export default function CodeBlock({
     background: 'var(--color-background, #0a0a0a)',
     borderBottomColor: 'var(--color-primary, #3b82f6)',
   };
+
+  const scrollbarClass =
+    'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-700 scrollbar-track-transparent';
 
   if (loading) {
     return (
@@ -239,8 +233,11 @@ export default function CodeBlock({
 
     if (typeof window === 'undefined') {
       return (
-        <pre className="font-mono" style={wordWrapStyle}>
-          <code className="p-4 font-mono" style={wordWrapStyle}>
+        <pre
+          className={`font-mono ${scrollbarClass}`}
+          style={codeOverflowStyle}
+        >
+          <code className="p-4 font-mono" style={codeOverflowStyle}>
             {displayCode}
           </code>
         </pre>
@@ -252,8 +249,8 @@ export default function CodeBlock({
     const pre = doc.body.querySelector('pre');
     if (!pre) {
       return (
-        <pre style={wordWrapStyle}>
-          <code style={wordWrapStyle}>{displayCode}</code>
+        <pre className={scrollbarClass} style={codeOverflowStyle}>
+          <code style={codeOverflowStyle}>{displayCode}</code>
         </pre>
       );
     }
@@ -290,7 +287,6 @@ export default function CodeBlock({
         domNodeToReact(child, i)
       );
       const props: any = { key };
-      // Copy className and style if present
       if (el.className) props.className = el.className;
       const styleAttr = el.getAttribute('style');
       if (styleAttr)
@@ -298,20 +294,25 @@ export default function CodeBlock({
           ...parseInlineStyle(styleAttr),
           ...(el.tagName.toLowerCase() === 'pre' ||
           el.tagName.toLowerCase() === 'code'
-            ? wordWrapStyle
+            ? codeOverflowStyle
             : {}),
         };
       else if (
         el.tagName.toLowerCase() === 'pre' ||
         el.tagName.toLowerCase() === 'code'
       )
-        props.style = wordWrapStyle;
-      // Copy data- attributes
+        props.style = codeOverflowStyle;
       Array.from(el.attributes).forEach((attr) => {
         if (attr.name.startsWith('data-')) {
           props[attr.name] = attr.value;
         }
       });
+      if (
+        el.tagName.toLowerCase() === 'pre' ||
+        el.tagName.toLowerCase() === 'code'
+      ) {
+        props.className = `${props.className || ''} ${scrollbarClass}`.trim();
+      }
       return React.createElement(el.tagName.toLowerCase(), props, ...children);
     }
 
@@ -323,28 +324,24 @@ export default function CodeBlock({
       className={`relative overflow-hidden rounded border ${className}`}
       style={codeBlockStyle}
     >
-      {/* Package Manager Tabs */}
       {isPackageInstall && (
-        <div className="flex border-b" style={tabStyle}>
-          {Object.entries(PACKAGE_MANAGERS).map(([key, manager]) => (
-            <button
-              key={key}
-              onClick={() => setSelectedPackageManager(key as PackageManager)}
-              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors ${
-                selectedPackageManager === key
-                  ? 'border-b-2 text-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-              style={selectedPackageManager === key ? activeTabStyle : {}}
-            >
-              <span className="text-base">{manager.logo}</span>
-              <span>{manager.name}</span>
-            </button>
-          ))}
+        <div className="flex border-b bg-background" style={tabStyle}>
+          <div className="flex w-full flex-wrap sm:flex-nowrap p-2 gap-1">
+            {Object.entries(PACKAGE_MANAGERS).map(([key, manager]) => (
+              <Button
+                key={key}
+                size="sm"
+                variant={selectedPackageManager === key ? 'outline' : 'ghost'}
+                onClick={() => setSelectedPackageManager(key as PackageManager)}
+                type="button"
+              >
+                <span className="text-xs">{manager.name}</span>
+              </Button>
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Header */}
       <div
         className="flex items-center justify-between border-b px-4 py-2"
         style={headerStyle}
@@ -358,16 +355,17 @@ export default function CodeBlock({
           <div className="flex items-center gap-2">
             <span className="text-base">{getLanguageLogo(lang)}</span>
             <span className="text-xs tracking-wide" style={langStyle}>
-              {isPackageInstall ? `(${PACKAGE_MANAGERS[selectedPackageManager].name})` : lang}
+              {isPackageInstall
+                ? `(${PACKAGE_MANAGERS[selectedPackageManager].name})`
+                : lang}
             </span>
           </div>
         </div>
-
         <Button
           aria-label="Copy code"
-          variant='ghost'
-          size='sm'
-          className='flex items-center justify-center gap-2 opacity-70 hover:opacity-100'
+          variant="ghost"
+          size="sm"
+          className="flex items-center justify-center gap-2 opacity-70 hover:opacity-100"
           onClick={copyToClipboard}
           type="button"
         >
@@ -385,30 +383,8 @@ export default function CodeBlock({
         </Button>
       </div>
 
-      {/* Code content */}
       <div className="relative">
-        {showLineNumbers && (
-          <div
-            className="absolute top-0 bottom-0 left-0 flex w-12 flex-col border-r text-xs"
-            style={lineNumberStyle}
-          >
-            {displayCode.split('\n').map((line, index) => (
-              <div
-                className="px-2 py-0.5 text-right leading-5"
-                key={getLineKey(line, index)}
-              >
-                {index + 1}
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div
-          className={`overflow-x-auto ${showLineNumbers ? 'ml-12' : ''}`}
-          style={{ ...wordWrapStyle }}
-        >
-          {renderHighlightedCode()}
-        </div>
+        <div className={`overflow-x-auto`}>{renderHighlightedCode()}</div>
       </div>
     </div>
   );

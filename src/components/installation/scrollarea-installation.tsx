@@ -5,9 +5,7 @@ export function ScrollAreaInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/scrollarea'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/scrollarea'}
         lang="package-install"
       />
       <p>example usage</p>

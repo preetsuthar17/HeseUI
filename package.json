@@ -3,7 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "description": "A collection of UI components built with BaseUI and styled with HextaUI design system",
-  "keywords": ["ui", "components", "react", "shadcn", "baseui", "hextaui"],
+  "keywords": [
+    "ui",
+    "components",
+    "react",
+    "shadcn",
+    "baseui",
+    "hextaui"
+  ],
   "author": "Preet Suthar <hi@preetsuthar.me>",
   "license": "MIT",
   "shadcn": {
@@ -51,7 +58,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "format": "npx ultracite@latest format",
+    "format": "pnpx @biomejs/biome format --write .",
     "lint": "npx ultracite@latest lint",
     "check": "tsc --noEmit",
     "registry:build": "shadcn build"

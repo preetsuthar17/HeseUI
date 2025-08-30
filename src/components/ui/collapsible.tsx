@@ -58,7 +58,7 @@ const CollapsibleContent = React.forwardRef<
   return (
     <BaseCollapsible.Panel
       className={cn(
-        'mt-2 flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden rounded text-sm transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0',
+        'mt-2 flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden rounded text-sm transition-all data-[ending-style]:h-0 data-[starting-style]:h-0',
         className
       )}
       ref={ref}

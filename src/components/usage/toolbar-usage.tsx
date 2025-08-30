@@ -30,7 +30,7 @@ import { Separator } from '../ui/separator';
 export function ToolbarDemo() {
   return (
     <div className="flex flex-col gap-8">
-      <Toolbar className="w-[600px]">
+      <Toolbar className="w-full max-w-full sm:max-w-[600px] flex flex-wrap gap-2 sm:gap-0">
         <ToggleGroup aria-label="Alignment" className="flex gap-1">
           <ToolbarButton
             aria-label="Align left"
@@ -40,7 +40,6 @@ export function ToolbarDemo() {
           >
             <AlignLeft />
           </ToolbarButton>
-
           <ToolbarButton
             aria-label="Align center"
             className="aspect-square"
@@ -49,7 +48,6 @@ export function ToolbarDemo() {
           >
             <AlignCenter />
           </ToolbarButton>
-
           <ToolbarButton
             aria-label="Align right"
             className="aspect-square"
@@ -59,8 +57,8 @@ export function ToolbarDemo() {
             <AlignRight />
           </ToolbarButton>
         </ToggleGroup>
-        <ToolbarSeparator />
-        <ToolbarGroup aria-label="Numerical format">
+        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarGroup aria-label="Numerical format" className="flex gap-1">
           <ToolbarButton
             aria-label="Format as currency"
             className="min-w-8 px-3"
@@ -74,10 +72,10 @@ export function ToolbarDemo() {
             %
           </ToolbarButton>
         </ToolbarGroup>
-        <ToolbarSeparator />
+        <ToolbarSeparator className="hidden xs:block" />
         <Select defaultValue="Helvetica">
           <ToolbarButton
-            className="min-w-[8rem] justify-between rounded px-3"
+            className="min-w-[7rem] sm:min-w-[8rem] justify-between rounded px-3"
             render={<SelectTrigger className="rounded" />}
             role="combobox"
           >
@@ -114,8 +112,13 @@ export function ToolbarDemo() {
             </SelectPositioner>
           </SelectPortal>
         </Select>
-        <ToolbarSeparator />
-        <ToolbarLink href="#">Edited 51m ago</ToolbarLink>
+        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarLink
+          href="#"
+          className="whitespace-nowrap text-xs sm:text-sm px-2"
+        >
+          Edited 51m ago
+        </ToolbarLink>
       </Toolbar>
       <Separator />
       <ToolbarInstallation />

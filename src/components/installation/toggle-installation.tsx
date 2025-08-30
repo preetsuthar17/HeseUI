@@ -5,9 +5,7 @@ export function ToggleInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/toggle'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/toggle'}
         lang="package-install"
       />
       <p>example usage</p>

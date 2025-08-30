@@ -5,9 +5,7 @@ export function ButtonInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/button'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/button'}
         lang="package-install"
       />
       <p>example usage</p>

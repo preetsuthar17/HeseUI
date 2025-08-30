@@ -5,9 +5,7 @@ export function ToggleGroupInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/toggle-group'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/toggle-group'}
         lang="package-install"
       />
       <p>example usage</p>

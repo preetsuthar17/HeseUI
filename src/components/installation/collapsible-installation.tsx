@@ -5,9 +5,7 @@ export function CollapsibleInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/collapsible'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/collapsible'}
         lang="package-install"
       />
       <p>example usage</p>

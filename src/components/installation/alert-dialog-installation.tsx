@@ -5,9 +5,7 @@ export function AlertDialogInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/alert-dialog'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/alert-dialog'}
         lang="package-install"
       />
       <p>example usage</p>

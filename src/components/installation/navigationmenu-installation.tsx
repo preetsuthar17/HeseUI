@@ -5,9 +5,7 @@ export function NavigationMenuInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/navigation-menu'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/navigation-menu'}
         lang="package-install"
       />
       <p>example usage</p>

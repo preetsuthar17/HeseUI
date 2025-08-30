@@ -5,9 +5,7 @@ export function CheckboxInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/checkbox'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/checkbox'}
         lang="package-install"
       />
       <p>example usage</p>

@@ -16,27 +16,27 @@ import { PopoverInstallation } from '../installation/popover-installation';
 
 export function PopoverDemo() {
   return (
-      <div className="flex flex-col gap-8">
-    <Popover>
-      <PopoverTrigger className="flex size-10 select-none items-center justify-center rounded border border-border bg-background text-foreground ring-offset-background hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent">
-        <BellIcon aria-label="Notifications" />
-      </PopoverTrigger>
-      <PopoverPortal>
-        <PopoverPositioner sideOffset={8}>
-          <PopoverPopup className="origin-[var(--transform-origin)] rounded bg-popover px-6 py-4 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0">
-            <PopoverArrow />
-            <PopoverTitle className="font-medium text-base">
-              Notifications
-            </PopoverTitle>
-            <PopoverDescription className="text-muted-foreground text-sm">
-              You are all caught up. Good job!
-            </PopoverDescription>
-          </PopoverPopup>
-        </PopoverPositioner>
-      </PopoverPortal>
-    </Popover>
-    <Separator/>
-    <PopoverInstallation/>
+    <div className="flex flex-col gap-8">
+      <Popover>
+        <PopoverTrigger className="flex size-10 select-none items-center justify-center rounded border border-border bg-background text-foreground ring-offset-background hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent">
+          <BellIcon aria-label="Notifications" />
+        </PopoverTrigger>
+        <PopoverPortal>
+          <PopoverPositioner sideOffset={8}>
+            <PopoverPopup className="origin-[var(--transform-origin)] rounded bg-popover px-6 py-4 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0">
+              <PopoverArrow />
+              <PopoverTitle className="font-medium text-base">
+                Notifications
+              </PopoverTitle>
+              <PopoverDescription className="text-muted-foreground text-sm">
+                You are all caught up. Good job!
+              </PopoverDescription>
+            </PopoverPopup>
+          </PopoverPositioner>
+        </PopoverPortal>
+      </Popover>
+      <Separator />
+      <PopoverInstallation />
     </div>
   );
 }

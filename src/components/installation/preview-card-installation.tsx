@@ -5,9 +5,7 @@ export function PreviewCardInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/preview-card'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/preview-card'}
         lang="package-install"
       />
       <p>example usage</p>

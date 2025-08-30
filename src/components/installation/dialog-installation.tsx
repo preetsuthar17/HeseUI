@@ -5,9 +5,7 @@ export function DialogInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/dialog'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/dialog'}
         lang="package-install"
       />
       <p>example usage</p>

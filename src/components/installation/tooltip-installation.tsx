@@ -5,9 +5,7 @@ export function TooltipInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/tooltip'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/tooltip'}
         lang="package-install"
       />
       <p>example usage</p>

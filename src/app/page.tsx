@@ -361,12 +361,14 @@ function ScrollToTopButton() {
   return (
     <Button
       type="button"
-      size='icon'
-      variant='default'
+      size="icon"
+      variant="default"
       aria-label="Scroll to top"
       onClick={scrollToTop}
       className={`fixed bottom-6 right-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
-        visible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        visible
+          ? 'opacity-100 pointer-events-auto'
+          : 'opacity-0 pointer-events-none'
       }`}
     >
       <ArrowUp className="size-5" />
@@ -374,12 +376,32 @@ function ScrollToTopButton() {
   );
 }
 
+// Divider component for left and right sides
+function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
+  // position: left or right
+  return (
+    <div
+      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} border-r border-l h-full md:w-6 w-2 z-10 block`}
+      aria-hidden="true"
+    >
+      <div
+        className="h-full w-full"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, #e4e4e7 0 1px, transparent 1px 10px)',
+          opacity: 1,
+        }}
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="mx-auto min-h-dvh max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8">
+    <div className="mx-auto min-h-dvh">
       <MobileNavigation />
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
-        <aside className="sticky top-0 hidden h-[calc(100dvh-1.5rem)] overflow-visible lg:block">
+      <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-[240px_minmax(0,1fr)]">
+        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] overflow-visible lg:block">
           <ScrollArea className="h-full">
             <ScrollAreaViewport className="h-full border-transparent p-4 pb-8 outline-transparent">
               <ScrollAreaContent>
@@ -391,14 +413,18 @@ export default function Home() {
             </ScrollAreaViewport>
           </ScrollArea>
         </aside>
-        <main className="flex min-w-0 flex-col gap-8 py-12 md:p-8 md:text-left">
-          <header className="flex w-full flex-wrap justify-center gap-4 md:justify-between">
+        <main className="relative flex min-w-0 flex-col gap-8 py-12 md:text-left">
+          {/* Left side divider */}
+          <SideDivider position="left" />
+          {/* Right side divider */}
+          <SideDivider position="right" />
+          <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
             <div className="flex flex-col gap-2">
               <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-2xl tracking-tight sm:text-3xl md:justify-start">
                 HeseUI
               </h1>
               <p className="text-muted-foreground text-center">
-                components built on top of Base UI using shadcn design system.
+                Components built on top of Base UI using shadcn design system.
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2">
@@ -414,7 +440,19 @@ export default function Home() {
               </Button>
             </div>
           </header>
-          <Separator />
+          {/* divider */}
+          <div className="relative h-6 border-y">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)',
+                opacity: 1,
+              }}
+            />
+          </div>
+          {/* divider */}
           {componentSections.map(
             ({ id, title, component: SectionComponent }, idx) => (
               <section className="min-w-0" key={id}>
@@ -428,14 +466,33 @@ export default function Home() {
                       <SectionComponent />
                     </LazyMount>
                   </ComponentSection>
-                  {idx < componentSections.length - 1 && <Separator />}
+                  {idx < componentSections.length - 1 && (
+                    <>
+                      {/* divider */}
+                      <div className="relative h-6 border-y">
+                        <div
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 z-0"
+                          style={{
+                            backgroundImage:
+                              'repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)',
+                            opacity: 1,
+                          }}
+                        />
+                      </div>
+                      {/* divider */}
+                    </>
+                  )}
                 </div>
               </section>
             )
           )}
-          <footer>  
-            <p className='text-muted-foreground'>
-              Built with ❤️ and ☕ by <Link href="https://x.com/preetsuthar17" className='underline'>Preet Suthar</Link>
+          <footer className="px-4 md:px-12">
+            <p className="text-muted-foreground">
+              Built with ❤️ and ☕ by{' '}
+              <Link href="https://x.com/preetsuthar17" className="underline">
+                Preet Suthar
+              </Link>
             </p>
           </footer>
         </main>

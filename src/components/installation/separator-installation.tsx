@@ -5,9 +5,7 @@ export function SeparatorInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/separator'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/separator'}
         lang="package-install"
       />
       <p>example usage</p>

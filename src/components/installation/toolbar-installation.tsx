@@ -5,14 +5,14 @@ export function ToolbarInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/toolbar'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/toolbar'}
         lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock
-        code={`import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react';
+        code={`'use client';
+
+import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react';
 import type React from 'react';
 import {
   Select,
@@ -35,91 +35,106 @@ import {
   ToolbarGroup,
   ToolbarLink,
   ToolbarSeparator,
-} from '@/components/ui/toolbar';`}
-        lang="tsx"
-      />
+} from '@/components/ui/toolbar';
+import { ToolbarInstallation } from '../installation/toolbar-installation';
+import { Separator } from '../ui/separator';
 
-      <CodeBlock
-        code={`export function ToolbarDemo() {
+export function ToolbarDemo() {
   return (
-    <Toolbar className="w-[600px]">
-      <ToggleGroup aria-label="Alignment" className="flex gap-1">
-        <ToolbarButton
-          aria-label="Align left"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-left"
+    <div className="flex flex-col gap-8">
+      <Toolbar className="w-full max-w-full sm:max-w-[600px] flex flex-wrap gap-2 sm:gap-0">
+        <ToggleGroup aria-label="Alignment" className="flex gap-1">
+          <ToolbarButton
+            aria-label="Align left"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-left"
+          >
+            <AlignLeft />
+          </ToolbarButton>
+          <ToolbarButton
+            aria-label="Align center"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-center"
+          >
+            <AlignCenter />
+          </ToolbarButton>
+          <ToolbarButton
+            aria-label="Align right"
+            className="aspect-square"
+            render={<ToggleGroupItem />}
+            value="align-right"
+          >
+            <AlignRight />
+          </ToolbarButton>
+        </ToggleGroup>
+        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarGroup aria-label="Numerical format" className="flex gap-1">
+          <ToolbarButton
+            aria-label="Format as currency"
+            className="min-w-8 px-3"
+          >
+            $
+          </ToolbarButton>
+          <ToolbarButton
+            aria-label="Format as percent"
+            className="min-w-8 px-3"
+          >
+            %
+          </ToolbarButton>
+        </ToolbarGroup>
+        <ToolbarSeparator className="hidden xs:block" />
+        <Select defaultValue="Helvetica">
+          <ToolbarButton
+            className="min-w-[7rem] sm:min-w-[8rem] justify-between rounded px-3"
+            render={<SelectTrigger className="rounded" />}
+            role="combobox"
+          >
+            <SelectValue />
+            <SelectIcon>
+              <ChevronUpDownIcon />
+            </SelectIcon>
+          </ToolbarButton>
+          <SelectPortal>
+            <SelectPositioner
+              className="select-none outline-none"
+              sideOffset={8}
+            >
+              <SelectScrollUpArrow />
+              <SelectContent>
+                <SelectItem value="Helvetica">
+                  <SelectItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
+                  </SelectItemIndicator>
+                  <SelectItemText className="col-start-2 text-sm">
+                    Helvetica
+                  </SelectItemText>
+                </SelectItem>
+                <SelectItem value="Arial">
+                  <SelectItemIndicator className="col-start-1">
+                    <CheckIcon className="size-3" />
+                  </SelectItemIndicator>
+                  <SelectItemText className="col-start-2 text-sm">
+                    Arial
+                  </SelectItemText>
+                </SelectItem>
+              </SelectContent>
+              <SelectScrollDownArrow />
+            </SelectPositioner>
+          </SelectPortal>
+        </Select>
+        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarLink
+          href="#"
+          className="whitespace-nowrap text-xs sm:text-sm px-2"
         >
-          <AlignLeft />
-        </ToolbarButton>
-
-        <ToolbarButton
-          aria-label="Align center"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-center"
-        >
-          <AlignCenter />
-        </ToolbarButton>
-
-        <ToolbarButton
-          aria-label="Align right"
-          className="aspect-square"
-          render={<ToggleGroupItem />}
-          value="align-right"
-        >
-          <AlignRight />
-        </ToolbarButton>
-      </ToggleGroup>
-      <ToolbarSeparator />
-      <ToolbarGroup aria-label="Numerical format">
-        <ToolbarButton aria-label="Format as currency" className="min-w-8 px-3">
-          $
-        </ToolbarButton>
-        <ToolbarButton aria-label="Format as percent" className="min-w-8 px-3">
-          %
-        </ToolbarButton>
-      </ToolbarGroup>
-      <ToolbarSeparator />
-      <Select defaultValue="Helvetica">
-        <ToolbarButton
-          className="min-w-[8rem] justify-between rounded px-3"
-          render={<SelectTrigger className="rounded" />}
-          role="combobox"
-        >
-          <SelectValue />
-          <SelectIcon>
-            <ChevronUpDownIcon />
-          </SelectIcon>
-        </ToolbarButton>
-        <SelectPortal>
-          <SelectPositioner className="select-none outline-none" sideOffset={8}>
-            <SelectScrollUpArrow />
-            <SelectContent>
-              <SelectItem value="Helvetica">
-                <SelectItemIndicator className="col-start-1">
-                  <CheckIcon className="size-3" />
-                </SelectItemIndicator>
-                <SelectItemText className="col-start-2 text-sm">
-                  Helvetica
-                </SelectItemText>
-              </SelectItem>
-              <SelectItem value="Arial">
-                <SelectItemIndicator className="col-start-1">
-                  <CheckIcon className="size-3" />
-                </SelectItemIndicator>
-                <SelectItemText className="col-start-2 text-sm">
-                  Arial
-                </SelectItemText>
-              </SelectItem>
-            </SelectContent>
-            <SelectScrollDownArrow />
-          </SelectPositioner>
-        </SelectPortal>
-      </Select>
-      <ToolbarSeparator />
-      <ToolbarLink href="#">Edited 51m ago</ToolbarLink>
-    </Toolbar>
+          Edited 51m ago
+        </ToolbarLink>
+      </Toolbar>
+      <Separator />
+      <ToolbarInstallation />
+    </div>
   );
 }
 

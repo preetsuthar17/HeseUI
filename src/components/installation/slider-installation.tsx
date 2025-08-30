@@ -5,9 +5,7 @@ export function SliderInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/slider'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/slider'}
         lang="package-install"
       />
       <p>example usage</p>

@@ -5,9 +5,7 @@ export function MenubarInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={
-          'pnpm dlx shadcn@latest add @heseui/menubar'
-        }
+        code={'pnpm dlx shadcn@latest add @heseui/menubar'}
         lang="package-install"
       />
       <p>example usage</p>
