@@ -11,6 +11,7 @@ const components = [
   { id: 'accordion', name: 'Accordion' },
   { id: 'alert-dialog', name: 'Alert Dialog' },
   { id: 'avatar', name: 'Avatar' },
+  { id: 'button', name: 'Button' },
   { id: 'checkbox', name: 'Checkbox' },
   { id: 'checkbox-group', name: 'Checkbox Group' },
   { id: 'collapsible', name: 'Collapsible' },
