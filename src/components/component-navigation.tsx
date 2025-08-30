@@ -65,28 +65,48 @@ function NavigationLinks({
   activeSection,
   onItemClick,
   setActiveSection,
-  toggleSection,
   search,
   focusedIndex,
   setFocusedIndex,
+  isScrollingRef,
 }: {
   activeSection: string;
   onItemClick?: () => void;
   setActiveSection: (id: string) => void;
-  toggleSection: (componentId: string) => void;
   search: string;
   focusedIndex: number;
   setFocusedIndex: (index: number) => void;
+  isScrollingRef: React.MutableRefObject<boolean>;
 }) {
   const handleClick = useCallback(
     (componentId: string) => {
       setActiveSection(componentId);
-      toggleSection(componentId);
+      
+      if (typeof window !== 'undefined') {
+        window.history.pushState(null, '', `#${componentId}`);
+      }
+      
+      const element = document.getElementById(componentId);
+      if (element) {
+        isScrollingRef.current = true;
+        const offset = 80; // Adjust this value based on your header height
+        const elementPosition = element.offsetTop - offset;
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        });
+        
+        // Reset scrolling flag after animation
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 1000);
+      }
+      
       if (onItemClick) {
         onItemClick();
       }
     },
-    [setActiveSection, toggleSection, onItemClick]
+    [setActiveSection, onItemClick]
   );
 
   const handleKeyDown = useCallback(
@@ -168,6 +188,7 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const isScrollingRef = useRef(false);
 
   const isMac = useMemo(() => {
     if (typeof window === 'undefined') return false;
@@ -190,21 +211,30 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
     };
   }, [handleGlobalKeyDown]);
 
-  useEffect(() => {
+    useEffect(() => {
     function handleScroll() {
+      // Don't update hash during programmatic scrolling
+      if (isScrollingRef.current) return;
+      
       const sections = document.querySelectorAll('[data-component-section]');
       const scrollPosition = window.scrollY + SCROLL_OFFSET;
-
+      
       for (const section of sections) {
         const element = section as HTMLElement;
         const offsetTop = element.offsetTop;
         const offsetHeight = element.offsetHeight;
-
+        
         if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight
         ) {
-          setActiveSection(element.dataset.componentSection ?? '');
+          const sectionId = element.dataset.componentSection ?? '';
+          setActiveSection(sectionId);
+          
+          // Only update hash if it's different and we're not programmatically scrolling
+          if (typeof window !== 'undefined' && window.location.hash !== `#${sectionId}`) {
+            window.history.replaceState(null, '', `#${sectionId}`);
+          }
           break;
         }
       }
@@ -212,6 +242,28 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
 
     const throttledHandleScroll = throttle(handleScroll, 16);
     window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+    
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const hash = window.location.hash.slice(1);
+      const element = document.getElementById(hash);
+      if (element) {
+        setActiveSection(hash);
+        isScrollingRef.current = true;
+        setTimeout(() => {
+          const offset = 80;
+          const elementPosition = element.offsetTop - offset;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+          // Reset scrolling flag after animation
+          setTimeout(() => {
+            isScrollingRef.current = false;
+          }, 1000);
+        }, 100);
+      }
+    }
+    
     handleScroll();
 
     timeoutRef.current = setTimeout(
@@ -227,23 +279,7 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
     };
   }, []);
 
-  const toggleSection = useCallback((componentId: string) => {
-    const section = document.querySelector(
-      `[data-component-section="${componentId}"]`
-    ) as HTMLElement | null;
-
-    if (!section) return;
-
-    const trigger = section.querySelector(
-      '[data-panel-open], button, h2'
-    ) as HTMLElement | null;
-
-    if (trigger) {
-      trigger.click();
-    }
-
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
+  
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -292,7 +328,7 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
           search={search}
           setActiveSection={setActiveSection}
           setFocusedIndex={setFocusedIndex}
-          toggleSection={toggleSection}
+          isScrollingRef={isScrollingRef}
         />
       )}
     </nav>

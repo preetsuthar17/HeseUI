@@ -22,6 +22,7 @@ export function ComponentSection({
 }: ComponentSectionProps) {
   return (
     <div
+      id={id}
       className="flex flex-col gap-4 px-4 md:px-12"
       data-component-section={id}
     >
