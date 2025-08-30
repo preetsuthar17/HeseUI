@@ -22,7 +22,7 @@ export function TooltipInstallation() {
       <CodeBlock
         code={`export function TooltipDemo() {
   return (
-    <TooltipProvider>
+    <TooltipProvider delay={10}>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="outline">Hover</Button>

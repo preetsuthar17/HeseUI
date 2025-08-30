@@ -17,7 +17,7 @@ import { Separator } from '../ui/separator';
 export function TooltipDemo() {
   return (
     <div className="flex flex-col gap-8">
-      <TooltipProvider>
+      <TooltipProvider delay={10}>
         <div className="flex w-fit rounded border border-border p-0.5">
           <Tooltip>
             <TooltipTrigger aria-label="Bold">
