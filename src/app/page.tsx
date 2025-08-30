@@ -1,6 +1,6 @@
 'use client';
 
-import { Loader, X, ArrowUp } from 'lucide-react';
+import { Loader, ArrowUp } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,7 +18,7 @@ import {
   ScrollAreaThumb,
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function RectanglePlaceholder() {
   return (
@@ -45,6 +45,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/accordion',
+    docs_ref: 'https://base-ui.com/react/components/accordion#api-reference',
+    v0_url: 'https://heseui.com/r/accordion.json',
   },
   {
     id: 'alert-dialog',
@@ -56,6 +59,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/alert-dialog',
+    docs_ref: 'https://base-ui.com/react/components/alert-dialog#api-reference',
+    v0_url: 'https://heseui.com/r/alert-dialog.json',
   },
   {
     id: 'avatar',
@@ -64,6 +70,9 @@ const componentSections = [
       () => import('@/components/usage/avatar-usage').then((m) => m.AvatarDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/avatar',
+    docs_ref: 'https://base-ui.com/react/components/avatar#api-reference',
+    v0_url: 'https://heseui.com/r/avatar.json',
   },
   {
     id: 'button',
@@ -72,6 +81,7 @@ const componentSections = [
       () => import('@/components/usage/button-usage').then((m) => m.ButtonDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    v0_url: 'https://heseui.com/r/button.json',
   },
   {
     id: 'checkbox',
@@ -81,6 +91,9 @@ const componentSections = [
         import('@/components/usage/checkbox-usage').then((m) => m.CheckboxDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/checkbox',
+    docs_ref: 'https://base-ui.com/react/components/checkbox#api-reference',
+    v0_url: 'https://heseui.com/r/checkbox.json',
   },
   {
     id: 'checkbox-group',
@@ -92,6 +105,10 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/checkbox-group',
+    docs_ref:
+      'https://base-ui.com/react/components/checkbox-group#api-reference',
+    v0_url: 'https://heseui.com/r/checkbox-group.json',
   },
   {
     id: 'collapsible',
@@ -103,6 +120,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/collapsible',
+    docs_ref: 'https://base-ui.com/react/components/collapsible#api-reference',
+    v0_url: 'https://heseui.com/r/collapsible.json',
   },
   {
     id: 'context-menu',
@@ -114,6 +134,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/context-menu',
+    docs_ref: 'https://base-ui.com/react/components/context-menu#api-reference',
+    v0_url: 'https://heseui.com/r/context-menu.json',
   },
   {
     id: 'dialog',
@@ -122,6 +145,9 @@ const componentSections = [
       () => import('@/components/usage/dialog-usage').then((m) => m.DialogDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/dialog',
+    docs_ref: 'https://base-ui.com/react/components/dialog#api-reference',
+    v0_url: 'https://heseui.com/r/dialog.json',
   },
   {
     id: 'field',
@@ -130,6 +156,9 @@ const componentSections = [
       () => import('@/components/usage/field-usage').then((m) => m.FieldDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/field',
+    docs_ref: 'https://base-ui.com/react/components/field#api-reference',
+    v0_url: 'https://heseui.com/r/field.json',
   },
   {
     id: 'fieldset',
@@ -139,6 +168,9 @@ const componentSections = [
         import('@/components/usage/fieldset-usage').then((m) => m.FieldsetDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/fieldset',
+    docs_ref: 'https://base-ui.com/react/components/fieldset#api-reference',
+    v0_url: 'https://heseui.com/r/fieldset.json',
   },
   {
     id: 'form',
@@ -147,6 +179,9 @@ const componentSections = [
       () => import('@/components/usage/form-usage').then((m) => m.FormDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/form',
+    docs_ref: 'https://base-ui.com/react/components/form#api-reference',
+    v0_url: 'https://heseui.com/r/form.json',
   },
   {
     id: 'input',
@@ -155,6 +190,9 @@ const componentSections = [
       () => import('@/components/usage/input-usage').then((m) => m.InputDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/input',
+    docs_ref: 'https://base-ui.com/react/components/input#api-reference',
+    v0_url: 'https://heseui.com/r/input.json',
   },
   {
     id: 'menu',
@@ -163,6 +201,9 @@ const componentSections = [
       () => import('@/components/usage/menu-usage').then((m) => m.MenuDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/menu',
+    docs_ref: 'https://base-ui.com/react/components/menu#api-reference',
+    v0_url: 'https://heseui.com/r/menu.json',
   },
   {
     id: 'menubar',
@@ -172,6 +213,9 @@ const componentSections = [
         import('@/components/usage/menubar-usage').then((m) => m.MenubarDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/menubar',
+    docs_ref: 'https://base-ui.com/react/components/menubar#api-reference',
+    v0_url: 'https://heseui.com/r/menubar.json',
   },
   {
     id: 'meter',
@@ -180,6 +224,9 @@ const componentSections = [
       () => import('@/components/usage/meter-usage').then((m) => m.MeterDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/meter',
+    docs_ref: 'https://base-ui.com/react/components/meter#api-reference',
+    v0_url: 'https://heseui.com/r/meter.json',
   },
   {
     id: 'navigationmenu',
@@ -191,6 +238,10 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/navigation-menu',
+    docs_ref:
+      'https://base-ui.com/react/components/navigation-menu#api-reference',
+    v0_url: 'https://heseui.com/r/navigation%20menu.json',
   },
   {
     id: 'popover',
@@ -200,6 +251,9 @@ const componentSections = [
         import('@/components/usage/popover-usage').then((m) => m.PopoverDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/popover',
+    docs_ref: 'https://base-ui.com/react/components/popover#api-reference',
+    v0_url: 'https://heseui.com/r/popover.json',
   },
   {
     id: 'numberfield',
@@ -211,6 +265,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/number-field',
+    docs_ref: 'https://base-ui.com/react/components/number-field#api-reference',
+    v0_url: 'https://heseui.com/r/number%20field.json',
   },
   {
     id: 'previewcard',
@@ -222,6 +279,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/preview-card',
+    docs_ref: 'https://base-ui.com/react/components/preview-card#api-reference',
+    v0_url: 'https://heseui.com/r/preview-card.json',
   },
   {
     id: 'progress',
@@ -231,6 +291,9 @@ const componentSections = [
         import('@/components/usage/progress-usage').then((m) => m.ProgressDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/progress',
+    docs_ref: 'https://base-ui.com/react/components/progress#api-reference',
+    v0_url: 'https://heseui.com/r/progress.json',
   },
   {
     id: 'radio',
@@ -240,6 +303,9 @@ const componentSections = [
         import('@/components/usage/radio-usage').then((m) => m.RadioGroupDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/radio',
+    docs_ref: 'https://base-ui.com/react/components/radio#api-reference',
+    v0_url: 'https://heseui.com/r/radio.json',
   },
   {
     id: 'scrollarea',
@@ -251,6 +317,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/scroll-area',
+    docs_ref: 'https://base-ui.com/react/components/scroll-area#api-reference',
+    v0_url: 'https://heseui.com/r/scrollarea.json',
   },
   {
     id: 'select',
@@ -259,6 +328,9 @@ const componentSections = [
       () => import('@/components/usage/select-usage').then((m) => m.SelectDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/select',
+    docs_ref: 'https://base-ui.com/react/components/select#api-reference',
+    v0_url: 'https://heseui.com/r/select.json',
   },
   {
     id: 'separator',
@@ -270,6 +342,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/separator',
+    docs_ref: 'https://base-ui.com/react/components/separator#api-reference',
+    v0_url: 'https://heseui.com/r/separator.json',
   },
   {
     id: 'slider',
@@ -278,6 +353,9 @@ const componentSections = [
       () => import('@/components/usage/slider-usage').then((m) => m.SliderDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/slider',
+    docs_ref: 'https://base-ui.com/react/components/slider#api-reference',
+    v0_url: 'https://heseui.com/r/slider.json',
   },
   {
     id: 'switch',
@@ -286,6 +364,9 @@ const componentSections = [
       () => import('@/components/usage/switch-usage').then((m) => m.SwitchDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/switch',
+    docs_ref: 'https://base-ui.com/react/components/switch#api-reference',
+    v0_url: 'https://heseui.com/r/switch.json',
   },
   {
     id: 'tabs',
@@ -294,6 +375,9 @@ const componentSections = [
       () => import('@/components/usage/tabs-usage').then((m) => m.TabsDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/tabs',
+    docs_ref: 'https://base-ui.com/react/components/tabs#api-reference',
+    v0_url: 'https://heseui.com/r/tabs.json',
   },
   {
     id: 'toast',
@@ -302,6 +386,9 @@ const componentSections = [
       () => import('@/components/usage/toast-usage').then((m) => m.ToastDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/toast',
+    docs_ref: 'https://base-ui.com/react/components/toast#api-reference',
+    v0_url: 'https://heseui.com/r/toast.json',
   },
   {
     id: 'toggle',
@@ -310,6 +397,9 @@ const componentSections = [
       () => import('@/components/usage/toggle-usage').then((m) => m.ToggleDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/toggle',
+    docs_ref: 'https://base-ui.com/react/components/toggle#api-reference',
+    v0_url: 'https://heseui.com/r/toggle.json',
   },
   {
     id: 'togglegroup',
@@ -321,6 +411,9 @@ const componentSections = [
         ),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/toggle-group',
+    docs_ref: 'https://base-ui.com/react/components/toggle-group#api-reference',
+    v0_url: 'https://heseui.com/r/togglegroup.json',
   },
   {
     id: 'toolbar',
@@ -330,6 +423,9 @@ const componentSections = [
         import('@/components/usage/toolbar-usage').then((m) => m.ToolbarDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/toolbar',
+    docs_ref: 'https://base-ui.com/react/components/toolbar#api-reference',
+    v0_url: 'https://heseui.com/r/toolbar.json',
   },
   {
     id: 'tooltip',
@@ -339,6 +435,9 @@ const componentSections = [
         import('@/components/usage/tooltip-usage').then((m) => m.TooltipDemo),
       { ssr: false, loading: () => <RectanglePlaceholder /> }
     ),
+    api_ref: 'https://base-ui.com/react/components/tooltip',
+    docs_ref: 'https://base-ui.com/react/components/tooltip#api-reference',
+    v0_url: 'https://heseui.com/r/tooltip.json',
   },
 ];
 
@@ -364,10 +463,10 @@ function ScrollToTopButton() {
       variant="default"
       aria-label="Scroll to top"
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
+      className={`fixed bottom-6 right-6 z-50 rounded-full p-2 duration-300 transition-opacity ${
         visible
-          ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
+          ? 'pointer-events-auto opacity-100'
+          : 'pointer-events-none opacity-0'
       }`}
     >
       <ArrowUp className="size-5" />
@@ -378,8 +477,8 @@ function ScrollToTopButton() {
 function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
   return (
     <div
-      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} border-r border-l h-full md:w-6 w-2 z-10 block`}
       aria-hidden="true"
+      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} z-10 block h-full w-2 border-r border-l md:w-6`}
     >
       <div
         className="h-full w-full"
@@ -398,7 +497,7 @@ export default function Home() {
     <div className="mx-auto min-h-dvh">
       <MobileNavigation />
       <div className="relative grid grid-cols-1 gap-2 lg:grid-cols-[270px_minmax(0,1fr)]">
-        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] overflow-visible w-full lg:block">
+        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] w-full overflow-visible lg:block">
           <ScrollArea className="h-full">
             <ScrollAreaViewport className="h-full border-transparent pb-8 outline-transparent">
               <ScrollAreaContent>
@@ -462,10 +561,26 @@ export default function Home() {
             />
           </div>
           {componentSections.map(
-            ({ id, title, component: SectionComponent }, idx) => (
+            (
+              {
+                id,
+                title,
+                component: SectionComponent,
+                api_ref,
+                docs_ref,
+                v0_url,
+              },
+              idx
+            ) => (
               <section className="min-w-0" key={id}>
                 <div className="flex flex-col justify-center gap-8">
-                  <ComponentSection id={id} title={title}>
+                  <ComponentSection
+                    id={id}
+                    title={title}
+                    api_ref={api_ref}
+                    docs_ref={docs_ref}
+                    v0_url={v0_url}
+                  >
                     <LazyMount
                       fallback={
                         <div className="h-48 animate-pulse rounded border border-border" />

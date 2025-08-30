@@ -78,35 +78,41 @@ function NavigationLinks({
   focusedIndex: number;
   setFocusedIndex: (index: number) => void;
 }) {
-  const handleClick = useCallback((componentId: string) => {
-    setActiveSection(componentId);
-    toggleSection(componentId);
-    if (onItemClick) {
-      onItemClick();
-    }
-  }, [setActiveSection, toggleSection, onItemClick]);
+  const handleClick = useCallback(
+    (componentId: string) => {
+      setActiveSection(componentId);
+      toggleSection(componentId);
+      if (onItemClick) {
+        onItemClick();
+      }
+    },
+    [setActiveSection, toggleSection, onItemClick]
+  );
 
-  const handleKeyDown = useCallback((event: React.KeyboardEvent, componentId: string, index: number) => {
-    switch (event.key) {
-      case 'Enter':
-      case ' ':
-        event.preventDefault();
-        handleClick(componentId);
-        break;
-      case 'ArrowDown':
-        event.preventDefault();
-        setFocusedIndex(Math.min(index + 1, filteredComponents.length - 1));
-        break;
-      case 'ArrowUp':
-        event.preventDefault();
-        setFocusedIndex(Math.max(index - 1, 0));
-        break;
-    }
-  }, [handleClick, setFocusedIndex]);
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent, componentId: string, index: number) => {
+      switch (event.key) {
+        case 'Enter':
+        case ' ':
+          event.preventDefault();
+          handleClick(componentId);
+          break;
+        case 'ArrowDown':
+          event.preventDefault();
+          setFocusedIndex(Math.min(index + 1, filteredComponents.length - 1));
+          break;
+        case 'ArrowUp':
+          event.preventDefault();
+          setFocusedIndex(Math.max(index - 1, 0));
+          break;
+      }
+    },
+    [handleClick, setFocusedIndex]
+  );
 
   const filteredComponents = useMemo(() => {
     if (!search.trim()) return components;
-    
+
     const searchLower = search.toLowerCase();
     return components.filter(
       (component) =>
@@ -124,15 +130,19 @@ function NavigationLinks({
   }
 
   return (
-    <div className="flex flex-col gap-1" role="listbox" aria-label="Component navigation">
+    <div
+      className="flex flex-col gap-1"
+      role="listbox"
+      aria-label="Component navigation"
+    >
       {filteredComponents.map((component, index) => (
         <button
           className={`w-full px-2 py-1 text-left text-sm transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
             activeSection === component.id
               ? 'font-medium text-foreground bg-accent'
               : focusedIndex === index
-              ? 'text-foreground bg-accent/50'
-              : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
+                ? 'text-foreground bg-accent/50'
+                : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
           }`}
           key={component.id}
           onClick={() => handleClick(component.id)}
@@ -184,12 +194,12 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
     function handleScroll() {
       const sections = document.querySelectorAll('[data-component-section]');
       const scrollPosition = window.scrollY + SCROLL_OFFSET;
-      
+
       for (const section of sections) {
         const element = section as HTMLElement;
         const offsetTop = element.offsetTop;
         const offsetHeight = element.offsetHeight;
-        
+
         if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight
@@ -221,24 +231,27 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
     const section = document.querySelector(
       `[data-component-section="${componentId}"]`
     ) as HTMLElement | null;
-    
+
     if (!section) return;
-    
+
     const trigger = section.querySelector(
       '[data-panel-open], button, h2'
     ) as HTMLElement | null;
-    
+
     if (trigger) {
       trigger.click();
     }
-    
+
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-    setFocusedIndex(0);
-  }, []);
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearch(e.target.value);
+      setFocusedIndex(0);
+    },
+    []
+  );
 
   const handleSearchKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -291,11 +304,11 @@ function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
-  return function(this: any, ...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
+      setTimeout(() => (inThrottle = false), limit);
     }
   };
 }

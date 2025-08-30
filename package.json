@@ -16,7 +16,7 @@
   "shadcn": {
     "registry": {
       "namespace": "@heseui",
-      "url": "https://base.hextaui.com/r/{name}.json",
+      "url": "https://www.heseui.com/r/{name}.json",
       "components": [
         "accordion",
         "alert-dialog",

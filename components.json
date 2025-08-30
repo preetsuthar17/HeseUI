@@ -19,6 +19,6 @@
   },
   "iconLibrary": "lucide",
   "registries": {
-    "@heseui": "https://base.hextaui.com/r/{name}.json"
+    "@heseui": "https://www.heseui.com/r/{name}.json"
   }
 }
