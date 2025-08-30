@@ -8,7 +8,7 @@ export function SliderInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/slider'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

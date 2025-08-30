@@ -8,7 +8,7 @@ export function NavigationMenuInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/navigation-menu'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

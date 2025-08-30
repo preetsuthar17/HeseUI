@@ -8,7 +8,7 @@ export function ButtonInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/button'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

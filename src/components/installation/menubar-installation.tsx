@@ -8,7 +8,7 @@ export function MenubarInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/menubar'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

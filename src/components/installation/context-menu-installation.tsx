@@ -8,7 +8,7 @@ export function ContextMenuInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/context-menu'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

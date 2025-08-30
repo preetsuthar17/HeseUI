@@ -6,7 +6,7 @@ export function TabsInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={'pnpm dlx shadcn@latest add @heseui/tabs'}
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

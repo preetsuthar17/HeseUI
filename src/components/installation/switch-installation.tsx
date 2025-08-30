@@ -8,7 +8,7 @@ export function SwitchInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/switch'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

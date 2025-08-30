@@ -8,7 +8,7 @@ export function SeparatorInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/separator'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

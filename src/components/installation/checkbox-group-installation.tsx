@@ -8,7 +8,7 @@ export function CheckboxGroupInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/checkbox-group'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

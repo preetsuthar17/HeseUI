@@ -8,7 +8,7 @@ export function TooltipInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/tooltip'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

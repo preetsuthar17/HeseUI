@@ -11,9 +11,12 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { Separator } from '../ui/separator';
+import { PopoverInstallation } from '../installation/popover-installation';
 
 export function PopoverDemo() {
   return (
+      <div className="flex flex-col gap-8">
     <Popover>
       <PopoverTrigger className="flex size-10 select-none items-center justify-center rounded border border-border bg-background text-foreground ring-offset-background hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent">
         <BellIcon aria-label="Notifications" />
@@ -32,6 +35,9 @@ export function PopoverDemo() {
         </PopoverPositioner>
       </PopoverPortal>
     </Popover>
+    <Separator/>
+    <PopoverInstallation/>
+    </div>
   );
 }
 

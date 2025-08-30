@@ -8,7 +8,7 @@ export function PopoverInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/popover'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

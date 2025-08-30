@@ -8,7 +8,7 @@ export function ScrollAreaInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/scrollarea'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

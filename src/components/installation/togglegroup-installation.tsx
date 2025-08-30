@@ -8,7 +8,7 @@ export function ToggleGroupInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/toggle-group'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

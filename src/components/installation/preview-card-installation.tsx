@@ -8,7 +8,7 @@ export function PreviewCardInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/preview-card'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

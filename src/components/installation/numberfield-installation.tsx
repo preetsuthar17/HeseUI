@@ -8,7 +8,7 @@ export function NumberFieldInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/numberfield'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

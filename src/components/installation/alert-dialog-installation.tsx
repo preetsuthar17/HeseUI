@@ -8,7 +8,7 @@ export function AlertDialogInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/alert-dialog'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

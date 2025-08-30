@@ -1,6 +1,6 @@
 'use client';
 
-import { Loader, X } from 'lucide-react';
+import { Loader, X, ArrowUp } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,6 +19,7 @@ import {
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';
 import { Separator } from '@/components/ui/separator';
+import React, { useEffect, useState } from 'react';
 
 function RectanglePlaceholder() {
   return (
@@ -334,6 +335,37 @@ const componentSections = [
   },
 ];
 
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setVisible(window.scrollY > 200);
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  return (
+    <Button
+      type="button"
+      size='icon'
+      variant='default'
+      aria-label="Scroll to top"
+      onClick={scrollToTop}
+      className={`fixed bottom-6 right-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
+        visible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+      }`}
+    >
+      <ArrowUp className="size-5" />
+    </Button>
+  );
+}
+
 export default function Home() {
   return (
     <div className="mx-auto min-h-dvh max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8">
@@ -400,6 +432,7 @@ export default function Home() {
           </footer>
         </main>
       </div>
+      <ScrollToTopButton />
     </div>
   );
 }

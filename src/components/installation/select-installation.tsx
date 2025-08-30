@@ -8,7 +8,7 @@ export function SelectInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/select'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

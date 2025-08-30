@@ -8,7 +8,7 @@ export function AvatarInstallation() {
         code={
           'pnpm dlx shadcn@latest add @heseui/avatar'
         }
-        lang="bash"
+        lang="package-install"
       />
       <p>example usage</p>
       <CodeBlock

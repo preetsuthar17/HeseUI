@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'HeseUI',
+  title: 'Components built on top of Base UI using shadcn design system - HeseUI',
   description:
-    'components built on top of Base UI using shadcn design system.',
+    'Components built on top of Base UI using shadcn design system.',
 };
 
 export default function RootLayout({
