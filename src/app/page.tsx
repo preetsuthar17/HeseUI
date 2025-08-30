@@ -67,6 +67,14 @@ const componentSections = [
     ),
   },
   {
+    id: 'button',
+    title: 'Button',
+    component: dynamic(
+      () => import('@/components/usage/button-usage').then((m) => m.ButtonDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+  },
+  {
     id: 'checkbox',
     title: 'Checkbox',
     component: dynamic(
