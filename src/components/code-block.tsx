@@ -358,7 +358,7 @@ export default function CodeBlock({
           <div className="flex items-center gap-2">
             <span className="text-base">{getLanguageLogo(lang)}</span>
             <span className="text-xs tracking-wide" style={langStyle}>
-              {isPackageInstall ? `${lang} (${PACKAGE_MANAGERS[selectedPackageManager].name})` : lang}
+              {isPackageInstall ? `(${PACKAGE_MANAGERS[selectedPackageManager].name})` : lang}
             </span>
           </div>
         </div>

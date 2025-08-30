@@ -391,13 +391,13 @@ export default function Home() {
             </ScrollAreaViewport>
           </ScrollArea>
         </aside>
-        <main className="flex min-w-0 flex-col gap-8 py-12 text-center md:p-8 md:text-left">
+        <main className="flex min-w-0 flex-col gap-8 py-12 md:p-8 md:text-left">
           <header className="flex w-full flex-wrap justify-center gap-4 md:justify-between">
             <div className="flex flex-col gap-2">
               <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-2xl tracking-tight sm:text-3xl md:justify-start">
                 HeseUI
               </h1>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-center">
                 components built on top of Base UI using shadcn design system.
               </p>
             </div>
