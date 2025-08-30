@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: '/github',
-        destination: 'https://github.com/preetsuthar17/hextaui-x-baseui',
+        destination: 'https://github.com/preetsuthar17/HeseUI',
         permanent: false,
       },
       {
