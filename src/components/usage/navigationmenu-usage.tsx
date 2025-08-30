@@ -148,7 +148,7 @@ function ListItem({
   return (
     <li {...props}>
       <NavigationMenuLink
-        className="block flex flex-col gap-2"
+        className="flex flex-col gap-2"
         render={<NextLink href={href} />}
       >
         <div className="font-medium text-sm leading-none">{title}</div>
