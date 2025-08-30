@@ -167,7 +167,9 @@ export default function CodeBlock({
       >
         {filename && (
           <div className="flex items-center justify-between rounded-t-lg border-b border-border bg-background px-4 py-2">
-            <span className="font-mono text-sm text-muted-foreground">{filename}</span>
+            <span className="font-mono text-sm text-muted-foreground">
+              {filename}
+            </span>
           </div>
         )}
         <div className="p-4">
@@ -254,7 +256,8 @@ export default function CodeBlock({
         el.tagName.toLowerCase() === 'pre' ||
         el.tagName.toLowerCase() === 'code'
       ) {
-        props.className = `${props.className || ''} whitespace-pre overflow-x-auto ${scrollbarClass}`.trim();
+        props.className =
+          `${props.className || ''} whitespace-pre overflow-x-auto ${scrollbarClass}`.trim();
       }
       return React.createElement(el.tagName.toLowerCase(), props, ...children);
     }

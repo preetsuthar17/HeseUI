@@ -548,7 +548,7 @@ export default function Home() {
                   <FaXTwitter className="size-4 shrink-0" />
                 </Link>
               </Button>
-              <ThemeToggle/>
+              <ThemeToggle />
             </div>
           </header>
           <div className="relative h-6 border-y">
