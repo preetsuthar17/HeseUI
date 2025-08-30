@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Checkbox Group",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A group of checkboxes.",
+  "description": "Multiple checkbox inputs.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

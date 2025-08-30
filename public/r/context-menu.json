@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Context Menu",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A contextual menu triggered by right-click.",
+  "description": "Right-click context menus.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Radio",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A radio button component.",
+  "description": "Radio button inputs.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

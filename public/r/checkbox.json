@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Checkbox",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A checkbox component.",
+  "description": "Single checkbox input.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

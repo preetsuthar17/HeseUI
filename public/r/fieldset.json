@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Fieldset",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A fieldset component for grouping form fields.",
+  "description": "Group of form fields.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

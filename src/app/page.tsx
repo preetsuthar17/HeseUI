@@ -424,7 +424,8 @@ export default function Home() {
                 HeseUI
               </h1>
               <p className="text-muted-foreground text-center">
-                Components built on top of Base UI using shadcn design system.
+                Foundation components built on top of Base UI using shadcn
+                design system for modern web applications{' '}
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2">

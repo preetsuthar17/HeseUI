@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Slider",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A slider input component.",
+  "description": "Range slider inputs.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

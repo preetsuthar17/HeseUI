@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Button",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A simple button component.",
+  "description": "Interactive buttons with variants.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

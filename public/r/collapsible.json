@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Collapsible",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A component for showing and hiding content.",
+  "description": "Expandable content areas.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

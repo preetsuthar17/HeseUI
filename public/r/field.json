@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Field",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A form field wrapper component.",
+  "description": "Form field wrapper.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

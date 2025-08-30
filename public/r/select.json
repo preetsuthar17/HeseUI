@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Select",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A select dropdown component.",
+  "description": "Dropdown select inputs.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

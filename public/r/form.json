@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Form",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A form component.",
+  "description": "Form components with validation.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

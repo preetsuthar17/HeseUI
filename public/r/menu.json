@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Menu",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A menu component.",
+  "description": "Dropdown menus.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Meter",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A meter component for displaying progress.",
+  "description": "Progress indicators.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

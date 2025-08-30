@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "navigation menu",
   "type": "registry:ui",
-  "title": "NavigationMenu",
+  "title": "Navigation Menu",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A navigation menu component.",
+  "description": "Navigation components.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

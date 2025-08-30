@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle group",
+  "type": "registry:ui",
+  "title": "Toggle Group",
+  "author": "Preet Suthar <hi@preetsuthar.me>",
+  "description": "Groups of toggle buttons.",
+  "dependencies": ["@base-ui-components/react"],
+  "files": [
+    {
+      "path": "registry/toggle-group/toggle-group.tsx",
+      "content": "'use client';\n\nimport { Toggle as BaseToggle } from '@base-ui-components/react/toggle';\nimport { ToggleGroup as BaseToggleGroup } from '@base-ui-components/react/toggle-group';\nimport React from 'react';\nimport { cn } from '@/lib/utils';\n\ntype ToggleGroupShadcnProps = {\n  variant?: 'default' | 'outline';\n  type?: 'single' | 'multiple';\n};\n\ntype ToggleGroupProps = React.ComponentPropsWithoutRef<typeof BaseToggleGroup> &\n  ToggleGroupShadcnProps;\n\nconst ToggleGroup = React.forwardRef<\n  React.ComponentRef<typeof BaseToggleGroup>,\n  ToggleGroupProps\n>(function ToggleGroupComponent(\n  { className, variant = 'default', type, ...props },\n  ref\n) {\n  const variantCls =\n    variant === 'outline'\n      ? 'rounded border border-border bg-secondary p-0.5'\n      : '';\n  return (\n    <BaseToggleGroup\n      className={cn('flex gap-1', variantCls, className)}\n      ref={ref}\n      toggleMultiple={type === 'multiple'}\n      {...props}\n    />\n  );\n});\nToggleGroup.displayName = 'ToggleGroup';\n\nconst ToggleGroupItem = React.forwardRef<\n  React.ComponentRef<typeof BaseToggle>,\n  React.ComponentPropsWithoutRef<typeof BaseToggle>\n>(function ToggleGroupItemComponent({ className, ...props }, ref) {\n  return (\n    <BaseToggle\n      className={cn(\n        'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded font-medium text-sm outline-none transition-[color,box-shadow] hover:bg-muted hover:text-muted-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[pressed]:bg-accent data-[state=on]:bg-accent data-[pressed]:text-accent-foreground data-[state=on]:text-accent-foreground dark:aria-invalid:ring-destructive/40 [&_svg:not([class*=\"size-\"])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0',\n        className\n      )}\n      ref={ref}\n      {...props}\n    />\n  );\n});\nToggleGroupItem.displayName = 'ToggleGroupItem';\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui"
+    }
+  ]
+}

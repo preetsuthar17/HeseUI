@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "number field",
   "type": "registry:ui",
-  "title": "NumberField",
+  "title": "Number Field",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A number input field component.",
+  "description": "Numeric input fields.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

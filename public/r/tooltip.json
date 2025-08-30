@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Tooltip",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A tooltip component for displaying additional information.",
+  "description": "Hover tooltips.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

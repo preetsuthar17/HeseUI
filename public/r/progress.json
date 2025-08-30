@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Progress",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A progress bar component.",
+  "description": "Progress bars.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

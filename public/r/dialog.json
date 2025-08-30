@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Dialog",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A modal dialog component.",
+  "description": "Modal dialogs.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

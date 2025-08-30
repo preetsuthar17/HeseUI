@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Input",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A text input component.",
+  "description": "Text input fields.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

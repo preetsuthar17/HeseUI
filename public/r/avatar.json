@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Avatar",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "An image element with a fallback for representing a user or entity.",
+  "description": "User profile pictures.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

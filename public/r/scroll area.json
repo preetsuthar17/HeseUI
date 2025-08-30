@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "scrollarea",
+  "name": "scroll area",
   "type": "registry:ui",
   "title": "Scroll Area",
   "author": "Preet Suthar <hi@preetsuthar.me>",

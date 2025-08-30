@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Toolbar",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A toolbar component for grouping actions.",
+  "description": "Toolbar components.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

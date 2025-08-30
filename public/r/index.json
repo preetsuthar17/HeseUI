@@ -2,9 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "index",
   "type": "registry:index",
-  "title": "HextaUI x BaseUI Registry",
+  "title": "HeseUI Registry",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A collection of UI components built with BaseUI and styled with HextaUI design system.",
+  "description": "Foundation components built on top of Base UI using shadcn design system for modern web applications.",
   "components": [
     "accordion",
     "alert-dialog",

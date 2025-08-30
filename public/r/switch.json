@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Switch",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A switch input component.",
+  "description": "Toggle switches.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

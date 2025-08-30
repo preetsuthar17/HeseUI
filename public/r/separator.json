@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Separator",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A separator component for dividing content.",
+  "description": "Visual dividers.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

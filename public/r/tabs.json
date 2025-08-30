@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Tabs",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A tabbed interface component.",
+  "description": "Tabbed content.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {

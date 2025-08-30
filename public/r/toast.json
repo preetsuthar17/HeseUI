@@ -4,7 +4,7 @@
   "type": "registry:ui",
   "title": "Toast",
   "author": "Preet Suthar <hi@preetsuthar.me>",
-  "description": "A toast notification component.",
+  "description": "Notification toasts.",
   "dependencies": ["@base-ui-components/react"],
   "files": [
     {
