@@ -420,12 +420,22 @@ export default function Home() {
           <SideDivider position="right" />
           <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
             <div className="flex flex-col gap-2">
-              <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-2xl tracking-tight sm:text-3xl md:justify-start">
+              <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-3xl tracking-tight sm:text-4xl md:justify-start">
                 HeseUI
               </h1>
-              <p className="text-muted-foreground text-center">
+              <p className="text-muted-foreground text-center text-lg">
                 Foundation components built on top of Base UI using shadcn
-                design system for modern web applications{' '}
+                <span className="inline-flex items-center align-middle w-fit px-2">
+                  <Image
+                    src="https://github.com/shadcn.png"
+                    className="rounded-full inline-block align-middle"
+                    alt="shadcn"
+                    width={24}
+                    height={24}
+                    style={{ verticalAlign: 'middle', display: 'inline', lineHeight: 1 }}
+                  />
+                </span>
+                design system for modern web applications
               </p>
             </div>
             <div className="flex flex-row flex-wrap items-center justify-center gap-2">
