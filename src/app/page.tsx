@@ -19,6 +19,7 @@ import {
   ScrollAreaViewport,
 } from '@/components/ui/scrollarea';
 import { useEffect, useState } from 'react';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 function RectanglePlaceholder() {
   return (
@@ -484,7 +485,7 @@ function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
         className="h-full w-full"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(135deg, #e4e4e7 0 1px, transparent 1px 10px)',
+            'repeating-linear-gradient(135deg, var(--muted) 0 1px, transparent 1px 10px)',
           opacity: 1,
         }}
       />
@@ -536,7 +537,7 @@ export default function Home() {
                 design system for modern web applications
               </p>
             </div>
-            <div className="flex flex-row flex-wrap items-center justify-center gap-2">
+            <div className="flex flex-row flex-wrap items-center justify-center">
               <Button size="icon" variant="ghost">
                 <Link href="/github">
                   <FaGithub className="size-4 shrink-0" />
@@ -547,6 +548,7 @@ export default function Home() {
                   <FaXTwitter className="size-4 shrink-0" />
                 </Link>
               </Button>
+              <ThemeToggle/>
             </div>
           </header>
           <div className="relative h-6 border-y">
@@ -555,7 +557,7 @@ export default function Home() {
               className="pointer-events-none absolute inset-0 z-0"
               style={{
                 backgroundImage:
-                  'repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)',
+                  'repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)',
                 opacity: 1,
               }}
             />
@@ -597,7 +599,7 @@ export default function Home() {
                           className="pointer-events-none absolute inset-0 z-0"
                           style={{
                             backgroundImage:
-                              'repeating-linear-gradient(-45deg, #e4e4e7 0 1px, transparent 1px 10px)',
+                              'repeating-linear-gradient(-45deg, var(--muted) 1px, transparent 1px 10px)',
                             opacity: 1,
                           }}
                         />

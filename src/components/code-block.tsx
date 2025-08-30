@@ -3,6 +3,7 @@
 import { Check, Copy } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { type BundledLanguage, type BundledTheme, codeToHtml } from 'shiki';
+import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 
 type CodeBlockProps = {
@@ -104,16 +105,20 @@ function getLanguageLogo(lang: string): string {
 export default function CodeBlock({
   code,
   lang,
-  theme = 'github-light',
+  theme: propTheme = 'github-light',
   showLineNumbers = false,
   className = '',
   filename,
 }: CodeBlockProps) {
+  const { theme: websiteTheme } = useTheme();
   const [highlightedCode, setHighlightedCode] = useState<string>('');
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(true);
   const [selectedPackageManager, setSelectedPackageManager] =
     useState<PackageManager>('pnpm');
+
+  // Determine the theme to use based on website theme
+  const theme = websiteTheme === 'dark' ? 'github-dark' : 'github-light';
 
   const isPackageInstall = lang === 'package-install';
   const displayCode = isPackageInstall
@@ -152,76 +157,24 @@ export default function CodeBlock({
     } catch {}
   };
 
-  const codeBlockStyle: React.CSSProperties = {
-    background: 'var(--color-background, #0a0a0a)',
-    borderColor: 'var(--color-border, #000)',
-    color: 'var(--color-foreground, #fff)',
-  };
-
-  const headerStyle: React.CSSProperties = {
-    background: 'var(--color-card, #18181b)',
-    borderBottomColor: 'var(--color-border, #000)',
-  };
-
-  const filenameStyle: React.CSSProperties = {
-    color: 'var(--color-muted-foreground, #d1d5db)',
-    fontFamily: 'var(--font-mono, monospace)',
-  };
-
-  const langStyle: React.CSSProperties = {
-    color: 'var(--color-muted-foreground, #6b7280)',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em',
-  };
-
-  const lineNumberStyle: React.CSSProperties = {
-    background: 'var(--color-muted, #18181b)',
-    borderRightColor: 'var(--color-border, #000)',
-    color: 'var(--color-muted-foreground, #6b7280)',
-    fontFamily: 'var(--font-mono, monospace)',
-    fontSize: '0.75rem',
-  };
-
-  const loadingBarStyle: React.CSSProperties = {
-    background: 'var(--color-muted, #27272a)',
-  };
-
-  const codeOverflowStyle: React.CSSProperties = {
-    whiteSpace: 'pre',
-    overflowX: 'auto',
-  };
-
-  const tabStyle: React.CSSProperties = {
-    background: 'var(--color-card, #18181b)',
-    borderBottomColor: 'var(--color-border, #000)',
-  };
-
-  const activeTabStyle: React.CSSProperties = {
-    background: 'var(--color-background, #0a0a0a)',
-    borderBottomColor: 'var(--color-primary, #3b82f6)',
-  };
-
   const scrollbarClass =
-    'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-700 scrollbar-track-transparent';
+    'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-muted-foreground scrollbar-track-transparent';
 
   if (loading) {
     return (
-      <div className={`rounded border ${className}`} style={codeBlockStyle}>
+      <div
+        className={`rounded border bg-background border-border text-foreground ${className}`}
+      >
         {filename && (
-          <div
-            className="flex items-center justify-between rounded-t-lg border-b px-4 py-2"
-            style={headerStyle}
-          >
-            <span className="font-mono text-sm" style={filenameStyle}>
-              {filename}
-            </span>
+          <div className="flex items-center justify-between rounded-t-lg border-b border-border bg-background px-4 py-2">
+            <span className="font-mono text-sm text-muted-foreground">{filename}</span>
           </div>
         )}
         <div className="p-4">
           <div className="animate-pulse">
-            <div className="mb-2 h-4 rounded" style={loadingBarStyle} />
-            <div className="mb-2 h-4 w-3/4 rounded" style={loadingBarStyle} />
-            <div className="h-4 w-1/2 rounded" style={loadingBarStyle} />
+            <div className="mb-2 h-4 rounded bg-muted" />
+            <div className="mb-2 h-4 w-3/4 rounded bg-muted" />
+            <div className="h-4 w-1/2 rounded bg-muted" />
           </div>
         </div>
       </div>
@@ -234,10 +187,9 @@ export default function CodeBlock({
     if (typeof window === 'undefined') {
       return (
         <pre
-          className={`font-mono ${scrollbarClass}`}
-          style={codeOverflowStyle}
+          className={`font-mono whitespace-pre overflow-x-auto ${scrollbarClass}`}
         >
-          <code className="p-4 font-mono" style={codeOverflowStyle}>
+          <code className="p-4 font-mono whitespace-pre text-sm">
             {displayCode}
           </code>
         </pre>
@@ -249,8 +201,8 @@ export default function CodeBlock({
     const pre = doc.body.querySelector('pre');
     if (!pre) {
       return (
-        <pre className={scrollbarClass} style={codeOverflowStyle}>
-          <code style={codeOverflowStyle}>{displayCode}</code>
+        <pre className={`whitespace-pre overflow-x-auto ${scrollbarClass}`}>
+          <code className="whitespace-pre">{displayCode}</code>
         </pre>
       );
     }
@@ -292,16 +244,7 @@ export default function CodeBlock({
       if (styleAttr)
         props.style = {
           ...parseInlineStyle(styleAttr),
-          ...(el.tagName.toLowerCase() === 'pre' ||
-          el.tagName.toLowerCase() === 'code'
-            ? codeOverflowStyle
-            : {}),
         };
-      else if (
-        el.tagName.toLowerCase() === 'pre' ||
-        el.tagName.toLowerCase() === 'code'
-      )
-        props.style = codeOverflowStyle;
       Array.from(el.attributes).forEach((attr) => {
         if (attr.name.startsWith('data-')) {
           props[attr.name] = attr.value;
@@ -311,7 +254,7 @@ export default function CodeBlock({
         el.tagName.toLowerCase() === 'pre' ||
         el.tagName.toLowerCase() === 'code'
       ) {
-        props.className = `${props.className || ''} ${scrollbarClass}`.trim();
+        props.className = `${props.className || ''} whitespace-pre overflow-x-auto ${scrollbarClass}`.trim();
       }
       return React.createElement(el.tagName.toLowerCase(), props, ...children);
     }
@@ -321,17 +264,16 @@ export default function CodeBlock({
 
   return (
     <div
-      className={`relative overflow-hidden rounded border ${className}`}
-      style={codeBlockStyle}
+      className={`relative overflow-hidden rounded border bg-background border-border text-foreground ${className}`}
     >
       {isPackageInstall && (
-        <div className="flex border-b bg-background" style={tabStyle}>
+        <div className="flex border-b border-border bg-background">
           <div className="flex w-full flex-wrap sm:flex-nowrap p-2 gap-1">
             {Object.entries(PACKAGE_MANAGERS).map(([key, manager]) => (
               <Button
                 key={key}
                 size="sm"
-                variant={selectedPackageManager === key ? 'outline' : 'ghost'}
+                variant={selectedPackageManager === key ? 'secondary' : 'ghost'}
                 onClick={() => setSelectedPackageManager(key as PackageManager)}
                 type="button"
               >
@@ -342,19 +284,16 @@ export default function CodeBlock({
         </div>
       )}
 
-      <div
-        className="flex items-center justify-between border-b px-4 py-2"
-        style={headerStyle}
-      >
+      <div className="flex items-center justify-between border-b border-border bg-background px-4 py-2">
         <div className="flex items-center space-x-2">
           {filename && (
-            <span className="font-mono text-sm" style={filenameStyle}>
+            <span className="font-mono text-sm text-muted-foreground">
               {filename}
             </span>
           )}
           <div className="flex items-center gap-2">
             <span className="text-base">{getLanguageLogo(lang)}</span>
-            <span className="text-xs tracking-wide" style={langStyle}>
+            <span className="text-xs tracking-wide uppercase text-muted-foreground">
               {isPackageInstall
                 ? `(${PACKAGE_MANAGERS[selectedPackageManager].name})`
                 : lang}
@@ -384,7 +323,7 @@ export default function CodeBlock({
       </div>
 
       <div className="relative">
-        <div className={`overflow-x-auto`}>{renderHighlightedCode()}</div>
+        <div className="overflow-x-auto">{renderHighlightedCode()}</div>
       </div>
     </div>
   );

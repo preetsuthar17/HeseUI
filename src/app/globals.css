@@ -10,10 +10,13 @@
 pre,
 code {
   font-family: var(--font-geist-mono) !important;
+  background-color: var(--background) !important;
 }
 
 pre {
+  background-color: var(--background) !important;
   padding: 15px;
+  font-size: 14px;
 }
 
 @theme inline {
