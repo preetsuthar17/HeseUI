@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/scrollarea';
 import { useEffect, useState } from 'react';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Separator } from '@/components/ui/separator';
 
 function RectanglePlaceholder() {
   return (
@@ -537,7 +538,7 @@ export default function Home() {
                 design system for modern web applications
               </p>
             </div>
-            <div className="flex flex-row flex-wrap items-center justify-center">
+            <div className="flex flex-row flex-wrap items-center justify-center h-fit gap-1">
               <Button size="icon" variant="ghost">
                 <Link href="/github">
                   <FaGithub className="size-4 shrink-0" />
