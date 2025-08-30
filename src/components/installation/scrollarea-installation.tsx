@@ -6,7 +6,7 @@ export function ScrollAreaInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/scrollarea.json'
+          'pnpm dlx shadcn@latest add @heseui/scrollarea'
         }
         lang="bash"
       />

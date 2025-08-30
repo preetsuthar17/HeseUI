@@ -5,7 +5,7 @@ export function RadioInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/radio.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/radio'}
         lang="bash"
       />
       <p>example usage</p>

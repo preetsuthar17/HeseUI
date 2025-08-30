@@ -5,7 +5,7 @@ export function TabsInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/tabs.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/tabs'}
         lang="bash"
       />
       <p>example usage</p>

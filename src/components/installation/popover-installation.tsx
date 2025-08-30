@@ -6,7 +6,7 @@ export function PopoverInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/popover.json'
+          'pnpm dlx shadcn@latest add @heseui/popover'
         }
         lang="bash"
       />

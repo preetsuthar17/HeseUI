@@ -5,7 +5,7 @@ export function MenuInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/menu.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/menu'}
         lang="bash"
       />
       <p>example usage</p>

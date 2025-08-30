@@ -6,7 +6,7 @@ export function ProgressInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/progress.json'
+          'pnpm dlx shadcn@latest add @heseui/progress'
         }
         lang="bash"
       />

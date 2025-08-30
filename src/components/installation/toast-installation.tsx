@@ -5,7 +5,7 @@ export function ToastInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/toast.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/toast'}
         lang="bash"
       />
       <p>example usage</p>

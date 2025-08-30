@@ -6,7 +6,7 @@ export function CheckboxInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/checkbox.json'
+          'pnpm dlx shadcn@latest add @heseui/checkbox'
         }
         lang="bash"
       />

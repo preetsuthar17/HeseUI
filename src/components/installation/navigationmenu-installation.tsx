@@ -6,7 +6,7 @@ export function NavigationMenuInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/navigation-menu.json'
+          'pnpm dlx shadcn@latest add @heseui/navigation-menu'
         }
         lang="bash"
       />

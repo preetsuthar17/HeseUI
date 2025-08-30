@@ -5,7 +5,7 @@ export function MeterInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/meter.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/meter'}
         lang="bash"
       />
       <p>example usage</p>

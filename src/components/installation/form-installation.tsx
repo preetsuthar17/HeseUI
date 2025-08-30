@@ -5,7 +5,7 @@ export function FormInstallation() {
     <>
       <p>Install component using the CLI</p>
       <CodeBlock
-        code={'pnpm dlx shadcn@latest add http://base.hextaui.com/r/form.json'}
+        code={'pnpm dlx shadcn@latest add @heseui/form'}
         lang="bash"
       />
       <p>example usage</p>

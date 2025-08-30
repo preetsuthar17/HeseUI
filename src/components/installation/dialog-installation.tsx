@@ -6,7 +6,7 @@ export function DialogInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/dialog.json'
+          'pnpm dlx shadcn@latest add @heseui/dialog'
         }
         lang="bash"
       />

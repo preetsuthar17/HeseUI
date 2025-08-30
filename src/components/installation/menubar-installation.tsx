@@ -6,7 +6,7 @@ export function MenubarInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/menubar.json'
+          'pnpm dlx shadcn@latest add @heseui/menubar'
         }
         lang="bash"
       />

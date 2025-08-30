@@ -6,7 +6,7 @@ export function ButtonInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/button.json'
+          'pnpm dlx shadcn@latest add @heseui/button'
         }
         lang="bash"
       />

@@ -6,7 +6,7 @@ export function SelectInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/select.json'
+          'pnpm dlx shadcn@latest add @heseui/select'
         }
         lang="bash"
       />

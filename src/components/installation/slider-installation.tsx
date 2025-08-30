@@ -6,7 +6,7 @@ export function SliderInstallation() {
       <p>Install component using the CLI</p>
       <CodeBlock
         code={
-          'pnpm dlx shadcn@latest add http://base.hextaui.com/r/slider.json'
+          'pnpm dlx shadcn@latest add @heseui/slider'
         }
         lang="bash"
       />
