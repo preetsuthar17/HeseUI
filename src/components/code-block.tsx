@@ -242,6 +242,7 @@ export default function CodeBlock({
         <Button
           aria-label="Copy code"
           variant='ghost'
+          size='sm'
           className='flex items-center justify-center gap-2 opacity-70 hover:opacity-100'
           onClick={copyToClipboard}
           type="button"
