@@ -432,7 +432,11 @@ export default function Home() {
                     alt="shadcn"
                     width={24}
                     height={24}
-                    style={{ verticalAlign: 'middle', display: 'inline', lineHeight: 1 }}
+                    style={{
+                      verticalAlign: 'middle',
+                      display: 'inline',
+                      lineHeight: 1,
+                    }}
                   />
                 </span>
                 design system for modern web applications
