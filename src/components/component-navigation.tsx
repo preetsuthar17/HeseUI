@@ -85,7 +85,7 @@ const NavigationLinks = memo(function NavigationLinks({
     [setFocusedIndex, search]
   );
 
-  const filteredComponents = useMemo(function () {
+  const filteredComponents = useMemo(() => {
     if (!search.trim()) {
       return components;
     }
