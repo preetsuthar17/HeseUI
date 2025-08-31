@@ -1,4 +1,4 @@
-export interface ComponentMetadata {
+export type ComponentMetadata = {
   id: string;
   title: string;
   description: string;
@@ -11,7 +11,7 @@ export interface ComponentMetadata {
     subtitle: string;
     color: string;
   };
-}
+};
 
 export const componentMetadata: Record<string, ComponentMetadata> = {
   accordion: {

@@ -43,7 +43,9 @@ export function LazyMount({
 
   useEffect(() => {
     const element = containerRef.current;
-    if (!element || isVisible) return;
+    if (!element || isVisible) {
+      return;
+    }
 
     const parseMarginPx = (margin: string): number => {
       const first = margin.trim().split(/\s+/)[0] ?? '0px';

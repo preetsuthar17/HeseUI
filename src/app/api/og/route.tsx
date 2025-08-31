@@ -9,17 +9,10 @@ export async function GET(request: Request) {
     const componentId = searchParams.get('component');
 
     if (!componentId) {
-      // For default OG, redirect to the favicon.ico image
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: 'https://www.heseui.com/favicon.ico',
-        },
-      });
+      return Response.redirect('https://www.heseui.com/favicon.ico', 302);
     }
 
     const metadata = getComponentMetadata(componentId);
-
     if (!metadata) {
       return new ImageResponse(
         <div

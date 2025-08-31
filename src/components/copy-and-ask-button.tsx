@@ -15,9 +15,9 @@ import { componentConfigs } from '@/lib/component-configs';
 import { generateComponentMarkdown } from '@/lib/markdown-generator';
 import { Button } from './ui/button';
 
-interface CopyAndAskButtonProps {
+type CopyAndAskButtonProps = {
   componentId: string;
-}
+};
 
 function useComponentLinks(componentId: string) {
   const componentUrl =

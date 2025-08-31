@@ -70,7 +70,7 @@ const NavigationLinks = memo(function NavigationLinks({
   setFocusedIndex: (index: number) => void;
 }) {
   const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent, componentId: string, index: number) => {
+    (event: React.KeyboardEvent, _componentId: string, index: number) => {
       switch (event.key) {
         case 'ArrowDown':
           event.preventDefault();
@@ -82,11 +82,13 @@ const NavigationLinks = memo(function NavigationLinks({
           break;
       }
     },
-    [setFocusedIndex]
+    [setFocusedIndex, search]
   );
 
-  const filteredComponents = useMemo(() => {
-    if (!search.trim()) return components;
+  const filteredComponents = useMemo(function () {
+    if (!search.trim()) {
+      return components;
+    }
 
     const searchLower = search.toLowerCase();
     return components.filter(
@@ -180,7 +182,9 @@ export const ComponentNavigation = memo(function ComponentNavigation() {
   }, [pathname]);
 
   const isMac = useMemo(() => {
-    if (typeof window === 'undefined') return false;
+    if (typeof window === 'undefined') {
+      return false;
+    }
     return navigator.platform.toUpperCase().indexOf('MAC') >= 0;
   }, []);
 

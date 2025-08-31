@@ -44,7 +44,7 @@ const PACKAGE_MANAGERS = {
 
 type PackageManager = keyof typeof PACKAGE_MANAGERS;
 
-function getLineKey(line: string, index: number): string {
+function _getLineKey(line: string, index: number): string {
   let hash = 0;
   for (let i = 0; i < line.length; i++) {
     hash = (hash << 5) - hash + line.charCodeAt(i);
@@ -138,7 +138,9 @@ export default function CodeBlock({
           setLoading(false);
         }
       } catch {
-        if (mounted) setLoading(false);
+        if (mounted) {
+          setLoading(false);
+        }
       }
     };
     highlightCode();
@@ -184,7 +186,9 @@ export default function CodeBlock({
   }
 
   function renderHighlightedCode() {
-    if (!highlightedCode) return null;
+    if (!highlightedCode) {
+      return null;
+    }
 
     if (typeof window === 'undefined') {
       return (
@@ -213,10 +217,14 @@ export default function CodeBlock({
       const styleObject: React.CSSProperties = {};
       styleText.split(';').forEach((declaration) => {
         const [rawProp, rawValue] = declaration.split(':');
-        if (!(rawProp && rawValue)) return;
+        if (!(rawProp && rawValue)) {
+          return;
+        }
         const prop = rawProp.trim();
         const value = rawValue.trim();
-        if (!(prop && value)) return;
+        if (!(prop && value)) {
+          return;
+        }
         const camelProp = prop.replace(/-([a-z])/g, (_m, c: string) =>
           c.toUpperCase()
         );
@@ -241,12 +249,15 @@ export default function CodeBlock({
         domNodeToReact(child, i)
       );
       const props: any = { key };
-      if (el.className) props.className = el.className;
+      if (el.className) {
+        props.className = el.className;
+      }
       const styleAttr = el.getAttribute('style');
-      if (styleAttr)
+      if (styleAttr) {
         props.style = {
           ...parseInlineStyle(styleAttr),
         };
+      }
       Array.from(el.attributes).forEach((attr) => {
         if (attr.name.startsWith('data-')) {
           props[attr.name] = attr.value;
