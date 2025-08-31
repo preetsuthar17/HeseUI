@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 interface ComponentLayoutProps {
   children: React.ReactNode;
-  params: { component: string };
+  params: Promise<{ component: string }>;
 }
 
 export async function generateMetadata({
