@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Input } from './ui/input';
 
 const components = [
@@ -106,26 +106,26 @@ const NavigationLinks = memo(function NavigationLinks({
 
   return (
     <div
+      aria-label="Component navigation"
       className="flex flex-col gap-1"
       role="listbox"
-      aria-label="Component navigation"
     >
       {filteredComponents.map((component, index) => (
         <Link
-          key={component.id}
-          href={`/components/${component.id}`}
-          className={`w-full px-2 py-1 text-left text-sm transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
+          aria-selected={activeComponent === component.id}
+          className={`w-full rounded-sm px-2 py-1 text-left text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
             activeComponent === component.id
-              ? 'font-medium text-foreground bg-accent'
+              ? 'bg-accent font-medium text-foreground'
               : focusedIndex === index
-                ? 'text-foreground bg-accent/50'
-                : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
+                ? 'bg-accent/50 text-foreground'
+                : 'text-muted-foreground hover:bg-accent/30 hover:text-foreground'
           }`}
-          onKeyDown={(e) => handleKeyDown(e, component.id, index)}
+          href={`/components/${component.id}`}
+          key={component.id}
           onFocus={() => setFocusedIndex(index)}
+          onKeyDown={(e) => handleKeyDown(e, component.id, index)}
           onMouseEnter={() => setFocusedIndex(index)}
           role="option"
-          aria-selected={activeComponent === component.id}
           tabIndex={focusedIndex === index ? 0 : -1}
         >
           {component.name}
@@ -149,17 +149,17 @@ const SearchInput = memo(function SearchInput({
   keyboardShortcut: string;
 }) {
   return (
-    <div className="mb-3 relative">
+    <div className="relative mb-3">
       <Input
-        ref={searchInputRef}
         aria-label="Search components"
         onChange={onSearchChange}
         onKeyDown={onSearchKeyDown}
-        placeholder={`Search components...`}
+        placeholder={'Search components...'}
+        ref={searchInputRef}
         type="text"
         value={search}
       />
-      <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground">
+      <kbd className="-translate-y-1/2 pointer-events-none absolute top-1/2 right-2 inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-medium font-mono text-muted-foreground text-xs">
         {keyboardShortcut}
       </kbd>
     </div>
@@ -233,11 +233,11 @@ export const ComponentNavigation = memo(function ComponentNavigation() {
   return (
     <nav className="flex max-h-screen flex-col p-4">
       <SearchInput
-        search={search}
+        keyboardShortcut={keyboardShortcut}
         onSearchChange={handleSearchChange}
         onSearchKeyDown={handleSearchKeyDown}
+        search={search}
         searchInputRef={searchInputRef}
-        keyboardShortcut={keyboardShortcut}
       />
       {isLoading ? (
         <NavigationSkeleton />

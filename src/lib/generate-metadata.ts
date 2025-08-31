@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { getComponentMetadata } from './component-metadata';
 
 export function generateComponentMetadata(componentId: string): Metadata {

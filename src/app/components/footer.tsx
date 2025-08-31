@@ -7,15 +7,15 @@ export const Footer = () => {
         <p className="text-muted-foreground text-sm">
           Built by{' '}
           <Link
+            className="text-primary underline underline-offset-2"
             href="https://x.com/preetsuthar17"
-            className="underline text-primary underline-offset-2"
           >
             Preet Suthar
           </Link>
           . The source code is available on{' '}
           <Link
+            className="text-primary underline underline-offset-2"
             href="https://github.com/preetsuthar17/HeseUI"
-            className="underline text-primary underline-offset-2"
           >
             GitHub
           </Link>
@@ -23,22 +23,22 @@ export const Footer = () => {
         </p>
         <div className="flex items-center gap-2 text-sm">
           <Link
+            className="text-muted-foreground underline-offset-2 transition-colors hover:text-foreground hover:underline"
             href="https://github.com/preetsuthar17"
-            className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-2"
           >
             GitHub
           </Link>
           <span className="text-muted-foreground">//</span>
           <Link
+            className="text-muted-foreground underline-offset-2 transition-colors hover:text-foreground hover:underline"
             href="https://x.com/preetsuthar17"
-            className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-2"
           >
             Twitter
           </Link>
           <span className="text-muted-foreground">//</span>
           <Link
+            className="text-muted-foreground underline-offset-2 transition-colors hover:text-foreground hover:underline"
             href="https://www.preetsuthar.me/sponsor"
-            className="text-muted-foreground hover:text-foreground transition-colors hover:underline underline-offset-2"
           >
             Sponsor
           </Link>

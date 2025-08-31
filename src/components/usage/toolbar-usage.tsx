@@ -30,7 +30,7 @@ import { Separator } from '../ui/separator';
 export function ToolbarDemo() {
   return (
     <div className="flex flex-col gap-8">
-      <Toolbar className="w-full max-w-full sm:max-w-[600px] flex flex-wrap gap-2 sm:gap-0">
+      <Toolbar className="flex w-full max-w-full flex-wrap gap-2 sm:max-w-[600px] sm:gap-0">
         <ToggleGroup aria-label="Alignment" className="flex gap-1">
           <ToolbarButton
             aria-label="Align left"
@@ -57,7 +57,7 @@ export function ToolbarDemo() {
             <AlignRight />
           </ToolbarButton>
         </ToggleGroup>
-        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarSeparator className="xs:block hidden" />
         <ToolbarGroup aria-label="Numerical format" className="flex gap-1">
           <ToolbarButton
             aria-label="Format as currency"
@@ -72,10 +72,10 @@ export function ToolbarDemo() {
             %
           </ToolbarButton>
         </ToolbarGroup>
-        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarSeparator className="xs:block hidden" />
         <Select defaultValue="Helvetica">
           <ToolbarButton
-            className="min-w-[7rem] sm:min-w-[8rem] justify-between rounded px-3"
+            className="min-w-[7rem] justify-between rounded px-3 sm:min-w-[8rem]"
             render={<SelectTrigger className="rounded" />}
             role="combobox"
           >
@@ -112,10 +112,10 @@ export function ToolbarDemo() {
             </SelectPositioner>
           </SelectPortal>
         </Select>
-        <ToolbarSeparator className="hidden xs:block" />
+        <ToolbarSeparator className="xs:block hidden" />
         <ToolbarLink
+          className="whitespace-nowrap px-2 text-xs sm:text-sm"
           href="#"
-          className="whitespace-nowrap text-xs sm:text-sm px-2"
         >
           Edited 51m ago
         </ToolbarLink>

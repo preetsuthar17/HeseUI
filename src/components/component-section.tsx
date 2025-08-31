@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import { OpenInV0Button } from './open-in-v0';
+import { Button } from './ui/button';
 
 type ComponentSectionProps = {
   id: string;
@@ -24,30 +24,30 @@ export function ComponentSection({
 }: ComponentSectionProps) {
   return (
     <div
-      id={id}
       className="flex flex-col gap-4 px-4 md:px-12"
       data-component-section={id}
+      id={id}
     >
       <div className="flex w-full flex-col gap-4 rounded">
-        <div className="flex gap-4 w-full">
-          <div className="flex flex-col gap-4 w-full">
-            <h2 className="rounded bg-secondary px-4 py-3 text-lg text-secondary-foreground w-full">
+        <div className="flex w-full gap-4">
+          <div className="flex w-full flex-col gap-4">
+            <h2 className="w-full rounded bg-secondary px-4 py-3 text-lg text-secondary-foreground">
               {title}
             </h2>
-            <div className="flex gap-4 items-center justify-between w-full">
-              <div className="flex gap-2 items-center">
+            <div className="flex w-full items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
                 <Button
                   aria-label="API Reference"
+                  className="h-8 p-0 text-xs"
+                  size="sm"
                   type="button"
                   variant="secondary"
-                  size="sm"
-                  className="text-xs h-8 p-0"
                 >
                   {api_ref && (
                     <Link
+                      className="flex h-8 items-center justify-center gap-2 px-3"
                       href={api_ref}
                       target="_blank"
-                      className="flex items-center gap-2 h-8 px-3 justify-center"
                     >
                       API Reference <ExternalLink size={15} />
                     </Link>
@@ -55,16 +55,16 @@ export function ComponentSection({
                 </Button>
                 <Button
                   aria-label="Docs"
+                  className="h-8 p-0 text-xs"
+                  size="sm"
                   type="button"
                   variant="secondary"
-                  size="sm"
-                  className="text-xs h-8 p-0"
                 >
                   {docs_ref && (
                     <Link
+                      className="flex h-8 items-center justify-center gap-2 px-3"
                       href={docs_ref}
                       target="_blank"
-                      className="flex items-center gap-2 h-8 px-3 justify-center"
                     >
                       Docs <ExternalLink size={15} />
                     </Link>

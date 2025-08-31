@@ -1,16 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { ArrowLeft, ArrowUp } from 'lucide-react';
 import Link from 'next/link';
-import { ArrowUp, ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 import { ComponentSection } from '@/components/component-section';
+import { CopyAndAskButton } from '@/components/copy-and-ask-button';
 import { LazyMount } from '@/components/lazy-mount';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { FaGithub, FaXTwitter } from 'react-icons/fa6';
+import { Button } from '@/components/ui/button';
 import { componentConfigs } from '@/lib/component-configs';
-import { CopyAndAskButton } from '@/components/copy-and-ask-button';
 import { Footer } from '../footer';
 
 function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
@@ -48,16 +48,16 @@ function ScrollToTopButton() {
 
   return (
     <Button
-      type="button"
-      size="icon"
-      variant="default"
       aria-label="Scroll to top"
-      onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 rounded-full p-2 duration-300 transition-opacity ${
+      className={`fixed right-6 bottom-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
         visible
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0'
       }`}
+      onClick={scrollToTop}
+      size="icon"
+      type="button"
+      variant="default"
     >
       <ArrowUp className="size-5" />
     </Button>
@@ -75,16 +75,16 @@ export function ComponentPageClient() {
     return (
       <div className="mx-auto min-h-dvh">
         <div className="relative flex min-w-0 flex-col gap-8">
-          <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
+          <header className="flex w-full flex-wrap justify-center gap-4 px-4 md:justify-between md:px-12">
             <div className="flex items-center gap-4">
               <Link href="/">
-                <Button variant="ghost" size="icon">
+                <Button size="icon" variant="ghost">
                   <ArrowLeft className="size-4" />
                 </Button>
               </Link>
-              <h1 className="text-2xl font-semibold">Component Not Found</h1>
+              <h1 className="font-semibold text-2xl">Component Not Found</h1>
             </div>
-            <div className="flex flex-row flex-wrap items-center justify-center h-fit gap-1">
+            <div className="flex h-fit flex-row flex-wrap items-center justify-center gap-1">
               <Button size="icon" variant="ghost">
                 <Link href="/github">
                   <FaGithub className="size-4 shrink-0" />
@@ -99,8 +99,8 @@ export function ComponentPageClient() {
             </div>
           </header>
           <main className="px-4 md:px-12">
-            <div className="text-center py-12">
-              <h2 className="text-xl font-medium mb-2">Component not found</h2>
+            <div className="py-12 text-center">
+              <h2 className="mb-2 font-medium text-xl">Component not found</h2>
               <p className="text-muted-foreground">
                 The component "{componentId}" does not exist.
               </p>
@@ -121,17 +121,17 @@ export function ComponentPageClient() {
 
   return (
     <>
-      <div className="relative flex min-w-0 min-h-dvh flex-col gap-8 py-8 max-w-screen-xl mx-auto w-full">
+      <div className="relative mx-auto flex min-h-dvh w-full min-w-0 max-w-screen-xl flex-col gap-8 py-8">
         <SideDivider position="left" />
         <SideDivider position="right" />
-        <header className="px-4 md:px-12 flex w-full flex-wrap justify-between gap-4 ">
+        <header className="flex w-full flex-wrap justify-between gap-4 px-4 md:px-12">
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon">
+            <Button size="icon" variant="ghost">
               <Link href="/">
                 <ArrowLeft className="size-4" />
               </Link>
             </Button>
-            <h1 className="text-2xl font-semibold">{title}</h1>
+            <h1 className="font-semibold text-2xl">{title}</h1>
           </div>
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -152,12 +152,12 @@ export function ComponentPageClient() {
 
         <main className="px-4 md:px-12">
           <ComponentSection
+            api_ref={api_ref}
+            copyButton={<CopyAndAskButton componentId={componentId} />}
+            docs_ref={docs_ref}
             id={componentId}
             title={title}
-            api_ref={api_ref}
-            docs_ref={docs_ref}
             v0_url={v0_url}
-            copyButton={<CopyAndAskButton componentId={componentId} />}
           >
             <LazyMount
               fallback={

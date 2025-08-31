@@ -102,8 +102,8 @@ export async function GET(request: Request) {
           >
             {/* HeseUI Logo */}
             <img
-              src="https://www.heseui.com/favicon.ico"
               alt="HeseUI Logo"
+              src="https://www.heseui.com/favicon.ico"
               style={{
                 width: '120px',
                 height: '120px',
@@ -212,8 +212,8 @@ export async function GET(request: Request) {
         >
           {/* HeseUI Logo */}
           <img
-            src="https://www.heseui.com/favicon.ico"
             alt="HeseUI Logo"
+            src="https://www.heseui.com/favicon.ico"
             style={{
               width: '90px',
               height: '90px',

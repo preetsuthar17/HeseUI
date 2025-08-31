@@ -1,14 +1,14 @@
 'use client';
 
-import { Loader, ArrowUp } from 'lucide-react';
+import { ArrowUp, Loader } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { PersistentSidebar } from '@/components/persistent-sidebar';
-import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Button } from '@/components/ui/button';
 import { Footer } from './components/footer';
 
 const components = [
@@ -150,16 +150,16 @@ function ScrollToTopButton() {
 
   return (
     <Button
-      type="button"
-      size="icon"
-      variant="default"
       aria-label="Scroll to top"
-      onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 z-50 rounded-full p-2 duration-300 transition-opacity ${
+      className={`fixed right-6 bottom-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
         visible
           ? 'pointer-events-auto opacity-100'
           : 'pointer-events-none opacity-0'
       }`}
+      onClick={scrollToTop}
+      size="icon"
+      type="button"
+      variant="default"
     >
       <ArrowUp className="size-5" />
     </Button>
@@ -174,31 +174,31 @@ export default function Home() {
         <main className="relative flex min-w-0 flex-col gap-8 py-8">
           <SideDivider position="left" />
           <SideDivider position="right" />
-          <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
+          <header className="flex w-full flex-wrap justify-center gap-4 px-4 md:justify-between md:px-12">
             <div className="flex flex-col gap-2">
               <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-3xl tracking-tight sm:text-4xl md:justify-start">
                 HeseUI
               </h1>
-              <p className="text-muted-foreground md:text-left text-center text-lg">
+              <p className="text-center text-lg text-muted-foreground md:text-left">
                 Foundation components built on top of Base UI using shadcn
-                <span className="inline-flex items-center align-middle w-fit px-2">
+                <span className="inline-flex w-fit items-center px-2 align-middle">
                   <Image
-                    src="https://github.com/shadcn.png"
-                    className="rounded-full inline-block align-middle"
                     alt="shadcn"
-                    width={24}
+                    className="inline-block rounded-full align-middle"
                     height={24}
+                    src="https://github.com/shadcn.png"
                     style={{
                       verticalAlign: 'middle',
                       display: 'inline',
                       lineHeight: 1,
                     }}
+                    width={24}
                   />
                 </span>
                 design system for modern web applications
               </p>
             </div>
-            <div className="flex flex-row flex-wrap items-center justify-center h-fit gap-1">
+            <div className="flex h-fit flex-row flex-wrap items-center justify-center gap-1">
               <Button size="icon" variant="ghost">
                 <Link href="/github">
                   <FaGithub className="size-4 shrink-0" />
@@ -227,21 +227,21 @@ export default function Home() {
 
           <div className="px-4 md:px-12">
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold mb-2">Components</h2>
+              <h2 className="mb-2 font-semibold text-2xl">Components</h2>
               <p className="text-muted-foreground">
                 Explore our collection of accessible and customizable UI
                 components
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 xl:grid-cols-4">
               {components.map((component) => (
                 <Link
-                  key={component.id}
+                  className="group rounded-lg border border-border p-4 text-center transition-all duration-200 hover:border-primary/50 hover:bg-accent/50"
                   href={`/components/${component.id}`}
-                  className="group p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-accent/50 transition-all duration-200 text-center"
+                  key={component.id}
                 >
-                  <div className="text-sm font-medium group-hover:text-primary transition-colors">
+                  <div className="font-medium text-sm transition-colors group-hover:text-primary">
                     {component.name}
                   </div>
                 </Link>

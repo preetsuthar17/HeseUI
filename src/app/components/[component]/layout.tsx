@@ -1,6 +1,6 @@
-import { generateComponentMetadata } from '@/lib/generate-metadata';
 import type { Metadata } from 'next';
 import { getAllComponentMetadata } from '@/lib/component-metadata';
+import { generateComponentMetadata } from '@/lib/generate-metadata';
 
 interface ComponentLayoutProps {
   children: React.ReactNode;

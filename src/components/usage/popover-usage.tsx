@@ -11,8 +11,8 @@ import {
   PopoverTitle,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { Separator } from '../ui/separator';
 import { PopoverInstallation } from '../installation/popover-installation';
+import { Separator } from '../ui/separator';
 
 export function PopoverDemo() {
   return (

@@ -13,7 +13,7 @@ import { Separator } from '../ui/separator';
 export function TabsDemo() {
   return (
     <div className="flex flex-col gap-8">
-      <Tabs className="max-w-[400px] w-full" defaultValue="overview">
+      <Tabs className="w-full max-w-[400px]" defaultValue="overview">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="projects">Projects</TabsTrigger>

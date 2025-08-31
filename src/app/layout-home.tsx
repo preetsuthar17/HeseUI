@@ -1,5 +1,5 @@
-import { generateHomeMetadata } from '@/lib/generate-metadata';
 import type { Metadata } from 'next';
+import { generateHomeMetadata } from '@/lib/generate-metadata';
 
 export const metadata: Metadata = generateHomeMetadata();
 

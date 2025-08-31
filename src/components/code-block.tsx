@@ -1,9 +1,9 @@
 'use client';
 
 import { Check, Copy } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { type BundledLanguage, type BundledTheme, codeToHtml } from 'shiki';
-import { useTheme } from 'next-themes';
 import { Button } from './ui/button';
 
 type CodeBlockProps = {
@@ -163,11 +163,11 @@ export default function CodeBlock({
   if (loading) {
     return (
       <div
-        className={`rounded border bg-background border-border text-foreground ${className}`}
+        className={`rounded border border-border bg-background text-foreground ${className}`}
       >
         {filename && (
-          <div className="flex items-center justify-between rounded-t-lg border-b border-border bg-background px-4 py-2">
-            <span className="font-mono text-sm text-muted-foreground">
+          <div className="flex items-center justify-between rounded-t-lg border-border border-b bg-background px-4 py-2">
+            <span className="font-mono text-muted-foreground text-sm">
               {filename}
             </span>
           </div>
@@ -189,9 +189,9 @@ export default function CodeBlock({
     if (typeof window === 'undefined') {
       return (
         <pre
-          className={`font-mono whitespace-pre overflow-x-auto ${scrollbarClass}`}
+          className={`overflow-x-auto whitespace-pre font-mono ${scrollbarClass}`}
         >
-          <code className="p-4 font-mono whitespace-pre text-sm">
+          <code className="whitespace-pre p-4 font-mono text-sm">
             {displayCode}
           </code>
         </pre>
@@ -203,7 +203,7 @@ export default function CodeBlock({
     const pre = doc.body.querySelector('pre');
     if (!pre) {
       return (
-        <pre className={`whitespace-pre overflow-x-auto ${scrollbarClass}`}>
+        <pre className={`overflow-x-auto whitespace-pre ${scrollbarClass}`}>
           <code className="whitespace-pre">{displayCode}</code>
         </pre>
       );
@@ -267,18 +267,18 @@ export default function CodeBlock({
 
   return (
     <div
-      className={`relative overflow-hidden rounded border bg-background border-border text-foreground ${className}`}
+      className={`relative overflow-hidden rounded border border-border bg-background text-foreground ${className}`}
     >
       {isPackageInstall && (
-        <div className="flex border-b border-border bg-background">
-          <div className="flex w-full flex-wrap sm:flex-nowrap p-2 gap-1">
+        <div className="flex border-border border-b bg-background">
+          <div className="flex w-full flex-wrap gap-1 p-2 sm:flex-nowrap">
             {Object.entries(PACKAGE_MANAGERS).map(([key, manager]) => (
               <Button
                 key={key}
-                size="sm"
-                variant={selectedPackageManager === key ? 'secondary' : 'ghost'}
                 onClick={() => setSelectedPackageManager(key as PackageManager)}
+                size="sm"
                 type="button"
+                variant={selectedPackageManager === key ? 'secondary' : 'ghost'}
               >
                 <span className="text-xs">{manager.name}</span>
               </Button>
@@ -287,16 +287,16 @@ export default function CodeBlock({
         </div>
       )}
 
-      <div className="flex items-center justify-between border-b border-border bg-background px-4 py-2">
+      <div className="flex items-center justify-between border-border border-b bg-background px-4 py-2">
         <div className="flex items-center space-x-2">
           {filename && (
-            <span className="font-mono text-sm text-muted-foreground">
+            <span className="font-mono text-muted-foreground text-sm">
               {filename}
             </span>
           )}
           <div className="flex items-center gap-2">
             <span className="text-base">{getLanguageLogo(lang)}</span>
-            <span className="text-xs tracking-wide uppercase text-muted-foreground">
+            <span className="text-muted-foreground text-xs uppercase tracking-wide">
               {isPackageInstall
                 ? `(${PACKAGE_MANAGERS[selectedPackageManager].name})`
                 : lang}
@@ -305,11 +305,11 @@ export default function CodeBlock({
         </div>
         <Button
           aria-label="Copy code"
-          variant="ghost"
-          size="sm"
           className="flex items-center justify-center gap-2 opacity-70 hover:opacity-100"
           onClick={copyToClipboard}
+          size="sm"
           type="button"
+          variant="ghost"
         >
           {copied ? (
             <>

@@ -32,9 +32,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
+          data-debug="www.heseui.com"
           defer
           src="https://assets.onedollarstats.com/stonks.js"
-          data-debug="www.heseui.com"
         />
       </head>
       <body
@@ -43,8 +43,8 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
           disableTransitionOnChange
+          enableSystem
         >
           <div className="root">{children}</div>
         </ThemeProvider>

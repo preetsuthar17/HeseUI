@@ -59,7 +59,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "format": "pnpx @biomejs/biome format --write .",
+    "format": "npx ultracite@latest format",
     "lint": "npx ultracite@latest lint",
     "check": "tsc --noEmit",
     "registry:build": "shadcn build"

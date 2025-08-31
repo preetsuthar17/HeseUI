@@ -44,7 +44,7 @@ export function AskAIButton({ componentId }: AskAIButtonProps) {
   return (
     <div className="relative inline-block" ref={dropdownRef}>
       <button
-        className="flex w-fit items-center gap-2 border border-border px-2 py-2 text-primary text-sm hover:bg-secondary rounded"
+        className="flex w-fit items-center gap-2 rounded border border-border px-2 py-2 text-primary text-sm hover:bg-secondary"
         onClick={() => setOpen((v) => !v)}
         type="button"
       >
@@ -54,9 +54,9 @@ export function AskAIButton({ componentId }: AskAIButtonProps) {
         </svg>
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 flex min-w-[160px] flex-col border border-border bg-background p-2 rounded shadow-lg">
+        <div className="absolute z-50 mt-2 flex min-w-[160px] flex-col rounded border border-border bg-background p-2 shadow-lg">
           <a
-            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary rounded"
+            className="flex items-center justify-between gap-2 rounded px-2 py-3 text-sm hover:bg-secondary"
             href={gpt}
             onClick={() => setOpen(false)}
             rel="noreferrer noopener"
@@ -66,7 +66,7 @@ export function AskAIButton({ componentId }: AskAIButtonProps) {
             <ExternalLinkIcon className="size-4" />
           </a>
           <a
-            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary rounded"
+            className="flex items-center justify-between gap-2 rounded px-2 py-3 text-sm hover:bg-secondary"
             href={claude}
             onClick={() => setOpen(false)}
             rel="noreferrer noopener"
@@ -76,7 +76,7 @@ export function AskAIButton({ componentId }: AskAIButtonProps) {
             <ExternalLinkIcon className="size-4" />
           </a>
           <a
-            className="flex items-center justify-between gap-2 px-2 py-3 text-sm hover:bg-secondary rounded"
+            className="flex items-center justify-between gap-2 rounded px-2 py-3 text-sm hover:bg-secondary"
             href={t3}
             onClick={() => setOpen(false)}
             rel="noreferrer noopener"

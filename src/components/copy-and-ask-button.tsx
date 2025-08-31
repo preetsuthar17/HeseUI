@@ -1,18 +1,18 @@
 'use client';
 
+import { Check, ChevronDown, Copy, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from './ui/button';
-import { Copy, Check, ChevronDown, ExternalLink } from 'lucide-react';
-import { generateComponentMarkdown } from '@/lib/markdown-generator';
 import {
   Menu,
   MenuContent,
   MenuItem,
+  MenuPortal,
+  MenuPositioner,
   MenuSeparator,
   MenuTrigger,
-  MenuPositioner,
-  MenuPortal,
 } from '@/components/ui/menu';
+import { generateComponentMarkdown } from '@/lib/markdown-generator';
+import { Button } from './ui/button';
 
 interface CopyAndAskButtonProps {
   componentId: string;
@@ -51,11 +51,11 @@ export function CopyAndAskButton({ componentId }: CopyAndAskButtonProps) {
     <div className="flex items-center gap-2">
       {/* Copy Page Button */}
       <Button
-        onClick={handleCopy}
-        variant="secondary"
-        size="sm"
-        className="text-xs h-8 px-3 flex items-center gap-1"
+        className="flex h-8 items-center gap-1 px-3 text-xs"
         disabled={copied}
+        onClick={handleCopy}
+        size="sm"
+        variant="secondary"
       >
         {copied ? (
           <>
@@ -72,7 +72,7 @@ export function CopyAndAskButton({ componentId }: CopyAndAskButtonProps) {
 
       {/* Ask AI Menu */}
       <Menu>
-        <MenuTrigger className="inline-flex items-center justify-center gap-1 whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-8 px-3">
+        <MenuTrigger className="inline-flex h-8 items-center justify-center gap-1 whitespace-nowrap rounded bg-secondary px-3 font-medium text-secondary-foreground text-sm ring-offset-background transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50">
           Ask AI
           <ChevronDown className="size-3" />
         </MenuTrigger>
@@ -81,10 +81,10 @@ export function CopyAndAskButton({ componentId }: CopyAndAskButtonProps) {
             <MenuContent className="mt-2">
               <MenuItem>
                 <a
+                  className="flex w-full items-center justify-between gap-2"
                   href={gpt}
                   rel="noreferrer noopener"
                   target="_blank"
-                  className="flex items-center justify-between gap-2 w-full"
                 >
                   Ask ChatGPT
                   <ExternalLink className="size-3" />
@@ -92,10 +92,10 @@ export function CopyAndAskButton({ componentId }: CopyAndAskButtonProps) {
               </MenuItem>
               <MenuItem>
                 <a
+                  className="flex w-full items-center justify-between gap-2"
                   href={claude}
                   rel="noreferrer noopener"
                   target="_blank"
-                  className="flex items-center justify-between gap-2 w-full"
                 >
                   Ask Claude
                   <ExternalLink className="size-3" />
@@ -103,10 +103,10 @@ export function CopyAndAskButton({ componentId }: CopyAndAskButtonProps) {
               </MenuItem>
               <MenuItem>
                 <a
+                  className="flex w-full items-center justify-between gap-2"
                   href={t3}
                   rel="noreferrer noopener"
                   target="_blank"
-                  className="flex items-center justify-between gap-2 w-full"
                 >
                   Ask T3 Chat
                   <ExternalLink className="size-3" />

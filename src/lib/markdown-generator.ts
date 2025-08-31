@@ -27,7 +27,7 @@ export function generateComponentMarkdown(componentId: string): string {
 
   turndownService.addRule('codeBlocks', {
     filter: ['pre'],
-    replacement: function (content: string, node: Node) {
+    replacement(content: string, node: Node) {
       const codeElement = (node as HTMLElement).querySelector('code');
       const language =
         codeElement?.className?.match(/language-(\w+)/)?.[1] || 'tsx';
@@ -37,7 +37,7 @@ export function generateComponentMarkdown(componentId: string): string {
 
   turndownService.addRule('buttons', {
     filter: ['button'],
-    replacement: function (content: string, node: Node) {
+    replacement(content: string, node: Node) {
       const link = (node as HTMLElement).querySelector('a');
       if (link) {
         return `[${link.textContent}](${link.href})`;
@@ -48,15 +48,16 @@ export function generateComponentMarkdown(componentId: string): string {
 
   const markdown = turndownService.turndown(componentSection as HTMLElement);
 
-  let result = `---\n`;
+  let result = '---\n';
   result += `title: ${title}\n`;
   result += `subtitle: ${title}\n`;
   result += `description: ${title} component from HeseUI component library.\n`;
-  result += `---\n\n`;
+  result += '---\n\n';
   result += `# ${title}\n\n`;
   result += markdown;
-  result += `\n\n---\n\n`;
-  result += `*Generated from [HeseUI Component Library](https://www.heseui.com)*\n`;
+  result += '\n\n---\n\n';
+  result +=
+    '*Generated from [HeseUI Component Library](https://www.heseui.com)*\n';
 
   return result;
 }
