@@ -1,11 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Input } from './ui/input';
-
-type ComponentNavigationProps = {
-  onItemClick?: () => void;
-};
 
 const components = [
   { id: 'accordion', name: 'Accordion' },
@@ -24,13 +22,13 @@ const components = [
   { id: 'menu', name: 'Menu' },
   { id: 'menubar', name: 'Menubar' },
   { id: 'meter', name: 'Meter' },
-  { id: 'navigationmenu', name: 'Navigation Menu' },
-  { id: 'numberfield', name: 'Number Field' },
+  { id: 'navigation-menu', name: 'Navigation Menu' },
+  { id: 'number-field', name: 'Number Field' },
   { id: 'popover', name: 'Popover' },
-  { id: 'previewcard', name: 'Preview Card' },
+  { id: 'preview-card', name: 'Preview Card' },
   { id: 'progress', name: 'Progress' },
   { id: 'radio', name: 'Radio' },
-  { id: 'scrollarea', name: 'Scroll Area' },
+  { id: 'scroll-area', name: 'Scroll Area' },
   { id: 'select', name: 'Select' },
   { id: 'separator', name: 'Separator' },
   { id: 'slider', name: 'Slider' },
@@ -38,18 +36,17 @@ const components = [
   { id: 'tabs', name: 'Tabs' },
   { id: 'toast', name: 'Toast' },
   { id: 'toggle', name: 'Toggle' },
-  { id: 'togglegroup', name: 'Toggle Group' },
+  { id: 'toggle-group', name: 'Toggle Group' },
   { id: 'toolbar', name: 'Toolbar' },
   { id: 'tooltip', name: 'Tooltip' },
 ] as const;
 
-const SCROLL_OFFSET = 100;
 const SKELETON_COUNT = 30;
 const LOADING_TIMEOUT_MS = 600;
 
-function NavigationSkeleton() {
+const NavigationSkeleton = memo(function NavigationSkeleton() {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
       {Array.from({ length: SKELETON_COUNT }).map((_, idx) => (
         <div
           aria-hidden="true"
@@ -59,64 +56,22 @@ function NavigationSkeleton() {
       ))}
     </div>
   );
-}
+});
 
-function NavigationLinks({
-  activeSection,
-  onItemClick,
-  setActiveSection,
+const NavigationLinks = memo(function NavigationLinks({
+  activeComponent,
   search,
   focusedIndex,
   setFocusedIndex,
-  isScrollingRef,
 }: {
-  activeSection: string;
-  onItemClick?: () => void;
-  setActiveSection: (id: string) => void;
+  activeComponent: string;
   search: string;
   focusedIndex: number;
   setFocusedIndex: (index: number) => void;
-  isScrollingRef: React.MutableRefObject<boolean>;
 }) {
-  const handleClick = useCallback(
-    (componentId: string) => {
-      setActiveSection(componentId);
-
-      if (typeof window !== 'undefined') {
-        window.history.pushState(null, '', `#${componentId}`);
-      }
-
-      const element = document.getElementById(componentId);
-      if (element) {
-        isScrollingRef.current = true;
-        const offset = 80; // Adjust this value based on your header height
-        const elementPosition = element.offsetTop - offset;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: 'smooth',
-        });
-
-        // Reset scrolling flag after animation
-        setTimeout(() => {
-          isScrollingRef.current = false;
-        }, 1000);
-      }
-
-      if (onItemClick) {
-        onItemClick();
-      }
-    },
-    [setActiveSection, onItemClick]
-  );
-
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent, componentId: string, index: number) => {
       switch (event.key) {
-        case 'Enter':
-        case ' ':
-          event.preventDefault();
-          handleClick(componentId);
-          break;
         case 'ArrowDown':
           event.preventDefault();
           setFocusedIndex(Math.min(index + 1, filteredComponents.length - 1));
@@ -127,7 +82,7 @@ function NavigationLinks({
           break;
       }
     },
-    [handleClick, setFocusedIndex]
+    [setFocusedIndex]
   );
 
   const filteredComponents = useMemo(() => {
@@ -156,46 +111,82 @@ function NavigationLinks({
       aria-label="Component navigation"
     >
       {filteredComponents.map((component, index) => (
-        <button
+        <Link
+          key={component.id}
+          href={`/components/${component.id}`}
           className={`w-full px-2 py-1 text-left text-sm transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
-            activeSection === component.id
+            activeComponent === component.id
               ? 'font-medium text-foreground bg-accent'
               : focusedIndex === index
                 ? 'text-foreground bg-accent/50'
                 : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
           }`}
-          key={component.id}
-          onClick={() => handleClick(component.id)}
           onKeyDown={(e) => handleKeyDown(e, component.id, index)}
           onFocus={() => setFocusedIndex(index)}
           onMouseEnter={() => setFocusedIndex(index)}
-          type="button"
           role="option"
-          aria-selected={activeSection === component.id}
+          aria-selected={activeComponent === component.id}
           tabIndex={focusedIndex === index ? 0 : -1}
         >
           {component.name}
-        </button>
+        </Link>
       ))}
     </div>
   );
-}
+});
 
-export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
-  const [activeSection, setActiveSection] = useState('');
+const SearchInput = memo(function SearchInput({
+  search,
+  onSearchChange,
+  onSearchKeyDown,
+  searchInputRef,
+  keyboardShortcut,
+}: {
+  search: string;
+  onSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearchKeyDown: (e: React.KeyboardEvent) => void;
+  searchInputRef: React.RefObject<HTMLInputElement | null>;
+  keyboardShortcut: string;
+}) {
+  return (
+    <div className="mb-3 relative">
+      <Input
+        ref={searchInputRef}
+        aria-label="Search components"
+        onChange={onSearchChange}
+        onKeyDown={onSearchKeyDown}
+        placeholder={`Search components...`}
+        type="text"
+        value={search}
+      />
+      <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground">
+        {keyboardShortcut}
+      </kbd>
+    </div>
+  );
+});
+
+export const ComponentNavigation = memo(function ComponentNavigation() {
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [focusedIndex, setFocusedIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const isScrollingRef = useRef(false);
+  const pathname = usePathname();
+
+  const activeComponent = useMemo(() => {
+    const match = pathname.match(/\/components\/(.+)/);
+    return match ? match[1] : '';
+  }, [pathname]);
 
   const isMac = useMemo(() => {
     if (typeof window === 'undefined') return false;
     return navigator.platform.toUpperCase().indexOf('MAC') >= 0;
   }, []);
 
-  const keyboardShortcut = isMac ? '⌘K' : 'Ctrl+K';
+  const keyboardShortcut = useMemo(() => {
+    return isMac ? '⌘K' : 'Ctrl+K';
+  }, [isMac]);
 
   const handleGlobalKeyDown = useCallback((event: KeyboardEvent) => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
@@ -212,70 +203,12 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
   }, [handleGlobalKeyDown]);
 
   useEffect(() => {
-    function handleScroll() {
-      // Don't update hash during programmatic scrolling
-      if (isScrollingRef.current) return;
-
-      const sections = document.querySelectorAll('[data-component-section]');
-      const scrollPosition = window.scrollY + SCROLL_OFFSET;
-
-      for (const section of sections) {
-        const element = section as HTMLElement;
-        const offsetTop = element.offsetTop;
-        const offsetHeight = element.offsetHeight;
-
-        if (
-          scrollPosition >= offsetTop &&
-          scrollPosition < offsetTop + offsetHeight
-        ) {
-          const sectionId = element.dataset.componentSection ?? '';
-          setActiveSection(sectionId);
-
-          // Only update hash if it's different and we're not programmatically scrolling
-          if (
-            typeof window !== 'undefined' &&
-            window.location.hash !== `#${sectionId}`
-          ) {
-            window.history.replaceState(null, '', `#${sectionId}`);
-          }
-          break;
-        }
-      }
-    }
-
-    const throttledHandleScroll = throttle(handleScroll, 16);
-    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
-
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const hash = window.location.hash.slice(1);
-      const element = document.getElementById(hash);
-      if (element) {
-        setActiveSection(hash);
-        isScrollingRef.current = true;
-        setTimeout(() => {
-          const offset = 80;
-          const elementPosition = element.offsetTop - offset;
-          window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth',
-          });
-          // Reset scrolling flag after animation
-          setTimeout(() => {
-            isScrollingRef.current = false;
-          }, 1000);
-        }, 100);
-      }
-    }
-
-    handleScroll();
-
     timeoutRef.current = setTimeout(
       () => setIsLoading(false),
       LOADING_TIMEOUT_MS
     );
 
     return () => {
-      window.removeEventListener('scroll', throttledHandleScroll);
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
@@ -299,53 +232,23 @@ export function ComponentNavigation({ onItemClick }: ComponentNavigationProps) {
 
   return (
     <nav className="flex max-h-screen flex-col p-4">
-      <div className="mb-3 relative">
-        <Input
-          ref={searchInputRef}
-          aria-label="Search components"
-          onChange={handleSearchChange}
-          onKeyDown={handleSearchKeyDown}
-          placeholder={`Search components...`}
-          type="text"
-          value={search}
-        />
-        <kbd className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground">
-          {isMac ? (
-            <>
-              <span className="text-xs">⌘</span>K
-            </>
-          ) : (
-            <>Ctrl+K</>
-          )}
-        </kbd>
-      </div>
+      <SearchInput
+        search={search}
+        onSearchChange={handleSearchChange}
+        onSearchKeyDown={handleSearchKeyDown}
+        searchInputRef={searchInputRef}
+        keyboardShortcut={keyboardShortcut}
+      />
       {isLoading ? (
         <NavigationSkeleton />
       ) : (
         <NavigationLinks
-          activeSection={activeSection}
+          activeComponent={activeComponent}
           focusedIndex={focusedIndex}
-          onItemClick={onItemClick}
           search={search}
-          setActiveSection={setActiveSection}
           setFocusedIndex={setFocusedIndex}
-          isScrollingRef={isScrollingRef}
         />
       )}
     </nav>
   );
-}
-
-function throttle<T extends (...args: any[]) => any>(
-  func: T,
-  limit: number
-): (...args: Parameters<T>) => void {
-  let inThrottle: boolean;
-  return function (this: any, ...args: Parameters<T>) {
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-}
+});

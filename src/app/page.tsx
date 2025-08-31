@@ -1,447 +1,136 @@
 'use client';
 
 import { Loader, ArrowUp } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { ComponentNavigation } from '@/components/component-navigation';
-import { ComponentSection } from '@/components/component-section';
-import { LazyMount } from '@/components/lazy-mount';
-import { MobileNavigation } from '@/components/mobile-navigation';
+import { PersistentSidebar } from '@/components/persistent-sidebar';
 import { Button } from '@/components/ui/button';
-import {
-  ScrollArea,
-  ScrollAreaContent,
-  ScrollAreaScrollbar,
-  ScrollAreaThumb,
-  ScrollAreaViewport,
-} from '@/components/ui/scrollarea';
 import { useEffect, useState } from 'react';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { Separator } from '@/components/ui/separator';
 
-function RectanglePlaceholder() {
-  return (
-    <div
-      className="flex h-48 w-full animate-pulse items-center justify-center rounded"
-      style={{
-        minHeight: '12rem',
-        maxWidth: '100%',
-      }}
-    >
-      <Loader className="size-4 animate-spin" />
-    </div>
-  );
-}
-
-const componentSections = [
+const components = [
   {
     id: 'accordion',
-    title: 'Accordion',
-    component: dynamic(
-      () =>
-        import('@/components/usage/accordion-usage').then(
-          (m) => m.AccordionDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/accordion',
-    docs_ref: 'https://base-ui.com/react/components/accordion#api-reference',
-    v0_url: 'https://heseui.com/r/accordion.json',
+    name: 'Accordion',
+    description: 'Collapsible content sections',
   },
   {
     id: 'alert-dialog',
-    title: 'Alert Dialog',
-    component: dynamic(
-      () =>
-        import('@/components/usage/alertdialog-usage').then(
-          (m) => m.AlertDialogDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/alert-dialog',
-    docs_ref: 'https://base-ui.com/react/components/alert-dialog#api-reference',
-    v0_url: 'https://heseui.com/r/alert-dialog.json',
+    name: 'Alert Dialog',
+    description: 'Modal dialogs for important actions',
   },
   {
     id: 'avatar',
-    title: 'Avatar',
-    component: dynamic(
-      () => import('@/components/usage/avatar-usage').then((m) => m.AvatarDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/avatar',
-    docs_ref: 'https://base-ui.com/react/components/avatar#api-reference',
-    v0_url: 'https://heseui.com/r/avatar.json',
+    name: 'Avatar',
+    description: 'User profile images and fallbacks',
   },
   {
     id: 'button',
-    title: 'Button',
-    component: dynamic(
-      () => import('@/components/usage/button-usage').then((m) => m.ButtonDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    v0_url: 'https://heseui.com/r/button.json',
+    name: 'Button',
+    description: 'Interactive buttons with various styles',
   },
   {
     id: 'checkbox',
-    title: 'Checkbox',
-    component: dynamic(
-      () =>
-        import('@/components/usage/checkbox-usage').then((m) => m.CheckboxDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/checkbox',
-    docs_ref: 'https://base-ui.com/react/components/checkbox#api-reference',
-    v0_url: 'https://heseui.com/r/checkbox.json',
+    name: 'Checkbox',
+    description: 'Single selection controls',
   },
   {
     id: 'checkbox-group',
-    title: 'Checkbox Group',
-    component: dynamic(
-      () =>
-        import('@/components/usage/checkbox-group-usage').then(
-          (m) => m.CheckboxGroupDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/checkbox-group',
-    docs_ref:
-      'https://base-ui.com/react/components/checkbox-group#api-reference',
-    v0_url: 'https://heseui.com/r/checkbox-group.json',
+    name: 'Checkbox Group',
+    description: 'Multiple selection controls',
   },
   {
     id: 'collapsible',
-    title: 'Collapsible',
-    component: dynamic(
-      () =>
-        import('@/components/usage/collapsible-usage').then(
-          (m) => m.CollapsibleDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/collapsible',
-    docs_ref: 'https://base-ui.com/react/components/collapsible#api-reference',
-    v0_url: 'https://heseui.com/r/collapsible.json',
+    name: 'Collapsible',
+    description: 'Expandable content areas',
   },
   {
     id: 'context-menu',
-    title: 'Context Menu',
-    component: dynamic(
-      () =>
-        import('@/components/usage/context-menu-usage').then(
-          (m) => m.ContextMenuDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/context-menu',
-    docs_ref: 'https://base-ui.com/react/components/context-menu#api-reference',
-    v0_url: 'https://heseui.com/r/context-menu.json',
+    name: 'Context Menu',
+    description: 'Right-click context menus',
   },
-  {
-    id: 'dialog',
-    title: 'Dialog',
-    component: dynamic(
-      () => import('@/components/usage/dialog-usage').then((m) => m.DialogDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/dialog',
-    docs_ref: 'https://base-ui.com/react/components/dialog#api-reference',
-    v0_url: 'https://heseui.com/r/dialog.json',
-  },
+  { id: 'dialog', name: 'Dialog', description: 'Modal dialogs and overlays' },
   {
     id: 'field',
-    title: 'Field',
-    component: dynamic(
-      () => import('@/components/usage/field-usage').then((m) => m.FieldDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/field',
-    docs_ref: 'https://base-ui.com/react/components/field#api-reference',
-    v0_url: 'https://heseui.com/r/field.json',
+    name: 'Field',
+    description: 'Form field containers with labels',
+  },
+  { id: 'fieldset', name: 'Fieldset', description: 'Grouped form fields' },
+  { id: 'form', name: 'Form', description: 'Form handling and validation' },
+  { id: 'input', name: 'Input', description: 'Text input fields' },
+  { id: 'menu', name: 'Menu', description: 'Dropdown menu components' },
+  { id: 'menubar', name: 'Menubar', description: 'Horizontal menu bars' },
+  { id: 'meter', name: 'Meter', description: 'Progress indicators and gauges' },
+  {
+    id: 'navigation-menu',
+    name: 'Navigation Menu',
+    description: 'Multi-level navigation',
   },
   {
-    id: 'fieldset',
-    title: 'Fieldset',
-    component: dynamic(
-      () =>
-        import('@/components/usage/fieldset-usage').then((m) => m.FieldsetDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/fieldset',
-    docs_ref: 'https://base-ui.com/react/components/fieldset#api-reference',
-    v0_url: 'https://heseui.com/r/fieldset.json',
+    id: 'number-field',
+    name: 'Number Field',
+    description: 'Numeric input controls',
   },
+  { id: 'popover', name: 'Popover', description: 'Floating content overlays' },
   {
-    id: 'form',
-    title: 'Form',
-    component: dynamic(
-      () => import('@/components/usage/form-usage').then((m) => m.FormDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/form',
-    docs_ref: 'https://base-ui.com/react/components/form#api-reference',
-    v0_url: 'https://heseui.com/r/form.json',
-  },
-  {
-    id: 'input',
-    title: 'Input',
-    component: dynamic(
-      () => import('@/components/usage/input-usage').then((m) => m.InputDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/input',
-    docs_ref: 'https://base-ui.com/react/components/input#api-reference',
-    v0_url: 'https://heseui.com/r/input.json',
-  },
-  {
-    id: 'menu',
-    title: 'Menu',
-    component: dynamic(
-      () => import('@/components/usage/menu-usage').then((m) => m.MenuDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/menu',
-    docs_ref: 'https://base-ui.com/react/components/menu#api-reference',
-    v0_url: 'https://heseui.com/r/menu.json',
-  },
-  {
-    id: 'menubar',
-    title: 'Menubar',
-    component: dynamic(
-      () =>
-        import('@/components/usage/menubar-usage').then((m) => m.MenubarDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/menubar',
-    docs_ref: 'https://base-ui.com/react/components/menubar#api-reference',
-    v0_url: 'https://heseui.com/r/menubar.json',
-  },
-  {
-    id: 'meter',
-    title: 'Meter',
-    component: dynamic(
-      () => import('@/components/usage/meter-usage').then((m) => m.MeterDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/meter',
-    docs_ref: 'https://base-ui.com/react/components/meter#api-reference',
-    v0_url: 'https://heseui.com/r/meter.json',
-  },
-  {
-    id: 'navigationmenu',
-    title: 'Navigation Menu',
-    component: dynamic(
-      () =>
-        import('@/components/usage/navigationmenu-usage').then(
-          (m) => m.NavigationMenuDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/navigation-menu',
-    docs_ref:
-      'https://base-ui.com/react/components/navigation-menu#api-reference',
-    v0_url: 'https://heseui.com/r/navigation%20menu.json',
-  },
-  {
-    id: 'popover',
-    title: 'Popover',
-    component: dynamic(
-      () =>
-        import('@/components/usage/popover-usage').then((m) => m.PopoverDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/popover',
-    docs_ref: 'https://base-ui.com/react/components/popover#api-reference',
-    v0_url: 'https://heseui.com/r/popover.json',
-  },
-  {
-    id: 'numberfield',
-    title: 'Number Field',
-    component: dynamic(
-      () =>
-        import('@/components/usage/numberfield-usage').then(
-          (m) => m.NumberFieldDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/number-field',
-    docs_ref: 'https://base-ui.com/react/components/number-field#api-reference',
-    v0_url: 'https://heseui.com/r/number%20field.json',
-  },
-  {
-    id: 'previewcard',
-    title: 'Preview Card',
-    component: dynamic(
-      () =>
-        import('@/components/usage/preview-card-usage').then(
-          (m) => m.PreviewCardDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/preview-card',
-    docs_ref: 'https://base-ui.com/react/components/preview-card#api-reference',
-    v0_url: 'https://heseui.com/r/preview-card.json',
+    id: 'preview-card',
+    name: 'Preview Card',
+    description: 'Content preview cards',
   },
   {
     id: 'progress',
-    title: 'Progress',
-    component: dynamic(
-      () =>
-        import('@/components/usage/progress-usage').then((m) => m.ProgressDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/progress',
-    docs_ref: 'https://base-ui.com/react/components/progress#api-reference',
-    v0_url: 'https://heseui.com/r/progress.json',
+    name: 'Progress',
+    description: 'Progress bars and indicators',
   },
+  { id: 'radio', name: 'Radio', description: 'Single choice selection' },
   {
-    id: 'radio',
-    title: 'Radio',
-    component: dynamic(
-      () =>
-        import('@/components/usage/radio-usage').then((m) => m.RadioGroupDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/radio',
-    docs_ref: 'https://base-ui.com/react/components/radio#api-reference',
-    v0_url: 'https://heseui.com/r/radio.json',
+    id: 'scroll-area',
+    name: 'Scroll Area',
+    description: 'Custom scrollable areas',
   },
-  {
-    id: 'scrollarea',
-    title: 'Scroll Area',
-    component: dynamic(
-      () =>
-        import('@/components/usage/scrollarea-usage').then(
-          (m) => m.ScrollAreaDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/scroll-area',
-    docs_ref: 'https://base-ui.com/react/components/scroll-area#api-reference',
-    v0_url: 'https://heseui.com/r/scrollarea.json',
-  },
-  {
-    id: 'select',
-    title: 'Select',
-    component: dynamic(
-      () => import('@/components/usage/select-usage').then((m) => m.SelectDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/select',
-    docs_ref: 'https://base-ui.com/react/components/select#api-reference',
-    v0_url: 'https://heseui.com/r/select.json',
-  },
+  { id: 'select', name: 'Select', description: 'Dropdown selection controls' },
   {
     id: 'separator',
-    title: 'Separator',
-    component: dynamic(
-      () =>
-        import('@/components/usage/separator-usage').then(
-          (m) => m.SeparatorDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/separator',
-    docs_ref: 'https://base-ui.com/react/components/separator#api-reference',
-    v0_url: 'https://heseui.com/r/separator.json',
+    name: 'Separator',
+    description: 'Visual dividers and separators',
   },
+  { id: 'slider', name: 'Slider', description: 'Range selection controls' },
+  { id: 'switch', name: 'Switch', description: 'Toggle switch controls' },
+  { id: 'tabs', name: 'Tabs', description: 'Tabbed content organization' },
+  { id: 'toast', name: 'Toast', description: 'Notification messages' },
+  { id: 'toggle', name: 'Toggle', description: 'Toggle button controls' },
   {
-    id: 'slider',
-    title: 'Slider',
-    component: dynamic(
-      () => import('@/components/usage/slider-usage').then((m) => m.SliderDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/slider',
-    docs_ref: 'https://base-ui.com/react/components/slider#api-reference',
-    v0_url: 'https://heseui.com/r/slider.json',
-  },
-  {
-    id: 'switch',
-    title: 'Switch',
-    component: dynamic(
-      () => import('@/components/usage/switch-usage').then((m) => m.SwitchDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/switch',
-    docs_ref: 'https://base-ui.com/react/components/switch#api-reference',
-    v0_url: 'https://heseui.com/r/switch.json',
-  },
-  {
-    id: 'tabs',
-    title: 'Tabs',
-    component: dynamic(
-      () => import('@/components/usage/tabs-usage').then((m) => m.TabsDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/tabs',
-    docs_ref: 'https://base-ui.com/react/components/tabs#api-reference',
-    v0_url: 'https://heseui.com/r/tabs.json',
-  },
-  {
-    id: 'toast',
-    title: 'Toast',
-    component: dynamic(
-      () => import('@/components/usage/toast-usage').then((m) => m.ToastDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/toast',
-    docs_ref: 'https://base-ui.com/react/components/toast#api-reference',
-    v0_url: 'https://heseui.com/r/toast.json',
-  },
-  {
-    id: 'toggle',
-    title: 'Toggle',
-    component: dynamic(
-      () => import('@/components/usage/toggle-usage').then((m) => m.ToggleDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/toggle',
-    docs_ref: 'https://base-ui.com/react/components/toggle#api-reference',
-    v0_url: 'https://heseui.com/r/toggle.json',
-  },
-  {
-    id: 'togglegroup',
-    title: 'Toggle Group',
-    component: dynamic(
-      () =>
-        import('@/components/usage/togglegroup-usage').then(
-          (m) => m.ToggleGroupDemo
-        ),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/toggle-group',
-    docs_ref: 'https://base-ui.com/react/components/toggle-group#api-reference',
-    v0_url: 'https://heseui.com/r/togglegroup.json',
+    id: 'toggle-group',
+    name: 'Toggle Group',
+    description: 'Grouped toggle buttons',
   },
   {
     id: 'toolbar',
-    title: 'Toolbar',
-    component: dynamic(
-      () =>
-        import('@/components/usage/toolbar-usage').then((m) => m.ToolbarDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/toolbar',
-    docs_ref: 'https://base-ui.com/react/components/toolbar#api-reference',
-    v0_url: 'https://heseui.com/r/toolbar.json',
+    name: 'Toolbar',
+    description: 'Toolbar with action buttons',
   },
-  {
-    id: 'tooltip',
-    title: 'Tooltip',
-    component: dynamic(
-      () =>
-        import('@/components/usage/tooltip-usage').then((m) => m.TooltipDemo),
-      { ssr: false, loading: () => <RectanglePlaceholder /> }
-    ),
-    api_ref: 'https://base-ui.com/react/components/tooltip',
-    docs_ref: 'https://base-ui.com/react/components/tooltip#api-reference',
-    v0_url: 'https://heseui.com/r/tooltip.json',
-  },
-];
+  { id: 'tooltip', name: 'Tooltip', description: 'Hover information tooltips' },
+] as const;
+
+function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
+  return (
+    <div
+      aria-hidden="true"
+      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} z-10 block h-full w-2 border-r border-l md:w-6`}
+    >
+      <div
+        className="h-full w-full"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, var(--muted) 0 1px, transparent 1px 10px)',
+          opacity: 1,
+        }}
+      />
+    </div>
+  );
+}
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -476,42 +165,12 @@ function ScrollToTopButton() {
   );
 }
 
-function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} z-10 block h-full w-2 border-r border-l md:w-6`}
-    >
-      <div
-        className="h-full w-full"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(135deg, var(--muted) 0 1px, transparent 1px 10px)',
-          opacity: 1,
-        }}
-      />
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <div className="mx-auto min-h-dvh">
-      <MobileNavigation />
       <div className="relative grid grid-cols-1 gap-2 lg:grid-cols-[270px_minmax(0,1fr)]">
-        <aside className="sticky top-0 hidden h-[calc(100dvh-2rem)] w-full overflow-visible lg:block">
-          <ScrollArea className="h-full">
-            <ScrollAreaViewport className="h-full border-transparent pb-8 outline-transparent">
-              <ScrollAreaContent>
-                <ComponentNavigation />
-              </ScrollAreaContent>
-              <ScrollAreaScrollbar className="bg-transparent">
-                <ScrollAreaThumb className="bg-secondary" />
-              </ScrollAreaScrollbar>
-            </ScrollAreaViewport>
-          </ScrollArea>
-        </aside>
-        <main className="relative flex min-w-0 flex-col gap-8 py-12 md:text-left">
+        <PersistentSidebar />
+        <main className="relative flex min-w-0 flex-col gap-8 py-12">
           <SideDivider position="left" />
           <SideDivider position="right" />
           <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
@@ -519,7 +178,7 @@ export default function Home() {
               <h1 className="flex flex-wrap items-center justify-center gap-2 text-balance font-semibold text-3xl tracking-tight sm:text-4xl md:justify-start">
                 HeseUI
               </h1>
-              <p className="text-muted-foreground text-center text-lg">
+              <p className="text-muted-foreground md:text-left text-center text-lg">
                 Foundation components built on top of Base UI using shadcn
                 <span className="inline-flex items-center align-middle w-fit px-2">
                   <Image
@@ -552,6 +211,7 @@ export default function Home() {
               <ThemeToggle />
             </div>
           </header>
+
           <div className="relative h-6 border-y">
             <div
               aria-hidden="true"
@@ -563,61 +223,72 @@ export default function Home() {
               }}
             />
           </div>
-          {componentSections.map(
-            (
-              {
-                id,
-                title,
-                component: SectionComponent,
-                api_ref,
-                docs_ref,
-                v0_url,
-              },
-              idx
-            ) => (
-              <section className="min-w-0" key={id}>
-                <div className="flex flex-col justify-center gap-8">
-                  <ComponentSection
-                    id={id}
-                    title={title}
-                    api_ref={api_ref}
-                    docs_ref={docs_ref}
-                    v0_url={v0_url}
-                  >
-                    <LazyMount
-                      fallback={
-                        <div className="h-48 animate-pulse rounded border border-border" />
-                      }
-                    >
-                      <SectionComponent />
-                    </LazyMount>
-                  </ComponentSection>
-                  {idx < componentSections.length - 1 && (
-                    <>
-                      <div className="relative h-6 border-y">
-                        <div
-                          aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 z-0"
-                          style={{
-                            backgroundImage:
-                              'repeating-linear-gradient(-45deg, var(--muted) 1px, transparent 1px 10px)',
-                            opacity: 1,
-                          }}
-                        />
-                      </div>
-                    </>
-                  )}
-                </div>
-              </section>
-            )
-          )}
+
+          <div className="px-4 md:px-12">
+            <div className="mb-8">
+              <h2 className="text-2xl font-semibold mb-2">Components</h2>
+              <p className="text-muted-foreground">
+                Explore our collection of accessible and customizable UI
+                components
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+              {components.map((component) => (
+                <Link
+                  key={component.id}
+                  href={`/components/${component.id}`}
+                  className="group p-4 rounded-lg border border-border hover:border-primary/50 hover:bg-accent/50 transition-all duration-200 text-center"
+                >
+                  <div className="text-sm font-medium group-hover:text-primary transition-colors">
+                    {component.name}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative h-6 border-y">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-0"
+              style={{
+                backgroundImage:
+                  'repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)',
+                opacity: 1,
+              }}
+            />
+          </div>
+
           <footer className="px-4 md:px-12">
-            <p className="text-muted-foreground">
-              Built with ❤️ and ☕ by{' '}
-              <Link href="https://x.com/preetsuthar17" className="underline">
-                Preet Suthar
-              </Link>
-            </p>
+            <div className="flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
+              <p className="text-muted-foreground">
+                Built with ❤️ and ☕ by{' '}
+                <Link href="https://x.com/preetsuthar17" className="underline">
+                  Preet Suthar
+                </Link>
+              </p>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="https://github.com/preetsuthar17"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  GitHub
+                </Link>
+                <Link
+                  href="https://x.com/preetsuthar17"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Twitter
+                </Link>
+                <Link
+                  href="https://www.preetsuthar.me/sponsor"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Sponsor
+                </Link>
+              </div>
+            </div>
           </footer>
         </main>
       </div>
