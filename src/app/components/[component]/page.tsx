@@ -552,7 +552,7 @@ export default function ComponentPage() {
 
   return (
     <>
-      <div className="relative flex min-w-0 min-h-dvh flex-col gap-8 py-12">
+      <div className="relative flex min-w-0 min-h-dvh flex-col gap-8 py-12 max-w-screen-xl mx-auto w-full">
         <SideDivider position="left" />
         <SideDivider position="right" />
         <header className="px-4 md:px-12 flex w-full flex-wrap justify-between gap-4 ">
