@@ -116,7 +116,6 @@ export function ComponentPageClient() {
     component: Component,
     api_ref,
     docs_ref,
-    v0_url,
   } = componentConfig as any;
 
   return (
@@ -157,7 +156,6 @@ export function ComponentPageClient() {
             docs_ref={docs_ref}
             id={componentId}
             title={title}
-            v0_url={v0_url}
           >
             <LazyMount
               fallback={

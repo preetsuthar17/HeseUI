@@ -1,6 +1,5 @@
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { OpenInV0Button } from './open-in-v0';
 import { Button } from './ui/button';
 
 type ComponentSectionProps = {
@@ -9,7 +8,6 @@ type ComponentSectionProps = {
   children: React.ReactNode;
   api_ref?: string;
   docs_ref?: string;
-  v0_url?: string;
   copyButton?: React.ReactNode;
 };
 
@@ -19,7 +17,6 @@ export function ComponentSection({
   children,
   api_ref,
   docs_ref,
-  v0_url,
   copyButton,
 }: ComponentSectionProps) {
   return (
@@ -71,10 +68,7 @@ export function ComponentSection({
                   )}
                 </Button>
               </div>
-              <div className="flex items-center gap-2">
-                {copyButton}
-                <OpenInV0Button url={`${v0_url}`} />
-              </div>
+              <div className="flex items-center gap-2">{copyButton}</div>
             </div>
           </div>
         </div>
