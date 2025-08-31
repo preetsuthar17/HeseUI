@@ -555,7 +555,7 @@ export default function ComponentPage() {
       <div className="relative flex min-w-0 min-h-dvh flex-col gap-8 py-12">
         <SideDivider position="left" />
         <SideDivider position="right" />
-        <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
+        <header className="px-4 md:px-12 flex w-full flex-wrap justify-between gap-4 ">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon">
               <Link href="/">

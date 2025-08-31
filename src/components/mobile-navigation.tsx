@@ -31,7 +31,7 @@ export function MobileNavigation() {
           <ScrollArea>
             <ScrollAreaViewport className="max-h-[calc(30dvh-1.5rem)]">
               <ScrollAreaContent>
-                <ComponentNavigation onItemClick={() => setOpen(false)} />
+                <ComponentNavigation />
               </ScrollAreaContent>
               <ScrollAreaScrollbar className="bg-transparent">
                 <ScrollAreaThumb className="bg-secondary" />
