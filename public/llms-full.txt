@@ -1,0 +1,115 @@
+# www.heseui.com llms-full.txt
+
+## UI Components Collection
+
+## Components
+
+Explore our collection of accessible and customizable UI components
+
+- [HeseUI Accordion Component](https://www.heseui.com/components/accordion): Showcase and document the Accordion component of HeseUI with API references and source links.
+- [HeseUI Alert Dialog Component](https://www.heseui.com/components/alert-dialog): Showcase and document the Alert Dialog component of HeseUI with API references and source links.
+- [HeseUI Avatar Component](https://www.heseui.com/components/avatar): Showcase and document the Avatar component of HeseUI with API references and source links.
+- [HeseUI Button Component](https://www.heseui.com/components/button): Showcase and document the Button component of HeseUI with API references and source links.
+- [HeseUI Checkbox Component](https://www.heseui.com/components/checkbox): Showcase and document the Checkbox component of HeseUI with API references and source links.
+- [HeseUI Checkbox Group Component](https://www.heseui.com/components/checkbox-group): Showcase and document the Checkbox Group component of HeseUI with API references and source links.
+- [HeseUI Collapsible Component](https://www.heseui.com/components/collapsible): Showcase and document the Collapsible component of HeseUI with API references and source links.
+- [HeseUI Context Menu Component](https://www.heseui.com/components/context-menu): Showcase and document the Context Menu component of HeseUI with API references and source links.
+- [HeseUI Dialog Component](https://www.heseui.com/components/dialog): Showcase and document the Dialog component of HeseUI with API references and source links.
+- [HeseUI Field Component](https://www.heseui.com/components/field): Showcase and document the Field component of HeseUI with API references and source links.
+- [HeseUI Fieldset Component](https://www.heseui.com/components/fieldset): Showcase and document the Fieldset component of HeseUI with API references and source links.
+- [HeseUI Form Component](https://www.heseui.com/components/form): Showcase and document the Form component of HeseUI with API references and source links.
+- [HeseUI Input Component](https://www.heseui.com/components/input): Showcase and document the Input component of HeseUI with API references and source links.
+- [HeseUI Menu Component](https://www.heseui.com/components/menu): Showcase and document the Menu component of HeseUI with API references and source links.
+- [HeseUI Menubar Component](https://www.heseui.com/components/menubar): Showcase and document the Menubar component of HeseUI with API references and source links.
+- [HeseUI Meter Component](https://www.heseui.com/components/meter): Showcase and document the Meter component of HeseUI with API references and source links.
+- [HeseUI Navigation Menu Component](https://www.heseui.com/components/navigation-menu): Showcase and document the Navigation Menu component of HeseUI with API references and source links.
+- [HeseUI Number Field Component](https://www.heseui.com/components/number-field): Showcase and document the Number Field component of HeseUI with API references and source links.
+- [HeseUI Popover Component](https://www.heseui.com/components/popover): Showcase and document the Popover component of HeseUI with API references and source links.
+- [HeseUI Preview Card Component](https://www.heseui.com/components/preview-card): Showcase and document the Preview Card component of HeseUI with API references and source links.
+- [HeseUI Progress Component](https://www.heseui.com/components/progress): Showcase and document the Progress component of HeseUI with API references and source links.
+- [HeseUI Radio Component](https://www.heseui.com/components/radio): Showcase and document the Radio component of HeseUI with API references and source links.
+- [HeseUI Scroll Area Component](https://www.heseui.com/components/scroll-area): Showcase and document the Scroll Area component of HeseUI with API references and source links.
+- [HeseUI Select Component](https://www.heseui.com/components/select): Showcase and document the Select component of HeseUI with API references and source links.
+- [HeseUI Separator Component](https://www.heseui.com/components/separator): Showcase and document the Separator component of HeseUI with API references and source links.
+- [HeseUI Slider Component](https://www.heseui.com/components/slider): Showcase and document the Slider component of HeseUI with API references and source links.
+- [HeseUI Switch Component](https://www.heseui.com/components/switch): Showcase and document the Switch component of HeseUI with API references and source links.
+- [HeseUI Tabs Component](https://www.heseui.com/components/tabs): Showcase and document the Tabs component of HeseUI with API references and source links.
+- [HeseUI Toast Component](https://www.heseui.com/components/toast): Showcase and document the Toast component of HeseUI with API references and source links.
+- [HeseUI Toggle Component](https://www.heseui.com/components/toggle): Showcase and document the Toggle component of HeseUI with API references and source links.
+- [HeseUI Toggle Group Component](https://www.heseui.com/components/toggle-group): Showcase and document the Toggle Group component of HeseUI with API references and source links.
+- [HeseUI Toolbar Component](https://www.heseui.com/components/toolbar): Showcase and document the Toolbar component of HeseUI with API references and source links.
+- [HeseUI Tooltip Component](https://www.heseui.com/components/tooltip): Showcase and document the Tooltip component of HeseUI with API references and source links.
+
+---
+
+## HeseUI Components
+
+[Skip to content](https://github.com/preetsuthar17/HeseUI#start-of-content)
+
+[preetsuthar17](https://github.com/preetsuthar17) / **[HeseUI](https://github.com/preetsuthar17/HeseUI)** Public
+
+- [Notifications](https://github.com/login?return_to=%2Fpreetsuthar17%2FHeseUI) You must be signed in to change notification settings
+- [Fork 1](https://github.com/login?return_to=%2Fpreetsuthar17%2FHeseUI)
+- [Star 15](https://github.com/login?return_to=%2Fpreetsuthar17%2FHeseUI)
+
+Components built on top of Base UI using shadcn design system.
+
+[hesaui.com](https://hesaui.com/ "https://hesaui.com")
+
+[15 stars](https://github.com/preetsuthar17/HeseUI/stargazers)  
+[1 fork](https://github.com/preetsuthar17/HeseUI/forks)  
+[Branches](https://github.com/preetsuthar17/HeseUI/branches)  
+[Tags](https://github.com/preetsuthar17/HeseUI/tags)  
+[Activity](https://github.com/preetsuthar17/HeseUI/activity)
+
+[Star](https://github.com/login?return_to=%2Fpreetsuthar17%2FHeseUI)
+
+[Notifications](https://github.com/login?return_to=%2Fpreetsuthar17%2FHeseUI) You must be signed in to change notification settings
+
+# preetsuthar17/HeseUI
+
+master
+
+[**1** Branch](https://github.com/preetsuthar17/HeseUI/branches)  
+[**0** Tags](https://github.com/preetsuthar17/HeseUI/tags)
+
+[Go to Branches page](https://github.com/preetsuthar17/HeseUI/branches)  
+[Go to Tags page](https://github.com/preetsuthar17/HeseUI/tags)
+
+Go to file
+
+Code
+
+Open more actions menu
+
+## Folders and files
+
+| Name | Name | Last commit message | Last commit date |
+| --- | --- | --- | --- |
+| **Latest commit**<br>[![preetsuthar17](https://avatars.githubusercontent.com/u/75468116?v=4&size=40)](https://github.com/preetsuthar17)[preetsuthar17](https://github.com/preetsuthar17/HeseUI/commits?author=preetsuthar17)<br>[Add footer component and integrate AI interaction buttons](https://github.com/preetsuthar17/HeseUI/commit/26eecf0ca0dab8fe6e08cbd7283a06525d8237b0)<br>Open commit details<br>Aug 31, 2025<br>[26eecf0](https://github.com/preetsuthar17/HeseUI/commit/26eecf0ca0dab8fe6e08cbd7283a06525d8237b0) · Aug 31, 2025<br>**History**<br>[45 Commits](https://github.com/preetsuthar17/HeseUI/commits/master/) <br>Open commit details<br>[View commit history for this file.](https://github.com/preetsuthar17/HeseUI/commits/master/) |
+| [.cursor/rules](https://github.com/preetsuthar17/HeseUI/tree/master/.cursor/rules "This path skips through empty directories") | [.cursor/rules](https://github.com/preetsuthar17/HeseUI/tree/master/.cursor/rules "This path skips through empty directories") | [Add initial configuration and setup for Biome, Ultracite, and Tailwind…](https://github.com/preetsuthar17/HeseUI/commit/ad975aecdd6a29e6f93bf21850cbb86a40b05a0d "Add initial configuration and setup for Biome, Ultracite, and Tailwind CSS") | Aug 16, 2025 |
+| [.vscode](https://github.com/preetsuthar17/HeseUI/tree/master/.vscode ".vscode") | [.vscode](https://github.com/preetsuthar17/HeseUI/tree/master/.vscode ".vscode") | [Add initial configuration and setup for Biome, Ultracite, and Tailwind…](https://github.com/preetsuthar17/HeseUI/commit/ad975aecdd6a29e6f93bf21850cbb86a40b05a0d "Add initial configuration and setup for Biome, Ultracite, and Tailwind CSS") | Aug 16, 2025 |
+| [public](https://github.com/preetsuthar17/HeseUI/tree/master/public "public") | [public](https://github.com/preetsuthar17/HeseUI/tree/master/public "public") | [Update component URLs and enhance layout for improved usability](https://github.com/preetsuthar17/HeseUI/commit/edf9c55df45b57fd79afeb8c8ab33d9387f522ad "Update component URLs and enhance layout for improved usability  - Changed registry URLs in components.json and package.json to point to the new HeseUI domain. - Updated baseUrl in index.json for consistency with the new registry. - Adjusted CSS variable for secondary color in globals.css for better theming. - Refactored the Home component to include API and documentation links for each component section. - Introduced OpenInV0Button component for quick access to v0 documentation.") | Aug 30, 2025 |
+| [registry](https://github.com/preetsuthar17/HeseUI/tree/master/registry "registry") | [registry](https://github.com/preetsuthar17/HeseUI/tree/master/registry "registry") | [Add new UI components and installation documentation for various elements…](https://github.com/preetsuthar17/HeseUI/commit/60690e46a640d72838615543b6811ac77d936e5a "Add new UI components and installation documentation for various elements including Accordion, AlertDialog, Avatar, Button, Checkbox, and more. Update package.json to include tw-animate-css and enhance styling in globals.css. Introduce new registry files for component management and improve usage examples with installation guides.") | Aug 18, 2025 |
+| [src](https://github.com/preetsuthar17/HeseUI/tree/master/src "src") | [src](https://github.com/preetsuthar17/HeseUI/tree/master/src "src") | [Add footer component and integrate AI interaction buttons](https://github.com/preetsuthar17/HeseUI/commit/26eecf0ca0dab8fe6e08cbd7283a06525d8237b0 "Add footer component and integrate AI interaction buttons  - Introduced a new Footer component for consistent footer content across pages. - Added CopyAndAskButton and AskAIButton components to facilitate user interaction with AI tools. - Updated ComponentSection to include the new CopyAndAskButton for enhanced functionality. - Refactored page layouts to accommodate the new footer and buttons, improving overall user experience.") | Aug 31, 2025 |
+| [.gitignore](https://github.com/preetsuthar17/HeseUI/blob/master/.gitignore ".gitignore") | [.gitignore](https://github.com/preetsuthar17/HeseUI/blob/master/.gitignore ".gitignore") | [Initial commit from Create Next App](https://github.com/preetsuthar17/HeseUI/commit/6d73b7d3abc36c985bb13ddf010420cd289c7755 "Initial commit from Create Next App") | Aug 16, 2025 |
+| [README.md](https://github.com/preetsuthar17/HeseUI/blob/master/README.md "README.md") | [README.md](https://github.com/preetsuthar17/HeseUI/blob/master/README.md "README.md") | [Initial commit from Create Next App](https://github.com/preetsuthar17/HeseUI/commit/6d73b7d3abc36c985bb13ddf010420cd289c7755 "Initial commit from Create Next App") | Aug 16, 2025 |
+| [biome.jsonc](https://github.com/preetsuthar17/HeseUI/blob/master/biome.jsonc "biome.jsonc") | [biome.jsonc](https://github.com/preetsuthar17/HeseUI/blob/master/biome.jsonc "biome.jsonc") | [Add initial configuration and setup for Biome, Ultracite, and Tailwind…](https://github.com/preetsuthar17/HeseUI/commit/ad975aecdd6a29e6f93bf21850cbb86a40b05a0d "Add initial configuration and setup for Biome, Ultracite, and Tailwind CSS") | Aug 16, 2025 |
+| [components.json](https://github.com/preetsuthar17/HeseUI/blob/master/components.json "components.json") | [components.json](https://github.com/preetsuthar17/HeseUI/blob/master/components.json "components.json") | [Update component URLs and enhance layout for improved usability](https://github.com/preetsuthar17/HeseUI/commit/edf9c55df45b57fd79afeb8c8ab33d9387f522ad "Update component URLs and enhance layout for improved usability  - Changed registry URLs in components.json and package.json to point to the new HeseUI domain. - Updated baseUrl in index.json for consistency with the new registry. - Adjusted CSS variable for secondary color in globals.css for better theming. - Refactored the Home component to include API and documentation links for each component section. - Introduced OpenInV0Button component for quick access to v0 documentation.") | Aug 30, 2025 |
+| [next.config.ts](https://github.com/preetsuthar17/HeseUI/blob/master/next.config.ts "next.config.ts") | [next.config.ts](https://github.com/preetsuthar17/HeseUI/blob/master/next.config.ts "next.config.ts") | [Enhance Next.js configuration and update Home component for improved …](https://github.com/preetsuthar17/HeseUI/commit/bcac619137fd185432ec4bbaedda09cc1aea6b92 "Enhance Next.js configuration and update Home component for improved image handling and styling  - Added remote image pattern for GitHub in next.config.ts to support external images. - Increased header font size and adjusted paragraph text size in Home component for better readability. - Included a profile image next to the description for enhanced visual appeal.") | Aug 30, 2025 |
+| [package.json](https://github.com/preetsuthar17/HeseUI/blob/master/package.json "package.json") | [package.json](https://github.com/preetsuthar17/HeseUI/blob/master/package.json "package.json") | [Add footer component and integrate AI interaction buttons](https://github.com/preetsuthar17/HeseUI/commit/26eecf0ca0dab8fe6e08cbd7283a06525d8237b0 "Add footer component and integrate AI interaction buttons  - Introduced a new Footer component for consistent footer content across pages. - Added CopyAndAskButton and AskAIButton components to facilitate user interaction with AI tools. - Updated ComponentSection to include the new CopyAndAskButton for enhanced functionality. - Refactored page layouts to accommodate the new footer and buttons, improving overall user experience.") | Aug 31, 2025 |
+| [pnpm-lock.yaml](https://github.com/preetsuthar17/HeseUI/blob/master/pnpm-lock.yaml "pnpm-lock.yaml") | [pnpm-lock.yaml](https://github.com/preetsuthar17/HeseUI/blob/master/pnpm-lock.yaml "pnpm-lock.yaml") | [Add footer component and integrate AI interaction buttons](https://github.com/preetsuthar17/HeseUI/commit/26eecf0ca0dab8fe6e08cbd7283a06525d8237b0 "Add footer component and integrate AI interaction buttons  - Introduced a new Footer component for consistent footer content across pages. - Added CopyAndAskButton and AskAIButton components to facilitate user interaction with AI tools. - Updated ComponentSection to include the new CopyAndAskButton for enhanced functionality. - Refactored page layouts to accommodate the new footer and buttons, improving overall user experience.") | Aug 31, 2025 |
+| [postcss.config.mjs](https://github.com/preetsuthar17/HeseUI/blob/master/postcss.config.mjs "postcss.config.mjs") | [postcss.config.mjs](https://github.com/preetsuthar17/HeseUI/blob/master/postcss.config.mjs "postcss.config.mjs") | [Add initial configuration and setup for Biome, Ultracite, and Tailwind…](https://github.com/preetsuthar17/HeseUI/commit/ad975aecdd6a29e6f93bf21850cbb86a40b05a0d "Add initial configuration and setup for Biome, Ultracite, and Tailwind CSS") | Aug 16, 2025 |
+| [registry.json](https://github.com/preetsuthar17/HeseUI/blob/master/registry.json "registry.json") | [registry.json](https://github.com/preetsuthar17/HeseUI/blob/master/registry.json "registry.json") | [Update registry.json and component metadata for HeseUI](https://github.com/preetsuthar17/HeseUI/commit/34d8967cba2becf06dbf19eec572e4ff7aa3182c "Update registry.json and component metadata for HeseUI  - Renamed the registry to \"HeseUI\" and updated the homepage URL. - Enhanced component descriptions for clarity and consistency across multiple UI components. - Added author and file details for each component in the registry. - Introduced new components such as \"Scroll Area\" and \"Toggle Group\" with their respective metadata. - Updated existing component JSON files to reflect new descriptions and titles.") | Aug 30, 2025 |
+| [tsconfig.json](https://github.com/preetsuthar17/HeseUI/blob/master/tsconfig.json "tsconfig.json") | [tsconfig.json](https://github.com/preetsuthar17/HeseUI/blob/master/tsconfig.json "tsconfig.json") | [Add initial configuration and setup for Biome, Ultracite, and Tailwind…](https://github.com/preetsuthar17/HeseUI/commit/ad975aecdd6a29e6f93bf21850cbb86a40b05a0d "Add initial configuration and setup for Biome, Ultracite, and Tailwind CSS") | Aug 16, 2025 |
+| View all files |
+
+## Repository files navigation
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+[Permalink: Getting Started](https://github.com/preetsuthar17/HeseUI#getting-started)
+
+First, run the development server:
