@@ -7,7 +7,7 @@ export function SeparatorDemo() {
     <div className="flex flex-col gap-8">
       <div>
         <div className="flex flex-col gap-1">
-          <h4 className="font-medium text-sm leading-none">Radix Primitives</h4>
+          <h4 className="font-medium text-sm leading-none">HeseUI</h4>
           <p className="text-muted-foreground text-sm">
             An open-source UI component library.
           </p>
