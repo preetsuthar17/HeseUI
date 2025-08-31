@@ -1,9 +1,17 @@
 import { generateComponentMetadata } from '@/lib/generate-metadata';
 import type { Metadata } from 'next';
+import { getAllComponentMetadata } from '@/lib/component-metadata';
 
 interface ComponentLayoutProps {
   children: React.ReactNode;
   params: Promise<{ component: string }>;
+}
+
+export async function generateStaticParams() {
+  const allComponents = getAllComponentMetadata();
+  return allComponents.map((component) => ({
+    component: component.id,
+  }));
 }
 
 export async function generateMetadata({

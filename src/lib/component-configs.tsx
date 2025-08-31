@@ -1,0 +1,379 @@
+import dynamic from 'next/dynamic';
+
+function RectanglePlaceholder() {
+  return <div className="h-48 animate-pulse rounded border border-border" />;
+}
+
+export const componentConfigs = {
+  accordion: {
+    title: 'Accordion',
+    component: dynamic(
+      () =>
+        import('@/components/usage/accordion-usage').then(
+          (m) => m.AccordionDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/accordion',
+    docs_ref: 'https://base-ui.com/react/components/accordion#api-reference',
+    v0_url: 'https://heseui.com/r/accordion.json',
+  },
+  'alert-dialog': {
+    title: 'Alert Dialog',
+    component: dynamic(
+      () =>
+        import('@/components/usage/alertdialog-usage').then(
+          (m) => m.AlertDialogDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/alert-dialog',
+    docs_ref: 'https://base-ui.com/react/components/alert-dialog#api-reference',
+    v0_url: 'https://heseui.com/r/alert-dialog.json',
+  },
+  avatar: {
+    title: 'Avatar',
+    component: dynamic(
+      () => import('@/components/usage/avatar-usage').then((m) => m.AvatarDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/avatar',
+    docs_ref: 'https://base-ui.com/react/components/avatar#api-reference',
+    v0_url: 'https://heseui.com/r/avatar.json',
+  },
+  button: {
+    title: 'Button',
+    component: dynamic(
+      () => import('@/components/usage/button-usage').then((m) => m.ButtonDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    v0_url: 'https://heseui.com/r/button.json',
+  },
+  checkbox: {
+    title: 'Checkbox',
+    component: dynamic(
+      () =>
+        import('@/components/usage/checkbox-usage').then((m) => m.CheckboxDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/checkbox',
+    docs_ref: 'https://base-ui.com/react/components/checkbox#api-reference',
+    v0_url: 'https://heseui.com/r/checkbox.json',
+  },
+  'checkbox-group': {
+    title: 'Checkbox Group',
+    component: dynamic(
+      () =>
+        import('@/components/usage/checkbox-group-usage').then(
+          (m) => m.CheckboxGroupDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/checkbox-group',
+    docs_ref:
+      'https://base-ui.com/react/components/checkbox-group#api-reference',
+    v0_url: 'https://heseui.com/r/checkbox-group.json',
+  },
+  collapsible: {
+    title: 'Collapsible',
+    component: dynamic(
+      () =>
+        import('@/components/usage/collapsible-usage').then(
+          (m) => m.CollapsibleDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/collapsible',
+    docs_ref: 'https://base-ui.com/react/components/collapsible#api-reference',
+    v0_url: 'https://heseui.com/r/collapsible.json',
+  },
+  'context-menu': {
+    title: 'Context Menu',
+    component: dynamic(
+      () =>
+        import('@/components/usage/context-menu-usage').then(
+          (m) => m.ContextMenuDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/context-menu',
+    docs_ref: 'https://base-ui.com/react/components/context-menu#api-reference',
+    v0_url: 'https://heseui.com/r/context-menu.json',
+  },
+  dialog: {
+    title: 'Dialog',
+    component: dynamic(
+      () => import('@/components/usage/dialog-usage').then((m) => m.DialogDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/dialog',
+    docs_ref: 'https://base-ui.com/react/components/dialog#api-reference',
+    v0_url: 'https://heseui.com/r/dialog.json',
+  },
+  field: {
+    title: 'Field',
+    component: dynamic(
+      () => import('@/components/usage/field-usage').then((m) => m.FieldDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/field',
+    docs_ref: 'https://base-ui.com/react/components/field#api-reference',
+    v0_url: 'https://heseui.com/r/field.json',
+  },
+  fieldset: {
+    title: 'Fieldset',
+    component: dynamic(
+      () =>
+        import('@/components/usage/fieldset-usage').then((m) => m.FieldsetDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/fieldset',
+    docs_ref: 'https://base-ui.com/react/components/fieldset#api-reference',
+    v0_url: 'https://heseui.com/r/fieldset.json',
+  },
+  form: {
+    title: 'Form',
+    component: dynamic(
+      () => import('@/components/usage/form-usage').then((m) => m.FormDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/form',
+    docs_ref: 'https://base-ui.com/react/components/form#api-reference',
+    v0_url: 'https://heseui.com/r/form.json',
+  },
+  input: {
+    title: 'Input',
+    component: dynamic(
+      () => import('@/components/usage/input-usage').then((m) => m.InputDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/input',
+    docs_ref: 'https://base-ui.com/react/components/input#api-reference',
+    v0_url: 'https://heseui.com/r/input.json',
+  },
+  menu: {
+    title: 'Menu',
+    component: dynamic(
+      () => import('@/components/usage/menu-usage').then((m) => m.MenuDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/menu',
+    docs_ref: 'https://base-ui.com/react/components/menu#api-reference',
+    v0_url: 'https://heseui.com/r/menu.json',
+  },
+  menubar: {
+    title: 'Menubar',
+    component: dynamic(
+      () =>
+        import('@/components/usage/menubar-usage').then((m) => m.MenubarDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/menubar',
+    docs_ref: 'https://base-ui.com/react/components/menubar#api-reference',
+    v0_url: 'https://heseui.com/r/menubar.json',
+  },
+  meter: {
+    title: 'Meter',
+    component: dynamic(
+      () => import('@/components/usage/meter-usage').then((m) => m.MeterDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/meter',
+    docs_ref: 'https://base-ui.com/react/components/meter#api-reference',
+    v0_url: 'https://heseui.com/r/meter.json',
+  },
+  'navigation-menu': {
+    title: 'Navigation Menu',
+    component: dynamic(
+      () =>
+        import('@/components/usage/navigationmenu-usage').then(
+          (m) => m.NavigationMenuDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/navigation-menu',
+    docs_ref:
+      'https://base-ui.com/react/components/navigation-menu#api-reference',
+    v0_url: 'https://heseui.com/r/navigation-menu.json',
+  },
+  'number-field': {
+    title: 'Number Field',
+    component: dynamic(
+      () =>
+        import('@/components/usage/numberfield-usage').then(
+          (m) => m.NumberFieldDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/number-field',
+    docs_ref: 'https://base-ui.com/react/components/number-field#api-reference',
+    v0_url: 'https://heseui.com/r/number-field.json',
+  },
+  popover: {
+    title: 'Popover',
+    component: dynamic(
+      () =>
+        import('@/components/usage/popover-usage').then((m) => m.PopoverDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/popover',
+    docs_ref: 'https://base-ui.com/react/components/popover#api-reference',
+    v0_url: 'https://heseui.com/r/popover.json',
+  },
+  'preview-card': {
+    title: 'Preview Card',
+    component: dynamic(
+      () =>
+        import('@/components/usage/preview-card-usage').then(
+          (m) => m.PreviewCardDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/preview-card',
+    docs_ref: 'https://base-ui.com/react/components/preview-card#api-reference',
+    v0_url: 'https://heseui.com/r/preview-card.json',
+  },
+  progress: {
+    title: 'Progress',
+    component: dynamic(
+      () =>
+        import('@/components/usage/progress-usage').then((m) => m.ProgressDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/progress',
+    docs_ref: 'https://base-ui.com/react/components/progress#api-reference',
+    v0_url: 'https://heseui.com/r/progress.json',
+  },
+  radio: {
+    title: 'Radio',
+    component: dynamic(
+      () =>
+        import('@/components/usage/radio-usage').then((m) => m.RadioGroupDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/radio',
+    docs_ref: 'https://base-ui.com/react/components/radio#api-reference',
+    v0_url: 'https://heseui.com/r/radio.json',
+  },
+  'scroll-area': {
+    title: 'Scroll Area',
+    component: dynamic(
+      () =>
+        import('@/components/usage/scrollarea-usage').then(
+          (m) => m.ScrollAreaDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/scroll-area',
+    docs_ref: 'https://base-ui.com/react/components/scroll-area#api-reference',
+    v0_url: 'https://heseui.com/r/scroll-area.json',
+  },
+  select: {
+    title: 'Select',
+    component: dynamic(
+      () => import('@/components/usage/select-usage').then((m) => m.SelectDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/select',
+    docs_ref: 'https://base-ui.com/react/components/select#api-reference',
+    v0_url: 'https://heseui.com/r/select.json',
+  },
+  separator: {
+    title: 'Separator',
+    component: dynamic(
+      () =>
+        import('@/components/usage/separator-usage').then(
+          (m) => m.SeparatorDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/separator',
+    docs_ref: 'https://base-ui.com/react/components/separator#api-reference',
+    v0_url: 'https://heseui.com/r/separator.json',
+  },
+  slider: {
+    title: 'Slider',
+    component: dynamic(
+      () => import('@/components/usage/slider-usage').then((m) => m.SliderDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/slider',
+    docs_ref: 'https://base-ui.com/react/components/slider#api-reference',
+    v0_url: 'https://heseui.com/r/slider.json',
+  },
+  switch: {
+    title: 'Switch',
+    component: dynamic(
+      () => import('@/components/usage/switch-usage').then((m) => m.SwitchDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/switch',
+    docs_ref: 'https://base-ui.com/react/components/switch#api-reference',
+    v0_url: 'https://heseui.com/r/switch.json',
+  },
+  tabs: {
+    title: 'Tabs',
+    component: dynamic(
+      () => import('@/components/usage/tabs-usage').then((m) => m.TabsDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/tabs',
+    docs_ref: 'https://base-ui.com/react/components/tabs#api-reference',
+    v0_url: 'https://heseui.com/r/tabs.json',
+  },
+  toast: {
+    title: 'Toast',
+    component: dynamic(
+      () => import('@/components/usage/toast-usage').then((m) => m.ToastDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/toast',
+    docs_ref: 'https://base-ui.com/react/components/toast#api-reference',
+    v0_url: 'https://heseui.com/r/toast.json',
+  },
+  toggle: {
+    title: 'Toggle',
+    component: dynamic(
+      () => import('@/components/usage/toggle-usage').then((m) => m.ToggleDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/toggle',
+    docs_ref: 'https://base-ui.com/react/components/toggle#api-reference',
+    v0_url: 'https://heseui.com/r/toggle.json',
+  },
+  'toggle-group': {
+    title: 'Toggle Group',
+    component: dynamic(
+      () =>
+        import('@/components/usage/togglegroup-usage').then(
+          (m) => m.ToggleGroupDemo
+        ),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/toggle-group',
+    docs_ref: 'https://base-ui.com/react/components/toggle-group#api-reference',
+    v0_url: 'https://heseui.com/r/toggle-group.json',
+  },
+  toolbar: {
+    title: 'Toolbar',
+    component: dynamic(
+      () =>
+        import('@/components/usage/toolbar-usage').then((m) => m.ToolbarDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/toolbar',
+    docs_ref: 'https://base-ui.com/react/components/toolbar#api-reference',
+    v0_url: 'https://heseui.com/r/toolbar.json',
+  },
+  tooltip: {
+    title: 'Tooltip',
+    component: dynamic(
+      () =>
+        import('@/components/usage/tooltip-usage').then((m) => m.TooltipDemo),
+      { ssr: false, loading: () => <RectanglePlaceholder /> }
+    ),
+    api_ref: 'https://base-ui.com/react/components/tooltip',
+    docs_ref: 'https://base-ui.com/react/components/tooltip#api-reference',
+    v0_url: 'https://heseui.com/r/tooltip.json',
+  },
+};
