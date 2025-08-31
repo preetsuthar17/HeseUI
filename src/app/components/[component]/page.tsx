@@ -629,10 +629,11 @@ export default function ComponentPage() {
                 Twitter
               </Link>
               <Link
-                href="mailto:support@heseui.com"
+                href="https://www.preetsuthar.me/sponsor"
+                target="_blank"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Support
+                Sponsor
               </Link>
             </div>
           </div>
