@@ -9,6 +9,7 @@ import { PersistentSidebar } from '@/components/persistent-sidebar';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Footer } from './components/footer';
 
 const components = [
   {
@@ -170,7 +171,7 @@ export default function Home() {
     <div className="mx-auto min-h-dvh">
       <div className="relative grid grid-cols-1 gap-2 lg:grid-cols-[270px_minmax(0,1fr)]">
         <PersistentSidebar />
-        <main className="relative flex min-w-0 flex-col gap-8 py-12">
+        <main className="relative flex min-w-0 flex-col gap-8 py-8">
           <SideDivider position="left" />
           <SideDivider position="right" />
           <header className="px-4 md:px-12 flex w-full flex-wrap justify-center gap-4 md:justify-between">
@@ -260,36 +261,7 @@ export default function Home() {
             />
           </div>
 
-          <footer className="px-4 md:px-12">
-            <div className="flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
-              <p className="text-muted-foreground">
-                Built with ❤️ and ☕ by{' '}
-                <Link href="https://x.com/preetsuthar17" className="underline">
-                  Preet Suthar
-                </Link>
-              </p>
-              <div className="flex items-center gap-4">
-                <Link
-                  href="https://github.com/preetsuthar17"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  GitHub
-                </Link>
-                <Link
-                  href="https://x.com/preetsuthar17"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Twitter
-                </Link>
-                <Link
-                  href="https://www.preetsuthar.me/sponsor"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Sponsor
-                </Link>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </main>
       </div>
       <ScrollToTopButton />

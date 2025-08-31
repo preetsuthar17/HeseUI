@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 
 export function OpenInV0Button({ url }: { url: string }) {
   return (
-    <Button size="sm" aria-label="Open in v0" className="text-xs p-0">
+    <Button size="sm" aria-label="Open in v0" className="text-xs px-0  h-8">
       <a
-        className="flex items-center gap-1 h-8 px-3 justify-center"
+        className="flex items-center gap-1 justify-center px-3 h-8"
         href={`https://v0.dev/chat/api/open?url=${url}`}
         target="_blank"
         rel="noreferrer"
