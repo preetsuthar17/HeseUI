@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Bold, Italic, Underline } from 'lucide-react';
-import type React from 'react';
+import { Bold, Italic, Underline } from "lucide-react";
+import type React from "react";
 import {
   Tooltip,
   TooltipArrow,
@@ -10,9 +10,9 @@ import {
   TooltipPositioner,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { TooltipInstallation } from '../installation/tooltip-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/tooltip";
+import { TooltipInstallation } from "../installation/tooltip-installation";
+import { Separator } from "../ui/separator";
 
 export function TooltipDemo() {
   return (
@@ -74,7 +74,7 @@ export function TooltipDemo() {
   );
 }
 
-function ArrowSvg(props: React.ComponentProps<'svg'>) {
+function ArrowSvg(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="10" viewBox="0 0 20 10" width="20" {...props}>
       <title>Tooltip arrow</title>

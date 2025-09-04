@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Toggle as BaseToggle } from '@base-ui-components/react/toggle';
-import { ToggleGroup as BaseToggleGroup } from '@base-ui-components/react/toggle-group';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Toggle as BaseToggle } from "@base-ui-components/react/toggle";
+import { ToggleGroup as BaseToggleGroup } from "@base-ui-components/react/toggle-group";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 type ToggleGroupShadcnProps = {
-  variant?: 'default' | 'outline';
-  type?: 'single' | 'multiple';
+  variant?: "default" | "outline";
+  type?: "single" | "multiple";
 };
 
 type ToggleGroupProps = React.ComponentPropsWithoutRef<typeof BaseToggleGroup> &
@@ -17,23 +17,23 @@ const ToggleGroup = React.forwardRef<
   React.ComponentRef<typeof BaseToggleGroup>,
   ToggleGroupProps
 >(function ToggleGroupComponent(
-  { className, variant = 'default', type, ...props },
+  { className, variant = "default", type, ...props },
   ref
 ) {
   const variantCls =
-    variant === 'outline'
-      ? 'rounded border border-border bg-secondary p-0.5'
-      : '';
+    variant === "outline"
+      ? "rounded border border-border bg-secondary p-0.5"
+      : "";
   return (
     <BaseToggleGroup
-      className={cn('flex gap-1', variantCls, className)}
+      className={cn("flex gap-1", variantCls, className)}
       ref={ref}
-      toggleMultiple={type === 'multiple'}
+      toggleMultiple={type === "multiple"}
       {...props}
     />
   );
 });
-ToggleGroup.displayName = 'ToggleGroup';
+ToggleGroup.displayName = "ToggleGroup";
 
 const ToggleGroupItem = React.forwardRef<
   React.ComponentRef<typeof BaseToggle>,
@@ -50,6 +50,6 @@ const ToggleGroupItem = React.forwardRef<
     />
   );
 });
-ToggleGroupItem.displayName = 'ToggleGroupItem';
+ToggleGroupItem.displayName = "ToggleGroupItem";
 
 export { ToggleGroup, ToggleGroupItem };

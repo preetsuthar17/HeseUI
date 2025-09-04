@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { NavigationMenu as BaseNav } from '@base-ui-components/react/navigation-menu';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { NavigationMenu as BaseNav } from "@base-ui-components/react/navigation-menu";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const NavigationMenu = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Root>,
@@ -11,7 +11,7 @@ const NavigationMenu = React.forwardRef<
   return (
     <BaseNav.Root
       className={cn(
-        'min-w-max rounded bg-secondary p-1 text-foreground',
+        "min-w-max rounded bg-secondary p-1 text-foreground",
         className
       )}
       ref={ref}
@@ -19,7 +19,7 @@ const NavigationMenu = React.forwardRef<
     />
   );
 });
-NavigationMenu.displayName = 'NavigationMenu';
+NavigationMenu.displayName = "NavigationMenu";
 
 const NavigationMenuList = React.forwardRef<
   React.ComponentRef<typeof BaseNav.List>,
@@ -27,21 +27,21 @@ const NavigationMenuList = React.forwardRef<
 >(function NavigationMenuListComponent({ className, ...props }, ref) {
   return (
     <BaseNav.List
-      className={cn('relative flex', className)}
+      className={cn("relative flex", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NavigationMenuList.displayName = 'NavigationMenuList';
+NavigationMenuList.displayName = "NavigationMenuList";
 
 const NavigationMenuItem = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Item>,
   React.ComponentPropsWithoutRef<typeof BaseNav.Item>
 >(function NavigationMenuItemComponent({ className, ...props }, ref) {
-  return <BaseNav.Item className={cn('', className)} ref={ref} {...props} />;
+  return <BaseNav.Item className={cn("", className)} ref={ref} {...props} />;
 });
-NavigationMenuItem.displayName = 'NavigationMenuItem';
+NavigationMenuItem.displayName = "NavigationMenuItem";
 
 const NavigationMenuTrigger = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Trigger>,
@@ -50,7 +50,7 @@ const NavigationMenuTrigger = React.forwardRef<
   return (
     <BaseNav.Trigger
       className={cn(
-        'inline-flex h-10 select-none items-center justify-center gap-1.5 rounded bg-secondary px-3 font-medium text-secondary-foreground text-sm no-underline ring-offset-background hover:bg-secondary/80 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent',
+        "inline-flex h-10 select-none items-center justify-center gap-1.5 rounded bg-secondary px-3 font-medium text-secondary-foreground text-sm no-underline ring-offset-background hover:bg-secondary/80 hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent",
         className
       )}
       ref={ref}
@@ -58,7 +58,7 @@ const NavigationMenuTrigger = React.forwardRef<
     />
   );
 });
-NavigationMenuTrigger.displayName = 'NavigationMenuTrigger';
+NavigationMenuTrigger.displayName = "NavigationMenuTrigger";
 
 const NavigationMenuIcon = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Icon>,
@@ -67,7 +67,7 @@ const NavigationMenuIcon = React.forwardRef<
   return (
     <BaseNav.Icon
       className={cn(
-        'transition-transform duration-200 ease-in-out data-[popup-open]:rotate-180',
+        "transition-transform duration-200 ease-in-out data-[popup-open]:rotate-180",
         className
       )}
       ref={ref}
@@ -75,7 +75,7 @@ const NavigationMenuIcon = React.forwardRef<
     />
   );
 });
-NavigationMenuIcon.displayName = 'NavigationMenuIcon';
+NavigationMenuIcon.displayName = "NavigationMenuIcon";
 
 const NavigationMenuContent = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Content>,
@@ -84,7 +84,7 @@ const NavigationMenuContent = React.forwardRef<
   return (
     <BaseNav.Content
       className={cn(
-        'data-[starting-style]:data-[activation-direction=left]:-translate-x-1/2 data-[ending-style]:data-[activation-direction=right]:-translate-x-1/2 box-border h-full w-[calc(100vw-2.5rem)] p-6 transition-[opacity,transform,translate] duration-[var(--duration)] ease-[var(--easing)] [--duration:0.35s] [--easing:cubic-bezier(0.22,1,0.36,1)] data-[ending-style]:data-[activation-direction=left]:translate-x-1/2 data-[starting-style]:data-[activation-direction=right]:translate-x-1/2 data-[ending-style]:opacity-0 sm:w-max sm:min-w-[24rem]',
+        "data-[starting-style]:data-[activation-direction=left]:-translate-x-1/2 data-[ending-style]:data-[activation-direction=right]:-translate-x-1/2 box-border h-full w-[calc(100vw-2.5rem)] p-6 transition-[opacity,transform,translate] duration-[var(--duration)] ease-[var(--easing)] [--duration:0.35s] [--easing:cubic-bezier(0.22,1,0.36,1)] data-[ending-style]:data-[activation-direction=left]:translate-x-1/2 data-[starting-style]:data-[activation-direction=right]:translate-x-1/2 data-[ending-style]:opacity-0 sm:w-max sm:min-w-[24rem]",
         className
       )}
       ref={ref}
@@ -92,7 +92,7 @@ const NavigationMenuContent = React.forwardRef<
     />
   );
 });
-NavigationMenuContent.displayName = 'NavigationMenuContent';
+NavigationMenuContent.displayName = "NavigationMenuContent";
 
 const NavigationMenuLink = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Link>,
@@ -100,13 +100,13 @@ const NavigationMenuLink = React.forwardRef<
 >(function NavigationMenuLinkComponent({ className, ...props }, ref) {
   return (
     <BaseNav.Link
-      className={cn('no-underline', className)}
+      className={cn("no-underline", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NavigationMenuLink.displayName = 'NavigationMenuLink';
+NavigationMenuLink.displayName = "NavigationMenuLink";
 
 const NavigationMenuPortal = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Portal>,
@@ -114,7 +114,7 @@ const NavigationMenuPortal = React.forwardRef<
 >(function NavigationMenuPortalComponent(props, _ref) {
   return <BaseNav.Portal {...props} />;
 });
-NavigationMenuPortal.displayName = 'NavigationMenuPortal';
+NavigationMenuPortal.displayName = "NavigationMenuPortal";
 
 const NavigationMenuPositioner = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Positioner>,
@@ -125,8 +125,8 @@ const NavigationMenuPositioner = React.forwardRef<
 ) {
   const mergedStyle: React.CSSProperties = {
     ...(style as React.CSSProperties),
-    ['--duration' as string]: '0.35s',
-    ['--easing' as string]: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    ["--duration" as string]: "0.35s",
+    ["--easing" as string]: "cubic-bezier(0.22, 1, 0.36, 1)",
   };
   return (
     <BaseNav.Positioner
@@ -140,7 +140,7 @@ const NavigationMenuPositioner = React.forwardRef<
     />
   );
 });
-NavigationMenuPositioner.displayName = 'NavigationMenuPositioner';
+NavigationMenuPositioner.displayName = "NavigationMenuPositioner";
 
 const NavigationMenuPopup = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Popup>,
@@ -149,7 +149,7 @@ const NavigationMenuPopup = React.forwardRef<
   return (
     <BaseNav.Popup
       className={cn(
-        'relative z-50 h-[var(--popup-height)] w-[var(--popup-width)] origin-[var(--transform-origin)] rounded border border-border bg-popover text-popover-foreground transition-[opacity,transform,width,height,scale,translate] duration-[var(--duration)] ease-[var(--easing)] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0',
+        "relative z-50 h-[var(--popup-height)] w-[var(--popup-width)] origin-[var(--transform-origin)] rounded border border-border bg-popover text-popover-foreground transition-[opacity,transform,width,height,scale,translate] duration-[var(--duration)] ease-[var(--easing)] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0",
         className
       )}
       ref={ref}
@@ -157,7 +157,7 @@ const NavigationMenuPopup = React.forwardRef<
     />
   );
 });
-NavigationMenuPopup.displayName = 'NavigationMenuPopup';
+NavigationMenuPopup.displayName = "NavigationMenuPopup";
 
 const NavigationMenuArrow = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Arrow>,
@@ -166,7 +166,7 @@ const NavigationMenuArrow = React.forwardRef<
   return (
     <BaseNav.Arrow
       className={cn(
-        'data-[side=right]:-rotate-90 flex transition-[left] duration-[var(--duration)] ease-[var(--easing)] data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180',
+        "data-[side=right]:-rotate-90 flex transition-[left] duration-[var(--duration)] ease-[var(--easing)] data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
         className
       )}
       ref={ref}
@@ -174,7 +174,7 @@ const NavigationMenuArrow = React.forwardRef<
     />
   );
 });
-NavigationMenuArrow.displayName = 'NavigationMenuArrow';
+NavigationMenuArrow.displayName = "NavigationMenuArrow";
 
 const NavigationMenuViewport = React.forwardRef<
   React.ComponentRef<typeof BaseNav.Viewport>,
@@ -182,16 +182,16 @@ const NavigationMenuViewport = React.forwardRef<
 >(function NavigationMenuViewportComponent({ className, ...props }, ref) {
   return (
     <BaseNav.Viewport
-      className={cn('relative h-full w-full overflow-hidden', className)}
+      className={cn("relative h-full w-full overflow-hidden", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NavigationMenuViewport.displayName = 'NavigationMenuViewport';
+NavigationMenuViewport.displayName = "NavigationMenuViewport";
 
 function navigationMenuTriggerStyle() {
-  return 'inline-flex h-10 items-center justify-center gap-1.5 rounded bg-secondary px-3 text-sm font-medium text-secondary-foreground hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background data-[popup-open]:bg-accent';
+  return "inline-flex h-10 items-center justify-center gap-1.5 rounded bg-secondary px-3 text-sm font-medium text-secondary-foreground hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background data-[popup-open]:bg-accent";
 }
 
 export {

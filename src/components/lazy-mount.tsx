@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 type LazyMountProps = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ type LazyMountProps = {
 
 export function LazyMount({
   children,
-  rootMargin = '400px',
+  rootMargin = "400px",
   once = true,
   fallback = null,
   initiallyVisible = false,
@@ -48,7 +48,7 @@ export function LazyMount({
     }
 
     const parseMarginPx = (margin: string): number => {
-      const first = margin.trim().split(/\s+/)[0] ?? '0px';
+      const first = margin.trim().split(/\s+/)[0] ?? "0px";
       const match = /(-?\d+(?:\.\d+)?)px/.exec(first);
       return match ? Number(match[1]) : 0;
     };
@@ -71,8 +71,8 @@ export function LazyMount({
       if (!isVisible && isInViewport(element)) {
         setIsVisible(true);
         if (once) {
-          window.removeEventListener('scroll', onScroll, true);
-          window.removeEventListener('resize', onScroll);
+          window.removeEventListener("scroll", onScroll, true);
+          window.removeEventListener("resize", onScroll);
         }
       }
     };
@@ -80,11 +80,11 @@ export function LazyMount({
     const onScroll = () => check();
 
     check();
-    window.addEventListener('scroll', onScroll, true);
-    window.addEventListener('resize', onScroll);
+    window.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onScroll);
     return () => {
-      window.removeEventListener('scroll', onScroll, true);
-      window.removeEventListener('resize', onScroll);
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onScroll);
     };
   }, [isVisible, once, rootMargin]);
 

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Check, ChevronDown, Copy } from 'lucide-react';
-import { useState } from 'react';
-import { RiChat3Fill, RiClaudeFill, RiOpenaiFill } from 'react-icons/ri';
+import { Check, ChevronDown, Copy } from "lucide-react";
+import { useState } from "react";
+import { RiChat3Fill, RiClaudeFill, RiOpenaiFill } from "react-icons/ri";
 import {
   Menu,
   MenuContent,
@@ -10,10 +10,10 @@ import {
   MenuPortal,
   MenuPositioner,
   MenuTrigger,
-} from '@/components/ui/menu';
-import { componentConfigs } from '@/lib/component-configs';
-import { generateComponentMarkdown } from '@/lib/markdown-generator';
-import { Button } from './ui/button';
+} from "@/components/ui/menu";
+import { componentConfigs } from "@/lib/component-configs";
+import { generateComponentMarkdown } from "@/lib/markdown-generator";
+import { Button } from "./ui/button";
 
 type CopyAndAskButtonProps = {
   componentId: string;
@@ -21,11 +21,11 @@ type CopyAndAskButtonProps = {
 
 function useComponentLinks(componentId: string) {
   const componentUrl =
-    typeof window !== 'undefined'
+    typeof window !== "undefined"
       ? `${window.location.origin}/components/${componentId}`
       : `https://www.heseui.com/components/${componentId}`;
   const q = `I'm looking at this heseui documentation ${componentUrl}. Help me to understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`;
-  const gpt = `https://chatgpt.com/?${new URLSearchParams({ hints: 'search', q })}`;
+  const gpt = `https://chatgpt.com/?${new URLSearchParams({ hints: "search", q })}`;
   const claude = `https://claude.ai/new?${new URLSearchParams({ q })}`;
   const t3 = `https://t3.chat/new?${new URLSearchParams({ q })}`;
   const config = componentConfigs[componentId as keyof typeof componentConfigs];
@@ -33,7 +33,7 @@ function useComponentLinks(componentId: string) {
     ? `https://v0.dev/?${new URLSearchParams({
         q: `I'm looking at this documentation: ${componentUrl}. Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`,
       })}`
-    : '';
+    : "";
   return { gpt, claude, t3, v0Url };
 }
 

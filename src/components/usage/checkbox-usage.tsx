@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Checkbox } from '@/components/ui/checkbox';
-import { CheckboxInstallation } from '../installation/checkbox-installation';
-import { Separator } from '../ui/separator';
+import { Checkbox } from "@/components/ui/checkbox";
+import { CheckboxInstallation } from "../installation/checkbox-installation";
+import { Separator } from "../ui/separator";
 
 export function CheckboxDemo() {
   return (

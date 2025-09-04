@@ -1,6 +1,6 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { AvatarInstallation } from '../installation/avatar-installation';
-import { Separator } from '../ui/separator';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AvatarInstallation } from "../installation/avatar-installation";
+import { Separator } from "../ui/separator";
 
 export function AvatarDemo() {
   return (

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Switch, SwitchThumb } from '@/components/ui/switch';
-import { SwitchInstallation } from '../installation/switch-installation';
-import { Separator } from '../ui/separator';
+import { Switch, SwitchThumb } from "@/components/ui/switch";
+import { SwitchInstallation } from "../installation/switch-installation";
+import { Separator } from "../ui/separator";
 
 export function SwitchDemo() {
   return (

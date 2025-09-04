@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { Bold } from 'lucide-react';
-import { Toggle } from '@/components/ui/toggle';
-import { ToggleInstallation } from '../installation/toggle-installation';
-import { Separator } from '../ui/separator';
+import { Bold } from "lucide-react";
+import { Toggle } from "@/components/ui/toggle";
+import { ToggleInstallation } from "../installation/toggle-installation";
+import { Separator } from "../ui/separator";
 
 export function ToggleDemo() {
   return (

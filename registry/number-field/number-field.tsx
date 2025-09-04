@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { NumberField as BaseNumberField } from '@base-ui-components/react/number-field';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { NumberField as BaseNumberField } from "@base-ui-components/react/number-field";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const NumberField = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.Root>,
@@ -10,13 +10,13 @@ const NumberField = React.forwardRef<
 >(function NumberFieldComponent({ className, ...props }, ref) {
   return (
     <BaseNumberField.Root
-      className={cn('flex flex-col items-start gap-1', className)}
+      className={cn("flex flex-col items-start gap-1", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NumberField.displayName = 'NumberField';
+NumberField.displayName = "NumberField";
 
 const NumberFieldScrubArea = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.ScrubArea>,
@@ -24,13 +24,13 @@ const NumberFieldScrubArea = React.forwardRef<
 >(function NumberFieldScrubAreaComponent({ className, ...props }, ref) {
   return (
     <BaseNumberField.ScrubArea
-      className={cn('cursor-ew-resize select-none font-medium', className)}
+      className={cn("cursor-ew-resize select-none font-medium", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NumberFieldScrubArea.displayName = 'NumberFieldScrubArea';
+NumberFieldScrubArea.displayName = "NumberFieldScrubArea";
 
 const NumberFieldScrubAreaCursor = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.ScrubAreaCursor>,
@@ -38,13 +38,13 @@ const NumberFieldScrubAreaCursor = React.forwardRef<
 >(function NumberFieldScrubAreaCursorComponent({ className, ...props }, ref) {
   return (
     <BaseNumberField.ScrubAreaCursor
-      className={cn('drop-shadow-[0_1px_1px_#0008] filter', className)}
+      className={cn("drop-shadow-[0_1px_1px_#0008] filter", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NumberFieldScrubAreaCursor.displayName = 'NumberFieldScrubAreaCursor';
+NumberFieldScrubAreaCursor.displayName = "NumberFieldScrubAreaCursor";
 
 const NumberFieldGroup = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.Group>,
@@ -52,13 +52,13 @@ const NumberFieldGroup = React.forwardRef<
 >(function NumberFieldGroupComponent({ className, ...props }, ref) {
   return (
     <BaseNumberField.Group
-      className={cn('flex', className)}
+      className={cn("flex", className)}
       ref={ref}
       {...props}
     />
   );
 });
-NumberFieldGroup.displayName = 'NumberFieldGroup';
+NumberFieldGroup.displayName = "NumberFieldGroup";
 
 const NumberFieldDecrement = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.Decrement>,
@@ -67,7 +67,7 @@ const NumberFieldDecrement = React.forwardRef<
   return (
     <BaseNumberField.Decrement
       className={cn(
-        'flex size-10 select-none items-center justify-center rounded-tl rounded-bl border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent',
+        "flex size-10 select-none items-center justify-center rounded-tl rounded-bl border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent",
         className
       )}
       ref={ref}
@@ -75,7 +75,7 @@ const NumberFieldDecrement = React.forwardRef<
     />
   );
 });
-NumberFieldDecrement.displayName = 'NumberFieldDecrement';
+NumberFieldDecrement.displayName = "NumberFieldDecrement";
 
 const NumberFieldInput = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.Input>,
@@ -84,7 +84,7 @@ const NumberFieldInput = React.forwardRef<
   return (
     <BaseNumberField.Input
       className={cn(
-        'h-10 w-24 border-border border-y text-center text-base text-foreground tabular-nums focus:z-10 focus:outline-none focus:ring-2 focus:ring-ring',
+        "h-10 w-24 border-border border-y text-center text-base text-foreground tabular-nums focus:z-10 focus:outline-none focus:ring-2 focus:ring-ring",
         className
       )}
       ref={ref}
@@ -92,7 +92,7 @@ const NumberFieldInput = React.forwardRef<
     />
   );
 });
-NumberFieldInput.displayName = 'NumberFieldInput';
+NumberFieldInput.displayName = "NumberFieldInput";
 
 const NumberFieldIncrement = React.forwardRef<
   React.ComponentRef<typeof BaseNumberField.Increment>,
@@ -101,7 +101,7 @@ const NumberFieldIncrement = React.forwardRef<
   return (
     <BaseNumberField.Increment
       className={cn(
-        'flex size-10 select-none items-center justify-center rounded-tr rounded-br border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent',
+        "flex size-10 select-none items-center justify-center rounded-tr rounded-br border border-border bg-background bg-clip-padding text-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent",
         className
       )}
       ref={ref}
@@ -109,7 +109,7 @@ const NumberFieldIncrement = React.forwardRef<
     />
   );
 });
-NumberFieldIncrement.displayName = 'NumberFieldIncrement';
+NumberFieldIncrement.displayName = "NumberFieldIncrement";
 
 export {
   NumberField,

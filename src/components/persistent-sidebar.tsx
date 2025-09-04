@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { memo } from 'react';
+import { memo } from "react";
 import {
   ScrollArea,
   ScrollAreaContent,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from '@/components/ui/scrollarea';
-import { ComponentNavigation } from './component-navigation';
+} from "@/components/ui/scrollarea";
+import { ComponentNavigation } from "./component-navigation";
 
 const PersistentSidebar = memo(function PersistentSidebar() {
   return (

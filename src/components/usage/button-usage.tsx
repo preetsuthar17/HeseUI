@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { ButtonInstallation } from '../installation/button-installation';
-import { Separator } from '../ui/separator';
+import { Button } from "@/components/ui/button";
+import { ButtonInstallation } from "../installation/button-installation";
+import { Separator } from "../ui/separator";
 
 export function ButtonDemo() {
   return (

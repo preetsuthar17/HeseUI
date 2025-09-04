@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Field as BaseField } from '@base-ui-components/react/field';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Field as BaseField } from "@base-ui-components/react/field";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Field = React.forwardRef<
   React.ComponentRef<typeof BaseField.Root>,
@@ -10,13 +10,13 @@ const Field = React.forwardRef<
 >(function FieldComponent({ className, ...props }, ref) {
   return (
     <BaseField.Root
-      className={cn('flex w-full flex-col items-start gap-1', className)}
+      className={cn("flex w-full flex-col items-start gap-1", className)}
       ref={ref}
       {...props}
     />
   );
 });
-Field.displayName = 'Field';
+Field.displayName = "Field";
 
 const FieldLabel = React.forwardRef<
   React.ComponentRef<typeof BaseField.Label>,
@@ -24,13 +24,13 @@ const FieldLabel = React.forwardRef<
 >(function FieldLabelComponent({ className, ...props }, ref) {
   return (
     <BaseField.Label
-      className={cn('font-medium text-sm', className)}
+      className={cn("font-medium text-sm", className)}
       ref={ref}
       {...props}
     />
   );
 });
-FieldLabel.displayName = 'FieldLabel';
+FieldLabel.displayName = "FieldLabel";
 
 const FieldControl = React.forwardRef<
   React.ComponentRef<typeof BaseField.Control>,
@@ -39,7 +39,7 @@ const FieldControl = React.forwardRef<
   return (
     <BaseField.Control
       className={cn(
-        'flex h-9 w-full min-w-0 rounded border border-border bg-transparent px-3 py-1 text-base text-foreground outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[2px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40',
+        "flex h-9 w-full min-w-0 rounded border border-border bg-transparent px-3 py-1 text-base text-foreground outline-none transition-[color,box-shadow] selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-sm placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-[2px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40",
         className
       )}
       ref={ref}
@@ -47,7 +47,7 @@ const FieldControl = React.forwardRef<
     />
   );
 });
-FieldControl.displayName = 'FieldControl';
+FieldControl.displayName = "FieldControl";
 
 const FieldDescription = React.forwardRef<
   React.ComponentRef<typeof BaseField.Description>,
@@ -55,13 +55,13 @@ const FieldDescription = React.forwardRef<
 >(function FieldDescriptionComponent({ className, ...props }, ref) {
   return (
     <BaseField.Description
-      className={cn('text-muted-foreground text-sm', className)}
+      className={cn("text-muted-foreground text-sm", className)}
       ref={ref}
       {...props}
     />
   );
 });
-FieldDescription.displayName = 'FieldDescription';
+FieldDescription.displayName = "FieldDescription";
 
 const FieldError = React.forwardRef<
   React.ComponentRef<typeof BaseField.Error>,
@@ -69,13 +69,13 @@ const FieldError = React.forwardRef<
 >(function FieldErrorComponent({ className, ...props }, ref) {
   return (
     <BaseField.Error
-      className={cn('text-destructive text-sm', className)}
+      className={cn("text-destructive text-sm", className)}
       ref={ref}
       {...props}
     />
   );
 });
-FieldError.displayName = 'FieldError';
+FieldError.displayName = "FieldError";
 
 const FieldValidity = React.forwardRef<
   React.ComponentRef<typeof BaseField.Validity>,
@@ -83,7 +83,7 @@ const FieldValidity = React.forwardRef<
 >(function FieldValidityComponent(props, _ref) {
   return <BaseField.Validity {...props} />;
 });
-FieldValidity.displayName = 'FieldValidity';
+FieldValidity.displayName = "FieldValidity";
 
 export {
   Field,

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import type React from 'react';
+import type React from "react";
 import {
   Popover,
   PopoverArrow,
@@ -10,9 +10,9 @@ import {
   PopoverPositioner,
   PopoverTitle,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { PopoverInstallation } from '../installation/popover-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/popover";
+import { PopoverInstallation } from "../installation/popover-installation";
+import { Separator } from "../ui/separator";
 
 export function PopoverDemo() {
   return (
@@ -41,7 +41,7 @@ export function PopoverDemo() {
   );
 }
 
-function BellIcon(props: React.ComponentProps<'svg'>) {
+function BellIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="currentcolor"

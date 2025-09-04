@@ -3,9 +3,9 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { AccordionInstallation } from '../installation/accordion-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/accordion";
+import { AccordionInstallation } from "../installation/accordion-installation";
+import { Separator } from "../ui/separator";
 
 export function AccordionDemo() {
   return (
@@ -13,7 +13,7 @@ export function AccordionDemo() {
       <Accordion
         className="w-full text-base"
         collapsible
-        defaultValue={['item-1']}
+        defaultValue={["item-1"]}
         type="single"
       >
         <AccordionItem value="item-1">

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Progress,
   ProgressIndicator,
   ProgressLabel,
   ProgressTrack,
   ProgressValue,
-} from '@/components/ui/progress';
-import { ProgressInstallation } from '../installation/progress-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/progress";
+import { ProgressInstallation } from "../installation/progress-installation";
+import { Separator } from "../ui/separator";
 
 const INITIAL_PROGRESS = 20;
 const PROGRESS_MAX = 100;

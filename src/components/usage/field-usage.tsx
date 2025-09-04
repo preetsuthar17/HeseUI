@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Field,
@@ -7,9 +7,9 @@ import {
   FieldError,
   FieldLabel,
   FieldValidity,
-} from '@/components/ui/field';
-import { FieldInstallation } from '../installation/field-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/field";
+import { FieldInstallation } from "../installation/field-installation";
+import { Separator } from "../ui/separator";
 
 const MIN_USERNAME_LENGTH = 3;
 const USERNAME_REGEX = /^[a-zA-Z0-9_]+$/;
@@ -73,12 +73,12 @@ export function FieldDemo() {
           <Field
             className="w-full max-w-64"
             validate={(value) => {
-              if (typeof value === 'string' && value.length > 0) {
+              if (typeof value === "string" && value.length > 0) {
                 if (value.length < MIN_USERNAME_LENGTH) {
-                  return 'Username must be at least 3 characters';
+                  return "Username must be at least 3 characters";
                 }
                 if (!USERNAME_REGEX.test(value)) {
-                  return 'Username can only contain letters, numbers, and underscores';
+                  return "Username can only contain letters, numbers, and underscores";
                 }
               }
               return null;

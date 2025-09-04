@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import NextImage from 'next/image';
+import NextImage from "next/image";
 import {
   PreviewCard,
   PreviewCardArrow,
@@ -8,22 +8,22 @@ import {
   PreviewCardPortal,
   PreviewCardPositioner,
   PreviewCardTrigger,
-} from '@/components/ui/preview-card';
-import { PreviewCardInstallation } from '../installation/preview-card-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/preview-card";
+import { PreviewCardInstallation } from "../installation/preview-card-installation";
+import { Separator } from "../ui/separator";
 
 export function PreviewCardDemo() {
   return (
     <div className="flex flex-col gap-8">
       <PreviewCard>
         <p className="max-w-64 text-balance text-base text-foreground">
-          The principles of good{' '}
+          The principles of good{" "}
           <PreviewCardTrigger
             className="text-primary underline decoration-1 decoration-primary/60 underline-offset-2 outline-none hover:underline focus-visible:rounded focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-ring data-[popup-open]:underline"
             href="https://en.wikipedia.org/wiki/Typography"
           >
             typography
-          </PreviewCardTrigger>{' '}
+          </PreviewCardTrigger>{" "}
           remain into the digital age.
         </p>
 

@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { Bold, Italic, Underline } from 'lucide-react';
-import React from 'react';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/togglegroup';
-import { ToggleGroupInstallation } from '../installation/togglegroup-installation';
-import { Separator } from '../ui/separator';
+import { Bold, Italic, Underline } from "lucide-react";
+import React from "react";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
+import { ToggleGroupInstallation } from "../installation/togglegroup-installation";
+import { Separator } from "../ui/separator";
 
 function getLabel(value: string) {
-  if (value === 'bold') {
-    return 'Bold';
+  if (value === "bold") {
+    return "Bold";
   }
-  if (value === 'italic') {
-    return 'Italic';
+  if (value === "italic") {
+    return "Italic";
   }
-  if (value === 'underline') {
-    return 'Underline';
+  if (value === "underline") {
+    return "Underline";
   }
-  return '';
+  return "";
 }
 
 const _icons = {
@@ -26,9 +26,9 @@ const _icons = {
 };
 
 const options = [
-  { value: 'bold', icon: Bold },
-  { value: 'italic', icon: Italic },
-  { value: 'underline', icon: Underline },
+  { value: "bold", icon: Bold },
+  { value: "italic", icon: Italic },
+  { value: "underline", icon: Underline },
 ];
 
 export function ToggleGroupDemo() {

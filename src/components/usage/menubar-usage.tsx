@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import type React from 'react';
+import type React from "react";
 import {
   Menubar,
   MenubarContent,
@@ -13,9 +13,9 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from '@/components/ui/menubar';
-import { MenubarInstallation } from '../installation/menubar-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/menubar";
+import { MenubarInstallation } from "../installation/menubar-installation";
+import { Separator } from "../ui/separator";
 
 export function MenubarDemo() {
   return (
@@ -113,7 +113,7 @@ function handleClick(event: React.MouseEvent<HTMLElement>) {
   alert(`${event.currentTarget.textContent} clicked`);
 }
 
-function ChevronRightIcon(props: React.ComponentProps<'svg'>) {
+function ChevronRightIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="16" viewBox="0 0 16 16" width="16" {...props}>
       <title>Open submenu</title>

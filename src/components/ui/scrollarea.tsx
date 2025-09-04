@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { ScrollArea as BaseScrollArea } from '@base-ui-components/react/scroll-area';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { ScrollArea as BaseScrollArea } from "@base-ui-components/react/scroll-area";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const ScrollArea = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Root>,
@@ -10,13 +10,13 @@ const ScrollArea = React.forwardRef<
 >(function ScrollAreaComponent({ className, ...props }, ref) {
   return (
     <BaseScrollArea.Root
-      className={cn('relative', className)}
+      className={cn("relative", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ScrollArea.displayName = 'ScrollArea';
+ScrollArea.displayName = "ScrollArea";
 
 const ScrollAreaViewport = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Viewport>,
@@ -25,7 +25,7 @@ const ScrollAreaViewport = React.forwardRef<
   return (
     <BaseScrollArea.Viewport
       className={cn(
-        '-outline-offset-1 h-full overscroll-contain rounded outline outline-border focus-visible:outline focus-visible:outline-ring',
+        "-outline-offset-1 h-full overscroll-contain rounded outline outline-border focus-visible:outline focus-visible:outline-ring",
         className
       )}
       ref={ref}
@@ -33,7 +33,7 @@ const ScrollAreaViewport = React.forwardRef<
     />
   );
 });
-ScrollAreaViewport.displayName = 'ScrollAreaViewport';
+ScrollAreaViewport.displayName = "ScrollAreaViewport";
 
 const ScrollAreaContent = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Content>,
@@ -41,23 +41,23 @@ const ScrollAreaContent = React.forwardRef<
 >(function ScrollAreaContentComponent({ className, ...props }, ref) {
   return (
     <BaseScrollArea.Content
-      className={cn('', className)}
+      className={cn("", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ScrollAreaContent.displayName = 'ScrollAreaContent';
+ScrollAreaContent.displayName = "ScrollAreaContent";
 
 const ScrollAreaScrollbar = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Scrollbar>,
   React.ComponentPropsWithoutRef<typeof BaseScrollArea.Scrollbar>
 >(function ScrollAreaScrollbarComponent(
-  { className, orientation = 'vertical', ...props },
+  { className, orientation = "vertical", ...props },
   ref
 ) {
   const baseScrollbarClass =
-    'relative flex justify-start rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-75 data-[scrolling]:duration-75';
+    "relative flex justify-start rounded bg-muted opacity-0 transition-opacity delay-300 data-[hovering]:opacity-100 data-[scrolling]:opacity-100 data-[hovering]:delay-0 data-[scrolling]:delay-0 data-[hovering]:duration-75 data-[scrolling]:duration-75";
   const verticalClass =
     'm-2 w-1 before:absolute before:inset-y-0 before:w-5 before:content-["""]';
   const horizontalClass =
@@ -66,7 +66,7 @@ const ScrollAreaScrollbar = React.forwardRef<
     <BaseScrollArea.Scrollbar
       className={cn(
         baseScrollbarClass,
-        orientation === 'vertical' ? verticalClass : horizontalClass,
+        orientation === "vertical" ? verticalClass : horizontalClass,
         className
       )}
       orientation={orientation}
@@ -75,7 +75,7 @@ const ScrollAreaScrollbar = React.forwardRef<
     />
   );
 });
-ScrollAreaScrollbar.displayName = 'ScrollAreaScrollbar';
+ScrollAreaScrollbar.displayName = "ScrollAreaScrollbar";
 
 const ScrollAreaThumb = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Thumb>,
@@ -84,7 +84,7 @@ const ScrollAreaThumb = React.forwardRef<
   return (
     <BaseScrollArea.Thumb
       className={cn(
-        'rounded bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
+        "rounded bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full",
         className
       )}
       ref={ref}
@@ -92,7 +92,7 @@ const ScrollAreaThumb = React.forwardRef<
     />
   );
 });
-ScrollAreaThumb.displayName = 'ScrollAreaThumb';
+ScrollAreaThumb.displayName = "ScrollAreaThumb";
 
 const ScrollAreaCorner = React.forwardRef<
   React.ComponentRef<typeof BaseScrollArea.Corner>,
@@ -100,13 +100,13 @@ const ScrollAreaCorner = React.forwardRef<
 >(function ScrollAreaCornerComponent({ className, ...props }, ref) {
   return (
     <BaseScrollArea.Corner
-      className={cn('bg-muted', className)}
+      className={cn("bg-muted", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ScrollAreaCorner.displayName = 'ScrollAreaCorner';
+ScrollAreaCorner.displayName = "ScrollAreaCorner";
 
 export {
   ScrollArea,

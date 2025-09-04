@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Field,
@@ -6,10 +6,10 @@ import {
   FieldDescription,
   FieldError,
   FieldLabel,
-} from '@/components/ui/field';
-import { Fieldset, FieldsetLegend } from '@/components/ui/fieldset';
-import { FieldsetInstallation } from '../installation/fieldset-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/field";
+import { Fieldset, FieldsetLegend } from "@/components/ui/fieldset";
+import { FieldsetInstallation } from "../installation/fieldset-installation";
+import { Separator } from "../ui/separator";
 
 export function FieldsetDemo() {
   return (

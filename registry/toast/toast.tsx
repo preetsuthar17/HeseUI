@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Toast as BaseToast } from '@base-ui-components/react/toast';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Toast as BaseToast } from "@base-ui-components/react/toast";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const ToastProvider = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Provider>,
@@ -10,7 +10,7 @@ const ToastProvider = React.forwardRef<
 >(function ToastProviderComponent(props, _ref) {
   return <BaseToast.Provider {...props} />;
 });
-ToastProvider.displayName = 'ToastProvider';
+ToastProvider.displayName = "ToastProvider";
 
 const ToastPortal = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Portal>,
@@ -18,7 +18,7 @@ const ToastPortal = React.forwardRef<
 >(function ToastPortalComponent(props, _ref) {
   return <BaseToast.Portal {...props} />;
 });
-ToastPortal.displayName = 'ToastPortal';
+ToastPortal.displayName = "ToastPortal";
 
 const ToastViewport = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Viewport>,
@@ -27,7 +27,7 @@ const ToastViewport = React.forwardRef<
   return (
     <BaseToast.Viewport
       className={cn(
-        'fixed right-4 bottom-4 z-50 mx-auto flex w-[250px] sm:right-8 sm:bottom-8 sm:w-[300px]',
+        "fixed right-4 bottom-4 z-50 mx-auto flex w-[250px] sm:right-8 sm:bottom-8 sm:w-[300px]",
         className
       )}
       ref={ref}
@@ -35,7 +35,7 @@ const ToastViewport = React.forwardRef<
     />
   );
 });
-ToastViewport.displayName = 'ToastViewport';
+ToastViewport.displayName = "ToastViewport";
 
 const ToastRoot = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Root>,
@@ -43,8 +43,8 @@ const ToastRoot = React.forwardRef<
 >(function ToastRootComponent({ className, style, ...props }, ref) {
   const mergedStyle: React.CSSProperties = {
     ...(style as React.CSSProperties),
-    ['--gap' as string]: '0.75rem',
-    ['--offset-y' as string]: 'var(--toast-offset-y)',
+    ["--gap" as string]: "0.75rem",
+    ["--offset-y" as string]: "var(--toast-offset-y)",
   };
   return (
     <BaseToast.Root
@@ -58,7 +58,7 @@ const ToastRoot = React.forwardRef<
     />
   );
 });
-ToastRoot.displayName = 'ToastRoot';
+ToastRoot.displayName = "ToastRoot";
 
 const ToastTitle = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Title>,
@@ -66,13 +66,13 @@ const ToastTitle = React.forwardRef<
 >(function ToastTitleComponent({ className, ...props }, ref) {
   return (
     <BaseToast.Title
-      className={cn('font-medium text-[0.975rem] leading-5', className)}
+      className={cn("font-medium text-[0.975rem] leading-5", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ToastTitle.displayName = 'ToastTitle';
+ToastTitle.displayName = "ToastTitle";
 
 const ToastDescription = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Description>,
@@ -81,7 +81,7 @@ const ToastDescription = React.forwardRef<
   return (
     <BaseToast.Description
       className={cn(
-        'text-[0.925rem] text-muted-foreground leading-5',
+        "text-[0.925rem] text-muted-foreground leading-5",
         className
       )}
       ref={ref}
@@ -89,7 +89,7 @@ const ToastDescription = React.forwardRef<
     />
   );
 });
-ToastDescription.displayName = 'ToastDescription';
+ToastDescription.displayName = "ToastDescription";
 
 const ToastAction = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Action>,
@@ -98,7 +98,7 @@ const ToastAction = React.forwardRef<
   return (
     <BaseToast.Action
       className={cn(
-        'mt-2 mr-auto inline-flex h-8 w-fit items-center justify-center rounded bg-primary px-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        "mt-2 mr-auto inline-flex h-8 w-fit items-center justify-center rounded bg-primary px-3 font-medium text-primary-foreground text-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         className
       )}
       ref={ref}
@@ -106,7 +106,7 @@ const ToastAction = React.forwardRef<
     />
   );
 });
-ToastAction.displayName = 'ToastAction';
+ToastAction.displayName = "ToastAction";
 
 const ToastClose = React.forwardRef<
   React.ComponentRef<typeof BaseToast.Close>,
@@ -115,7 +115,7 @@ const ToastClose = React.forwardRef<
   return (
     <BaseToast.Close
       className={cn(
-        'absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded bg-transparent text-muted-foreground hover:bg-accent hover:text-foreground',
+        "absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded bg-transparent text-muted-foreground hover:bg-accent hover:text-foreground",
         className
       )}
       ref={ref}
@@ -123,7 +123,7 @@ const ToastClose = React.forwardRef<
     />
   );
 });
-ToastClose.displayName = 'ToastClose';
+ToastClose.displayName = "ToastClose";
 
 const useToastManager = BaseToast.useToastManager;
 const createToastManager = BaseToast.createToastManager;

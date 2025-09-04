@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { ArrowLeft, ArrowUp } from 'lucide-react';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { FaGithub, FaXTwitter } from 'react-icons/fa6';
-import { ComponentSection } from '@/components/component-section';
-import { CopyAndAskButton } from '@/components/copy-and-ask-button';
-import { LazyMount } from '@/components/lazy-mount';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { Button } from '@/components/ui/button';
-import { componentConfigs } from '@/lib/component-configs';
-import { Footer } from '../footer';
+import { ArrowLeft, ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { ComponentSection } from "@/components/component-section";
+import { CopyAndAskButton } from "@/components/copy-and-ask-button";
+import { LazyMount } from "@/components/lazy-mount";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { componentConfigs } from "@/lib/component-configs";
+import { Footer } from "../footer";
 
-function SideDivider({ position = 'left' }: { position?: 'left' | 'right' }) {
+function SideDivider({ position = "left" }: { position?: "left" | "right" }) {
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute top-0 ${position === 'left' ? 'left-0' : 'right-0'} z-10 block h-full w-2 border-r border-l md:w-6`}
+      className={`pointer-events-none absolute top-0 ${position === "left" ? "left-0" : "right-0"} z-10 block h-full w-2 border-r border-l md:w-6`}
     >
       <div
         className="h-full w-full"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(135deg, var(--muted) 0 1px, transparent 1px 10px)',
+            "repeating-linear-gradient(135deg, var(--muted) 0 1px, transparent 1px 10px)",
           opacity: 1,
         }}
       />
@@ -38,12 +38,12 @@ function ScrollToTopButton() {
     function handleScroll() {
       setVisible(window.scrollY > 200);
     }
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
@@ -51,8 +51,8 @@ function ScrollToTopButton() {
       aria-label="Scroll to top"
       className={`fixed right-6 bottom-6 z-50 rounded-full p-2 transition-opacity duration-300 ${
         visible
-          ? 'pointer-events-auto opacity-100'
-          : 'pointer-events-none opacity-0'
+          ? "pointer-events-auto opacity-100"
+          : "pointer-events-none opacity-0"
       }`}
       onClick={scrollToTop}
       size="icon"
@@ -143,7 +143,7 @@ export function ComponentPageClient() {
             className="pointer-events-none absolute inset-0 z-0"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)',
+                "repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)",
               opacity: 1,
             }}
           />
@@ -172,7 +172,7 @@ export function ComponentPageClient() {
             className="pointer-events-none absolute inset-0 z-0"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)',
+                "repeating-linear-gradient(-45deg, var(--muted) 0 1px, transparent 1px 10px)",
               opacity: 1,
             }}
           />

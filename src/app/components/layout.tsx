@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { PersistentSidebar } from '@/components/persistent-sidebar';
+import { PersistentSidebar } from "@/components/persistent-sidebar";
 
 export default function ComponentsLayout({
   children,

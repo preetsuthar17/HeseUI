@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { PreviewCard as BasePreviewCard } from '@base-ui-components/react/preview-card';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { PreviewCard as BasePreviewCard } from "@base-ui-components/react/preview-card";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const PreviewCard = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Root>,
@@ -10,7 +10,7 @@ const PreviewCard = React.forwardRef<
 >(function PreviewCardComponent(props, _ref) {
   return <BasePreviewCard.Root {...props} />;
 });
-PreviewCard.displayName = 'PreviewCard';
+PreviewCard.displayName = "PreviewCard";
 
 const PreviewCardTrigger = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Trigger>,
@@ -19,7 +19,7 @@ const PreviewCardTrigger = React.forwardRef<
   return (
     <BasePreviewCard.Trigger
       className={cn(
-        'text-primary no-underline decoration-1 decoration-primary/60 underline-offset-2 outline-none hover:underline focus-visible:rounded focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-ring data-[popup-open]:underline',
+        "text-primary no-underline decoration-1 decoration-primary/60 underline-offset-2 outline-none hover:underline focus-visible:rounded focus-visible:no-underline focus-visible:ring-2 focus-visible:ring-ring data-[popup-open]:underline",
         className
       )}
       ref={ref}
@@ -27,7 +27,7 @@ const PreviewCardTrigger = React.forwardRef<
     />
   );
 });
-PreviewCardTrigger.displayName = 'PreviewCardTrigger';
+PreviewCardTrigger.displayName = "PreviewCardTrigger";
 
 const PreviewCardPortal = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Portal>,
@@ -35,7 +35,7 @@ const PreviewCardPortal = React.forwardRef<
 >(function PreviewCardPortalComponent(props, _ref) {
   return <BasePreviewCard.Portal {...props} />;
 });
-PreviewCardPortal.displayName = 'PreviewCardPortal';
+PreviewCardPortal.displayName = "PreviewCardPortal";
 
 const PreviewCardPositioner = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Positioner>,
@@ -43,13 +43,13 @@ const PreviewCardPositioner = React.forwardRef<
 >(function PreviewCardPositionerComponent({ className, ...props }, ref) {
   return (
     <BasePreviewCard.Positioner
-      className={cn('', className)}
+      className={cn("", className)}
       ref={ref}
       {...props}
     />
   );
 });
-PreviewCardPositioner.displayName = 'PreviewCardPositioner';
+PreviewCardPositioner.displayName = "PreviewCardPositioner";
 
 const PreviewCardPopup = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Popup>,
@@ -58,7 +58,7 @@ const PreviewCardPopup = React.forwardRef<
   return (
     <BasePreviewCard.Popup
       className={cn(
-        'flex w-[240px] origin-[var(--transform-origin)] flex-col gap-2 rounded bg-popover p-2 text-popover-foreground shadow outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0',
+        "flex w-[240px] origin-[var(--transform-origin)] flex-col gap-2 rounded bg-popover p-2 text-popover-foreground shadow outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0",
         className
       )}
       ref={ref}
@@ -66,7 +66,7 @@ const PreviewCardPopup = React.forwardRef<
     />
   );
 });
-PreviewCardPopup.displayName = 'PreviewCardPopup';
+PreviewCardPopup.displayName = "PreviewCardPopup";
 
 const PreviewCardArrow = React.forwardRef<
   React.ComponentRef<typeof BasePreviewCard.Arrow>,
@@ -75,7 +75,7 @@ const PreviewCardArrow = React.forwardRef<
   return (
     <BasePreviewCard.Arrow
       className={cn(
-        'data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180',
+        "data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
         className
       )}
       ref={ref}
@@ -83,7 +83,7 @@ const PreviewCardArrow = React.forwardRef<
     />
   );
 });
-PreviewCardArrow.displayName = 'PreviewCardArrow';
+PreviewCardArrow.displayName = "PreviewCardArrow";
 
 export {
   PreviewCard,

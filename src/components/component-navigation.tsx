@@ -1,44 +1,44 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Input } from './ui/input';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Input } from "./ui/input";
 
 const components = [
-  { id: 'accordion', name: 'Accordion' },
-  { id: 'alert-dialog', name: 'Alert Dialog' },
-  { id: 'avatar', name: 'Avatar' },
-  { id: 'button', name: 'Button' },
-  { id: 'checkbox', name: 'Checkbox' },
-  { id: 'checkbox-group', name: 'Checkbox Group' },
-  { id: 'collapsible', name: 'Collapsible' },
-  { id: 'context-menu', name: 'Context Menu' },
-  { id: 'dialog', name: 'Dialog' },
-  { id: 'field', name: 'Field' },
-  { id: 'fieldset', name: 'Fieldset' },
-  { id: 'form', name: 'Form' },
-  { id: 'input', name: 'Input' },
-  { id: 'menu', name: 'Menu' },
-  { id: 'menubar', name: 'Menubar' },
-  { id: 'meter', name: 'Meter' },
-  { id: 'navigation-menu', name: 'Navigation Menu' },
-  { id: 'number-field', name: 'Number Field' },
-  { id: 'popover', name: 'Popover' },
-  { id: 'preview-card', name: 'Preview Card' },
-  { id: 'progress', name: 'Progress' },
-  { id: 'radio', name: 'Radio' },
-  { id: 'scroll-area', name: 'Scroll Area' },
-  { id: 'select', name: 'Select' },
-  { id: 'separator', name: 'Separator' },
-  { id: 'slider', name: 'Slider' },
-  { id: 'switch', name: 'Switch' },
-  { id: 'tabs', name: 'Tabs' },
-  { id: 'toast', name: 'Toast' },
-  { id: 'toggle', name: 'Toggle' },
-  { id: 'toggle-group', name: 'Toggle Group' },
-  { id: 'toolbar', name: 'Toolbar' },
-  { id: 'tooltip', name: 'Tooltip' },
+  { id: "accordion", name: "Accordion" },
+  { id: "alert-dialog", name: "Alert Dialog" },
+  { id: "avatar", name: "Avatar" },
+  { id: "button", name: "Button" },
+  { id: "checkbox", name: "Checkbox" },
+  { id: "checkbox-group", name: "Checkbox Group" },
+  { id: "collapsible", name: "Collapsible" },
+  { id: "context-menu", name: "Context Menu" },
+  { id: "dialog", name: "Dialog" },
+  { id: "field", name: "Field" },
+  { id: "fieldset", name: "Fieldset" },
+  { id: "form", name: "Form" },
+  { id: "input", name: "Input" },
+  { id: "menu", name: "Menu" },
+  { id: "menubar", name: "Menubar" },
+  { id: "meter", name: "Meter" },
+  { id: "navigation-menu", name: "Navigation Menu" },
+  { id: "number-field", name: "Number Field" },
+  { id: "popover", name: "Popover" },
+  { id: "preview-card", name: "Preview Card" },
+  { id: "progress", name: "Progress" },
+  { id: "radio", name: "Radio" },
+  { id: "scroll-area", name: "Scroll Area" },
+  { id: "select", name: "Select" },
+  { id: "separator", name: "Separator" },
+  { id: "slider", name: "Slider" },
+  { id: "switch", name: "Switch" },
+  { id: "tabs", name: "Tabs" },
+  { id: "toast", name: "Toast" },
+  { id: "toggle", name: "Toggle" },
+  { id: "toggle-group", name: "Toggle Group" },
+  { id: "toolbar", name: "Toolbar" },
+  { id: "tooltip", name: "Tooltip" },
 ] as const;
 
 const SKELETON_COUNT = 30;
@@ -72,11 +72,11 @@ const NavigationLinks = memo(function NavigationLinks({
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent, _componentId: string, index: number) => {
       switch (event.key) {
-        case 'ArrowDown':
+        case "ArrowDown":
           event.preventDefault();
           setFocusedIndex(Math.min(index + 1, filteredComponents.length - 1));
           break;
-        case 'ArrowUp':
+        case "ArrowUp":
           event.preventDefault();
           setFocusedIndex(Math.max(index - 1, 0));
           break;
@@ -117,10 +117,10 @@ const NavigationLinks = memo(function NavigationLinks({
           aria-selected={activeComponent === component.id}
           className={`w-full rounded-sm px-2 py-1 text-left text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
             activeComponent === component.id
-              ? 'bg-accent font-medium text-foreground'
+              ? "bg-accent font-medium text-foreground"
               : focusedIndex === index
-                ? 'bg-accent/50 text-foreground'
-                : 'text-muted-foreground hover:bg-accent/30 hover:text-foreground'
+                ? "bg-accent/50 text-foreground"
+                : "text-muted-foreground hover:bg-accent/30 hover:text-foreground"
           }`}
           href={`/components/${component.id}`}
           key={component.id}
@@ -156,7 +156,7 @@ const SearchInput = memo(function SearchInput({
         aria-label="Search components"
         onChange={onSearchChange}
         onKeyDown={onSearchKeyDown}
-        placeholder={'Search components...'}
+        placeholder={"Search components..."}
         ref={searchInputRef}
         type="text"
         value={search}
@@ -170,7 +170,7 @@ const SearchInput = memo(function SearchInput({
 
 export const ComponentNavigation = memo(function ComponentNavigation() {
   const [isLoading, setIsLoading] = useState(true);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [focusedIndex, setFocusedIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -178,31 +178,31 @@ export const ComponentNavigation = memo(function ComponentNavigation() {
 
   const activeComponent = useMemo(() => {
     const match = pathname.match(/\/components\/(.+)/);
-    return match ? match[1] : '';
+    return match ? match[1] : "";
   }, [pathname]);
 
   const isMac = useMemo(() => {
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       return false;
     }
-    return navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
   }, []);
 
   const keyboardShortcut = useMemo(() => {
-    return isMac ? '⌘K' : 'Ctrl+K';
+    return isMac ? "⌘K" : "Ctrl+K";
   }, [isMac]);
 
   const handleGlobalKeyDown = useCallback((event: KeyboardEvent) => {
-    if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+    if ((event.ctrlKey || event.metaKey) && event.key === "k") {
       event.preventDefault();
       searchInputRef.current?.focus();
     }
   }, []);
 
   useEffect(() => {
-    document.addEventListener('keydown', handleGlobalKeyDown);
+    document.addEventListener("keydown", handleGlobalKeyDown);
     return () => {
-      document.removeEventListener('keydown', handleGlobalKeyDown);
+      document.removeEventListener("keydown", handleGlobalKeyDown);
     };
   }, [handleGlobalKeyDown]);
 
@@ -228,8 +228,8 @@ export const ComponentNavigation = memo(function ComponentNavigation() {
   );
 
   const handleSearchKeyDown = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      setSearch('');
+    if (e.key === "Escape") {
+      setSearch("");
       searchInputRef.current?.blur();
     }
   }, []);

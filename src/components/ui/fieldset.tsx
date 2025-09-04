@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Fieldset as BaseFieldset } from '@base-ui-components/react/fieldset';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Fieldset as BaseFieldset } from "@base-ui-components/react/fieldset";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Fieldset = React.forwardRef<
   React.ComponentRef<typeof BaseFieldset.Root>,
@@ -10,13 +10,13 @@ const Fieldset = React.forwardRef<
 >(function FieldsetComponent({ className, ...props }, ref) {
   return (
     <BaseFieldset.Root
-      className={cn('flex w-full flex-col gap-4', className)}
+      className={cn("flex w-full flex-col gap-4", className)}
       ref={ref}
       {...props}
     />
   );
 });
-Fieldset.displayName = 'Fieldset';
+Fieldset.displayName = "Fieldset";
 
 const FieldsetLegend = React.forwardRef<
   React.ComponentRef<typeof BaseFieldset.Legend>,
@@ -25,7 +25,7 @@ const FieldsetLegend = React.forwardRef<
   return (
     <BaseFieldset.Legend
       className={cn(
-        'border-border border-b pb-3 font-medium text-foreground text-lg',
+        "border-border border-b pb-3 font-medium text-foreground text-lg",
         className
       )}
       ref={ref}
@@ -33,6 +33,6 @@ const FieldsetLegend = React.forwardRef<
     />
   );
 });
-FieldsetLegend.displayName = 'FieldsetLegend';
+FieldsetLegend.displayName = "FieldsetLegend";
 
 export { Fieldset, FieldsetLegend };

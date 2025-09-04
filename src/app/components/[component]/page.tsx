@@ -1,5 +1,5 @@
-import { getAllComponentMetadata } from '@/lib/component-metadata';
-import { ComponentPageClient } from './component-page-client';
+import { getAllComponentMetadata } from "@/lib/component-metadata";
+import { ComponentPageClient } from "./component-page-client";
 
 export async function generateStaticParams() {
   const allComponents = getAllComponentMetadata();

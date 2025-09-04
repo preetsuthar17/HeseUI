@@ -1,6 +1,6 @@
-import { Separator } from '@/components/ui/separator';
-import { SeparatorInstallation } from '../installation/separator-installation';
-import { Separator as SeparatorUI } from '../ui/separator';
+import { Separator } from "@/components/ui/separator";
+import { SeparatorInstallation } from "../installation/separator-installation";
+import { Separator as SeparatorUI } from "../ui/separator";
 
 export function SeparatorDemo() {
   return (

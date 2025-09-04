@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio';
-import { RadioInstallation } from '../installation/radio-installation';
-import { Separator } from '../ui/separator';
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio";
+import { RadioInstallation } from "../installation/radio-installation";
+import { Separator } from "../ui/separator";
 
 export function RadioGroupDemo() {
   return (

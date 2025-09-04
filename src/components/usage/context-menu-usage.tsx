@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -18,13 +18,13 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from '@/components/ui/context-menu';
-import { ContextMenuInstallation } from '../installation/context-menu-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/context-menu";
+import { ContextMenuInstallation } from "../installation/context-menu-installation";
+import { Separator } from "../ui/separator";
 
 export function ContextMenuDemo() {
   const [showStatusBar, setShowStatusBar] = React.useState(true);
-  const [position, setPosition] = React.useState('bottom');
+  const [position, setPosition] = React.useState("bottom");
 
   return (
     <div className="flex flex-col gap-8">

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Toggle as BaseToggle } from '@base-ui-components/react/toggle';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Toggle as BaseToggle } from "@base-ui-components/react/toggle";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Toggle = React.forwardRef<
   React.ComponentRef<typeof BaseToggle>,
@@ -19,6 +19,6 @@ const Toggle = React.forwardRef<
     />
   );
 });
-Toggle.displayName = 'Toggle';
+Toggle.displayName = "Toggle";
 
 export { Toggle };

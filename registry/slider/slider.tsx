@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { Slider as BaseSlider } from '@base-ui-components/react/slider';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Slider as BaseSlider } from "@base-ui-components/react/slider";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Slider = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Root>,
   React.ComponentPropsWithoutRef<typeof BaseSlider.Root>
 >(function SliderComponent({ className, ...props }, _ref) {
-  return <BaseSlider.Root className={cn('', className)} {...props} />;
+  return <BaseSlider.Root className={cn("", className)} {...props} />;
 });
-Slider.displayName = 'Slider';
+Slider.displayName = "Slider";
 
 const SliderValue = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Value>,
@@ -18,13 +18,13 @@ const SliderValue = React.forwardRef<
 >(function SliderValueComponent({ className, ...props }, ref) {
   return (
     <BaseSlider.Value
-      className={cn('text-foreground text-sm', className)}
+      className={cn("text-foreground text-sm", className)}
       ref={ref}
       {...props}
     />
   );
 });
-SliderValue.displayName = 'SliderValue';
+SliderValue.displayName = "SliderValue";
 
 const SliderControl = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Control>,
@@ -33,7 +33,7 @@ const SliderControl = React.forwardRef<
   return (
     <BaseSlider.Control
       className={cn(
-        'flex w-56 touch-none select-none items-center py-3',
+        "flex w-56 touch-none select-none items-center py-3",
         className
       )}
       ref={ref}
@@ -41,7 +41,7 @@ const SliderControl = React.forwardRef<
     />
   );
 });
-SliderControl.displayName = 'SliderControl';
+SliderControl.displayName = "SliderControl";
 
 const SliderTrack = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Track>,
@@ -50,7 +50,7 @@ const SliderTrack = React.forwardRef<
   return (
     <BaseSlider.Track
       className={cn(
-        'select-none rounded bg-muted shadow-[inset_0_0_0_1px] shadow-border data-[orientation=horizontal]:h-1 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1',
+        "select-none rounded bg-muted shadow-[inset_0_0_0_1px] shadow-border data-[orientation=horizontal]:h-1 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1",
         className
       )}
       ref={ref}
@@ -58,7 +58,7 @@ const SliderTrack = React.forwardRef<
     />
   );
 });
-SliderTrack.displayName = 'SliderTrack';
+SliderTrack.displayName = "SliderTrack";
 
 const SliderIndicator = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Indicator>,
@@ -66,13 +66,13 @@ const SliderIndicator = React.forwardRef<
 >(function SliderIndicatorComponent({ className, ...props }, ref) {
   return (
     <BaseSlider.Indicator
-      className={cn('rounded bg-primary', className)}
+      className={cn("rounded bg-primary", className)}
       ref={ref}
       {...props}
     />
   );
 });
-SliderIndicator.displayName = 'SliderIndicator';
+SliderIndicator.displayName = "SliderIndicator";
 
 const SliderThumb = React.forwardRef<
   React.ComponentRef<typeof BaseSlider.Thumb>,
@@ -81,7 +81,7 @@ const SliderThumb = React.forwardRef<
   return (
     <BaseSlider.Thumb
       className={cn(
-        'size-4 select-none rounded-full bg-background outline outline-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        "size-4 select-none rounded-full bg-background outline outline-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         className
       )}
       ref={ref}
@@ -89,7 +89,7 @@ const SliderThumb = React.forwardRef<
     />
   );
 });
-SliderThumb.displayName = 'SliderThumb';
+SliderThumb.displayName = "SliderThumb";
 
 export {
   Slider,

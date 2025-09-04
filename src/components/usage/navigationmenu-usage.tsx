@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import NextLink from 'next/link';
-import type React from 'react';
+import NextLink from "next/link";
+import type React from "react";
 import {
   NavigationMenu,
   NavigationMenuArrow,
@@ -15,45 +15,45 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigationmenu';
-import { NavigationMenuInstallation } from '../installation/navigationmenu-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/navigationmenu";
+import { NavigationMenuInstallation } from "../installation/navigationmenu-installation";
+import { Separator } from "../ui/separator";
 
 const components = [
   {
-    title: 'Alert Dialog',
-    href: '/docs/primitives/alert-dialog',
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
     description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: 'Hover Card',
-    href: '/docs/primitives/hover-card',
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
     description:
-      'For sighted users to preview content available behind a link.',
+      "For sighted users to preview content available behind a link.",
   },
   {
-    title: 'Progress',
-    href: '/docs/primitives/progress',
+    title: "Progress",
+    href: "/docs/primitives/progress",
     description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
-    title: 'Scroll-area',
-    href: '/docs/primitives/scroll-area',
-    description: 'Visually or semantically separates content.',
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
   },
   {
-    title: 'Tabs',
-    href: '/docs/primitives/tabs',
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
     description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
-    title: 'Tooltip',
-    href: '/docs/primitives/tooltip',
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
     description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
 ] as const;
 
@@ -122,7 +122,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuPortal>
           <NavigationMenuPositioner
             className="z-50 box-border h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] transition-[top,left,right,bottom] [--duration:0.35s] [--easing:cubic-bezier(0.22,1,0.36,1)] before:absolute before:content-[''] data-[instant]:transition-none data-[side=bottom]:before:top-[-10px] data-[side=left]:before:top-0 data-[side=right]:before:top-0 data-[side=bottom]:before:right-0 data-[side=left]:before:right-[-10px] data-[side=top]:before:right-0 data-[side=left]:before:bottom-0 data-[side=right]:before:bottom-0 data-[side=top]:before:bottom-[-10px] data-[side=bottom]:before:left-0 data-[side=right]:before:left-[-10px] data-[side=top]:before:left-0 data-[side=bottom]:before:h-2.5 data-[side=top]:before:h-2.5 data-[side=left]:before:w-2.5 data-[side=right]:before:w-2.5"
-            collisionAvoidance={{ side: 'none' }}
+            collisionAvoidance={{ side: "none" }}
             collisionPadding={{ top: 5, bottom: 5, left: 20, right: 20 }}
             sideOffset={10}
           >
@@ -144,7 +144,7 @@ function ListItem({
   children,
   href,
   ...props
-}: React.ComponentPropsWithoutRef<'li'> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
     <li {...props}>
       <NavigationMenuLink

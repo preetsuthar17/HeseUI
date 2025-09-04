@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Menu,
   MenuArrow,
@@ -20,19 +20,19 @@ import {
   MenuSubContent,
   MenuSubTrigger,
   MenuTrigger,
-} from '@/components/ui/menu';
-import { MenuInstallation } from '../installation/menu-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/menu";
+import { MenuInstallation } from "../installation/menu-installation";
+import { Separator } from "../ui/separator";
 
 export function MenuDemo() {
-  const [_hoverValue, _setHoverValue] = React.useState('Get Up!');
+  const [_hoverValue, _setHoverValue] = React.useState("Get Up!");
   const [showMinimap, setShowMinimap] = React.useState(true);
   const [showSearch, setShowSearch] = React.useState(true);
   const [showSidebar, setShowSidebar] = React.useState(false);
-  const [sortValue, setSortValue] = React.useState('date');
+  const [sortValue, setSortValue] = React.useState("date");
 
   const triggerCls =
-    'inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2';
+    "inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2";
 
   return (
     <div className="flex flex-col gap-8">
@@ -282,7 +282,7 @@ export function MenuDemo() {
   );
 }
 
-function ChevronDownIcon(props: React.ComponentProps<'svg'>) {
+function ChevronDownIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="10" viewBox="0 0 10 10" width="10" {...props}>
       <title>Open menu</title>
@@ -291,7 +291,7 @@ function ChevronDownIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function _ChevronRightIcon(props: React.ComponentProps<'svg'>) {
+function _ChevronRightIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="10" viewBox="0 0 10 10" width="10" {...props}>
       <title>Open submenu</title>
@@ -300,7 +300,7 @@ function _ChevronRightIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function CheckIcon(props: React.ComponentProps<'svg'>) {
+function CheckIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="currentcolor"

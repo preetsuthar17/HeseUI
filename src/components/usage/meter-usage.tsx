@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Meter,
@@ -6,9 +6,9 @@ import {
   MeterLabel,
   MeterTrack,
   MeterValue,
-} from '@/components/ui/meter';
-import { MeterInstallation } from '../installation/meter-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/meter";
+import { MeterInstallation } from "../installation/meter-installation";
+import { Separator } from "../ui/separator";
 
 export function MeterDemo() {
   return (
@@ -45,7 +45,7 @@ export function MeterDemo() {
           <h3 className="font-medium text-lg">Formatted Value</h3>
           <Meter
             className="grid w-48 grid-cols-2 gap-y-2"
-            format={{ style: 'percent' }}
+            format={{ style: "percent" }}
             max={1}
             min={0}
             value={0.42}

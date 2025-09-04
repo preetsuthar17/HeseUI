@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import { CollapsibleInstallation } from '../installation/collapsible-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/collapsible";
+import { CollapsibleInstallation } from "../installation/collapsible-installation";
+import { Separator } from "../ui/separator";
 
 export function CollapsibleDemo() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -37,7 +37,7 @@ export function CollapsibleDemo() {
             open={isOpen}
           >
             <CollapsibleTrigger>
-              Click to {isOpen ? 'close' : 'open'}
+              Click to {isOpen ? "close" : "open"}
             </CollapsibleTrigger>
             <CollapsibleContent>
               <div className="flex flex-col gap-2 rounded bg-muted p-4">
@@ -46,7 +46,7 @@ export function CollapsibleDemo() {
                   text changes based on the open state.
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Current state: {isOpen ? 'Open' : 'Closed'}
+                  Current state: {isOpen ? "Open" : "Closed"}
                 </p>
               </div>
             </CollapsibleContent>

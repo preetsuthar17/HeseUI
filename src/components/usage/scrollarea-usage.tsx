@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import {
   ScrollArea,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from '@/components/ui/scrollarea';
-import { ScrollAreaInstallation } from '../installation/scrollarea-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/scrollarea";
+import { ScrollAreaInstallation } from "../installation/scrollarea-installation";
+import { Separator } from "../ui/separator";
 
 const BOX_COUNT = 10;
 

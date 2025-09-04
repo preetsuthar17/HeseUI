@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Field,
   FieldControl,
   FieldError,
   FieldLabel,
-} from '@/components/ui/field';
-import { Form } from '@/components/ui/form';
-import { FormInstallation } from '../installation/form-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/field";
+import { Form } from "@/components/ui/form";
+import { FormInstallation } from "../installation/form-installation";
+import { Separator } from "../ui/separator";
 
 const SERVER_DELAY_MS = 1000;
 const MIN_AGE = 18;
@@ -25,11 +25,11 @@ async function submitForm(value: string) {
   try {
     const url = new URL(value);
 
-    if (url.hostname.endsWith('example.com')) {
-      return { error: 'The example domain is not allowed' };
+    if (url.hostname.endsWith("example.com")) {
+      return { error: "The example domain is not allowed" };
     }
   } catch {
-    return { error: 'This is not a valid URL' };
+    return { error: "This is not a valid URL" };
   }
 
   return { success: true };
@@ -37,30 +37,30 @@ async function submitForm(value: string) {
 
 // Mock Zod-like validation
 function validateFormData(formData: FormData) {
-  const name = formData.get('name') as string;
-  const age = formData.get('age') as string;
-  const email = formData.get('email') as string;
+  const name = formData.get("name") as string;
+  const age = formData.get("age") as string;
+  const email = formData.get("email") as string;
 
   const errors: Record<string, string> = {};
 
   if (!name || name.trim().length === 0) {
-    errors.name = 'Name is required';
+    errors.name = "Name is required";
   } else if (name.length < 2) {
-    errors.name = 'Name must be at least 2 characters';
+    errors.name = "Name must be at least 2 characters";
   }
 
   if (!age || Number.isNaN(Number(age))) {
-    errors.age = 'Age must be a number';
+    errors.age = "Age must be a number";
   } else if (Number(age) < MIN_AGE) {
-    errors.age = 'You must be at least 18 years old';
+    errors.age = "You must be at least 18 years old";
   } else if (Number(age) > MAX_AGE) {
-    errors.age = 'Please enter a valid age';
+    errors.age = "Please enter a valid age";
   }
 
   if (!email) {
-    errors.email = 'Email is required';
+    errors.email = "Email is required";
   } else if (!EMAIL_REGEX.test(email)) {
-    errors.email = 'Please enter a valid email address';
+    errors.email = "Please enter a valid email address";
   }
 
   return errors;
@@ -84,7 +84,7 @@ export function FormDemo() {
             onSubmit={async (event) => {
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
-              const value = formData.get('url') as string;
+              const value = formData.get("url") as string;
 
               setUrlLoading(true);
               const response = await submitForm(value);
@@ -108,7 +108,7 @@ export function FormDemo() {
               <FieldError />
             </Field>
             <Button className="w-full" disabled={urlLoading} type="submit">
-              {urlLoading ? 'Submitting...' : 'Submit'}
+              {urlLoading ? "Submitting..." : "Submit"}
             </Button>
           </Form>
         </div>
@@ -129,7 +129,7 @@ export function FormDemo() {
               setValidationLoading(false);
 
               if (Object.keys(errors).length === 0) {
-                alert('Form submitted successfully!');
+                alert("Form submitted successfully!");
               }
             }}
           >
@@ -166,7 +166,7 @@ export function FormDemo() {
               disabled={validationLoading}
               type="submit"
             >
-              {validationLoading ? 'Validating...' : 'Submit'}
+              {validationLoading ? "Validating..." : "Submit"}
             </Button>
           </Form>
         </div>
@@ -179,7 +179,7 @@ export function FormDemo() {
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
               const _data = Object.fromEntries(formData);
-              alert('Contact form submitted! Check console for data.');
+              alert("Contact form submitted! Check console for data.");
             }}
           >
             <Field className="flex flex-col items-start gap-1" name="firstName">
@@ -214,7 +214,7 @@ export function FormDemo() {
               event.preventDefault();
               const formData = new FormData(event.currentTarget);
               const _data = Object.fromEntries(formData);
-              alert('Registration successful! Check console for data.');
+              alert("Registration successful! Check console for data.");
             }}
           >
             <Field className="flex flex-col items-start gap-1" name="username">

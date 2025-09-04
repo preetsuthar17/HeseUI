@@ -1,33 +1,10 @@
-import CodeBlock from '../code-block';
+import CodeBlock from "../code-block";
+import { ComponentInstallation } from "../component-installation";
 
 export function TooltipInstallation() {
   return (
     <>
-      <p>Adding registry to components.json</p>
-      <p>
-        Head over to <kbd>components.json</kbd> and add the following:
-      </p>
-      <CodeBlock
-        code={`{
-  "tailwind": {
-    // code
-  },
-  "aliases": {
-    // code
-  },
-
-  // add the following
-  "registries": {
-    "@heseui": "https://www.heseui.com/r/{name}.json"
-  }
-}`}
-        lang="json"
-      />
-      <p>Install component using the CLI</p>
-      <CodeBlock
-        code={'pnpm dlx shadcn@latest add @heseui/tooltip'}
-        lang="package-install"
-      />
+      <ComponentInstallation componentName="tooltip" />
       <p>example usage</p>
       <CodeBlock
         code={`import {

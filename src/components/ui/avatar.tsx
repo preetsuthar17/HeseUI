@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Avatar as BaseAvatar } from '@base-ui-components/react/avatar';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Avatar as BaseAvatar } from "@base-ui-components/react/avatar";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Avatar = React.forwardRef<
   React.ComponentRef<typeof BaseAvatar.Root>,
@@ -10,26 +10,26 @@ const Avatar = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <BaseAvatar.Root
     className={cn(
-      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
+      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full",
       className
     )}
     ref={ref}
     {...props}
   />
 ));
-Avatar.displayName = 'Avatar';
+Avatar.displayName = "Avatar";
 
 const AvatarImage = React.forwardRef<
   React.ComponentRef<typeof BaseAvatar.Image>,
   React.ComponentPropsWithoutRef<typeof BaseAvatar.Image>
 >(({ className, ...props }, ref) => (
   <BaseAvatar.Image
-    className={cn('aspect-square h-full w-full', className)}
+    className={cn("aspect-square h-full w-full", className)}
     ref={ref}
     {...props}
   />
 ));
-AvatarImage.displayName = 'AvatarImage';
+AvatarImage.displayName = "AvatarImage";
 
 const AvatarFallback = React.forwardRef<
   React.ComponentRef<typeof BaseAvatar.Fallback>,
@@ -37,13 +37,13 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <BaseAvatar.Fallback
     className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-muted',
+      "flex h-full w-full items-center justify-center rounded-full bg-muted",
       className
     )}
     ref={ref}
     {...props}
   />
 ));
-AvatarFallback.displayName = 'AvatarFallback';
+AvatarFallback.displayName = "AvatarFallback";
 
 export { Avatar, AvatarImage, AvatarFallback };

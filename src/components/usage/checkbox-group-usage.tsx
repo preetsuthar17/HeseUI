@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Checkbox } from '@/components/ui/checkbox';
-import { CheckboxGroup } from '@/components/ui/checkbox-group';
-import { CheckboxGroupInstallation } from '../installation/checkbox-group-installation';
-import { Separator } from '../ui/separator';
+import React from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { CheckboxGroup } from "@/components/ui/checkbox-group";
+import { CheckboxGroupInstallation } from "../installation/checkbox-group-installation";
+import { Separator } from "../ui/separator";
 
 export function CheckboxGroupDemo() {
   const [value, setValue] = React.useState<string[]>([]);
-  const fruits = ['fuji-apple', 'gala-apple', 'granny-smith-apple'];
+  const fruits = ["fuji-apple", "gala-apple", "granny-smith-apple"];
 
   return (
     <div className="flex flex-col gap-8">
@@ -18,7 +18,7 @@ export function CheckboxGroupDemo() {
           <CheckboxGroup
             aria-labelledby="apples-caption"
             className="flex flex-col items-start gap-2"
-            defaultValue={['fuji-apple']}
+            defaultValue={["fuji-apple"]}
           >
             <div className="font-medium" id="apples-caption">
               Apples
@@ -96,7 +96,7 @@ export function CheckboxGroupDemo() {
           <CheckboxGroup
             aria-labelledby="disabled-caption"
             className="flex flex-col items-start gap-2"
-            defaultValue={['fuji-apple']}
+            defaultValue={["fuji-apple"]}
             disabled
           >
             <div className="font-medium" id="disabled-caption">

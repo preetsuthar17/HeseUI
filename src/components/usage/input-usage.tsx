@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Input } from '@/components/ui/input';
-import { InputInstallation } from '../installation/input-installation';
-import { Separator } from '../ui/separator';
+import { Input } from "@/components/ui/input";
+import { InputInstallation } from "../installation/input-installation";
+import { Separator } from "../ui/separator";
 
 export function InputDemo() {
   return (

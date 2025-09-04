@@ -1,33 +1,11 @@
-import CodeBlock from '../code-block';
+import CodeBlock from "../code-block";
+import { ComponentInstallation } from "../component-installation";
 
 export function CheckboxGroupInstallation() {
   return (
     <>
-      <p>Adding registry to components.json</p>
-      <p>
-        Head over to <kbd>components.json</kbd> and add the following:
-      </p>
-      <CodeBlock
-        code={`{
-  "tailwind": {
-    // code
-  },
-  "aliases": {
-    // code
-  },
+      <ComponentInstallation componentName="checkbox-group" />
 
-  // add the following
-  "registries": {
-    "@heseui": "https://www.heseui.com/r/{name}.json"
-  }
-}`}
-        lang="json"
-      />
-      <p>Install component using the CLI</p>
-      <CodeBlock
-        code={'pnpm dlx shadcn@latest add @heseui/checkbox-group'}
-        lang="package-install"
-      />
       <p>example usage</p>
       <CodeBlock
         code={`import React from 'react';

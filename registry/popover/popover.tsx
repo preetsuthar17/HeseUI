@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Popover as BasePopover } from '@base-ui-components/react/popover';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Popover as BasePopover } from "@base-ui-components/react/popover";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Popover = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Root>,
@@ -10,7 +10,7 @@ const Popover = React.forwardRef<
 >(function PopoverComponent(props, _ref) {
   return <BasePopover.Root {...props} />;
 });
-Popover.displayName = 'Popover';
+Popover.displayName = "Popover";
 
 const PopoverTrigger = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Trigger>,
@@ -19,7 +19,7 @@ const PopoverTrigger = React.forwardRef<
   return (
     <BasePopover.Trigger
       className={cn(
-        'inline-flex items-center justify-center rounded font-medium text-sm ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[disabled]:opacity-50',
+        "inline-flex items-center justify-center rounded font-medium text-sm ring-offset-background transition-colors hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[disabled]:opacity-50",
         className
       )}
       ref={ref}
@@ -27,7 +27,7 @@ const PopoverTrigger = React.forwardRef<
     />
   );
 });
-PopoverTrigger.displayName = 'PopoverTrigger';
+PopoverTrigger.displayName = "PopoverTrigger";
 
 const PopoverPortal = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Portal>,
@@ -35,7 +35,7 @@ const PopoverPortal = React.forwardRef<
 >(function PopoverPortalComponent(props, _ref) {
   return <BasePopover.Portal {...props} />;
 });
-PopoverPortal.displayName = 'PopoverPortal';
+PopoverPortal.displayName = "PopoverPortal";
 
 const PopoverPositioner = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Positioner>,
@@ -43,13 +43,13 @@ const PopoverPositioner = React.forwardRef<
 >(function PopoverPositionerComponent({ className, ...props }, ref) {
   return (
     <BasePopover.Positioner
-      className={cn('z-50 outline-none', className)}
+      className={cn("z-50 outline-none", className)}
       ref={ref}
       {...props}
     />
   );
 });
-PopoverPositioner.displayName = 'PopoverPositioner';
+PopoverPositioner.displayName = "PopoverPositioner";
 
 const PopoverPopup = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Popup>,
@@ -58,7 +58,7 @@ const PopoverPopup = React.forwardRef<
   return (
     <BasePopover.Popup
       className={cn(
-        'z-50 origin-[var(--transform-origin)] rounded border border-border bg-popover px-6 py-4 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0',
+        "z-50 origin-[var(--transform-origin)] rounded border border-border bg-popover px-6 py-4 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0",
         className
       )}
       ref={ref}
@@ -66,7 +66,7 @@ const PopoverPopup = React.forwardRef<
     />
   );
 });
-PopoverPopup.displayName = 'PopoverPopup';
+PopoverPopup.displayName = "PopoverPopup";
 
 const PopoverArrow = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Arrow>,
@@ -75,7 +75,7 @@ const PopoverArrow = React.forwardRef<
   return (
     <BasePopover.Arrow
       className={cn(
-        'data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180',
+        "data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
         className
       )}
       ref={ref}
@@ -83,7 +83,7 @@ const PopoverArrow = React.forwardRef<
     />
   );
 });
-PopoverArrow.displayName = 'PopoverArrow';
+PopoverArrow.displayName = "PopoverArrow";
 
 const PopoverTitle = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Title>,
@@ -91,13 +91,13 @@ const PopoverTitle = React.forwardRef<
 >(function PopoverTitleComponent({ className, ...props }, ref) {
   return (
     <BasePopover.Title
-      className={cn('font-medium text-base', className)}
+      className={cn("font-medium text-base", className)}
       ref={ref}
       {...props}
     />
   );
 });
-PopoverTitle.displayName = 'PopoverTitle';
+PopoverTitle.displayName = "PopoverTitle";
 
 const PopoverDescription = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Description>,
@@ -105,13 +105,13 @@ const PopoverDescription = React.forwardRef<
 >(function PopoverDescriptionComponent({ className, ...props }, ref) {
   return (
     <BasePopover.Description
-      className={cn('text-base text-muted-foreground', className)}
+      className={cn("text-base text-muted-foreground", className)}
       ref={ref}
       {...props}
     />
   );
 });
-PopoverDescription.displayName = 'PopoverDescription';
+PopoverDescription.displayName = "PopoverDescription";
 
 const PopoverClose = React.forwardRef<
   React.ComponentRef<typeof BasePopover.Close>,
@@ -120,7 +120,7 @@ const PopoverClose = React.forwardRef<
   return (
     <BasePopover.Close
       className={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        "inline-flex items-center justify-center whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         className
       )}
       ref={ref}
@@ -128,7 +128,7 @@ const PopoverClose = React.forwardRef<
     />
   );
 });
-PopoverClose.displayName = 'PopoverClose';
+PopoverClose.displayName = "PopoverClose";
 
 // Alias to match shadcn-style import
 const PopoverContent = PopoverPopup;

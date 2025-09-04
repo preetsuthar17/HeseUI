@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { Check, Copy } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
-import { type BundledLanguage, type BundledTheme, codeToHtml } from 'shiki';
-import { Button } from './ui/button';
+import { Check, Copy } from "lucide-react";
+import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
+import { type BundledLanguage, type BundledTheme, codeToHtml } from "shiki";
+import { Button } from "./ui/button";
 
 type CodeBlockProps = {
   code: string;
-  lang: BundledLanguage | 'package-install';
+  lang: BundledLanguage | "package-install";
   theme?: BundledTheme;
   showLineNumbers?: boolean;
   className?: string;
@@ -17,28 +17,28 @@ type CodeBlockProps = {
 
 const PACKAGE_MANAGERS = {
   npm: {
-    name: 'npm',
-    logo: '📦',
-    command: 'npx',
-    color: '#cb3837',
+    name: "npm",
+    logo: "📦",
+    command: "npx",
+    color: "#cb3837",
   },
   pnpm: {
-    name: 'pnpm',
-    logo: '📦',
-    command: 'pnpm dlx',
-    color: '#f69220',
+    name: "pnpm",
+    logo: "📦",
+    command: "pnpm dlx",
+    color: "#f69220",
   },
   yarn: {
-    name: 'yarn',
-    logo: '🧶',
-    command: 'yarn',
-    color: '#2c8ebb',
+    name: "yarn",
+    logo: "🧶",
+    command: "yarn",
+    color: "#2c8ebb",
   },
   bun: {
-    name: 'bun',
-    logo: '🍞',
-    command: 'bunx --bun',
-    color: '#fbf0df',
+    name: "bun",
+    logo: "🍞",
+    command: "bunx --bun",
+    color: "#fbf0df",
   },
 } as const;
 
@@ -63,64 +63,64 @@ function transformPackageInstallCode(
 
 function getLanguageLogo(lang: string): string {
   const languageLogos: Record<string, string> = {
-    typescript: '🔷',
-    javascript: '🟨',
-    jsx: '⚛️',
-    tsx: '⚛️',
-    python: '🐍',
-    java: '☕',
-    cpp: '⚡',
-    c: '⚡',
-    csharp: '💜',
-    go: '🐹',
-    rust: '🦀',
-    php: '🐘',
-    ruby: '💎',
-    swift: '🍎',
-    kotlin: '🔷',
-    scala: '🔴',
-    html: '🌐',
-    css: '🎨',
-    json: '📄',
-    yaml: '📄',
-    yml: '📄',
-    markdown: '📝',
-    bash: '💻',
-    shell: '💻',
-    sh: '💻',
-    sql: '🗄️',
-    dockerfile: '🐳',
-    docker: '🐳',
-    git: '📚',
-    'package-install': '📦',
-    'package.json': '📦',
-    'package-lock.json': '📦',
-    'pnpm-lock.yaml': '📦',
-    'yarn.lock': '📦',
-    'bun.lockb': '📦',
+    typescript: "🔷",
+    javascript: "🟨",
+    jsx: "⚛️",
+    tsx: "⚛️",
+    python: "🐍",
+    java: "☕",
+    cpp: "⚡",
+    c: "⚡",
+    csharp: "💜",
+    go: "🐹",
+    rust: "🦀",
+    php: "🐘",
+    ruby: "💎",
+    swift: "🍎",
+    kotlin: "🔷",
+    scala: "🔴",
+    html: "🌐",
+    css: "🎨",
+    json: "📄",
+    yaml: "📄",
+    yml: "📄",
+    markdown: "📝",
+    bash: "💻",
+    shell: "💻",
+    sh: "💻",
+    sql: "🗄️",
+    dockerfile: "🐳",
+    docker: "🐳",
+    git: "📚",
+    "package-install": "📦",
+    "package.json": "📦",
+    "package-lock.json": "📦",
+    "pnpm-lock.yaml": "📦",
+    "yarn.lock": "📦",
+    "bun.lockb": "📦",
   };
-  return languageLogos[lang.toLowerCase()] || '📄';
+  return languageLogos[lang.toLowerCase()] || "📄";
 }
 
 export default function CodeBlock({
   code,
   lang,
-  theme: propTheme = 'github-light',
+  theme: propTheme = "github-light",
   showLineNumbers = false,
-  className = '',
+  className = "",
   filename,
 }: CodeBlockProps) {
   const { theme: websiteTheme } = useTheme();
-  const [highlightedCode, setHighlightedCode] = useState<string>('');
+  const [highlightedCode, setHighlightedCode] = useState<string>("");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(true);
   const [selectedPackageManager, setSelectedPackageManager] =
-    useState<PackageManager>('pnpm');
+    useState<PackageManager>("pnpm");
 
   // Determine the theme to use based on website theme
-  const theme = websiteTheme === 'dark' ? 'github-dark' : 'github-light';
+  const theme = websiteTheme === "dark" ? "github-dark" : "github-light";
 
-  const isPackageInstall = lang === 'package-install';
+  const isPackageInstall = lang === "package-install";
   const displayCode = isPackageInstall
     ? transformPackageInstallCode(code, selectedPackageManager)
     : code;
@@ -130,7 +130,7 @@ export default function CodeBlock({
     const highlightCode = async () => {
       try {
         const html = await codeToHtml(displayCode, {
-          lang: isPackageInstall ? 'bash' : lang,
+          lang: isPackageInstall ? "bash" : lang,
           theme,
         });
         if (mounted) {
@@ -160,7 +160,7 @@ export default function CodeBlock({
   };
 
   const scrollbarClass =
-    'scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-muted-foreground scrollbar-track-transparent';
+    "scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-muted-foreground scrollbar-track-transparent";
 
   if (loading) {
     return (
@@ -190,7 +190,7 @@ export default function CodeBlock({
       return null;
     }
 
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       return (
         <pre
           className={`overflow-x-auto whitespace-pre font-mono ${scrollbarClass}`}
@@ -203,8 +203,8 @@ export default function CodeBlock({
     }
 
     const parser = new window.DOMParser();
-    const doc = parser.parseFromString(highlightedCode, 'text/html');
-    const pre = doc.body.querySelector('pre');
+    const doc = parser.parseFromString(highlightedCode, "text/html");
+    const pre = doc.body.querySelector("pre");
     if (!pre) {
       return (
         <pre className={`overflow-x-auto whitespace-pre ${scrollbarClass}`}>
@@ -215,8 +215,8 @@ export default function CodeBlock({
 
     function parseInlineStyle(styleText: string): React.CSSProperties {
       const styleObject: React.CSSProperties = {};
-      styleText.split(';').forEach((declaration) => {
-        const [rawProp, rawValue] = declaration.split(':');
+      styleText.split(";").forEach((declaration) => {
+        const [rawProp, rawValue] = declaration.split(":");
         if (!(rawProp && rawValue)) {
           return;
         }
@@ -252,28 +252,28 @@ export default function CodeBlock({
       if (el.className) {
         props.className = el.className;
       }
-      const styleAttr = el.getAttribute('style');
+      const styleAttr = el.getAttribute("style");
       if (styleAttr) {
         props.style = {
           ...parseInlineStyle(styleAttr),
         };
       }
       Array.from(el.attributes).forEach((attr) => {
-        if (attr.name.startsWith('data-')) {
+        if (attr.name.startsWith("data-")) {
           props[attr.name] = attr.value;
         }
       });
       if (
-        el.tagName.toLowerCase() === 'pre' ||
-        el.tagName.toLowerCase() === 'code'
+        el.tagName.toLowerCase() === "pre" ||
+        el.tagName.toLowerCase() === "code"
       ) {
         props.className =
-          `${props.className || ''} whitespace-pre overflow-x-auto ${scrollbarClass}`.trim();
+          `${props.className || ""} whitespace-pre overflow-x-auto ${scrollbarClass}`.trim();
       }
       return React.createElement(el.tagName.toLowerCase(), props, ...children);
     }
 
-    return domNodeToReact(pre, 'pre');
+    return domNodeToReact(pre, "pre");
   }
 
   return (
@@ -289,7 +289,7 @@ export default function CodeBlock({
                 onClick={() => setSelectedPackageManager(key as PackageManager)}
                 size="sm"
                 type="button"
-                variant={selectedPackageManager === key ? 'secondary' : 'ghost'}
+                variant={selectedPackageManager === key ? "secondary" : "ghost"}
               >
                 <span className="text-xs">{manager.name}</span>
               </Button>

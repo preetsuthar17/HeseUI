@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Slider,
   SliderControl,
@@ -8,9 +8,9 @@ import {
   SliderThumb,
   SliderTrack,
   SliderValue,
-} from '@/components/ui/slider';
-import { SliderInstallation } from '../installation/slider-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/slider";
+import { SliderInstallation } from "../installation/slider-installation";
+import { Separator } from "../ui/separator";
 
 const RANGE_SINGLE_INITIAL = 25;
 const RANGE_LOWER_INITIAL = 25;

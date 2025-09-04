@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Tooltip as BaseTooltip } from '@base-ui-components/react/tooltip';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Tooltip as BaseTooltip } from "@base-ui-components/react/tooltip";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const TooltipProvider = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Provider>,
@@ -10,7 +10,7 @@ const TooltipProvider = React.forwardRef<
 >(function TooltipProviderComponent(props, _ref) {
   return <BaseTooltip.Provider {...props} />;
 });
-TooltipProvider.displayName = 'TooltipProvider';
+TooltipProvider.displayName = "TooltipProvider";
 
 const Tooltip = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Root>,
@@ -18,7 +18,7 @@ const Tooltip = React.forwardRef<
 >(function TooltipComponent(props, _ref) {
   return <BaseTooltip.Root {...props} />;
 });
-Tooltip.displayName = 'Tooltip';
+Tooltip.displayName = "Tooltip";
 
 const TooltipTrigger = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Trigger>,
@@ -27,7 +27,7 @@ const TooltipTrigger = React.forwardRef<
   return (
     <BaseTooltip.Trigger
       className={cn(
-        'flex size-8 select-none items-center justify-center rounded text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[popup-open]:bg-accent focus-visible:[&:not(:hover)]:bg-transparent',
+        "flex size-8 select-none items-center justify-center rounded text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[popup-open]:bg-accent focus-visible:[&:not(:hover)]:bg-transparent",
         className
       )}
       ref={ref}
@@ -35,7 +35,7 @@ const TooltipTrigger = React.forwardRef<
     />
   );
 });
-TooltipTrigger.displayName = 'TooltipTrigger';
+TooltipTrigger.displayName = "TooltipTrigger";
 
 const TooltipPortal = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Portal>,
@@ -43,7 +43,7 @@ const TooltipPortal = React.forwardRef<
 >(function TooltipPortalComponent(props, _ref) {
   return <BaseTooltip.Portal {...props} />;
 });
-TooltipPortal.displayName = 'TooltipPortal';
+TooltipPortal.displayName = "TooltipPortal";
 
 const TooltipPositioner = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Positioner>,
@@ -51,13 +51,13 @@ const TooltipPositioner = React.forwardRef<
 >(function TooltipPositionerComponent({ className, ...props }, ref) {
   return (
     <BaseTooltip.Positioner
-      className={cn('', className)}
+      className={cn("", className)}
       ref={ref}
       {...props}
     />
   );
 });
-TooltipPositioner.displayName = 'TooltipPositioner';
+TooltipPositioner.displayName = "TooltipPositioner";
 
 const TooltipPopup = React.forwardRef<
   React.ComponentRef<typeof BaseTooltip.Popup>,
@@ -66,7 +66,7 @@ const TooltipPopup = React.forwardRef<
   return (
     <BaseTooltip.Popup
       className={cn(
-        'flex origin-[var(--transform-origin)] flex-col rounded bg-popover px-2 py-1 text-popover-foreground text-sm outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[instant]:duration-0',
+        "flex origin-[var(--transform-origin)] flex-col rounded bg-popover px-2 py-1 text-popover-foreground text-sm outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[instant]:duration-0",
         className
       )}
       ref={ref}
@@ -74,7 +74,7 @@ const TooltipPopup = React.forwardRef<
     />
   );
 });
-TooltipPopup.displayName = 'TooltipPopup';
+TooltipPopup.displayName = "TooltipPopup";
 
 const TooltipContent = TooltipPopup;
 
@@ -85,7 +85,7 @@ const TooltipArrow = React.forwardRef<
   return (
     <BaseTooltip.Arrow
       className={cn(
-        'data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180',
+        "data-[side=right]:-rotate-90 data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
         className
       )}
       ref={ref}
@@ -93,7 +93,7 @@ const TooltipArrow = React.forwardRef<
     />
   );
 });
-TooltipArrow.displayName = 'TooltipArrow';
+TooltipArrow.displayName = "TooltipArrow";
 
 export {
   TooltipProvider,

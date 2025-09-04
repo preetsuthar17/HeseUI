@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Toolbar as BaseToolbar } from '@base-ui-components/react/toolbar';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Toolbar as BaseToolbar } from "@base-ui-components/react/toolbar";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Toolbar = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Root>,
@@ -11,7 +11,7 @@ const Toolbar = React.forwardRef<
   return (
     <BaseToolbar.Root
       className={cn(
-        'flex items-center gap-px rounded border border-border p-0.5',
+        "flex items-center gap-px rounded border border-border p-0.5",
         className
       )}
       ref={ref}
@@ -19,7 +19,7 @@ const Toolbar = React.forwardRef<
     />
   );
 });
-Toolbar.displayName = 'Toolbar';
+Toolbar.displayName = "Toolbar";
 
 const ToolbarButton = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Button>,
@@ -28,7 +28,7 @@ const ToolbarButton = React.forwardRef<
   return (
     <BaseToolbar.Button
       className={cn(
-        'inline-flex h-8 min-w-8 select-none items-center justify-center rounded px-3 font-medium text-muted-foreground text-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[pressed]:bg-accent data-[pressed]:text-foreground',
+        "inline-flex h-8 min-w-8 select-none items-center justify-center rounded px-3 font-medium text-muted-foreground text-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:bg-accent data-[pressed]:bg-accent data-[pressed]:text-foreground",
         className
       )}
       ref={ref}
@@ -36,7 +36,7 @@ const ToolbarButton = React.forwardRef<
     />
   );
 });
-ToolbarButton.displayName = 'ToolbarButton';
+ToolbarButton.displayName = "ToolbarButton";
 
 const ToolbarLink = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Link>,
@@ -45,7 +45,7 @@ const ToolbarLink = React.forwardRef<
   return (
     <BaseToolbar.Link
       className={cn(
-        'mr-3 ml-auto flex-none self-center text-muted-foreground text-sm no-underline hover:text-primary focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        "mr-3 ml-auto flex-none self-center text-muted-foreground text-sm no-underline hover:text-primary focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         className
       )}
       ref={ref}
@@ -53,7 +53,7 @@ const ToolbarLink = React.forwardRef<
     />
   );
 });
-ToolbarLink.displayName = 'ToolbarLink';
+ToolbarLink.displayName = "ToolbarLink";
 
 const ToolbarSeparator = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Separator>,
@@ -61,13 +61,13 @@ const ToolbarSeparator = React.forwardRef<
 >(function ToolbarSeparatorComponent({ className, ...props }, ref) {
   return (
     <BaseToolbar.Separator
-      className={cn('m-1 h-4 w-px bg-border', className)}
+      className={cn("m-1 h-4 w-px bg-border", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ToolbarSeparator.displayName = 'ToolbarSeparator';
+ToolbarSeparator.displayName = "ToolbarSeparator";
 
 const ToolbarGroup = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Group>,
@@ -75,13 +75,13 @@ const ToolbarGroup = React.forwardRef<
 >(function ToolbarGroupComponent({ className, ...props }, ref) {
   return (
     <BaseToolbar.Group
-      className={cn('flex gap-1', className)}
+      className={cn("flex gap-1", className)}
       ref={ref}
       {...props}
     />
   );
 });
-ToolbarGroup.displayName = 'ToolbarGroup';
+ToolbarGroup.displayName = "ToolbarGroup";
 
 const ToolbarInput = React.forwardRef<
   React.ComponentRef<typeof BaseToolbar.Input>,
@@ -90,7 +90,7 @@ const ToolbarInput = React.forwardRef<
   return (
     <BaseToolbar.Input
       className={cn(
-        'h-8 min-w-24 rounded border border-border bg-background px-2 text-foreground text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring',
+        "h-8 min-w-24 rounded border border-border bg-background px-2 text-foreground text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring",
         className
       )}
       ref={ref}
@@ -98,7 +98,7 @@ const ToolbarInput = React.forwardRef<
     />
   );
 });
-ToolbarInput.displayName = 'ToolbarInput';
+ToolbarInput.displayName = "ToolbarInput";
 
 export {
   Toolbar,

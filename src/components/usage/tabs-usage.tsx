@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Tabs,
@@ -6,9 +6,9 @@ import {
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from '@/components/ui/tabs';
-import { TabsInstallation } from '../installation/tabs-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/tabs";
+import { TabsInstallation } from "../installation/tabs-installation";
+import { Separator } from "../ui/separator";
 
 export function TabsDemo() {
   return (

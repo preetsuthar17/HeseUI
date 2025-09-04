@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -11,16 +11,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { DialogInstallation } from '../installation/dialog-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/dialog";
+import { DialogInstallation } from "../installation/dialog-installation";
+import { Separator } from "../ui/separator";
 
 export function DialogDemo() {
   const [_controlledOpen, _setControlledOpen] = React.useState(false);
   const [_nonModalOpen, _setNonModalOpen] = React.useState(false);
   const [_nonDismissibleOpen, _setNonDismissibleOpen] = React.useState(false);
   const [_dialogOpen, _setDialogOpen] = React.useState(false);
-  const [_textareaValue, _setTextareaValue] = React.useState('');
+  const [_textareaValue, _setTextareaValue] = React.useState("");
 
   return (
     <div className="flex flex-col gap-8">

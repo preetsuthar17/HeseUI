@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Switch as BaseSwitch } from '@base-ui-components/react/switch';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Switch as BaseSwitch } from "@base-ui-components/react/switch";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Switch = React.forwardRef<
   React.ComponentRef<typeof BaseSwitch.Root>,
@@ -11,7 +11,7 @@ const Switch = React.forwardRef<
   return (
     <BaseSwitch.Root
       className={cn(
-        'peer inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent bg-input text-foreground outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary data-[unchecked]:bg-input dark:data-[unchecked]:bg-input/80',
+        "peer inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent bg-input text-foreground outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 data-[checked]:bg-primary data-[unchecked]:bg-input dark:data-[unchecked]:bg-input/80",
         className
       )}
       ref={ref}
@@ -19,7 +19,7 @@ const Switch = React.forwardRef<
     />
   );
 });
-Switch.displayName = 'Switch';
+Switch.displayName = "Switch";
 
 const SwitchThumb = React.forwardRef<
   React.ComponentRef<typeof BaseSwitch.Thumb>,
@@ -28,7 +28,7 @@ const SwitchThumb = React.forwardRef<
   return (
     <BaseSwitch.Thumb
       className={cn(
-        'aspect-square h-full rounded-full bg-background shadow transition-transform duration-150 data-[checked]:translate-x-3.5',
+        "aspect-square h-full rounded-full bg-background shadow transition-transform duration-150 data-[checked]:translate-x-3.5",
         className
       )}
       ref={ref}
@@ -36,6 +36,6 @@ const SwitchThumb = React.forwardRef<
     />
   );
 });
-SwitchThumb.displayName = 'SwitchThumb';
+SwitchThumb.displayName = "SwitchThumb";
 
 export { Switch, SwitchThumb };

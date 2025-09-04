@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react';
-import type React from 'react';
+import { AlignCenter, AlignLeft, AlignRight } from "lucide-react";
+import type React from "react";
 import {
   Select,
   SelectContent,
@@ -15,17 +15,17 @@ import {
   SelectScrollUpArrow,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/togglegroup';
+} from "@/components/ui/select";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import {
   Toolbar,
   ToolbarButton,
   ToolbarGroup,
   ToolbarLink,
   ToolbarSeparator,
-} from '@/components/ui/toolbar';
-import { ToolbarInstallation } from '../installation/toolbar-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/toolbar";
+import { ToolbarInstallation } from "../installation/toolbar-installation";
+import { Separator } from "../ui/separator";
 
 export function ToolbarDemo() {
   return (
@@ -126,7 +126,7 @@ export function ToolbarDemo() {
   );
 }
 
-function ChevronUpDownIcon(props: React.ComponentProps<'svg'>) {
+function ChevronUpDownIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="none"
@@ -144,7 +144,7 @@ function ChevronUpDownIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function CheckIcon(props: React.ComponentProps<'svg'>) {
+function CheckIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="currentcolor"

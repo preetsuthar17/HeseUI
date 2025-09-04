@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Menu as BaseMenu } from '@base-ui-components/react/menu';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Menu as BaseMenu } from "@base-ui-components/react/menu";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Menu = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Root>,
@@ -10,7 +10,7 @@ const Menu = React.forwardRef<
 >(function MenuComponent(props, _ref) {
   return <BaseMenu.Root {...props} />;
 });
-Menu.displayName = 'Menu';
+Menu.displayName = "Menu";
 
 const MenuTrigger = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Trigger>,
@@ -19,7 +19,7 @@ const MenuTrigger = React.forwardRef<
   return (
     <BaseMenu.Trigger
       className={cn(
-        'inline-flex items-center justify-center gap-1 whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50',
+        "inline-flex items-center justify-center gap-1 whitespace-nowrap rounded font-medium text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[popup-open]:bg-accent data-[popup-open]:text-accent-foreground data-[disabled]:opacity-50",
         className
       )}
       ref={ref}
@@ -27,7 +27,7 @@ const MenuTrigger = React.forwardRef<
     />
   );
 });
-MenuTrigger.displayName = 'MenuTrigger';
+MenuTrigger.displayName = "MenuTrigger";
 
 const MenuPortal = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Portal>,
@@ -35,7 +35,7 @@ const MenuPortal = React.forwardRef<
 >(function MenuPortalComponent(props, _ref) {
   return <BaseMenu.Portal {...props} />;
 });
-MenuPortal.displayName = 'MenuPortal';
+MenuPortal.displayName = "MenuPortal";
 
 const MenuPositioner = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Positioner>,
@@ -43,13 +43,13 @@ const MenuPositioner = React.forwardRef<
 >(function MenuPositionerComponent({ className, ...props }, ref) {
   return (
     <BaseMenu.Positioner
-      className={cn('z-50 outline-none', className)}
+      className={cn("z-50 outline-none", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MenuPositioner.displayName = 'MenuPositioner';
+MenuPositioner.displayName = "MenuPositioner";
 
 const MenuContent = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Popup>,
@@ -58,7 +58,7 @@ const MenuContent = React.forwardRef<
   return (
     <BaseMenu.Popup
       className={cn(
-        'z-50 min-w-[10rem] origin-[var(--transform-origin)] rounded border border-border bg-popover p-1 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0',
+        "z-50 min-w-[10rem] origin-[var(--transform-origin)] rounded border border-border bg-popover p-1 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0",
         className
       )}
       ref={ref}
@@ -66,19 +66,19 @@ const MenuContent = React.forwardRef<
     />
   );
 });
-MenuContent.displayName = 'MenuContent';
+MenuContent.displayName = "MenuContent";
 
 const MenuArrow = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Arrow>,
   React.ComponentPropsWithoutRef<typeof BaseMenu.Arrow>
 >(function MenuArrowComponent({ className, children, ...props }, ref) {
   return (
-    <BaseMenu.Arrow className={cn('', className)} ref={ref} {...props}>
+    <BaseMenu.Arrow className={cn("", className)} ref={ref} {...props}>
       {children ?? <ArrowSvg />}
     </BaseMenu.Arrow>
   );
 });
-MenuArrow.displayName = 'MenuArrow';
+MenuArrow.displayName = "MenuArrow";
 
 const MenuItem = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Item>,
@@ -87,7 +87,7 @@ const MenuItem = React.forwardRef<
   return (
     <BaseMenu.Item
       className={cn(
-        'relative flex cursor-default select-none items-center rounded p-1.5 pr-2 pl-4 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
+        "relative flex cursor-default select-none items-center rounded p-1.5 pr-2 pl-4 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
         className
       )}
       ref={ref}
@@ -95,7 +95,7 @@ const MenuItem = React.forwardRef<
     />
   );
 });
-MenuItem.displayName = 'MenuItem';
+MenuItem.displayName = "MenuItem";
 
 const MenuSeparator = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Separator>,
@@ -103,21 +103,21 @@ const MenuSeparator = React.forwardRef<
 >(function MenuSeparatorComponent({ className, ...props }, ref) {
   return (
     <BaseMenu.Separator
-      className={cn('mx-4 my-1.5 h-px bg-muted', className)}
+      className={cn("mx-4 my-1.5 h-px bg-muted", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MenuSeparator.displayName = 'MenuSeparator';
+MenuSeparator.displayName = "MenuSeparator";
 
 const MenuGroup = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Group>,
   React.ComponentPropsWithoutRef<typeof BaseMenu.Group>
 >(function MenuGroupComponent({ className, ...props }, ref) {
-  return <BaseMenu.Group className={cn('', className)} ref={ref} {...props} />;
+  return <BaseMenu.Group className={cn("", className)} ref={ref} {...props} />;
 });
-MenuGroup.displayName = 'MenuGroup';
+MenuGroup.displayName = "MenuGroup";
 
 const MenuGroupLabel = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.GroupLabel>,
@@ -126,7 +126,7 @@ const MenuGroupLabel = React.forwardRef<
   return (
     <BaseMenu.GroupLabel
       className={cn(
-        'cursor-default select-none p-2 pr-8 pl-7 text-muted-foreground text-sm',
+        "cursor-default select-none p-2 pr-8 pl-7 text-muted-foreground text-sm",
         className
       )}
       ref={ref}
@@ -134,7 +134,7 @@ const MenuGroupLabel = React.forwardRef<
     />
   );
 });
-MenuGroupLabel.displayName = 'MenuGroupLabel';
+MenuGroupLabel.displayName = "MenuGroupLabel";
 
 const MenuCheckboxItem = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.CheckboxItem>,
@@ -143,7 +143,7 @@ const MenuCheckboxItem = React.forwardRef<
   return (
     <BaseMenu.CheckboxItem
       className={cn(
-        'relative grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 rounded p-1.5 pr-8 pl-2.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
+        "relative grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 rounded p-1.5 pr-8 pl-2.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
         className
       )}
       ref={ref}
@@ -153,7 +153,7 @@ const MenuCheckboxItem = React.forwardRef<
     </BaseMenu.CheckboxItem>
   );
 });
-MenuCheckboxItem.displayName = 'MenuCheckboxItem';
+MenuCheckboxItem.displayName = "MenuCheckboxItem";
 
 const MenuCheckboxItemIndicator = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.CheckboxItemIndicator>,
@@ -161,23 +161,23 @@ const MenuCheckboxItemIndicator = React.forwardRef<
 >(function MenuCheckboxItemIndicatorComponent({ className, ...props }, ref) {
   return (
     <BaseMenu.CheckboxItemIndicator
-      className={cn('col-start-1 flex items-center justify-center', className)}
+      className={cn("col-start-1 flex items-center justify-center", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MenuCheckboxItemIndicator.displayName = 'MenuCheckboxItemIndicator';
+MenuCheckboxItemIndicator.displayName = "MenuCheckboxItemIndicator";
 
 const MenuRadioGroup = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.RadioGroup>,
   React.ComponentPropsWithoutRef<typeof BaseMenu.RadioGroup>
 >(function MenuRadioGroupComponent({ className, ...props }, ref) {
   return (
-    <BaseMenu.RadioGroup className={cn('', className)} ref={ref} {...props} />
+    <BaseMenu.RadioGroup className={cn("", className)} ref={ref} {...props} />
   );
 });
-MenuRadioGroup.displayName = 'MenuRadioGroup';
+MenuRadioGroup.displayName = "MenuRadioGroup";
 
 const MenuRadioItem = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.RadioItem>,
@@ -186,7 +186,7 @@ const MenuRadioItem = React.forwardRef<
   return (
     <BaseMenu.RadioItem
       className={cn(
-        'relative grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 rounded p-1.5 pr-8 pl-2.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
+        "relative grid cursor-default grid-cols-[0.75rem_1fr] items-center gap-2 rounded p-1.5 pr-8 pl-2.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
         className
       )}
       ref={ref}
@@ -196,7 +196,7 @@ const MenuRadioItem = React.forwardRef<
     </BaseMenu.RadioItem>
   );
 });
-MenuRadioItem.displayName = 'MenuRadioItem';
+MenuRadioItem.displayName = "MenuRadioItem";
 
 const MenuRadioItemIndicator = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.RadioItemIndicator>,
@@ -204,13 +204,13 @@ const MenuRadioItemIndicator = React.forwardRef<
 >(function MenuRadioItemIndicatorComponent({ className, ...props }, ref) {
   return (
     <BaseMenu.RadioItemIndicator
-      className={cn('col-start-1 flex items-center justify-center', className)}
+      className={cn("col-start-1 flex items-center justify-center", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MenuRadioItemIndicator.displayName = 'MenuRadioItemIndicator';
+MenuRadioItemIndicator.displayName = "MenuRadioItemIndicator";
 
 const MenuSub = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.SubmenuRoot>,
@@ -218,7 +218,7 @@ const MenuSub = React.forwardRef<
 >(function MenuSubComponent(props, _ref) {
   return <BaseMenu.SubmenuRoot {...props} />;
 });
-MenuSub.displayName = 'MenuSub';
+MenuSub.displayName = "MenuSub";
 
 const MenuSubTrigger = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.SubmenuTrigger>,
@@ -227,7 +227,7 @@ const MenuSubTrigger = React.forwardRef<
   return (
     <BaseMenu.SubmenuTrigger
       className={cn(
-        'relative flex w-full cursor-default select-none items-center justify-between gap-4 rounded p-1.5 pr-4 pl-4 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground',
+        "relative flex w-full cursor-default select-none items-center justify-between gap-4 rounded p-1.5 pr-4 pl-4 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[highlighted]:bg-accent data-[popup-open]:bg-accent data-[highlighted]:text-accent-foreground data-[popup-open]:text-accent-foreground",
         className
       )}
       ref={ref}
@@ -238,7 +238,7 @@ const MenuSubTrigger = React.forwardRef<
     </BaseMenu.SubmenuTrigger>
   );
 });
-MenuSubTrigger.displayName = 'MenuSubTrigger';
+MenuSubTrigger.displayName = "MenuSubTrigger";
 
 const MenuSubContent = React.forwardRef<
   React.ComponentRef<typeof BaseMenu.Popup>,
@@ -247,7 +247,7 @@ const MenuSubContent = React.forwardRef<
   return (
     <BaseMenu.Popup
       className={cn(
-        'z-50 min-w-[10rem] origin-[var(--transform-origin)] rounded border border-border bg-popover p-1 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0',
+        "z-50 min-w-[10rem] origin-[var(--transform-origin)] rounded border border-border bg-popover p-1 text-popover-foreground transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0",
         className
       )}
       ref={ref}
@@ -255,9 +255,9 @@ const MenuSubContent = React.forwardRef<
     />
   );
 });
-MenuSubContent.displayName = 'MenuSubContent';
+MenuSubContent.displayName = "MenuSubContent";
 
-function ChevronRightIcon(props: React.ComponentProps<'svg'>) {
+function ChevronRightIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="10" viewBox="0 0 10 10" width="10" {...props}>
       <title>Open submenu</title>
@@ -266,7 +266,7 @@ function ChevronRightIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function ArrowSvg(props: React.ComponentProps<'svg'>) {
+function ArrowSvg(props: React.ComponentProps<"svg">) {
   return (
     <svg fill="none" height="10" viewBox="0 0 20 10" width="20" {...props}>
       <title>Menu arrow</title>

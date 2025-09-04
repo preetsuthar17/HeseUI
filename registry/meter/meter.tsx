@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Meter as BaseMeter } from '@base-ui-components/react/meter';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Meter as BaseMeter } from "@base-ui-components/react/meter";
+import React from "react";
+import { cn } from "@/lib/utils";
 
 const Meter = React.forwardRef<
   React.ComponentRef<typeof BaseMeter.Root>,
@@ -10,13 +10,13 @@ const Meter = React.forwardRef<
 >(function MeterComponent({ className, ...props }, ref) {
   return (
     <BaseMeter.Root
-      className={cn('box-border', className)}
+      className={cn("box-border", className)}
       ref={ref}
       {...props}
     />
   );
 });
-Meter.displayName = 'Meter';
+Meter.displayName = "Meter";
 
 const MeterLabel = React.forwardRef<
   React.ComponentRef<typeof BaseMeter.Label>,
@@ -24,13 +24,13 @@ const MeterLabel = React.forwardRef<
 >(function MeterLabelComponent({ className, ...props }, ref) {
   return (
     <BaseMeter.Label
-      className={cn('font-medium text-foreground text-sm', className)}
+      className={cn("font-medium text-foreground text-sm", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MeterLabel.displayName = 'MeterLabel';
+MeterLabel.displayName = "MeterLabel";
 
 const MeterValue = React.forwardRef<
   React.ComponentRef<typeof BaseMeter.Value>,
@@ -38,13 +38,13 @@ const MeterValue = React.forwardRef<
 >(function MeterValueComponent({ className, ...props }, ref) {
   return (
     <BaseMeter.Value
-      className={cn('m-0 text-foreground text-sm leading-5', className)}
+      className={cn("m-0 text-foreground text-sm leading-5", className)}
       ref={ref}
       {...props}
     />
   );
 });
-MeterValue.displayName = 'MeterValue';
+MeterValue.displayName = "MeterValue";
 
 const MeterTrack = React.forwardRef<
   React.ComponentRef<typeof BaseMeter.Track>,
@@ -53,7 +53,7 @@ const MeterTrack = React.forwardRef<
   return (
     <BaseMeter.Track
       className={cn(
-        'relative block h-2 w-full overflow-hidden rounded bg-muted outline outline-border',
+        "relative block h-2 w-full overflow-hidden rounded bg-muted outline outline-border",
         className
       )}
       ref={ref}
@@ -61,7 +61,7 @@ const MeterTrack = React.forwardRef<
     />
   );
 });
-MeterTrack.displayName = 'MeterTrack';
+MeterTrack.displayName = "MeterTrack";
 
 const MeterIndicator = React.forwardRef<
   React.ComponentRef<typeof BaseMeter.Indicator>,
@@ -70,7 +70,7 @@ const MeterIndicator = React.forwardRef<
   return (
     <BaseMeter.Indicator
       className={cn(
-        'block h-full bg-primary transition-[width] duration-500',
+        "block h-full bg-primary transition-[width] duration-500",
         className
       )}
       ref={ref}
@@ -78,6 +78,6 @@ const MeterIndicator = React.forwardRef<
     />
   );
 });
-MeterIndicator.displayName = 'MeterIndicator';
+MeterIndicator.displayName = "MeterIndicator";
 
 export { Meter, MeterLabel, MeterValue, MeterTrack, MeterIndicator };

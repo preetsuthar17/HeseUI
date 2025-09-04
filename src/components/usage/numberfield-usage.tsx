@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   NumberField,
   NumberFieldDecrement,
@@ -9,9 +9,9 @@ import {
   NumberFieldInput,
   NumberFieldScrubArea,
   NumberFieldScrubAreaCursor,
-} from '@/components/ui/numberfield';
-import { NumberFieldInstallation } from '../installation/numberfield-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/numberfield";
+import { NumberFieldInstallation } from "../installation/numberfield-installation";
+import { Separator } from "../ui/separator";
 
 export function NumberFieldDemo() {
   const id = React.useId();
@@ -50,7 +50,7 @@ export function NumberFieldDemo() {
   );
 }
 
-function CursorGrowIcon(props: React.ComponentProps<'svg'>) {
+function CursorGrowIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="black"
@@ -66,7 +66,7 @@ function CursorGrowIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function PlusIcon(props: React.ComponentProps<'svg'>) {
+function PlusIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="none"
@@ -83,7 +83,7 @@ function PlusIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function MinusIcon(props: React.ComponentProps<'svg'>) {
+function MinusIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="none"

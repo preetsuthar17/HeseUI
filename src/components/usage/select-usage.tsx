@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import type React from 'react';
+import type React from "react";
 import {
   Select,
   SelectContent,
@@ -14,15 +14,15 @@ import {
   SelectScrollUpArrow,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { SelectInstallation } from '../installation/select-installation';
-import { Separator } from '../ui/separator';
+} from "@/components/ui/select";
+import { SelectInstallation } from "../installation/select-installation";
+import { Separator } from "../ui/separator";
 
 const fontItems = {
-  sans: 'Sans-serif',
-  serif: 'Serif',
-  mono: 'Monospace',
-  cursive: 'Cursive',
+  sans: "Sans-serif",
+  serif: "Serif",
+  mono: "Monospace",
+  cursive: "Cursive",
 };
 
 export function SelectDemo() {
@@ -62,7 +62,7 @@ export function SelectDemo() {
 
         <div className="item-center flex w-fit flex-col justify-start gap-2">
           <h3 className="font-medium text-lg">Multiple Select</h3>
-          <Select defaultValue={['javascript', 'typescript']} multiple>
+          <Select defaultValue={["javascript", "typescript"]} multiple>
             <SelectTrigger className="min-w-[14rem]">
               <SelectValue>{renderLanguages}</SelectValue>
               <SelectIcon>
@@ -97,16 +97,16 @@ export function SelectDemo() {
 }
 
 const languages = {
-  javascript: 'JavaScript',
-  typescript: 'TypeScript',
-  python: 'Python',
-  java: 'Java',
-  csharp: 'C#',
-  php: 'PHP',
-  cpp: 'C++',
-  rust: 'Rust',
-  go: 'Go',
-  swift: 'Swift',
+  javascript: "JavaScript",
+  typescript: "TypeScript",
+  python: "Python",
+  java: "Java",
+  csharp: "C#",
+  php: "PHP",
+  cpp: "C++",
+  rust: "Rust",
+  go: "Go",
+  swift: "Swift",
 } as const;
 
 type Language = keyof typeof languages;
@@ -115,14 +115,14 @@ const values = Object.keys(languages) as Language[];
 
 function renderLanguages(value: Language[]) {
   if (value.length === 0) {
-    return 'Select languages...';
+    return "Select languages...";
   }
   const firstLanguage = languages[value[0]];
-  const additional = value.length > 1 ? ` (+${value.length - 1} more)` : '';
+  const additional = value.length > 1 ? ` (+${value.length - 1} more)` : "";
   return firstLanguage + additional;
 }
 
-function ChevronUpDownIcon(props: React.ComponentProps<'svg'>) {
+function ChevronUpDownIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="none"
@@ -140,7 +140,7 @@ function ChevronUpDownIcon(props: React.ComponentProps<'svg'>) {
   );
 }
 
-function CheckIcon(props: React.ComponentProps<'svg'>) {
+function CheckIcon(props: React.ComponentProps<"svg">) {
   return (
     <svg
       fill="currentcolor"
