@@ -59,13 +59,13 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "format": "npx ultracite@latest format",
+    "format": "npx ultracite@latest fix",
     "lint": "npx ultracite@latest lint",
     "check": "tsc --noEmit",
     "registry:build": "shadcn build"
   },
   "dependencies": {
-    "@base-ui-components/react": "1.0.0-beta.2",
+    "@base-ui-components/react": "1.0.0-beta.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.542.0",
@@ -76,8 +76,8 @@
     "react-dom": "19.1.1",
     "react-element-to-jsx-string": "^17.0.1",
     "react-icons": "^5.5.0",
-    "shadcn": "3.0.0",
-    "shiki": "^3.12.0",
+    "shadcn": "3.1.0",
+    "shiki": "^3.12.2",
     "tailwind-merge": "^3.3.1",
     "turndown": "^7.2.1"
   },
@@ -89,8 +89,8 @@
     "@types/react-dom": "^19",
     "@types/turndown": "^5.0.5",
     "tailwindcss": "^4",
-    "tw-animate-css": "^1.3.7",
+    "tw-animate-css": "^1.3.8",
     "typescript": "^5",
-    "ultracite": "5.2.10"
+    "ultracite": "5.3.3"
   }
 }
